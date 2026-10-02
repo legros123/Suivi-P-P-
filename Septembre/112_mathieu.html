@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A0F1A">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Mon mois — Pick &amp; Pack</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --nuit:#0A0F1A; --tole:#111A2B; --tole2:#17233A; --rail:#22304B; --rail2:#30425F;
+  --texte:#EAF0FA; --gris:#93A2BC; --gris2:#5E6E8A;
+  --jaune:#FFD23F; --vert:#3DDC97; --orange:#FFA94D; --rouge:#FF5C70; --bleu:#6CB2FF;
+  --cond:'Barlow Condensed','Roboto Condensed','Arial Narrow',sans-serif;
+  --sans:'Barlow','Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  --nav-h:68px;
+  color-scheme:dark;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 72px);background:var(--nuit)}
+*,*::before,*::after{box-sizing:inherit;margin:0;padding:0}
+body{background:var(--nuit);color:var(--texte);font-family:var(--sans);font-size:16px;line-height:1.45;
+  -webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent;overflow-x:hidden}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--jaune);outline-offset:2px;border-radius:6px}
+.num{font-family:var(--cond);font-variant-numeric:tabular-nums;letter-spacing:.005em}
+.ok{--st:var(--vert)} .warn{--st:var(--orange)} .bad{--st:var(--rouge)} .na{--st:var(--gris2)}
+
+.wrap{max-width:560px;margin:0 auto;padding:0 16px calc(var(--nav-h) + 28px)}
+
+/* ── En-tête ── */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:rgba(10,15,26,.92);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--rail)}
+.top-in{max-width:560px;margin:0 auto;display:flex;align-items:center;gap:12px;padding:10px 16px}
+.plate{flex:none;background:var(--jaune);color:#14110A;border-radius:6px;padding:3px 8px 2px;
+  font-family:var(--cond);font-weight:800;font-size:1.25rem;line-height:1.1;text-align:center;min-width:48px;
+  box-shadow:inset 0 -3px 0 rgba(0,0,0,.18)}
+.plate small{display:block;font-size:.56rem;font-weight:700;letter-spacing:.04em;opacity:.7;margin-bottom:-1px}
+.who{flex:1;min-width:0}
+.who b{display:block;font-family:var(--cond);font-weight:700;font-size:1.3rem;line-height:1.05;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.who span{font-size:.8rem;color:var(--gris)}
+.icon-btn{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:var(--tole);border:1px solid var(--rail)}
+.icon-btn svg{width:22px;height:22px}
+
+/* ── Panneaux ── */
+.panel{display:none}
+.panel.on{display:block;animation:panelIn .18s ease-out}
+@keyframes panelIn{from{opacity:.4}to{opacity:1}}
+h2{font-family:var(--cond);font-weight:700;font-size:1.45rem;line-height:1.15;margin:30px 0 4px}
+h2+.lead{margin-bottom:12px}
+.lead{color:var(--gris);font-size:.9rem}
+h3{font-family:var(--cond);font-weight:700;font-size:1.12rem;margin:0 0 8px}
+
+.card{background:var(--tole);border:1px solid var(--rail);border-radius:14px;padding:16px}
+.card.edge{border-left:4px solid var(--st,var(--rail2))}
+.stack>*+*{margin-top:12px}
+
+/* ── Héros : le compteur ── */
+.hero{position:relative;text-align:center;padding:18px 0 6px}
+.hero::before{content:"";position:absolute;left:0;right:0;top:0;height:300px;
+  background:radial-gradient(closest-side,rgba(255,210,63,.08),rgba(255,210,63,0));pointer-events:none}
+.hero-month{font-size:.95rem;color:var(--gris)}
+.gauge{position:relative;width:100%;max-width:340px;margin:2px auto 0}
+.gauge svg{display:block;width:100%;height:auto;overflow:visible}
+.gauge .lbl{font-family:var(--cond);font-size:13px;font-weight:600;fill:var(--gris)}
+#needle{transform-box:view-box;transform-origin:160px 140px;transform:rotate(-120deg);
+  transition:transform 1.7s cubic-bezier(.2,1.25,.35,1)}
+.g-val{position:absolute;left:0;right:0;bottom:0;line-height:1}
+.g-val .big{font-family:var(--cond);font-weight:800;font-size:4.4rem;letter-spacing:-.01em;color:var(--st)}
+.g-val .big sup{font-size:.42em;font-weight:700;vertical-align:.95em;margin-left:2px;color:var(--texte)}
+.g-cap{margin-top:6px;font-size:1rem}
+.delta{display:inline-flex;align-items:center;gap:4px;font-family:var(--cond);font-weight:700;font-size:1rem;
+  padding:2px 10px;border-radius:99px;background:rgba(255,255,255,.07);background:color-mix(in srgb,var(--st) 16%,transparent);color:var(--st);margin-left:6px;white-space:nowrap}
+.verdict{margin:12px auto 0;max-width:30ch;font-size:1.06rem;color:var(--texte)}
+.verdict b{color:var(--st)}
+
+/* bande des 3 chiffres */
+.glance{display:grid;grid-template-columns:repeat(3,1fr);margin-top:20px;border:1px solid var(--rail);border-radius:14px;background:var(--tole);overflow:hidden}
+.glance>div{padding:12px 10px 11px;text-align:center}
+.glance>div+div{border-left:1px solid var(--rail)}
+.glance .v{font-family:var(--cond);font-weight:700;font-size:1.9rem;line-height:1}
+.glance .k{font-size:.8rem;color:var(--gris);margin-top:4px}
+.glance .s{font-size:.75rem;color:var(--gris2);margin-top:1px}
+
+/* projecteur qualité (fiche annuelle) */
+.spot{margin-top:18px}
+.spot .k{font-size:.85rem;color:var(--gris)}
+.spot .big{font-family:var(--cond);font-weight:700;font-size:1.65rem;line-height:1.15;margin:4px 0 12px}
+.spot .big b{color:var(--st);font-size:1.6em;font-weight:800}
+.vs{display:grid;grid-template-columns:62px 1fr 74px;align-items:center;gap:10px;padding:5px 0;font-size:.9rem}
+.vs .b{height:14px;border-radius:7px;background:var(--rail);position:relative;overflow:hidden}
+.vs .b i{position:absolute;inset:0 auto 0 0;border-radius:7px;background:var(--c)}
+.vs .n{text-align:right;font-family:var(--cond);font-weight:700;font-size:1.05rem}
+.spot .foot2{margin-top:10px;font-size:.92rem}
+.cal-m{font-family:var(--cond);font-weight:700;font-size:1.05rem;margin:14px 0 8px}
+.cal-m:first-child{margin-top:0}
+.cal-m span{font-family:var(--sans);font-weight:400;font-size:.8rem;color:var(--gris);margin-left:6px}
+
+/* message */
+.msg{margin-top:16px;background:linear-gradient(180deg,var(--tole2),var(--tole));border:1px solid var(--rail);border-radius:14px;padding:14px 16px 14px 18px;position:relative}
+.msg::before{content:"";position:absolute;left:0;top:14px;bottom:14px;width:4px;border-radius:0 3px 3px 0;background:var(--jaune)}
+.msg-from{font-size:.82rem;color:var(--gris);margin-bottom:4px;display:flex;align-items:center;gap:8px}
+.msg-from b{color:var(--jaune);font-weight:600}
+.msg-txt{font-size:1rem;line-height:1.5}
+.edit-only{display:none}
+.eq-only{display:none}
+body.eq .eq-only{display:block}
+body.edit .edit-only{display:revert}
+.msg textarea{width:100%;min-height:110px;margin-top:10px;background:var(--nuit);color:var(--texte);border:1px solid var(--rail2);border-radius:10px;padding:10px;font:inherit;resize:vertical}
+.btn-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.btn{padding:9px 14px;border-radius:10px;background:var(--tole2);border:1px solid var(--rail2);font-weight:600;font-size:.88rem}
+.btn.main{background:var(--jaune);color:#14110A;border-color:var(--jaune)}
+
+/* calendrier */
+.cal-head,.cal-row{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
+.cal-head{margin-bottom:6px}
+.cal-head span{text-align:center;font-size:.75rem;color:var(--gris2)}
+.cal-row+.cal-row{margin-top:6px}
+.day{position:relative;aspect-ratio:1/1.02;border-radius:9px;border:1px solid var(--rail);background:var(--tole);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;padding:4px 2px}
+.day .n{position:absolute;top:4px;left:6px;font-size:.68rem;color:var(--gris)}
+.day .q{font-family:var(--cond);font-weight:700;font-size:1.22rem;line-height:1;margin-top:5px}
+.day .u{font-size:.62rem;color:var(--gris);line-height:1}
+.day.prod{background:var(--tole2);background:color-mix(in srgb,var(--st) 15%,var(--tole));border-color:color-mix(in srgb,var(--st) 45%,var(--rail))}
+.day.prod .q{color:var(--st)}
+.day.away{background:repeating-linear-gradient(-45deg,var(--tole) 0 6px,#1A2236 6px 12px);}
+.day.away .q{font-size:.95rem;color:var(--texte);font-weight:600}
+.day.out{visibility:hidden}
+.day.none{opacity:.45}
+.day.none .q{color:var(--gris2)}
+button.day:active{transform:scale(.96)}
+.marks{position:absolute;bottom:4px;left:0;right:0;display:flex;justify-content:center;gap:3px;height:7px}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--orange)}
+.dia{width:7px;height:7px;transform:rotate(45deg);background:var(--rouge);border-radius:1px}
+.plus{font-size:.6rem;line-height:7px;color:var(--orange);font-weight:700}
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:12px;font-size:.78rem;color:var(--gris)}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:-1px}
+
+/* paires qualité */
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.kpi .k{font-size:.85rem;color:var(--gris)}
+.kpi .v{font-family:var(--cond);font-weight:700;font-size:2.3rem;line-height:1.05;color:var(--st)}
+.kpi .s{font-size:.82rem;color:var(--texte)}
+.kpi .t{font-size:.75rem;color:var(--gris2);margin-top:2px}
+.meter{position:relative;height:6px;border-radius:3px;background:var(--rail);margin-top:10px;overflow:visible}
+.meter>i{position:absolute;left:0;top:0;bottom:0;border-radius:3px;background:var(--st)}
+.meter>b{position:absolute;top:-4px;bottom:-4px;width:2px;background:var(--texte);opacity:.55}
+
+/* score fiabilité */
+.score-top{display:flex;align-items:baseline;gap:10px}
+.score-top .v{font-family:var(--cond);font-weight:800;font-size:3rem;line-height:1;color:var(--st)}
+.score-top .v small{font-size:.45em;color:var(--gris);font-weight:600}
+.segs{display:flex;gap:4px;margin-top:12px}
+.seg{height:14px;border-radius:4px;background:var(--rail);position:relative;overflow:hidden}
+.seg>i{position:absolute;left:0;top:0;bottom:0;background:var(--c)}
+.seg-l{display:flex;gap:4px;margin-top:6px}
+.seg-l>div{font-size:.76rem;color:var(--gris);line-height:1.25}
+.seg-l b{display:block;font-family:var(--cond);font-size:1rem;color:var(--texte);font-weight:700}
+.hint{margin-top:12px;font-size:.88rem;color:var(--texte);padding-top:10px;border-top:1px dashed var(--rail2)}
+
+/* forces / axes */
+.fx{display:grid;gap:10px}
+.fx ul{list-style:none}
+.fx li{display:flex;gap:10px;align-items:flex-start;padding:7px 0;font-size:.93rem}
+.fx li+li{border-top:1px solid var(--rail)}
+.fx li svg{flex:none;width:18px;height:18px;margin-top:2px}
+
+/* listes */
+.chips{display:flex;gap:6px;overflow-x:auto;padding-bottom:2px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;padding:7px 13px;border-radius:99px;border:1px solid var(--rail2);background:var(--tole);font-size:.85rem;color:var(--gris);white-space:nowrap}
+.chip[aria-pressed="true"]{background:var(--texte);color:var(--nuit);border-color:var(--texte);font-weight:600}
+.rows{margin-top:10px;border:1px solid var(--rail);border-radius:14px;background:var(--tole);overflow:hidden}
+.row{display:grid;grid-template-columns:62px 1fr auto;align-items:center;gap:10px;width:100%;text-align:left;padding:11px 14px}
+.row+.row{border-top:1px solid var(--rail)}
+.row .d1{font-family:var(--cond);font-weight:700;font-size:1.05rem;line-height:1.05}
+.row .d1 small{display:block;font-family:var(--sans);font-weight:400;font-size:.72rem;color:var(--gris)}
+.row .bar{height:8px;border-radius:4px;background:var(--rail);position:relative}
+.row .bar i{position:absolute;left:0;top:0;bottom:0;border-radius:4px;background:var(--st)}
+.row .bar b{position:absolute;top:-3px;bottom:-3px;width:2px;background:var(--jaune);left:66.67%}
+.row .sub{font-size:.75rem;color:var(--gris);margin-top:4px}
+.row .r{text-align:right;font-family:var(--cond);font-weight:700;font-size:1.15rem;color:var(--st);line-height:1.05}
+.row .r small{display:block;font-family:var(--sans);font-weight:400;font-size:.72rem;color:var(--gris)}
+.empty{padding:22px 16px;text-align:center;color:var(--gris);font-size:.92rem}
+
+.wk{display:grid;grid-template-columns:repeat(auto-fit,minmax(60px,1fr));gap:6px}
+.wk>div{background:var(--tole);border:1px solid var(--rail);border-top:3px solid var(--st);border-radius:10px;padding:8px 6px 9px;text-align:center}
+.wk .k{font-size:.75rem;color:var(--gris)}
+.wk .v{font-family:var(--cond);font-weight:700;font-size:1.45rem;color:var(--st);line-height:1.15;white-space:nowrap}
+.wk .v small{font-size:.6em;margin-left:1px}
+.wk .s{font-size:.7rem;color:var(--gris);line-height:1.3}
+
+.hbars>div{display:grid;grid-template-columns:minmax(120px,44%) 1fr 48px;align-items:center;gap:10px;padding:6px 0;font-size:.88rem}
+.hbars .b{height:10px;border-radius:5px;background:var(--rail);position:relative;overflow:hidden}
+.hbars .b i{position:absolute;inset:0 auto 0 0;background:var(--c,var(--bleu));border-radius:5px}
+.hbars .n{text-align:right;font-family:var(--cond);font-weight:700;font-size:1.02rem}
+
+.mix{display:flex;height:12px;border-radius:6px;overflow:hidden;gap:2px;margin:10px 0 6px}
+.mix i{display:block}
+.mix-l{display:flex;justify-content:space-between;font-size:.78rem;color:var(--gris)}
+
+/* erreurs */
+.err{padding:12px 14px}
+.err+.err{border-top:1px solid var(--rail)}
+.err-h{display:flex;justify-content:space-between;gap:10px;align-items:baseline}
+.err-h b{font-weight:600;font-size:.95rem}
+.err-h>span{font-size:.78rem;color:var(--gris);white-space:nowrap}
+.tag{display:inline-block;font-size:.72rem;font-weight:700;padding:1px 7px;border-radius:5px;margin-right:6px;vertical-align:1px;
+  background:rgba(255,255,255,.07);background:color-mix(in srgb,var(--st) 18%,transparent);color:var(--st)}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:3px 12px;margin-top:7px;font-size:.84rem}
+.kv dt{color:var(--gris)}
+.kv dd{font-family:var(--cond);font-weight:600;font-size:.98rem;letter-spacing:.02em}
+.al-pill{display:inline-block;background:var(--jaune);color:#14110A;font-family:var(--cond);font-weight:800;border-radius:4px;padding:0 5px;margin-right:6px;font-size:.88rem}
+
+.aisles svg{display:block;width:100%;height:auto}
+.aisles .rk{cursor:pointer}
+.aisles text{font-family:var(--cond)}
+
+/* graphiques */
+.chart svg{display:block;width:100%;height:auto;overflow:visible}
+.chart text{font-family:var(--cond);font-size:12px;fill:var(--gris)}
+.cap{margin-top:8px;font-size:.88rem;color:var(--texte);min-height:2.6em}
+.cmp{width:100%;border-collapse:collapse;font-size:.9rem}
+.cmp th{font-weight:500;color:var(--gris);text-align:right;font-size:.78rem;padding:0 0 6px}
+.cmp th:first-child{text-align:left}
+.cmp td{padding:8px 0 8px 8px;border-top:1px solid var(--rail);white-space:nowrap;text-align:right;font-family:var(--cond);font-size:1.05rem;font-weight:600}
+.cmp td:first-child{text-align:left;font-family:var(--sans);font-size:.9rem;font-weight:400;white-space:normal;padding-left:0}
+.cmp td.dl{color:var(--st);width:74px}
+
+.badges{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.badge{text-align:center;padding:12px 4px 10px;border-radius:12px;background:var(--tole);border:1px solid var(--rail)}
+.badge .ic{width:44px;height:44px;margin:0 auto 6px;border-radius:50%;display:grid;place-items:center;border:2px solid var(--rail2);color:var(--gris2)}
+.badge .ic svg{width:22px;height:22px}
+.badge.got .ic{border-color:var(--jaune);color:var(--jaune);background:rgba(255,210,63,.1)}
+.badge b{display:block;font-family:var(--cond);font-size:.95rem;font-weight:700;line-height:1.1}
+.badge span{display:block;font-size:.68rem;color:var(--gris);line-height:1.25;margin-top:3px}
+.badge:not(.got) b{color:var(--gris)}
+
+.recs .row{grid-template-columns:40px 1fr auto}
+.recs .ri{width:34px;height:34px;border-radius:9px;display:grid;place-items:center;background:rgba(255,210,63,.12);color:var(--jaune)}
+.recs .ri svg{width:18px;height:18px}
+
+.strip{padding:12px 0 4px}
+.strip+.strip{border-top:1px solid var(--rail)}
+.strip-h{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.strip-h b{font-weight:600;font-size:.95rem}
+.strip-h span{font-family:var(--cond);font-weight:700;font-size:1.15rem;color:var(--st)}
+.strip p{font-size:.82rem;color:var(--gris);margin-top:2px}
+
+/* barre basse */
+.nav{position:fixed;left:0;right:0;bottom:0;z-index:50;background:rgba(10,15,26,.96);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-top:1px solid var(--rail);padding-bottom:env(safe-area-inset-bottom,0px)}
+.nav-in{max-width:560px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr);height:var(--nav-h)}
+.tab{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:var(--gris2);font-size:.72rem;font-weight:500}
+.tab svg{width:23px;height:23px}
+.tab[aria-selected="true"]{color:var(--texte)}
+.tab[aria-selected="true"]::before{content:"";position:absolute;top:0;left:22%;right:22%;height:3px;border-radius:0 0 3px 3px;background:var(--jaune)}
+.tab[aria-selected="true"] svg{color:var(--jaune)}
+
+/* feuille de détail */
+.veil{position:fixed;inset:0;z-index:60;background:rgba(3,6,12,.6);opacity:0;pointer-events:none;transition:opacity .2s}
+.veil.on{opacity:1;pointer-events:auto}
+.sheet{position:fixed;left:0;right:0;bottom:0;z-index:61;max-width:560px;margin:0 auto;max-height:88%;overflow-y:auto;
+  background:var(--tole);border:1px solid var(--rail2);border-bottom:0;border-radius:20px 20px 0 0;
+  padding:8px 16px calc(20px + env(safe-area-inset-bottom,0px));transform:translateY(105%);transition:transform .28s cubic-bezier(.2,.9,.3,1)}
+.sheet.on{transform:translateY(0)}
+.grab{width:40px;height:4px;border-radius:2px;background:var(--rail2);margin:2px auto 10px}
+.sh-top{display:flex;align-items:center;gap:8px}
+.sh-top h3{flex:1;margin:0;font-size:1.3rem;text-align:center}
+.sh-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
+.sh-grid>div{background:var(--nuit);border:1px solid var(--rail);border-radius:10px;padding:9px 11px}
+.sh-grid .k{font-size:.75rem;color:var(--gris)}
+.sh-grid .v{font-family:var(--cond);font-weight:700;font-size:1.45rem;line-height:1.1}
+.sh-big{text-align:center;margin-top:12px}
+.sh-big .v{font-family:var(--cond);font-weight:800;font-size:3.4rem;line-height:1;color:var(--st)}
+.status{display:inline-block;font-size:.8rem;font-weight:600;padding:3px 10px;border-radius:99px;background:rgba(255,255,255,.07);background:color-mix(in srgb,var(--st) 18%,transparent);color:var(--st)}
+.sh-sec{margin-top:16px}
+.sh-sec h4{font-family:var(--cond);font-weight:700;font-size:1.02rem;margin-bottom:6px}
+.sh-sec .rows{margin-top:0}
+
+/* recherche */
+.search{position:fixed;inset:0;z-index:70;background:var(--nuit);display:none;flex-direction:column;
+  padding-top:env(safe-area-inset-top,0px)}
+.search.on{display:flex}
+.s-bar{display:flex;gap:8px;align-items:center;padding:10px 16px;border-bottom:1px solid var(--rail);max-width:560px;width:100%;margin:0 auto}
+.s-bar input{flex:1;min-width:0;height:46px;border-radius:12px;border:1px solid var(--rail2);background:var(--tole);color:var(--texte);padding:0 14px;font:inherit;font-size:1.02rem}
+.s-bar input::placeholder{color:var(--gris2)}
+.s-res{flex:1;overflow-y:auto;padding:6px 16px calc(24px + env(safe-area-inset-bottom,0px));max-width:560px;width:100%;margin:0 auto}
+.s-grp{font-family:var(--cond);font-weight:700;font-size:1rem;color:var(--gris);margin:16px 0 6px}
+.s-item{display:block;width:100%;text-align:left;padding:10px 12px;border-radius:10px;background:var(--tole);border:1px solid var(--rail)}
+.s-item+.s-item{margin-top:6px}
+.s-item b{font-weight:600;font-size:.93rem}
+.s-item span{display:block;font-size:.8rem;color:var(--gris);margin-top:1px}
+mark{background:rgba(255,210,63,.3);color:inherit;border-radius:3px;padding:0 1px}
+.s-hint{color:var(--gris);font-size:.9rem;margin-top:18px}
+.s-hint .chips{flex-wrap:wrap;margin-top:10px}
+
+.foot{margin-top:34px;text-align:center;font-size:.75rem;color:var(--gris2);line-height:1.6}
+
+@media (prefers-reduced-motion:reduce){
+  #needle{transition:none} .panel.on{animation:none} .sheet,.veil{transition:none}
+}
+@media print{
+  :root{padding:0}
+  body{background:#fff;color:#111}
+  .top,.nav,.veil,.sheet,.search,.icon-btn,.edit-only,.chips{display:none!important}
+  .panel{display:block!important}
+  .wrap{padding-bottom:0}
+  .card,.rows,.glance,.msg,.badge,.wk>div,.day{background:#fff!important;border-color:#bbb!important;color:#111}
+  .lead,.kpi .k,.glance .k{color:#444}
+  h2{break-after:avoid} .card,.rows{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="top-in">
+    <div class="plate" id="plate"><small>MAT.</small><span>—</span></div>
+    <div class="who"><b id="whoName">—</b><span id="whoSub">—</span></div>
+    <button class="icon-btn" id="openSearch" aria-label="Rechercher une journée, une référence, une adresse">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m20 20-4.6-4.6"/></svg>
+    </button>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ═════════ MON MOIS ═════════ -->
+  <section class="panel on" id="p-mois" aria-label="Mon mois">
+    <div class="hero" id="hero">
+      <div class="hero-month" id="heroMonth">—</div>
+      <div class="gauge">
+        <svg id="gaugeSvg" viewBox="0 0 320 262" role="img" aria-labelledby="gaugeTitle"><title id="gaugeTitle">Quota du mois</title></svg>
+        <div class="g-val"><div class="big num" id="gVal">0<sup>%</sup></div></div>
+      </div>
+      <div class="g-cap" id="gCap">Quota du mois</div>
+      <p class="verdict" id="verdict"></p>
+    </div>
+
+    <div id="spot"></div>
+    <div class="glance" id="glance"></div>
+
+    <div class="msg" id="msg">
+      <div class="msg-from"><span>Le mot de <b id="supName">Greg</b></span>
+        <button class="btn edit-only" id="editMsg" style="margin-left:auto;padding:4px 10px">Modifier</button></div>
+      <p class="msg-txt" id="msgTxt"></p>
+      <div class="edit-only" id="msgEdit" hidden>
+        <textarea id="msgArea" aria-label="Message pour l'opérateur"></textarea>
+        <div class="btn-row">
+          <button class="btn main" id="msgApply">Appliquer</button>
+          <button class="btn" id="msgCopy">Copier pour messages.csv</button>
+          <button class="btn" id="msgPrint">Imprimer la fiche</button>
+        </div>
+      </div>
+    </div>
+
+    <h2 data-eq="Le mois de l'équipe, jour par jour" data-an="Ton année jour par jour">Ton mois jour par jour</h2>
+    <p class="lead">Touche une journée pour voir son détail.</p>
+    <div class="card" id="calendar"></div>
+
+    <h2 data-eq="La qualité de l'équipe">Ta qualité</h2>
+    <p class="lead">Une erreur décelée est arrêtée au poste de rejet. Une erreur avérée est partie chez le client.</p>
+    <div class="pair" id="qualPair"></div>
+
+    <h2 data-eq="Score de fiabilité de l'équipe">Ton score de fiabilité</h2>
+    <p class="lead" id="scoreLead"></p>
+    <div class="card edge" id="scoreCard"></div>
+
+    <h2>En bref</h2>
+    <div class="fx" id="fx"></div>
+  </section>
+
+  <!-- ═════════ JOURS ═════════ -->
+  <section class="panel" id="p-jours" aria-label="Mes journées">
+    <h2 data-an="Mois par mois">Semaine par semaine</h2>
+    <p class="lead">Quota moyen, lignes préparées et erreurs décelées.</p>
+    <div class="wk" id="weeks"></div>
+
+    <h2 data-eq="Toutes les journées">Toutes tes journées</h2>
+    <div class="chips" id="dayChips" role="group" aria-label="Filtrer les journées"></div>
+    <div class="rows" id="dayList"></div>
+
+    <h2 data-eq="Les tournées">Tes tournées</h2>
+    <p class="lead" id="mixLead"></p>
+    <div class="card" id="mixCard"></div>
+
+    <h2 data-eq="Le temps hors préparation">Ton temps hors préparation</h2>
+    <p class="lead" data-eq="Ces heures sont retirées du temps de picking : elles ne pèsent pas sur le quota.">Ces heures sont retirées de ton temps de picking : elles ne pèsent pas sur ton quota.</p>
+    <div class="card" id="awayCard"></div>
+  </section>
+
+  <!-- ═════════ QUALITÉ ═════════ -->
+  <section class="panel" id="p-qualite" aria-label="Mes erreurs">
+    <h2>Ce qui revient le plus</h2>
+    <p class="lead" data-eq="Les erreurs décelées de l'équipe ce mois, par type.">Tes erreurs décelées du mois, par type.</p>
+    <div class="card hbars" id="typeBars"></div>
+
+    <h2 data-eq="Où se trouvent les erreurs">Où se trouvent tes erreurs</h2>
+    <p class="lead">Vue de dessus des allées 1 à 13. Touche une allée pour filtrer la liste.</p>
+    <div class="card aisles" id="aisles"></div>
+
+    <h2>Le détail</h2>
+    <p class="lead eq-only">Sans nom : la liste sert à repérer les pièges, pas les personnes.</p>
+    <div class="chips" id="errChips" role="group" aria-label="Filtrer les erreurs"></div>
+    <div class="rows" id="errList"></div>
+  </section>
+
+  <!-- ═════════ PROGRÈS ═════════ -->
+  <section class="panel" id="p-progres" aria-label="Ma progression">
+    <h2 id="cmpTitle">Ce mois face au précédent</h2>
+    <div class="card"><table class="cmp" id="cmpTable"></table></div>
+
+    <h2 data-eq="L'année de l'équipe">Ton année</h2>
+    <p class="lead" data-eq="Quota de l'équipe chaque mois. Touche un mois.">Quota de chaque mois. La ligne pointillée grise est la moyenne de l'équipe. Touche un mois.</p>
+    <div class="card chart"><div id="yearChart"></div><p class="cap" id="yearCap"></p></div>
+
+    <h2 data-eq="Les erreurs avérées dans l'année">Tes erreurs avérées dans l'année</h2>
+    <p class="lead" id="ppmLead"></p>
+    <div class="card chart" id="ppmChart"></div>
+
+    <h2 data-eq="Les trophées de l'équipe">Tes trophées</h2>
+    <p class="lead" id="badgeLead"></p>
+    <div class="badges" id="badges"></div>
+
+    <h2 data-eq="Les records de l'équipe">Tes records de l'année</h2>
+    <div class="rows recs" id="records"></div>
+  </section>
+
+  <!-- ═════════ ÉQUIPE ═════════ -->
+  <section class="panel" id="p-equipe" aria-label="Ma place dans l'équipe">
+    <h2 data-eq="Les opérateurs du mois">Ta place dans l'équipe</h2>
+    <p class="lead" id="teamLead"></p>
+    <div class="card" id="teamStrips"></div>
+    <p class="lead" style="margin-top:12px" data-eq="Chaque point est un opérateur, sans nom. Le trait clair marque la moyenne des opérateurs.">Chaque point est un collègue, sans nom : chacun ne voit que sa propre position. Le trait clair marque la moyenne de l'équipe.</p>
+  </section>
+
+  <p class="foot" id="foot"></p>
+</main>
+
+<nav class="nav" aria-label="Rubriques">
+  <div class="nav-in" role="tablist">
+    <button class="tab" role="tab" aria-selected="true" data-p="p-mois">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M4 17a8 8 0 1 1 16 0"/><path d="m12 17 4-5"/><circle cx="12" cy="17" r="1.6" fill="currentColor"/></svg><span data-an="Mon année">Mon mois</span></button>
+    <button class="tab" role="tab" aria-selected="false" data-p="p-jours">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>Jours</button>
+    <button class="tab" role="tab" aria-selected="false" data-p="p-qualite">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r=".8" fill="currentColor"/></svg>Qualité</button>
+    <button class="tab" role="tab" aria-selected="false" data-p="p-progres">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M4 19h16"/><path d="M6 15l4-4 3 3 5-6"/><path d="M15 8h3v3"/></svg>Progrès</button>
+    <button class="tab" role="tab" aria-selected="false" data-p="p-equipe">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="9" cy="9" r="3"/><circle cx="17" cy="10" r="2.3"/><path d="M3.5 19c.7-3 2.9-4.6 5.5-4.6s4.8 1.6 5.5 4.6M15 15.2c2.6-.5 4.8.8 5.5 3.8"/></svg><span data-eq="Opérateurs">Équipe</span></button>
+  </div>
+</nav>
+
+<div class="veil" id="veil"></div>
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="shTitle"></div>
+
+<div class="search" id="search" role="dialog" aria-modal="true" aria-label="Recherche">
+  <div class="s-bar">
+    <input id="q" type="search" autocomplete="off" placeholder="Date, référence, adresse, allée…" aria-label="Rechercher">
+    <button class="icon-btn" id="closeSearch" aria-label="Fermer la recherche">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+  </div>
+  <div class="s-res" id="sRes"></div>
+</div>
+
+<script>
+/* ════════════════════════════════════════════════════════════
+   SPC-FR v3 — fiche opérateur Pick & Pack
+   Les données ci-dessous sont écrites par build_spc.py
+   (lecture du classeur Pick & Pack : PROD, ERREURS, AVEREES,
+   ACTIVITES, OPERATEURS, PARAMETRES). Ne rien modifier à la main.
+   ════════════════════════════════════════════════════════════ */
+let DATA = {"op":{"mat":"112","prenom":"Allan","nom":"Mathieu","role":"Opérateur","poste":"Détail","contrat":"CDI"},"periode":{"y":2026,"m":9,"label":"Septembre 2026","prevLabel":"août 2026"},"maj":"02/10/2026","superviseur":"Greg","seuils":{"quotaJour":620.0,"hRef":7.4,"quotaRouge":90.0,"quotaVert":100.0,"ppmAveOrange":180.0,"ppmAveRouge":220.0,"ppmDecOrange":1000.0,"ppmDecRouge":2000.0,"poidsQuota":60.0,"poidsQualite":40.0,"poidsRegul":0.0,"hMiniScore":40.0,"tunnel":15.0,"hMiniEquipe":2.0,"midP":20.5,"midM":60.5,"midG":100.5,"coefP":1.47,"coefM":1.04,"coefG":0.92,"plafond":150.0,"lignesMiniQualite":2000.0},"kpi":{"jours":8,"heures":59.2,"hPick":52.1,"hHors":7.2,"hSupp":0.0,"lignes":4950,"contenants":3310,"tournees":101,"petites":46,"moyennes":27,"grandes":28,"quota":121.1,"cadence":95.1,"lignesJour":619.0,"errDec":12,"errAve":5,"ppmDec":2424.0,"ppmAve":1010.0,"regul":null,"score":60.0,"joursQuota":8},"prev":{"jours":12,"heures":90.8,"hPick":90.8,"hHors":0.0,"hSupp":2.0,"lignes":7269,"contenants":3743,"tournees":160,"petites":77,"moyennes":56,"grandes":27,"quota":103.4,"cadence":80.1,"lignesJour":606.0,"errDec":3,"errAve":0,"ppmDec":413.0,"ppmAve":0.0,"regul":null,"score":100.0,"joursQuota":12},"jours":[{"d":"2026-09-01","h":7.4,"hp":7.4,"hh":0.0,"l":683,"c":193,"t":10,"tp":3,"tm":4,"tg":3,"q":112.7,"cad":92.3,"reg":null,"cls":"Mixte","ed":1,"ea":0,"act":[]},{"d":"2026-09-02","h":7.4,"hp":7.4,"hh":0.0,"l":674,"c":222,"t":10,"tp":4,"tm":2,"tg":4,"q":110.6,"cad":91.1,"reg":null,"cls":"Mixte","ed":0,"ea":0,"act":[]},{"d":"2026-09-03","h":7.4,"hp":7.4,"hh":0.0,"l":739,"c":557,"t":17,"tp":9,"tm":5,"tg":3,"q":130.5,"cad":99.9,"reg":null,"cls":"Petites","ed":0,"ea":0,"act":[]},{"d":"2026-09-04","h":7.4,"hp":7.4,"hh":0.0,"l":741,"c":252,"t":11,"tp":3,"tm":4,"tg":4,"q":120.6,"cad":100.1,"reg":null,"cls":"Mixte","ed":3,"ea":3,"act":[]},{"d":"2026-09-05","off":true,"l":0,"ed":1,"ea":0,"act":[],"orphan":true},{"d":"2026-09-07","h":7.4,"hp":7.4,"hh":0.0,"l":698,"c":698,"t":16,"tp":6,"tm":5,"tg":5,"q":116.1,"cad":94.3,"reg":null,"cls":"Mixte","ed":2,"ea":0,"act":[]},{"d":"2026-09-08","h":7.4,"hp":5.2,"hh":2.2,"l":478,"c":478,"t":10,"tp":4,"tm":4,"tg":2,"q":117.5,"cad":92.8,"reg":null,"cls":"Mixte","ed":0,"ea":0,"act":[{"rf":true,"ou":"Hors gabarit","det":"Hors Gabarit","h":2.25}]},{"d":"2026-09-09","h":7.4,"hp":2.5,"hh":4.9,"l":293,"c":290,"t":7,"tp":4,"tm":0,"tg":3,"q":145.1,"cad":117.2,"reg":null,"cls":"Mixte","ed":2,"ea":0,"act":[{"rf":true,"ou":"Hors gabarit","det":"renfort","h":4.9}]},{"d":"2026-09-10","h":7.4,"hp":7.4,"hh":0.0,"l":644,"c":620,"t":20,"tp":13,"tm":3,"tg":4,"q":116.1,"cad":87.0,"reg":null,"cls":"Mixte","ed":0,"ea":2,"act":[]},{"d":"2026-09-11","off":true,"l":0,"ed":3,"ea":0,"act":[],"orphan":true}],"dec":[{"d":"2026-09-01","type":"QTE +","lbl":"Quantité en trop","det":"10 BOITES","adr":"04 045 05","al":4,"rc":"WAG 221 430","rp":"","com":""},{"d":"2026-09-04","type":"QTE +","lbl":"Quantité en trop","det":"3 SCH DE 10","adr":"07 0463 05","al":7,"rc":"IBO 08822","rp":"","com":""},{"d":"2026-09-04","type":"ERREUR REF","lbl":"Mauvaise référence","det":"","adr":"23 029 01 E","al":null,"rc":"SCH 512 6567","rp":"SCH 077 647","com":""},{"d":"2026-09-04","type":"ORIENTATION","lbl":"Erreur d'orientation","det":"","adr":"03 021 00D","al":3,"rc":"SCH 721 271","rp":"","com":""},{"d":"2026-09-05","type":"ERREUR REF","lbl":"Mauvaise référence","det":"","adr":"04 099 00","al":4,"rc":"TMR 132 602","rp":"TMR GS20XC","com":""},{"d":"2026-09-07","type":"ERREUR REF","lbl":"Mauvaise référence","det":"","adr":"11 24 02","al":11,"rc":"SCH 052 021","rp":"SCH 0520 16","com":""},{"d":"2026-09-07","type":"ERREUR REF","lbl":"Mauvaise référence","det":"","adr":"05 99 03","al":5,"rc":"ARI 50 744","rp":"ARI 2202","com":""},{"d":"2026-09-09","type":"ERREUR REF","lbl":"Mauvaise référence","det":"","adr":"22 33 00B","al":null,"rc":"ELG 412 287","rp":"LEG401211","com":""},{"d":"2026-09-09","type":"ERREUR REF","lbl":"Mauvaise référence","det":"","adr":"04 67 00","al":4,"rc":"BIZ 770 183","rp":"BIZ 500132","com":""},{"d":"2026-09-11","type":"ERREUR REF","lbl":"Mauvaise référence","det":"","adr":"21 28 01D","al":null,"rc":"HAG FE02F1","rp":"HAG GA055N","com":""},{"d":"2026-09-11","type":"ERREUR REF","lbl":"Mauvaise référence","det":"","adr":"21 88 01B","al":null,"rc":"HAG UC43 6PR","rp":"OSR 844 292","com":""},{"d":"2026-09-11","type":"NON PRECISE","lbl":"Type non précisé","det":"","adr":"07 76 01","al":7,"rc":"ARI 51 972","rp":"","com":""}],"ave":[{"d":"2026-09-04","lit":"2066993","res":"(VIDE)","motif":"Manquant","ag":"Rexel Flers","cli":"Comptant Pro Instal 6102","rc":"BIY80100040803","rr":"","qc":"2","ql":"2"},{"d":"2026-09-04","lit":"2066586","res":"(VIDE)","motif":"Manquant","ag":"Rexel Nogent Le Rotrou","cli":"Rexel Nogent Le Rotrou","rc":"BTE1401405012I","rr":"","qc":"3","ql":"3"},{"d":"2026-09-04","lit":"2066692","res":"(VIDE)","motif":"Manquant","ag":"Rexel Porte D'Aubervilliers","cli":"Ste Bathelec Rj","rc":"PLW16481","rr":"","qc":"1","ql":"1"},{"d":"2026-09-10","lit":"2068378","res":"(VIDE)","motif":"Manquant","ag":"Rexel Pertuis","cli":"Boriat Yoann","rc":"ID2ABS403022","rr":"","qc":"1","ql":"1"},{"d":"2026-09-10","lit":"2069841","res":"CLR REF","motif":"Non conforme","ag":"Rexel Reims Cormontreuil","cli":"Bs Entreprise","rc":"EBE073000","rr":"EBE055311","qc":"4","ql":"4"}],"hist":[{"m":1,"q":111.8,"l":10133,"h":118.2,"pa":197.0,"pd":1974.0,"sc":64.0,"tq":93.7},{"m":2,"q":110.1,"l":10950,"h":126.1,"pa":274.0,"pd":2466.0,"sc":60.0,"tq":94.5},{"m":3,"q":111.7,"l":4656,"h":53.1,"pa":215.0,"pd":3007.0,"sc":61.0,"tq":97.5},{"m":4,"q":100.3,"l":627,"h":4.7,"pa":4785.0,"pd":27113.0,"sc":null,"tq":97.7},{"m":5,"q":114.9,"l":9361,"h":107.5,"pa":0.0,"pd":2243.0,"sc":100.0,"tq":104.4},{"m":6,"q":104.5,"l":13208,"h":156.3,"pa":151.0,"pd":1969.0,"sc":72.0,"tq":95.4},{"m":7,"q":108.3,"l":5314,"h":63.5,"pa":0.0,"pd":1694.0,"sc":100.0,"tq":107.9},{"m":8,"q":103.4,"l":7269,"h":90.8,"pa":0.0,"pd":413.0,"sc":100.0,"tq":96.9},{"m":9,"q":121.1,"l":4950,"h":52.1,"pa":1010.0,"pd":2424.0,"sc":60.0,"tq":107.6}],"equipe":[{"q":72.7,"pa":382.0,"pd":5724.0,"cad":64.5,"lj":393.0,"sc":44.0,"me":false},{"q":101.2,"pa":80.0,"pd":1849.0,"cad":80.7,"lj":592.0,"sc":85.0,"me":false},{"q":102.6,"pa":85.0,"pd":85.0,"cad":83.9,"lj":621.0,"sc":85.0,"me":false},{"q":102.7,"pa":84.0,"pd":2022.0,"cad":83.1,"lj":593.0,"sc":85.0,"me":false},{"q":105.3,"pa":167.0,"pd":1835.0,"cad":85.8,"lj":631.0,"sc":70.0,"me":false},{"q":107.8,"pa":216.0,"pd":2484.0,"cad":86.7,"lj":514.0,"sc":61.0,"me":false},{"q":108.3,"pa":607.0,"pd":3721.0,"cad":88.4,"lj":658.0,"sc":60.0,"me":false},{"q":110.0,"pa":604.0,"pd":1811.0,"cad":88.5,"lj":592.0,"sc":60.0,"me":false},{"q":111.5,"pa":70.0,"pd":557.0,"cad":91.0,"lj":684.0,"sc":87.0,"me":false},{"q":111.9,"pa":945.0,"pd":3646.0,"cad":84.3,"lj":617.0,"sc":60.0,"me":false},{"q":121.1,"pa":1010.0,"pd":2424.0,"cad":95.1,"lj":619.0,"sc":60.0,"me":true},{"q":136.3,"pa":767.0,"pd":4946.0,"cad":111.1,"lj":733.0,"sc":60.0,"me":false}],"records":{"lignes":{"v":818,"d":"2026-05-21"},"quota":{"v":137.4,"d":"2026-05-29"},"cad":{"v":108.0,"d":"2026-08-12"},"serie":{"v":4,"from":"2026-01-21","to":"2026-01-26"},"serieEnCours":1,"mois":{"v":121.1,"m":9}},"message":"Allan, objectif tenu ce mois avec 121,1 % de quota. Ta prochaine marche : les erreurs décelées, 12 ce mois, au-dessus du seuil, surtout les mauvaises références (8). Merci pour les 7,2 h de renfort (hors gabarit)."};
+const CONFIG = { DATA_URL: '' };   // facultatif : JSON hébergé pour actualiser sans régénérer la page
+
+/* ── outils ── */
+const $ = s => document.querySelector(s);
+const nf = (v, d = 0) => v == null || isNaN(v) ? '—' : Number(v).toLocaleString('fr-FR', { minimumFractionDigits: d, maximumFractionDigits: d });
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const norm = s => String(s ?? '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+const JOURS = ['dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi'];
+const MOIS = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'];
+const MOIS_C = ['janv.', 'févr.', 'mars', 'avr.', 'mai', 'juin', 'juil.', 'août', 'sept.', 'oct.', 'nov.', 'déc.'];
+const pd = k => { const [y, m, d] = k.split('-').map(Number); return new Date(y, m - 1, d); };
+const dShort = k => { const t = pd(k); return String(t.getDate()).padStart(2, '0') + '/' + String(t.getMonth() + 1).padStart(2, '0'); };
+const dLong = k => { const t = pd(k); return JOURS[t.getDay()] + ' ' + t.getDate() + ' ' + MOIS[t.getMonth()]; };
+const cap = s => s.charAt(0).toUpperCase() + s.slice(1);
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const ICON = {
+  up: '<svg viewBox="0 0 24 24" fill="none" stroke="var(--vert)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>',
+  warn: '<svg viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2.4" stroke-linecap="round"><path d="M12 6v8"/><circle cx="12" cy="18.5" r=".6" fill="var(--orange)"/></svg>',
+  close: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>',
+  prev: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M15 5l-7 7 7 7"/></svg>',
+  next: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M9 5l7 7-7 7"/></svg>',
+};
+
+let S, K, P, DAYS, BYDAY;
+const stQ = q => q == null ? 'na' : q >= S.quotaVert ? 'ok' : q >= S.quotaRouge ? 'warn' : 'bad';
+const stPA = p => p == null ? 'na' : p >= S.ppmAveRouge ? 'bad' : p >= S.ppmAveOrange ? 'warn' : 'ok';
+const stPD = p => p == null ? 'na' : p >= S.ppmDecRouge ? 'bad' : p >= S.ppmDecOrange ? 'warn' : 'ok';
+const EQ = () => DATA && DATA.mode === 'equipe';
+const T = (solo, eq) => EQ() ? eq : solo;
+const ANN = () => DATA && DATA.mode === 'annee';
+const inPer = k => !!k && (ANN() ? !!BYDAY[k] : k.startsWith(`${DATA.periode.y}-${String(DATA.periode.m).padStart(2, '0')}`));
+const stSc = s => s == null ? 'na' : s >= 80 ? 'ok' : s >= 60 ? 'warn' : 'bad';
+
+function prepare() {
+  S = DATA.seuils; K = DATA.kpi; P = DATA.prev;
+  DAYS = DATA.jours; BYDAY = Object.fromEntries(DAYS.map(d => [d.d, d]));
+}
+
+/* ═════════ EN-TÊTE ═════════ */
+function renderHeader() {
+  const o = DATA.op;
+  document.body.classList.toggle('eq', EQ());
+  if (EQ()) document.querySelectorAll('[data-eq]').forEach(el => { el.dataset.solo = el.dataset.solo || el.textContent; el.textContent = el.dataset.eq; });
+  if (ANN()) document.querySelectorAll('[data-an]').forEach(el => { el.dataset.solo = el.dataset.solo || el.textContent; el.textContent = el.dataset.an; });
+  $('#plate small').textContent = T('MAT.', 'OPÉ.');
+  $('#plate span').textContent = EQ() ? DATA.nOps : o.mat;
+  $('#whoName').textContent = EQ() ? 'Équipe Pick & Pack' : o.prenom + ' ' + o.nom;
+  $('#whoSub').textContent = T('', 'Hors pilotes, ') + T('Mis', 'mis') + ' à jour le ' + DATA.maj;
+  document.title = T(o.prenom, 'Équipe') + ' — ' + DATA.periode.label + ' — Pick & Pack';
+  $('#foot').innerHTML = 'Pick &amp; Pack, Rexel CLR Champigneulles 5406<br>' + (EQ() ? `Moyenne de ${DATA.nOps} opérateurs, hors pilotes et poste convoyeur` : esc(o.role) + ', ' + esc(o.poste)) + ' — mise à jour du ' + DATA.maj;
+}
+
+/* ═════════ COMPTEUR ═════════ */
+function gauge(q) {
+  const cx = 160, cy = 140, R = 118, MAX = 150;
+  const ang = v => -120 + 240 * Math.max(0, Math.min(MAX, v)) / MAX;
+  const pt = (a, r) => [cx + r * Math.sin(a * Math.PI / 180), cy - r * Math.cos(a * Math.PI / 180)];
+  const arc = (a0, a1, r) => { const p0 = pt(a0, r), p1 = pt(a1, r); return `M${p0[0].toFixed(2)} ${p0[1].toFixed(2)}A${r} ${r} 0 ${a1 - a0 > 180 ? 1 : 0} 1 ${p1[0].toFixed(2)} ${p1[1].toFixed(2)}`; };
+  const st = stQ(q);
+  let s = `<title id="gaugeTitle">Quota du mois : ${nf(q, 1)} %</title>
+  <defs><filter id="glow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="4"/></filter></defs>
+  <path d="${arc(-120, 120, R)}" stroke="var(--rail)" stroke-width="16" fill="none" stroke-linecap="round"/>
+  <path d="${arc(ang(0), ang(S.quotaRouge), R + 16)}" stroke="var(--rouge)" stroke-width="4" fill="none" opacity=".8"/>
+  <path d="${arc(ang(S.quotaRouge) + .8, ang(S.quotaVert), R + 16)}" stroke="var(--orange)" stroke-width="4" fill="none" opacity=".9"/>
+  <path d="${arc(ang(S.quotaVert) + .8, 120, R + 16)}" stroke="var(--vert)" stroke-width="4" fill="none" opacity=".8"/>`;
+  if (q != null) {
+    s += `<path d="${arc(-120, ang(q), R)}" stroke="var(--st)" stroke-width="16" fill="none" stroke-linecap="round" opacity=".35" filter="url(#glow)" class="${st}"/>
+    <path id="valArc" d="${arc(-120, ang(q), R)}" stroke="var(--st)" stroke-width="16" fill="none" stroke-linecap="round" class="${st}"/>`;
+  }
+  for (let v = 0; v <= MAX; v += 5) {
+    const major = v % 50 === 0, a = ang(v);
+    const [x0, y0] = pt(a, R - 14), [x1, y1] = pt(a, R - (major ? 26 : 19));
+    s += `<line x1="${x0.toFixed(1)}" y1="${y0.toFixed(1)}" x2="${x1.toFixed(1)}" y2="${y1.toFixed(1)}" stroke="${major ? 'var(--texte)' : 'var(--gris2)'}" stroke-width="${major ? 2 : 1.2}" stroke-linecap="round"/>`;
+    if (major) { const [tx, ty] = pt(a, R - 40); s += `<text class="lbl" x="${tx.toFixed(1)}" y="${(ty + 4).toFixed(1)}" text-anchor="middle">${v}</text>`; }
+  }
+  const at = ang(S.quotaVert), [ax, ay] = pt(at, R + 26), [bx, by] = pt(at, R - 30);
+  s += `<line x1="${ax}" y1="${ay}" x2="${bx}" y2="${by}" stroke="var(--jaune)" stroke-width="3" stroke-linecap="round"/>`;
+  const [lx, ly] = pt(at, R + 38);
+  s += `<text x="${lx.toFixed(1)}" y="${(ly + 2).toFixed(1)}" text-anchor="middle" style="font-family:var(--cond);font-size:12px;font-weight:700;fill:var(--jaune)">objectif</text>`;
+  s += `<g id="needle"><path d="M${cx - 5} ${cy} L${cx} ${cy - R + 6} L${cx + 5} ${cy} L${cx} ${cy + 16}Z" fill="var(--jaune)"/>
+    <circle cx="${cx}" cy="${cy}" r="12" fill="var(--jaune)"/><circle cx="${cx}" cy="${cy}" r="4.5" fill="var(--nuit)"/></g>`;
+  $('#gaugeSvg').innerHTML = s;
+  const box = $('.g-val'); box.className = 'g-val ' + st;
+  return ang(q ?? 0);
+}
+
+function countUp(el, to, dec, suffix, ms) {
+  if (reduce || to == null) { el.innerHTML = nf(to, dec) + suffix; return; }
+  const t0 = performance.now();
+  const step = t => { const k = Math.min(1, (t - t0) / ms), e = 1 - Math.pow(1 - k, 3);
+    el.innerHTML = nf(to * e, dec) + suffix; if (k < 1) requestAnimationFrame(step); };
+  requestAnimationFrame(step);
+}
+
+function renderHero() {
+  const q = K.quota, st = stQ(q);
+  $('#heroMonth').textContent = cap(DATA.periode.label) + (ANN() ? ', de ' + DATA.periode.sub : '');
+  const noQ = ANN() && q == null;
+  $('.gauge').style.display = $('#gCap').style.display = noQ ? 'none' : '';
+  const a = gauge(q);
+  requestAnimationFrame(() => requestAnimationFrame(() => { $('#needle').style.transform = `rotate(${a}deg)`; }));
+  countUp($('#gVal'), q, 1, '<sup>%</sup>', 1500);
+  let capt = ANN() ? "Quota sur l'année" : T('Quota du mois', "Quota de l'équipe");
+  const TK = DATA.teamKpi;
+  if (ANN() && TK && TK.quota != null && q != null) {
+    const d = +(q - TK.quota).toFixed(1), c = d > 0.5 ? 'ok' : d < -0.5 ? 'bad' : 'na';
+    capt += `<span class="delta ${c}">${d > 0 ? '▲ +' : d < 0 ? '▼ ' : ''}${nf(d, 1)} pt${Math.abs(d) >= 2 ? 's' : ''} vs équipe</span>`;
+  } else if (P && P.quota != null && q != null) {
+    const d = +(q - P.quota).toFixed(1), c = d > 0.5 ? 'ok' : d < -0.5 ? 'bad' : 'na';
+    capt += `<span class="delta ${c}">${d > 0 ? '▲ +' : d < 0 ? '▼ ' : ''}${nf(d, 1)} pt${Math.abs(d) >= 2 ? 's' : ''} vs ${esc(DATA.periode.prevLabel.split(' ')[0])}</span>`;
+  }
+  $('#gCap').innerHTML = capt;
+  const prod = DAYS.filter(d => !d.off && d.q != null);
+  const okD = prod.filter(d => d.q >= S.quotaVert).length;
+  const v = $('#verdict'); v.className = 'verdict ' + st;
+  const nj = prod.length, jr = n => n > 1 ? 'journées' : 'journée';
+  const full = prod.filter(d => d.hp >= 4), best = (full.length ? full : prod).slice().sort((a, b) => b.q - a.q)[0];
+  const partial = ANN() && K.joursQuota < K.jours ? ` <span style="color:var(--gris);font-size:.88rem">Quota calculé sur les ${K.joursQuota} journées dont les heures sont pointées.</span>` : '';
+  if (noQ) { v.className = 'verdict'; v.innerHTML = `${nf(K.lignes)} lignes préparées en ${K.jours} journées. <span style="color:var(--gris);font-size:.88rem">Tes heures au détail n'ont pas été pointées : pas de quota calculable, mais ta qualité se mesure.</span>`; }
+  else v.innerHTML = (q == null || !nj ? 'Pas encore assez de préparation ce mois pour calculer ton quota.'
+    : okD === 0 ? `Pas encore de journée à ${S.quotaVert} % ${ANN() ? 'cette année' : 'ce mois'}. ${T('Ta', 'La')} meilleure : <b>${nf(best.q, 0)} %</b> le ${dLong(best.d)}.`
+    : okD === nj ? `Objectif atteint <b>chaque jour</b> : ${nj} ${jr(nj)} sur ${nj}.`
+    : `${T('Objectif atteint', "L'équipe a tenu l'objectif")} <b>${okD} ${okD > 1 ? 'jours' : 'jour'}</b> sur ${nj} ${jr(nj)}${T(' de préparation', '')}.`) + partial;
+
+  const away = awayHours(true);
+  const team = DATA.equipe.filter(e => !e.me);
+  const tCad = team.length ? team.reduce((s, e) => s + e.cad, 0) / team.length : null;
+  $('#glance').innerHTML = `
+    <div><div class="v num">${nf(K.lignes)}</div><div class="k">lignes</div><div class="s">${nf(K.lignesJour)} par jour</div></div>
+    <div><div class="v num">${nf(K.cadence, 1)}</div><div class="k">lignes / heure</div><div class="s">${EQ() ? DATA.nOps + ' opérateurs' : ANN() && DATA.teamKpi ? 'équipe ' + nf(DATA.teamKpi.cadence, 1) : tCad ? 'équipe ' + nf(tCad, 1) : '&nbsp;'}</div></div>
+    ${ANN() ? `<div><div class="v num">${K.jours}</div><div class="k">journées au détail</div><div class="s">sur ${new Set(DAYS.filter(d => !d.off).map(d => d.d.slice(0, 7))).size} mois</div></div>`
+    : `<div><div class="v num">${nf(away.total, EQ() || !(away.total % 1) ? 0 : 1)} h</div><div class="k">${T('en renfort', 'prêtées')}</div><div class="s">${away.list.length ? away.list.length + ' service' + (away.list.length > 1 ? 's' : '') : 'tout le mois au détail'}</div></div>`}`;
+  renderSpot();
+}
+
+function renderSpot() {
+  const el = $('#spot');
+  if (!ANN() || !DATA.teamKpi) { el.innerHTML = ''; return; }
+  const TK = DATA.teamKpi, eqv = TK.ppmDec ? Math.round(1e6 / TK.ppmDec) : null;
+  if (!K.errDec) { el.innerHTML = `<div class="card edge ok spot"><div class="k">Ta qualité en une phrase</div><p class="big"><b>Zéro</b> erreur décelée sur ${nf(K.lignes)} lignes</p><p class="foot2">L'équipe en fait une toutes les ${nf(eqv)} lignes. Bravo.</p></div>`; return; }
+  const me = Math.round(1e6 / K.ppmDec), ratio = K.ppmDec / TK.ppmDec;
+  const st = ratio > 1.5 ? 'bad' : ratio > 1.1 ? 'warn' : 'ok', mx = Math.max(me, eqv);
+  const cmp = ratio > 1.1 ? `Soit <b>${nf(ratio, 1)} fois plus</b> d'erreurs que la moyenne de l'équipe.` : ratio < 0.9 ? `Soit <b>${nf(1 / ratio, 1)} fois moins</b> d'erreurs que la moyenne de l'équipe. Bravo.` : `C'est le niveau de l'équipe.`;
+  el.innerHTML = `<div class="card edge ${st} spot"><div class="k">Ta qualité en une phrase</div>
+    <p class="big">Une erreur toutes les <b class="num">${nf(me)}</b> lignes</p>
+    <div class="vs"><span>Toi</span><div class="b"><i style="width:${me / mx * 100}%;--c:var(--st)"></i></div><span class="n">${nf(me)} l.</span></div>
+    <div class="vs"><span>Équipe</span><div class="b"><i style="width:${eqv / mx * 100}%;--c:var(--gris2)"></i></div><span class="n">${nf(eqv)} l.</span></div>
+    <p class="foot2">${cmp}${K.errAve ? ` <b style="color:var(--rouge)">${K.errAve} erreur${K.errAve > 1 ? 's sont parties' : ' est partie'} chez le client.</b>` : ''}</p>
+    <p class="lead" style="margin-top:6px;font-size:.8rem">Plus la barre est longue, mieux c'est : c'est le nombre de lignes préparées entre deux erreurs.</p></div>`;
+}
+
+function awayHours(onlyRenfort) {
+  const m = {};
+  let total = 0, n = 0;
+  DAYS.forEach(d => (d.act || []).filter(a => !onlyRenfort || a.rf).forEach(a => { m[a.ou] = m[a.ou] || { h: 0, n: 0 }; m[a.ou].h += a.h || 0; m[a.ou].n++; total += a.h || 0; n++; }));
+  return { total: +total.toFixed(2), n, list: Object.entries(m).sort((a, b) => b[1].h - a[1].h) };
+}
+
+/* ═════════ MESSAGE ═════════ */
+function renderMsg() {
+  $('#supName').textContent = DATA.superviseur || 'Greg';
+  const t = (DATA.message || '').trim();
+  $('#msgTxt').textContent = t || 'Pas de message ce mois-ci.';
+  $('#msg').style.display = t || document.body.classList.contains('edit') ? '' : 'none';
+}
+function setupEdit() {
+  if (!/edit/.test(location.hash)) return;
+  document.body.classList.add('edit');
+  renderMsg();
+  $('#msgEdit').hidden = false;
+  $('#msgArea').value = DATA.message || '';
+  $('#editMsg').onclick = () => $('#msgArea').focus();
+  $('#msgApply').onclick = () => { DATA.message = $('#msgArea').value.trim(); renderMsg(); toast('Message appliqué sur cette page'); };
+  $('#msgCopy').onclick = () => {
+    const line = (EQ() ? 'EQUIPE' : DATA.op.mat) + ';' + $('#msgArea').value.trim().replace(/\s*\n\s*/g, ' ');
+    (navigator.clipboard ? navigator.clipboard.writeText(line) : Promise.reject()).then(() => toast('Ligne copiée : colle-la dans messages.csv')).catch(() => { $('#msgArea').select(); toast('Copie impossible : sélectionne le texte à la main'); });
+  };
+  $('#msgPrint').onclick = () => window.print();
+}
+function toast(t) {
+  let el = $('#toast');
+  if (!el) { el = document.createElement('div'); el.id = 'toast'; el.setAttribute('role', 'status');
+    el.style.cssText = 'position:fixed;left:50%;bottom:calc(var(--nav-h) + 20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:90;background:var(--texte);color:var(--nuit);padding:10px 16px;border-radius:10px;font-weight:600;font-size:.9rem;max-width:90vw;transition:opacity .3s';
+    document.body.appendChild(el); }
+  el.textContent = t; el.style.opacity = '1'; clearTimeout(el._t); el._t = setTimeout(() => el.style.opacity = '0', 2600);
+}
+
+/* ═════════ CALENDRIER ═════════ */
+const SHORT = { 'Hors gabarit': 'HG', 'Expédition': 'Expé', 'Câble': 'Câble', 'Convoyeur / rejet': 'Rejet', 'Réception': 'Récep.', 'Réorg': 'Réorg', 'Formation reçue': 'Form.', 'Formation donnée': 'Form.', 'Ménage / 5S': '5S', 'Projet': 'Projet' };
+function marks(d) {
+  if (!d) return '';
+  let s = '';
+  const n = d.ed || 0;
+  for (let i = 0; i < Math.min(n, 3); i++) s += '<i class="dot"></i>';
+  if (n > 3) s += '<i class="plus">+</i>';
+  for (let i = 0; i < Math.min(d.ea || 0, 2); i++) s += '<i class="dia"></i>';
+  if ((d.ea || 0) > 2) s += '<i class="plus" style="color:var(--rouge)">+</i>';
+  return s ? `<span class="marks">${s}</span>` : '';
+}
+function renderCalendar() {
+  if (ANN()) {
+    const ms = [...new Set(DAYS.filter(d => !d.off || d.ed || d.ea).map(d => d.d.slice(0, 7)))].sort();
+    $('#calendar').innerHTML = ms.map(k => { const [y, m] = k.split('-').map(Number), n = DAYS.filter(d => d.d.startsWith(k) && !d.off).length;
+      return `<div class="cal-m">${cap(MOIS[m - 1])}<span>${n} journée${n > 1 ? 's' : ''}</span></div>` + calMonth(y, m, false); }).join('') + calLegend();
+    return;
+  }
+  $('#calendar').innerHTML = calMonth(DATA.periode.y, DATA.periode.m, true) + calLegend();
+}
+function calMonth(y, m, head) {
+  const first = new Date(y, m - 1, 1), last = new Date(y, m, 0);
+  const start = new Date(first); start.setDate(first.getDate() - ((first.getDay() + 6) % 7));
+  let html = '<div class="cal-head"><span>lun.</span><span>mar.</span><span>mer.</span><span>jeu.</span><span>ven.</span></div>';
+  for (let w = new Date(start); w <= last; w.setDate(w.getDate() + 7)) {
+    if (ANN() && ![0, 1, 2, 3, 4].some(i => { const t = new Date(w); t.setDate(w.getDate() + i);
+      return t.getMonth() === m - 1 && BYDAY[`${t.getFullYear()}-${String(t.getMonth() + 1).padStart(2, '0')}-${String(t.getDate()).padStart(2, '0')}`]; })) continue;
+    html += '<div class="cal-row">';
+    for (let i = 0; i < 5; i++) {
+      const t = new Date(w); t.setDate(w.getDate() + i);
+      const k = `${t.getFullYear()}-${String(t.getMonth() + 1).padStart(2, '0')}-${String(t.getDate()).padStart(2, '0')}`;
+      if (t.getMonth() !== m - 1) { html += '<div class="day out"></div>'; continue; }
+      const d = BYDAY[k];
+      if (d && !d.off && d.q == null) {
+        html += `<button class="day prod na" data-d="${k}" aria-label="${dLong(k)} : ${d.l} lignes"><span class="n">${t.getDate()}</span><span class="q num" style="color:var(--texte);font-size:1.05rem">${nf(d.l)}</span><span class="u">lignes</span>${marks(d)}</button>`;
+      } else if (d && !d.off) {
+        const st = stQ(d.q);
+        html += `<button class="day prod ${st}" data-d="${k}" aria-label="${dLong(k)} : quota ${nf(d.q, 0)} %"><span class="n">${t.getDate()}</span><span class="q num">${nf(d.q, 0)}</span><span class="u">%</span>${marks(d)}</button>`;
+      } else if (d && d.act && d.act.length) {
+        const lb = SHORT[d.act[0].ou] || d.act[0].ou.slice(0, 5);
+        html += `<button class="day away" data-d="${k}" aria-label="${dLong(k)} : ${esc(d.act[0].ou)}"><span class="n">${t.getDate()}</span><span class="q">${esc(lb)}</span>${marks(d)}</button>`;
+      } else if (d) {
+        html += `<button class="day none" data-d="${k}" aria-label="${dLong(k)}"><span class="n">${t.getDate()}</span><span class="q">—</span>${marks(d)}</button>`;
+      } else {
+        html += `<div class="day none"><span class="n">${t.getDate()}</span><span class="q">·</span></div>`;
+      }
+    }
+    html += '</div>';
+  }
+  return html;
+}
+function calLegend() {
+  return `<div class="legend"><span><i style="background:var(--vert)"></i>${S.quotaVert} % et plus</span><span><i style="background:var(--orange)"></i>${S.quotaRouge} à ${S.quotaVert} %</span><span><i style="background:var(--rouge)"></i>sous ${S.quotaRouge} %</span><span><i style="background:repeating-linear-gradient(-45deg,#2a3550 0 3px,#121a2b 3px 6px)"></i>en renfort</span><span><i style="background:var(--orange);border-radius:50%;width:8px;height:8px"></i>erreur décelée</span><span><i style="background:var(--rouge);transform:rotate(45deg);width:8px;height:8px;border-radius:1px"></i>erreur avérée</span>${ANN() ? '<span><i style="background:var(--tole2);border:1px solid var(--rail2)"></i>heures non pointées</span>' : ''}</div>`;
+}
+
+/* ═════════ QUALITÉ (accueil) ═════════ */
+function renderQualPair() {
+  const judge = K.lignes >= (S.lignesMiniQualite || 0);
+  const a = judge ? stPD(K.ppmDec) : 'na', b = judge ? stPA(K.ppmAve) : 'na';
+  const note = judge ? '' : `<p class="lead" style="grid-column:1/-1;margin-top:2px">Avec ${nf(K.lignes)} lignes ce mois, le taux en ppm n'est pas encore parlant : on juge la qualité à partir de ${nf(S.lignesMiniQualite)} lignes.</p>`;
+  const meter = (v, red, max) => `<div class="meter"><i style="width:${Math.min(100, v / max * 100)}%"></i><b style="left:${red / max * 100}%" title="seuil"></b></div>`;
+  $('#qualPair').innerHTML = `
+    <div class="card edge kpi ${a}"><div class="k">Décelées</div><div class="v num">${nf(K.errDec)}</div>
+      <div class="s"><span class="num" style="font-size:1.05rem;font-weight:700">${nf(K.ppmDec)}</span> ppm</div>
+      ${meter(K.ppmDec || 0, S.ppmDecRouge, S.ppmDecRouge * 1.6)}<div class="t">seuil ${nf(S.ppmDecRouge)} ppm</div></div>
+    <div class="card edge kpi ${b}"><div class="k">Avérées</div><div class="v num">${nf(K.errAve)}</div>
+      <div class="s"><span class="num" style="font-size:1.05rem;font-weight:700">${nf(K.ppmAve)}</span> ppm</div>
+      ${meter(K.ppmAve || 0, S.ppmAveRouge, S.ppmAveRouge * 1.6)}<div class="t">seuil ${nf(S.ppmAveRouge)} ppm</div></div>${note}`;
+}
+
+/* ═════════ SCORE ═════════ */
+function renderScore() {
+  const lp = [[T('ton quota', 'le quota'), S.poidsQuota], [T('ta qualité', 'la qualité'), S.poidsQualite], [T('ta régularité', 'la régularité'), S.poidsRegul]].filter(x => x[1] > 0).map(x => `${x[0]} (${x[1]} points)`);
+  $('#scoreLead').textContent = 'Il combine ' + lp.join(', ').replace(/, ([^,]*)$/, ' et $1') + '.';
+  const card = $('#scoreCard');
+  if (K.score == null) { card.className = 'card edge na'; card.innerHTML = `<p class="lead" style="margin:0">Pas assez d'heures de préparation pointées ${ANN() ? 'sur la période' : 'ce mois'} (${nf(K.hPick, 1)} h, il en faut ${S.hMiniScore}) pour calculer un score juste.</p>`; return; }
+  const pq = S.poidsQuota * Math.min(1, K.quota / S.quotaVert);
+  const pl = S.poidsQualite * Math.max(0, 1 - (K.ppmAve || 0) / S.ppmAveRouge);
+  const pr = S.poidsRegul * (K.regul || 0) / 100;
+  const parts = [
+    { k: 'Quota', got: pq, max: S.poidsQuota, c: 'var(--bleu)' },
+    { k: 'Qualité', got: pl, max: S.poidsQualite, c: 'var(--vert)' },
+    { k: 'Régularité', got: pr, max: S.poidsRegul, c: 'var(--jaune)' }].filter(p => p.max > 0);
+  const st = stSc(K.score);
+  const lost = parts.map(p => ({ ...p, lost: p.max - p.got })).sort((a, b) => b.lost - a.lost)[0];
+  let why = '';
+  if (lost.lost < 1) why = T('Tu prends', "L'équipe prend") + ' quasiment tous les points : rien à redire.';
+  else if (lost.k === 'Qualité') why = `C'est la qualité qui ${T('te', 'lui')} coûte le plus : <b>${nf(lost.lost, 0)} points</b> perdus avec ${K.errAve} erreur${K.errAve > 1 ? 's' : ''} avérée${K.errAve > 1 ? 's' : ''} (${nf(K.ppmAve)} ppm, les points tombent à zéro à ${S.ppmAveRouge}).`;
+  else if (lost.k === 'Régularité') why = `C'est la régularité qui te coûte le plus : <b>${nf(lost.lost, 0)} points</b>. Seules ${nf(K.regul)} % de tes journées restent dans ton rythme habituel (à ± ${S.tunnel} %).`;
+  else why = `C'est le quota qui ${T('te', 'lui')} coûte le plus : <b>${nf(lost.lost, 0)} points</b>. Chaque point de quota gagné jusqu'à ${S.quotaVert} % te rapporte ${nf(S.poidsQuota / S.quotaVert, 1)} point.`;
+  const prevTxt = P && P.score != null ? `<span class="delta ${K.score > P.score ? 'ok' : K.score < P.score ? 'bad' : 'na'}">${K.score > P.score ? '▲ +' : K.score < P.score ? '▼ ' : ''}${nf(K.score - P.score)} vs ${esc(DATA.periode.prevLabel.split(' ')[0])}</span>` : '';
+  card.className = 'card edge ' + st;
+  card.innerHTML = `<div class="score-top"><div class="v num">${nf(K.score)}<small> / 100</small></div>${prevTxt}</div>
+    <div class="segs">${parts.map(p => `<div class="seg" style="flex:${p.max};--c:${p.c}"><i style="width:${p.got / p.max * 100}%"></i></div>`).join('')}</div>
+    <div class="seg-l">${parts.map(p => `<div style="flex:${p.max}">${p.k}<b class="num">${nf(p.got, p.got < 10 && p.got % 1 ? 1 : 0)} / ${p.max}</b></div>`).join('')}</div>
+    <p class="hint">${why}</p>`;
+}
+
+/* ═════════ EN BREF ═════════ */
+function topBy(arr, f) { const m = {}; arr.forEach(x => { const k = f(x); if (k != null && k !== '') m[k] = (m[k] || 0) + 1; }); return Object.entries(m).sort((a, b) => b[1] - a[1]); }
+function bestRun() {
+  let best = 0, cur = 0;
+  DAYS.filter(d => !d.off).forEach(d => { if (!d.ed) { cur++; best = Math.max(best, cur); } else cur = 0; });
+  return best;
+}
+function renderFx() {
+  if (EQ()) return renderFxTeam();
+  const good = [], todo = [];
+  const team = DATA.equipe.filter(e => !e.me);
+  const avg = f => team.length ? team.reduce((s, e) => s + (e[f] || 0), 0) / team.length : null;
+  const pm = DATA.periode.prevLabel.split(' ')[0];
+  if (P && P.quota != null && K.quota - P.quota >= 2) good.push(`Quota en hausse de <b>${nf(K.quota - P.quota, 1)} points</b> par rapport à ${pm}.`);
+  if (K.quota != null && K.quota >= S.quotaVert && !(P && K.quota - P.quota >= 2)) good.push(`Objectif tenu : <b>${nf(K.quota, 1)} %</b> de quota.`);
+  const tc = avg('cad');
+  if (tc && K.cadence > tc) good.push(`Cadence au-dessus de la moyenne de l'équipe : <b>${nf(K.cadence, 1)}</b> contre ${nf(tc, 1)} lignes par heure.`);
+  if (K.errAve === 0) good.push('<b>Aucune erreur</b> partie chez le client ce mois.');
+  const aw = awayHours(true);
+  if (!ANN() && aw.total >= 7) good.push(`<b>${nf(aw.total, aw.total % 1 ? 1 : 0)} h de renfort</b> dans ${aw.list.length} service${aw.list.length > 1 ? 's' : ''} : merci pour le collectif.`);
+  const r = DATA.records;
+  if (!ANN() && r.lignes && inPer(r.lignes.d)) good.push(`Record de l'année battu : <b>${nf(r.lignes.v)} lignes</b> le ${dLong(r.lignes.d)}.`);
+  const br = bestRun(); if (br >= 4) good.push(`<b>${br} journées d'affilée</b> sans erreur décelée.`);
+
+  const judge = K.lignes >= (S.lignesMiniQualite || 0);
+  if (judge && K.ppmDec != null && K.ppmDec >= S.ppmDecOrange) todo.push(`Erreurs décelées à <b>${nf(K.ppmDec)} ppm</b> pour un seuil à ${nf(S.ppmDecRouge)}.`);
+  if (K.errAve > 0) todo.push(`<b>${K.errAve} erreur${K.errAve > 1 ? 's' : ''}</b> partie${K.errAve > 1 ? 's' : ''} chez le client${judge ? ` (${nf(K.ppmAve)} ppm, seuil ${S.ppmAveRouge})` : ''}.`);
+  const tb = topBy(DATA.dec.filter(e => e.type !== 'NON PRECISE'), e => e.lbl), tt = tb.filter(x => x[1] === (tb[0] || [])[1]);
+  if (tt.length && tt[0][1] >= 3) todo.push(tt.length === 1 ? `Ton erreur la plus fréquente : <b>${tt[0][0].toLowerCase()}</b> (${tt[0][1]} fois).`
+    : `Tes erreurs les plus fréquentes, à égalité : <b>${tt.map(x => x[0].toLowerCase()).join(', ').replace(/, ([^,]*)$/, ' et $1')}</b> (${tt[0][1]} fois chacune).`);
+  const ta = topBy(DATA.dec, e => e.al)[0];
+  if (ta && ta[1] >= 3) todo.push(`L'allée <b>${ta[0]}</b> concentre ${ta[1]} de tes erreurs.`);
+  if (K.quota != null && K.quota < S.quotaVert) todo.push(`Quota à <b>${nf(K.quota, 1)} %</b>, encore ${nf(S.quotaVert - K.quota, 1)} points pour l'objectif.`);
+  if (S.poidsRegul > 0 && K.regul != null && K.regul < 40) todo.push(`Rythme irrégulier : <b>${nf(K.regul)} %</b> de journées dans ton rythme habituel.`);
+
+  const li = (arr, ic) => arr.slice(0, 3).map(t => `<li>${ic}<span>${t}</span></li>`).join('');
+  $('#fx').innerHTML = `
+    <div class="card edge ok"><h3>Ce qui marche</h3><ul>${li(good, ICON.up) || '<li><span class="lead">On construit le mois ensemble.</span></li>'}</ul></div>
+    <div class="card edge warn"><h3>À travailler</h3><ul>${li(todo, ICON.warn) || '<li><span>Rien de notable : continue comme ça.</span></li>'}</ul></div>`;
+}
+
+function renderFxTeam() {
+  const good = [], todo = [], pm = DATA.periode.prevLabel.split(' ')[0];
+  if (P && P.quota != null && K.quota - P.quota >= 1) good.push(`Quota d'équipe en hausse de <b>${nf(K.quota - P.quota, 1)} points</b> par rapport à ${pm}.`);
+  if (P && P.cadence != null && K.cadence > P.cadence) good.push(`Cadence moyenne à <b>${nf(K.cadence, 1)} l/h</b>, contre ${nf(P.cadence, 1)} en ${pm}.`);
+  const tm = DATA.equipe.filter(e => e.q >= S.quotaVert).length;
+  if (DATA.equipe.length) (tm * 2 >= DATA.equipe.length ? good : todo).push(`<b>${tm} opérateur${tm > 1 ? 's' : ''} sur ${DATA.equipe.length}</b> à l'objectif sur le mois.`);
+  const aw = awayHours(true);
+  if (aw.total >= 20) good.push(`<b>${nf(aw.total, 0)} h prêtées</b> à ${aw.list.length} autre${aw.list.length > 1 ? 's' : ''} service${aw.list.length > 1 ? 's' : ''}.`);
+  const r = DATA.records; if (r.serie && r.serie.v >= 5 && r.serie.to && r.serie.to.startsWith(`${DATA.periode.y}-${String(DATA.periode.m).padStart(2, '0')}`)) good.push(`<b>${r.serie.v} journées d'affilée</b> à l'objectif, record de l'année.`);
+  if (K.ppmDec != null && K.ppmDec >= S.ppmDecOrange) todo.push(`Erreurs décelées à <b>${nf(K.ppmDec)} ppm</b> pour un seuil à ${nf(S.ppmDecRouge)}.`);
+  if (K.errAve > 0) todo.push(`<b>${K.errAve} erreurs</b> parties chez le client (${nf(K.ppmAve)} ppm, seuil ${S.ppmAveRouge}).`);
+  const tb = topBy(DATA.dec.filter(e => e.type !== 'NON PRECISE'), e => e.lbl)[0];
+  if (tb) todo.push(`Erreur la plus fréquente : <b>${tb[0].toLowerCase()}</b> (${tb[1]} fois).`);
+  const ta = topBy(DATA.dec, e => e.al)[0]; if (ta) todo.push(`L'allée <b>${ta[0]}</b> concentre ${ta[1]} erreurs.`);
+  const li = (arr, ic) => arr.slice(0, 3).map(t => `<li>${ic}<span>${t}</span></li>`).join('');
+  $('#fx').innerHTML = `<div class="card edge ok"><h3>Ce qui marche</h3><ul>${li(good, ICON.up) || '<li><span class="lead">Rien de marquant ce mois.</span></li>'}</ul></div>
+    <div class="card edge warn"><h3>À travailler ensemble</h3><ul>${li(todo, ICON.warn) || '<li><span>Rien de notable.</span></li>'}</ul></div>`;
+}
+
+/* ═════════ JOURS ═════════ */
+function isoWeek(dt) { const t = new Date(Date.UTC(dt.getFullYear(), dt.getMonth(), dt.getDate())); const n = t.getUTCDay() || 7; t.setUTCDate(t.getUTCDate() + 4 - n); const y0 = new Date(Date.UTC(t.getUTCFullYear(), 0, 1)); return Math.ceil(((t - y0) / 864e5 + 1) / 7); }
+function renderWeeks() {
+  const w = {};
+  DAYS.filter(d => !d.off).forEach(d => { const k = ANN() ? d.d.slice(0, 7) : isoWeek(pd(d.d)); (w[k] = w[k] || []).push(d); });
+  $('#weeks').innerHTML = Object.entries(w).map(([k, a]) => {
+    const qs = a.filter(d => d.q != null), q = qs.length ? qs.reduce((s, d) => s + d.q, 0) / qs.length : null;
+    const l = a.reduce((s, d) => s + d.l, 0), e = a.reduce((s, d) => s + (d.ed || 0), 0);
+    const lb = ANN() ? MOIS_C[+k.slice(5) - 1] : 'sem. ' + k;
+    return `<div class="${stQ(q)}"><div class="k">${lb}</div><div class="v num">${q == null ? nf(a.length) + '<small>j</small>' : nf(q, 0) + '<small>%</small>'}</div><div class="s">${nf(l)} l.<br>${e} erreur${e > 1 ? 's' : ''}</div></div>`;
+  }).join('');
+}
+let dayFilter = 'all';
+function renderDayList() {
+  const F = { all: ['Toutes', () => true], ok: ['Objectif tenu', d => !d.off && d.q >= S.quotaVert], ko: ["Sous l'objectif", d => !d.off && d.q != null && d.q < S.quotaVert], err: ['Avec erreurs', d => d.ed || d.ea], away: ['En renfort', d => d.act && d.act.length] };
+  $('#dayChips').innerHTML = Object.entries(F).map(([k, [l, f]]) => `<button class="chip" aria-pressed="${k === dayFilter}" data-f="${k}">${l} <span style="opacity:.6">${DAYS.filter(f).length}</span></button>`).join('');
+  const list = DAYS.filter(F[dayFilter][1]).slice().reverse();
+  $('#dayList').innerHTML = list.length ? list.map(dayRow).join('') : '<p class="empty">Aucune journée dans ce filtre.</p>';
+}
+function dayRow(d) {
+  const t = pd(d.d);
+  const left = `<div class="d1">${dShort(d.d)}<small>${JOURS[t.getDay()]}</small></div>`;
+  const errs = (d.ed ? `${d.ed} décelée${d.ed > 1 ? 's' : ''}` : '') + (d.ea ? `${d.ed ? ', ' : ''}${d.ea} avérée${d.ea > 1 ? 's' : ''}` : '');
+  if (d.off) {
+    const a = (d.act || []).map(x => `${x.ou} ${nf(x.h, x.h % 1 ? 1 : 0)} h`).join(', ');
+    return `<button class="row na" data-d="${d.d}">${left}<div><div class="sub" style="margin:0;color:var(--texte)">${esc(a || 'Pas de préparation enregistrée')}</div>${errs ? `<div class="sub">${errs}</div>` : ''}</div><div class="r" style="color:var(--gris)">—</div></button>`;
+  }
+  if (d.q == null) return `<button class="row na" data-d="${d.d}">${left}<div><div class="sub" style="margin:0;color:var(--texte)">${nf(d.l)} lignes, heures non pointées</div>${errs ? `<div class="sub">${errs}</div>` : ''}</div><div class="r" style="color:var(--gris)">—</div></button>`;
+  const st = stQ(d.q);
+  return `<button class="row ${st}" data-d="${d.d}">${left}<div><div class="bar"><i style="width:${Math.min(100, (d.q || 0) / 150 * 100)}%"></i><b></b></div>
+    <div class="sub">${nf(d.l)} lignes, ${nf(d.cad, 0)} l/h${errs ? ', ' + errs : ''}</div></div><div class="r num">${nf(d.q, 0)} %<small>${EQ() ? d.n + ' opérateurs' : nf(d.hp, 1) + ' h pick'}</small></div></button>`;
+}
+function renderMix() {
+  const tot = K.petites + K.moyennes + K.grandes || 1;
+  $('#mixLead').textContent = `${nf(K.tournees)} tournées et ${nf(K.contenants)} contenants ce mois.`;
+  const c = ['#6CB2FF', '#B79BFF', '#FF8FB1'];
+  const it = [['Petites', K.petites, '1 à 40 contenants'], ['Moyennes', K.moyennes, '41 à 80'], ['Grandes', K.grandes, '81 à 120']];
+  $('#mixCard').innerHTML = `<div class="mix">${it.map((x, i) => `<i style="flex:${x[1] || 0.0001};background:${c[i]}"></i>`).join('')}</div>
+    <div class="mix-l">${it.map((x, i) => `<span><b class="num" style="color:${c[i]};font-size:1.1rem">${x[1]}</b> ${x[0].toLowerCase()}<br><span style="color:var(--gris2)">${x[2]}</span></span>`).join('')}</div>
+    <p class="hint">Une petite tournée compte plus par ligne dans ${T('ton', 'le')} quota : le calcul tient compte de la difficulté.</p>`;
+}
+function renderAway() {
+  const a = awayHours();
+  if (!a.list.length) { $('#awayCard').innerHTML = `<p class="empty" style="padding:6px">${ANN() ? 'Aucune activité hors préparation déclarée sur tes journées au détail.' : T('Tout ton mois', 'Tout le mois') + ' en préparation détail.'}</p>`; return; }
+  const max = a.list[0][1].h;
+  $('#awayCard').innerHTML = `<div class="score-top" style="margin-bottom:8px"><div class="v num" style="color:var(--texte);font-size:2.4rem;white-space:nowrap">${nf(a.total, a.total % 1 ? 1 : 0)} h</div><span class="lead">${EQ() ? 'cumul des ' + DATA.nOps + ' opérateurs' : a.n + ' passage' + (a.n > 1 ? 's' : '') + ' hors du détail'}<br>${nf(K.hSupp, 1)} h supplémentaires sur le mois</span></div>
+  <div class="hbars">${a.list.map(([k, v]) => `<div><span>${esc(k)}</span><div class="b"><i style="width:${v.h / max * 100}%"></i></div><span class="n">${nf(v.h, 1)} h</span></div>`).join('')}</div>`;
+}
+
+/* ═════════ QUALITÉ ═════════ */
+let errFilter = { kind: 'all', al: null }, errShown = 25;
+function renderTypes() {
+  const t = topBy(DATA.dec, e => e.lbl);
+  if (!t.length) { $('#typeBars').innerHTML = '<p class="empty" style="padding:6px">Aucune erreur décelée ce mois. Superbe.</p>'; return; }
+  const max = t[0][1];
+  $('#typeBars').innerHTML = t.map(([k, n]) => `<div><span>${esc(k)}</span><div class="b"><i style="width:${n / max * 100}%;--c:${n === max ? 'var(--orange)' : '#4A5C7E'}"></i></div><span class="n" style="${n === max ? 'color:var(--orange)' : ''}">${n}</span></div>`).join('');
+}
+function renderAisles() {
+  const cnt = Array(14).fill(0); DATA.dec.forEach(e => { if (e.al) cnt[e.al]++; });
+  const max = Math.max(1, ...cnt), none = DATA.dec.filter(e => !e.al).length;
+  const W = 340, x0 = 10, gap = 4, bw = (W - 2 * x0 - gap * 12) / 13, top = 26, h = 120;
+  let s = `<svg viewBox="0 0 ${W} ${top + h + 46}" role="img" aria-label="Erreurs par allée">`;
+  for (let i = 1; i <= 13; i++) {
+    const x = x0 + (i - 1) * (bw + gap), n = cnt[i], k = n / max;
+    const sel = errFilter.al === i;
+    const fh = n ? Math.max(8, h * k) : 0;
+    s += `<g class="rk" data-al="${i}" tabindex="0" role="button" aria-label="Allée ${i} : ${n} erreur${n > 1 ? 's' : ''}">
+      <rect x="${x}" y="${top}" width="${bw}" height="${h}" rx="3" fill="var(--tole2)" stroke="${sel ? 'var(--jaune)' : 'var(--rail2)'}" stroke-width="${sel ? 2.5 : 1}"/>
+      ${n ? `<rect x="${x + 2}" y="${top + h - fh + 2}" width="${bw - 4}" height="${fh - 4}" rx="2" fill="var(--orange)" opacity="${(0.55 + 0.45 * k).toFixed(2)}"/>` : ''}`;
+    for (let j = 1; j < 6; j++) s += `<line x1="${x + 2}" x2="${x + bw - 2}" y1="${top + j * h / 6}" y2="${top + j * h / 6}" stroke="rgba(10,15,26,.35)" stroke-width="1"/>`;
+    s += `<text x="${x + bw / 2}" y="${top - 8}" text-anchor="middle" font-size="15" font-weight="700" fill="${n ? 'var(--texte)' : 'var(--gris2)'}">${n || ''}</text>
+      <text x="${x + bw / 2}" y="${top + h + 16}" text-anchor="middle" font-size="13" font-weight="700" fill="${sel ? 'var(--jaune)' : 'var(--gris)'}">${i}</text></g>`;
+  }
+  const grp = (a, b, t) => { const xa = x0 + (a - 1) * (bw + gap), xb = x0 + b * (bw + gap) - gap;
+    return `<line x1="${xa}" x2="${xb}" y1="${top + h + 26}" y2="${top + h + 26}" stroke="var(--jaune)" stroke-width="2" opacity=".7"/><text x="${(xa + xb) / 2}" y="${top + h + 41}" text-anchor="middle" font-size="12" fill="var(--gris)">${t}</text>`; };
+  s += grp(1, 3, 'lourd, fixe') + grp(4, 10, 'rotation forte') + grp(11, 13, 'rotation faible') + '</svg>';
+  s += `<p class="lead" style="margin-top:6px">${none ? `${none} erreur${none > 1 ? 's' : ''} sans adresse d'allée (orientation de colis).` : ''}${errFilter.al ? ` <button class="chip" id="clearAl" style="margin-left:4px">Retirer le filtre allée ${errFilter.al}</button>` : ''}</p>`;
+  $('#aisles').innerHTML = s;
+}
+function decCard(e) {
+  const al = e.al ? `<span class="al-pill">${e.al}</span>` : '';
+  const isO = e.type === 'ORIENTATION';
+  return `<div class="err"><div class="err-h"><b><span class="tag warn">décelée</span>${esc(e.lbl)}</b><span>${dShort(e.d)}</span></div>
+    <dl class="kv"><dt>Adresse</dt><dd>${al}${esc(e.adr || '—')}</dd><dt>Commandé</dt><dd>${esc(e.rc || '—')}</dd>
+    ${e.rp ? `<dt>${isO ? 'Orientation' : 'Préparé'}</dt><dd>${esc(e.rp)}</dd>` : ''}
+    ${e.det ? `<dt>Quantité</dt><dd>${esc(e.det)}</dd>` : ''}${e.com ? `<dt>Note</dt><dd style="font-family:var(--sans);font-weight:400;font-size:.84rem">${esc(e.com)}</dd>` : ''}</dl></div>`;
+}
+function aveCard(e) {
+  return `<div class="err"><div class="err-h"><b><span class="tag bad">avérée</span>${esc(e.motif)}</b><span>${dShort(e.d)}</span></div>
+    <dl class="kv"><dt>Litige</dt><dd>n° ${esc(e.lit)}</dd><dt>Agence</dt><dd style="font-family:var(--sans);font-weight:500;font-size:.86rem">${esc(e.ag)}</dd>
+    <dt>Client</dt><dd style="font-family:var(--sans);font-weight:400;font-size:.84rem">${esc(e.cli)}</dd>
+    <dt>Commandé</dt><dd>${esc(e.rc)}${e.qc ? ` × ${esc(e.qc)}` : ''}</dd>${e.rr ? `<dt>Reçu</dt><dd>${esc(e.rr)}</dd>` : ''}${e.ql ? `<dt>En litige</dt><dd>${esc(e.ql)}</dd>` : ''}</dl></div>`;
+}
+function renderErrList() {
+  const types = topBy(DATA.dec, e => e.lbl).map(x => x[0]);
+  const F = [['all', 'Toutes', DATA.dec.length + DATA.ave.length], ['ave', 'Avérées', DATA.ave.length], ['dec', 'Décelées', DATA.dec.length], ...types.map(t => ['t:' + t, t, DATA.dec.filter(e => e.lbl === t).length])];
+  $('#errChips').innerHTML = F.map(([k, l, n]) => `<button class="chip" aria-pressed="${k === errFilter.kind}" data-k="${esc(k)}">${esc(l)} <span style="opacity:.6">${n}</span></button>`).join('');
+  let items = [];
+  const k = errFilter.kind;
+  if (k === 'all' || k === 'ave') items.push(...DATA.ave.map(e => ({ d: e.d, h: aveCard(e) })));
+  if (k === 'all' || k === 'dec' || k.startsWith('t:')) items.push(...DATA.dec.filter(e => (!k.startsWith('t:') || e.lbl === k.slice(2))).filter(e => !errFilter.al || e.al === errFilter.al).map(e => ({ d: e.d, h: decCard(e) })));
+  if (errFilter.al) items = items.filter(x => x.h.includes('al-pill">' + errFilter.al + '<'));
+  items.sort((a, b) => b.d.localeCompare(a.d));
+  const rest = items.length - errShown;
+  $('#errList').innerHTML = items.length ? items.slice(0, errShown).map(x => x.h).join('') + (rest > 0 ? `<div style="padding:12px;text-align:center;border-top:1px solid var(--rail)"><button class="btn" id="moreErr">Afficher ${Math.min(25, rest)} de plus (${rest} restante${rest > 1 ? 's' : ''})</button></div>` : '') : '<p class="empty">Aucune erreur dans ce filtre.</p>';
+}
+
+/* ═════════ PROGRÈS ═════════ */
+function renderCmp() {
+  if (ANN()) {
+    const TK = DATA.teamKpi; $('#cmpTitle').textContent = "Toi face à l'équipe sur l'année";
+    const gap = v => v ? Math.round(1e6 / v) : null;
+    const R = [['Quota', K.quota, TK.quota, 1, ' %', 1], ['Cadence (l/h)', K.cadence, TK.cadence, 1, '', 1],
+      ['Lignes entre deux erreurs', gap(K.ppmDec), gap(TK.ppmDec), 0, '', 1],
+      ['Erreurs décelées (ppm)', K.ppmDec, TK.ppmDec, 0, '', -1], ['Erreurs avérées (ppm)', K.ppmAve, TK.ppmAve, 0, '', -1], ['Score de fiabilité', K.score, TK.score, 0, '', 1]];
+    $('#cmpTable').innerHTML = `<tr><th>Indicateur</th><th>toi</th><th>équipe</th><th>écart</th></tr>` + R.map(([l, a, b, d, u, dir]) => {
+      if (a == null || b == null) return `<tr><td>${l}</td><td>${nf(a, d)}${a != null ? u : ''}</td><td>${nf(b, d)}${b != null ? u : ''}</td><td class="dl na">—</td></tr>`;
+      const df = a - b, cl = Math.abs(df) < (d ? 0.5 : 1) ? 'na' : df * dir > 0 ? 'ok' : 'bad';
+      return `<tr><td>${l}</td><td>${nf(a, d)}${u}</td><td>${nf(b, d)}${u}</td><td class="dl ${cl}">${df > 0 ? '+' : ''}${nf(df, d)}</td></tr>`; }).join('');
+    return;
+  }
+  if (!P) { $('#cmpTitle').textContent = 'Premier mois suivi'; $('#cmpTable').innerHTML = '<tr><td>Rien à comparer pour l\'instant.</td></tr>'; return; }
+  $('#cmpTitle').textContent = `${cap(DATA.periode.label.split(' ')[0])} face à ${DATA.periode.prevLabel.split(' ')[0]}`;
+  const R = [['Quota', 'quota', 1, ' %', 1], ['Cadence (l/h)', 'cadence', 1, '', 1], ['Lignes préparées', 'lignes', 0, '', 0], ['Erreurs décelées (ppm)', 'ppmDec', 0, '', -1], ['Erreurs avérées (ppm)', 'ppmAve', 0, '', -1], ['Régularité', 'regul', 0, ' %', 1], ['Score de fiabilité', 'score', 0, '', 1]].filter(r => r[1] !== 'regul' || S.poidsRegul > 0);
+  $('#cmpTable').innerHTML = `<tr><th>Indicateur</th><th>${MOIS_C[(DATA.periode.m + 10) % 12]}</th><th>${MOIS_C[DATA.periode.m - 1]}</th><th>écart</th></tr>` +
+    R.map(([l, f, d, u, dir]) => {
+      const a = P[f], b = K[f];
+      if (a == null || b == null) return `<tr><td>${l}</td><td>${nf(a, d)}${a != null ? u : ''}</td><td>${nf(b, d)}${b != null ? u : ''}</td><td class="dl na">—</td></tr>`;
+      const df = b - a, good = df * dir > 0, cl = dir === 0 || Math.abs(df) < (d ? 0.5 : 1) ? 'na' : good ? 'ok' : 'bad';
+      return `<tr><td>${l}</td><td>${nf(a, d)}${u}</td><td>${nf(b, d)}${u}</td><td class="dl ${cl}">${df > 0 ? '+' : ''}${nf(df, d)}</td></tr>`;
+    }).join('');
+}
+function renderYear(sel) {
+  const H = DATA.hist, W = 340, Hh = 170, pl = 30, pr = 6, pt = 12, pb = 22;
+  const max = Math.max(120, ...H.map(h => (h.q || 0) + 10)), iw = (W - pl - pr) / H.length, bw = Math.min(26, iw * .62);
+  const y = v => pt + (Hh - pt - pb) * (1 - Math.min(v, max) / max);
+  let s = `<svg viewBox="0 0 ${W} ${Hh}" role="img" aria-label="Quota par mois">`;
+  [0, 50, 100].forEach(v => { s += `<line x1="${pl}" x2="${W - pr}" y1="${y(v)}" y2="${y(v)}" stroke="${v === 100 ? 'var(--jaune)' : 'var(--rail)'}" stroke-dasharray="${v === 100 ? '3 4' : ''}" opacity="${v === 100 ? .8 : 1}"/><text x="${pl - 6}" y="${y(v) + 4}" text-anchor="end">${v}</text>`; });
+  H.forEach((h, i) => {
+    const x = pl + i * iw + (iw - bw) / 2, cur = h.m === DATA.periode.m, light = h.h < S.hMiniScore;
+    if (h.q != null) s += `<rect class="${stQ(h.q)}" data-i="${i}" x="${x}" y="${y(h.q)}" width="${bw}" height="${y(0) - y(h.q)}" rx="4" fill="var(--st)" opacity="${light ? .35 : 1}" style="cursor:pointer"/>`;
+    if (h.q != null && (sel === i || (sel == null && cur))) s += `<rect x="${x - 3}" y="${y(h.q) - 3}" width="${bw + 6}" height="${y(0) - y(h.q) + 3}" rx="6" fill="none" stroke="var(--texte)" stroke-width="1.5"/>`;
+    s += `<rect data-i="${i}" x="${pl + i * iw}" y="${pt}" width="${iw}" height="${Hh - pt - pb}" fill="transparent" style="cursor:pointer"/>`;
+    s += `<text x="${pl + i * iw + iw / 2}" y="${Hh - 6}" text-anchor="middle" style="${cur ? 'fill:var(--texte);font-weight:700' : ''}">${MOIS_C[h.m - 1].replace('.', '')}</text>`;
+  });
+  const tl = H.map((h, i) => h.tq != null ? `${pl + i * iw + iw / 2},${y(h.tq)}` : null).filter(Boolean);
+  if (tl.length) s += `<polyline points="${tl.join(' ')}" fill="none" stroke="var(--gris)" stroke-width="1.6" stroke-dasharray="2 3"/>`;
+  $('#yearChart').innerHTML = s + '</svg>';
+  const h = H[sel ?? H.length - 1];
+  $('#yearCap').innerHTML = h.q == null ? `${cap(MOIS[h.m - 1])} : pas de préparation.` :
+    `<b>${cap(MOIS[h.m - 1])}</b> : quota <b class="${stQ(h.q)}" style="color:var(--st)">${nf(h.q, 1)} %</b>, ${nf(h.l)} lignes, ${nf(h.pa)} ppm avérée${h.tq != null ? `, équipe ${nf(h.tq, 1)} %` : ''}.${h.h < S.hMiniScore ? ' Mois court : peu d\'heures de préparation.' : ''}`;
+  $('#yearChart').querySelectorAll('[data-i]').forEach(r => r.onclick = () => renderYear(+r.dataset.i));
+}
+function renderPpm() {
+  const H = DATA.hist.filter(h => h.pa != null && h.h >= 8);
+  const W = 340, Hh = 150, pl = 34, pr = 10, pt = 10, pb = 30;
+  const max = Math.max(S.ppmAveRouge * 1.5, ...H.map(h => h.pa)) * 1.05;
+  const x = i => pl + (W - pl - pr) * (H.length < 2 ? .5 : i / (H.length - 1)), y = v => pt + (Hh - pt - pb) * (1 - v / max);
+  let s = `<svg viewBox="0 0 ${W} ${Hh}" role="img" aria-label="PPM avérée par mois">
+    <rect x="${pl}" y="${y(max)}" width="${W - pl - pr}" height="${y(S.ppmAveRouge) - y(max)}" fill="var(--rouge)" opacity=".08"/>
+    <rect x="${pl}" y="${y(S.ppmAveRouge)}" width="${W - pl - pr}" height="${y(S.ppmAveOrange) - y(S.ppmAveRouge)}" fill="var(--orange)" opacity=".1"/>
+    <line x1="${pl}" x2="${W - pr}" y1="${y(S.ppmAveRouge)}" y2="${y(S.ppmAveRouge)}" stroke="var(--rouge)" stroke-dasharray="3 4" opacity=".7"/>
+    <text x="${pl - 6}" y="${y(S.ppmAveRouge) + 4}" text-anchor="end">${S.ppmAveRouge}</text><text x="${pl - 6}" y="${y(0) + 4}" text-anchor="end">0</text><line x1="${pl}" x2="${W - pr}" y1="${y(0)}" y2="${y(0)}" stroke="var(--rail)"/>`;
+  s += `<polyline points="${H.map((h, i) => `${x(i)},${y(h.pa)}`).join(' ')}" fill="none" stroke="var(--texte)" stroke-width="2" stroke-linejoin="round"/>`;
+  H.forEach((h, i) => { s += `<circle class="${stPA(h.pa)}" cx="${x(i)}" cy="${y(h.pa)}" r="${h.m === DATA.periode.m ? 6 : 4.5}" fill="var(--st)" stroke="var(--tole)" stroke-width="2"/><text x="${x(i)}" y="${Hh - 6}" text-anchor="middle">${MOIS_C[h.m - 1].replace('.', '')}</text>`; });
+  $('#ppmChart').innerHTML = s + '</svg>';
+  const okM = H.filter(h => h.pa < S.ppmAveOrange).length;
+  $('#ppmLead').textContent = `En ppm (erreurs par million de lignes). Sous ${S.ppmAveOrange} : vert. ${okM} mois sur ${H.length} dans le vert.`;
+}
+const BI = {
+  target: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3.5"/></svg>',
+  rise: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17l6-6 4 4 6-7"/><path d="M15 8h5v5"/></svg>',
+  shield: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.4-3 7.6-7 9-4-1.4-7-4.6-7-9V6z"/><path d="M9 12l2 2 4-4" stroke-linecap="round"/></svg>',
+  chain: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="9" width="8" height="6" rx="3"/><rect x="13" y="9" width="8" height="6" rx="3"/><path d="M9 12h6"/></svg>',
+  metro: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6l4 18H5z"/><path d="M12 17l4-10"/></svg>',
+  boxes: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3" y="12" width="8" height="8"/><rect x="13" y="12" width="8" height="8"/><rect x="8" y="4" width="8" height="8"/></svg>',
+  swap: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h14l-3-3M20 16H6l3 3"/></svg>',
+  cross: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="7"/><path d="M12 2v5M12 17v5M2 12h5M17 12h5"/></svg>',
+  bolt: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M13 3L5 14h6l-1 7 8-11h-6z"/></svg>',
+  cal: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg>',
+};
+function renderBadges() {
+  const aw = awayHours(true), br = bestRun();
+  const B = [
+    ['target', 'Objectif', `Quota du mois à ${S.quotaVert} % ou plus`, K.quota >= S.quotaVert],
+    ['rise', 'En progrès', 'Quota en hausse sur le mois précédent', P && P.quota != null && K.quota > P.quota],
+    ['shield', 'Zéro avérée', 'Aucune erreur chez le client', K.errAve === 0],
+    ['cross', 'Précision', `Décelées sous ${nf(S.ppmDecOrange)} ppm`, K.ppmDec != null && K.ppmDec < S.ppmDecOrange],
+    ['chain', 'Série propre', '5 journées de suite sans erreur', br >= 5],
+    S.poidsRegul > 0 ? ['metro', 'Métronome', 'Régularité à 50 % ou plus', K.regul >= 50]
+      : ['bolt', 'Record', "Battre ton record de lignes de l'année", !!(DATA.records.lignes && DATA.records.lignes.d.startsWith(`${DATA.periode.y}-${String(DATA.periode.m).padStart(2, '0')}`))],
+    ['boxes', 'Gros mois', '10 000 lignes ou plus', K.lignes >= 10000],
+    ['swap', 'Polyvalent', 'Renfort dans 2 services ou plus', aw.list.length >= 2],
+  ];
+  if (ANN()) {
+    const TK = DATA.teamKpi, prod = DAYS.filter(d => !d.off);
+    B.splice(0, B.length,
+      ['target', 'Objectif', `Quota sur l'année à ${S.quotaVert} % ou plus`, K.quota >= S.quotaVert],
+      ['rise', 'Niveau équipe', "Quota égal ou supérieur à celui de l'équipe", K.quota != null && TK.quota != null && K.quota >= TK.quota],
+      ['shield', 'Zéro avérée', 'Aucune erreur chez le client', K.errAve === 0],
+      ['cross', 'Précision', "Moins d'erreurs décelées que l'équipe", K.ppmDec != null && TK.ppmDec != null && K.ppmDec <= TK.ppmDec],
+      ['chain', 'Série propre', '5 journées de suite sans erreur', br >= 5],
+      ['bolt', 'Journée parfaite', 'Une journée à 100 % sans aucune erreur', prod.some(d => d.q >= S.quotaVert && !d.ed && !d.ea)],
+      ['boxes', 'Gros volume', "5 000 lignes ou plus dans l'année", K.lignes >= 5000],
+      ['cal', 'Fidèle au poste', '20 journées ou plus au détail', K.jours >= 20]);
+  }
+  if (EQ()) {
+    const inM = k => k && k.startsWith(`${DATA.periode.y}-${String(DATA.periode.m).padStart(2, '0')}`);
+    let run = 0, best = 0; DAYS.filter(d => !d.off && d.q != null).forEach(d => { run = d.q >= S.quotaVert ? run + 1 : 0; best = Math.max(best, run); });
+    const tm = DATA.equipe.filter(e => e.q >= S.quotaVert).length;
+    B.splice(0, B.length,
+      ['target', 'Objectif', `Quota d'équipe à ${S.quotaVert} % ou plus`, K.quota >= S.quotaVert],
+      ['rise', 'En progrès', 'Quota en hausse sur le mois précédent', P && P.quota != null && K.quota > P.quota],
+      ['shield', 'Zéro avérée', 'Aucune erreur chez le client', K.errAve === 0],
+      ['cross', 'Précision', `Décelées sous ${nf(S.ppmDecOrange)} ppm`, K.ppmDec != null && K.ppmDec < S.ppmDecOrange],
+      ['chain', 'Série verte', '5 journées de suite à l\'objectif', best >= 5],
+      ['bolt', 'Record', "Record de lignes de l'année battu", !!(DATA.records.lignes && inM(DATA.records.lignes.d))],
+      ['boxes', 'Majorité', "Plus de la moitié des opérateurs à l'objectif", DATA.equipe.length > 0 && tm * 2 > DATA.equipe.length],
+      ['swap', 'Entraide', '50 h ou plus prêtées aux autres services', aw.total >= 50]);
+  }
+  const got = B.filter(b => b[3]).length;
+  $('#badgeLead').textContent = `${got} sur ${B.length} ${ANN() ? 'cette année' : 'ce mois'}. Ceux en gris sont à aller chercher.`;
+  $('#badges').innerHTML = B.map(([ic, t, d, ok]) => `<div class="badge ${ok ? 'got' : ''}"><div class="ic">${BI[ic]}</div><b>${t}</b><span>${d}</span></div>`).join('');
+}
+function renderRecords() {
+  const r = DATA.records, R = [];
+  if (r.lignes) R.push(['boxes', T('Plus de lignes en une journée', "Plus grosse journée de l'équipe"), nf(r.lignes.v) + ' lignes', dLong(r.lignes.d), r.lignes.d]);
+  if (r.quota) R.push(['target', T('Meilleur quota sur une journée pleine', "Meilleur quota d'équipe sur une journée"), nf(r.quota.v, 1) + ' %', dLong(r.quota.d), r.quota.d]);
+  if (r.cad) R.push(['bolt', T('Meilleure cadence sur une journée pleine', 'Meilleure cadence moyenne sur une journée'), nf(r.cad.v, 1) + ' l/h', dLong(r.cad.d), r.cad.d]);
+  if (r.serie && r.serie.v) R.push(['chain', T('Plus longue série sans erreur décelée', "Plus longue série de journées à l'objectif"), r.serie.v + ' journées', 'du ' + dShort(r.serie.from) + ' au ' + dShort(r.serie.to), r.serie.to]);
+  if (r.mois) R.push(['cal', 'Meilleur mois', nf(r.mois.v, 1) + ' % de quota', MOIS[r.mois.m - 1], null]);
+  const inMonth = inPer;
+  $('#records').innerHTML = R.map(([ic, l, v, d, k]) => `<${inMonth(k) ? `button data-d="${k}"` : 'div'} class="row"><div class="ri">${BI[ic]}</div><div><div style="font-size:.88rem">${l}</div><div class="sub" style="margin-top:1px">${d}${inMonth(k) && !ANN() ? ' — ce mois-ci' : ''}</div></div><div class="r num" style="color:var(--jaune)">${v}</div></${inMonth(k) ? 'button' : 'div'}>`).join('');
+}
+
+/* ═════════ ÉQUIPE ═════════ */
+function renderTeam() {
+  if (EQ()) return renderSpread();
+  const team = DATA.equipe.filter(e => !e.me);
+  const n = team.length;
+  if (!n) { $('#teamLead').textContent = "Pas assez de collègues comparables ce mois."; $('#teamStrips').innerHTML = ''; return; }
+  $('#teamLead').textContent = `Comparé aux ${n} opérateurs du détail qui ont préparé au moins ${S.hMiniScore} h ${ANN() ? 'cette année' : 'ce mois'}.`;
+  const M = [
+    ['Quota', 'q', K.quota, 1, ' %', 1, stQ(K.quota)],
+    ['Cadence (lignes / heure)', 'cad', K.cadence, 1, '', 1, 'na'],
+    ['Erreurs avérées (ppm)', 'pa', K.ppmAve, 0, '', -1, stPA(K.ppmAve)],
+    ['Erreurs décelées (ppm)', 'pd', K.ppmDec, 0, '', -1, stPD(K.ppmDec)],
+  ];
+  $('#teamStrips').innerHTML = M.map(([l, f, me, d, u, dir, st]) => {
+    const vals = team.map(e => e[f]).filter(v => v != null);
+    if (me == null || !vals.length) return '';
+    const all = [...vals, me], lo = Math.min(...all), hi = Math.max(...all), span = hi - lo || 1;
+    const W = 320, pad = 14, X = v => pad + (W - 2 * pad) * (v - lo) / span, avg = vals.reduce((a, b) => a + b, 0) / vals.length;
+    const better = vals.filter(v => dir > 0 ? v < me : v > me).length;
+    if (me < lo || me > hi) { /* hors échelle : élargit */ }
+    let s = `<svg viewBox="0 0 ${W} 54" style="display:block;width:100%;height:auto;margin-top:6px" aria-hidden="true">
+      <line x1="${pad}" x2="${W - pad}" y1="26" y2="26" stroke="var(--rail2)" stroke-width="2" stroke-linecap="round"/>
+      <line x1="${X(avg)}" x2="${X(avg)}" y1="14" y2="38" stroke="var(--texte)" stroke-width="2" opacity=".55"/>`;
+    vals.forEach((v, i) => { s += `<circle cx="${X(v)}" cy="${26 + ((i % 3) - 1) * 4}" r="5" fill="var(--gris2)" opacity=".85"/>`; });
+    s += `<circle cx="${X(me)}" cy="26" r="9" fill="var(--jaune)" stroke="var(--tole)" stroke-width="3"/>
+      <text x="${Math.min(W - 16, Math.max(16, X(me)))}" y="52" text-anchor="middle" style="font-family:var(--cond);font-weight:700;font-size:12px;fill:var(--jaune)">toi</text>
+      <text x="${pad}" y="10" style="font-family:var(--cond);font-size:11px;fill:var(--gris2)">${nf(lo, d)}</text>
+      <text x="${W - pad}" y="10" text-anchor="end" style="font-family:var(--cond);font-size:11px;fill:var(--gris2)">${nf(hi, d)}</text></svg>`;
+    const phrase = better === n ? 'Meilleur résultat de l\'équipe.' : better === 0 ? 'Marge de progression la plus grande de l\'équipe.' : `Mieux que ${better} collègue${better > 1 ? 's' : ''} sur ${n}.`;
+    return `<div class="strip ${st}"><div class="strip-h"><b>${l}</b><span class="num" style="${st === 'na' ? 'color:var(--texte)' : ''}">${nf(me, d)}${u}</span></div>${s}<p>${phrase} Moyenne de l'équipe : ${nf(avg, d)}${u}.</p></div>`;
+  }).join('');
+}
+
+function renderSpread() {
+  const ops = DATA.equipe, n = ops.length;
+  $('#teamLead').textContent = n ? `Les ${n} opérateurs qui ont préparé au moins ${S.hMiniScore} h ce mois, chacun représenté par un point.` : "Pas assez d'opérateurs comparables ce mois.";
+  const M = [
+    ['Quota du mois', 'q', 1, ' %', v => v >= S.quotaVert, "à l'objectif", st => stQ(st)],
+    ['Cadence (lignes / heure)', 'cad', 1, '', null, '', () => 'na'],
+    ['Erreurs avérées (ppm)', 'pa', 0, '', v => v < S.ppmAveOrange, 'dans le vert', st => stPA(st)],
+    ['Erreurs décelées (ppm)', 'pd', 0, '', v => v < S.ppmDecOrange, 'dans le vert', st => stPD(st)],
+  ];
+  $('#teamStrips').innerHTML = M.map(([l, f, d, u, okf, okl, stf]) => {
+    const vals = ops.map(e => e[f]).filter(v => v != null); if (!vals.length) return '';
+    const lo = Math.min(...vals), hi = Math.max(...vals), span = hi - lo || 1, W = 320, pad = 14, X = v => pad + (W - 2 * pad) * (v - lo) / span;
+    const avg = vals.reduce((a, b) => a + b, 0) / vals.length;
+    let s = `<svg viewBox="0 0 ${W} 46" style="display:block;width:100%;height:auto;margin-top:6px" aria-hidden="true">
+      <line x1="${pad}" x2="${W - pad}" y1="26" y2="26" stroke="var(--rail2)" stroke-width="2" stroke-linecap="round"/>
+      <line x1="${X(avg)}" x2="${X(avg)}" y1="12" y2="40" stroke="var(--texte)" stroke-width="2" opacity=".6"/>`;
+    vals.forEach((v, i) => { s += `<circle class="${stf(v)}" cx="${X(v)}" cy="${26 + ((i % 3) - 1) * 5}" r="6" fill="${stf(v) === 'na' ? 'var(--bleu)' : 'var(--st)'}" opacity=".85"/>`; });
+    s += `<text x="${pad}" y="10" style="font-family:var(--cond);font-size:11px;fill:var(--gris2)">${nf(lo, d)}</text><text x="${W - pad}" y="10" text-anchor="end" style="font-family:var(--cond);font-size:11px;fill:var(--gris2)">${nf(hi, d)}</text></svg>`;
+    const k = okf ? vals.filter(okf).length : null;
+    return `<div class="strip ${stf(avg)}"><div class="strip-h"><b>${l}</b><span class="num" style="${stf(avg) === 'na' ? 'color:var(--texte)' : ''}">moy. ${nf(avg, d)}${u}</span></div>${s}<p>${k != null ? `<b style="color:var(--texte)">${k} sur ${vals.length}</b> ${okl}. ` : ''}De ${nf(lo, d)} à ${nf(hi, d)}${u}.</p></div>`;
+  }).join('');
+}
+
+/* ═════════ FEUILLE JOURNÉE ═════════ */
+let sheetKey = null;
+function openDay(k) {
+  sheetKey = k;
+  const d = BYDAY[k], keys = DAYS.map(x => x.d), i = keys.indexOf(k);
+  const ed = DATA.dec.filter(e => e.d === k), ea = DATA.ave.filter(e => e.d === k);
+  let body = '';
+  if (d && !d.off) {
+    const st = stQ(d.q);
+    body += d.q == null ? `<div class="sh-big na"><span class="status">Heures non pointées : pas de quota ce jour-là</span></div>` : `<div class="sh-big ${st}"><div class="v num">${nf(d.q, 1)} %</div><span class="status">${d.q >= S.quotaVert ? 'Objectif tenu' : d.q >= S.quotaRouge ? 'Proche de l\'objectif' : 'Sous l\'objectif'}</span>${d.reg ? ' <span class="status ok">Journée régulière</span>' : ''}${EQ() ? ` <span class="status na" style="color:var(--texte)">${d.nObj} opérateur${d.nObj > 1 ? 's' : ''} sur ${d.nQ} à l'objectif</span>` : ''}</div>`;
+    if (EQ()) body += `<div class="sh-grid"><div><div class="k">Lignes préparées</div><div class="v num">${nf(d.l)}</div></div><div><div class="k">Cadence moyenne</div><div class="v num">${nf(d.cad, 1)} <small style="font-size:.6em">l/h</small></div></div>
+      <div><div class="k">Opérateurs présents</div><div class="v num">${d.n}</div></div><div><div class="k">Heures de picking</div><div class="v num">${nf(d.hp, 1)} h</div></div>
+      <div><div class="k">Tournées</div><div class="v num">${d.t}</div><div class="k">${d.tp} petites, ${d.tm} moy., ${d.tg} grandes</div></div><div><div class="k">Contenants</div><div class="v num">${nf(d.c)}</div></div></div>`;
+    else body += `
+      <div class="sh-grid"><div><div class="k">Lignes préparées</div><div class="v num">${nf(d.l)}</div></div><div><div class="k">Cadence</div><div class="v num">${nf(d.cad, 1)} <small style="font-size:.6em">l/h</small></div></div>
+      <div><div class="k">Heures pointées</div><div class="v num">${nf(d.h, 2)} h</div></div><div><div class="k">Heures de picking</div><div class="v num">${nf(d.hp, 2)} h</div></div>
+      <div><div class="k">Tournées</div><div class="v num">${d.t}</div><div class="k">${d.tp} petites, ${d.tm} moy., ${d.tg} grandes</div></div><div><div class="k">Contenants</div><div class="v num">${nf(d.c)}</div></div></div>`;
+  } else {
+    body += `<div class="sh-big na"><span class="status">${d && d.act && d.act.length ? 'Journée en renfort' : 'Pas de préparation enregistrée'}</span></div>`;
+  }
+  if (d && d.act && d.act.length) body += `<div class="sh-sec"><h4>Hors préparation</h4><div class="rows">${d.act.map(a => `<div class="row" style="grid-template-columns:1fr auto"><div>${esc(a.ou)}${a.det && norm(a.det) !== norm(a.ou) ? `<div class="sub">${esc(a.det)}</div>` : ''}</div><div class="r num" style="color:var(--texte)">${nf(a.h, 2)} h</div></div>`).join('')}</div></div>`;
+  body += `<div class="sh-sec"><h4>Erreurs décelées : ${ed.length}</h4>${ed.length ? `<div class="rows">${ed.map(decCard).join('')}</div>` : '<p class="lead">Aucune. Journée propre.</p>'}</div>`;
+  if (ea.length) body += `<div class="sh-sec"><h4>Erreurs avérées : ${ea.length}</h4><div class="rows">${ea.map(aveCard).join('')}</div></div>`;
+  $('#sheet').innerHTML = `<div class="grab"></div><div class="sh-top">
+    <button class="icon-btn" id="shPrev" aria-label="Journée précédente" ${i <= 0 ? 'disabled style="opacity:.3"' : ''}>${ICON.prev}</button>
+    <h3 id="shTitle">${cap(dLong(k))}</h3>
+    <button class="icon-btn" id="shNext" aria-label="Journée suivante" ${i >= keys.length - 1 ? 'disabled style="opacity:.3"' : ''}>${ICON.next}</button>
+    <button class="icon-btn" id="shClose" aria-label="Fermer">${ICON.close}</button></div>${body}`;
+  $('#shPrev').onclick = () => i > 0 && openDay(keys[i - 1]);
+  $('#shNext').onclick = () => i < keys.length - 1 && openDay(keys[i + 1]);
+  $('#shClose').onclick = closeDay;
+  $('#veil').classList.add('on'); $('#sheet').classList.add('on'); $('#sheet').scrollTop = 0;
+  setTimeout(() => $('#shClose').focus({ preventScroll: true }), 60);
+}
+function closeDay() { $('#veil').classList.remove('on'); $('#sheet').classList.remove('on'); sheetKey = null; }
+
+/* ═════════ RECHERCHE ═════════ */
+let INDEX = [];
+function buildIndex() {
+  INDEX = [];
+  DAYS.forEach(d => INDEX.push({ g: 'Journées', d: d.d, t: cap(dLong(d.d)) + (d.off ? '' : ` : ${nf(d.q, 0)} %`), s: d.off ? (d.act || []).map(a => a.ou).join(', ') || 'Pas de préparation' : `${nf(d.l)} lignes, ${nf(d.cad, 0)} l/h${d.ed ? `, ${d.ed} décelée(s)` : ''}`,
+    x: norm([dShort(d.d), dLong(d.d), d.d, (d.act || []).map(a => a.ou + ' ' + a.det).join(' '), d.ed ? 'erreur' : ''].join(' ')) }));
+  DATA.dec.forEach(e => INDEX.push({ g: 'Erreurs décelées', d: e.d, t: `${e.lbl}, ${dShort(e.d)}`, s: `${e.adr}${e.al ? ' (allée ' + e.al + ')' : ''} — ${e.rc}${e.rp ? ' / ' + e.rp : ''}`,
+    x: norm([e.lbl, e.type, e.adr, e.adr.replace(/\s/g, ''), e.al ? 'allee ' + e.al + ' allee' + e.al : '', e.rc, e.rc.replace(/\s/g, ''), e.rp, e.rp.replace(/\s/g, ''), e.det, e.com, dShort(e.d), dLong(e.d), 'decelee'].join(' ')) }));
+  DATA.ave.forEach(e => INDEX.push({ g: 'Erreurs avérées', d: e.d, t: `${e.motif}, ${dShort(e.d)}`, s: `Litige ${e.lit}, ${e.ag} — ${e.rc}`,
+    x: norm([e.motif, e.lit, e.ag, e.cli, e.rc, e.rr, dShort(e.d), dLong(e.d), 'averee litige client'].join(' ')) }));
+}
+function hl(t, toks) { let s = esc(t); toks.forEach(k => { if (k.length < 2) return; const re = new RegExp('(' + k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig'); s = s.replace(re, '<mark>$1</mark>'); }); return s; }
+function runSearch() {
+  const raw = $('#q').value.trim(), q = norm(raw);
+  if (!q) {
+    const ex = ['allée ' + (topBy(DATA.dec, e => e.al)[0]?.[0] || 5), topBy(DATA.dec, e => e.lbl)[0]?.[0] || 'Quantité en trop', DATA.dec[0]?.rc.split(' ')[0] || 'SCH', dShort(DAYS[Math.floor(DAYS.length / 2)]?.d || DAYS[0].d), 'renfort'];
+    $('#sRes').innerHTML = `<div class="s-hint">Cherche une date, une référence, une adresse, une allée, un type d'erreur ou un n° de litige.<div class="chips">${ex.map(x => `<button class="chip" data-q="${esc(x)}">${esc(x)}</button>`).join('')}</div></div>`;
+    return;
+  }
+  const toks = q.split(/\s+/).filter(Boolean);
+  const hits = INDEX.filter(it => toks.every(k => it.x.includes(k) || it.x.includes(k.replace(/\s/g, ''))));
+  if (!hits.length) { $('#sRes').innerHTML = `<p class="s-hint">Rien pour « ${esc(raw)} ». Essaie une partie de la référence (ex. « 034 ») ou un numéro d'allée.</p>`; return; }
+  const groups = {};
+  hits.forEach(h => (groups[h.g] = groups[h.g] || []).push(h));
+  const rawToks = raw.split(/\s+/);
+  $('#sRes').innerHTML = Object.entries(groups).map(([g, a]) => `<div class="s-grp">${g} <span style="font-weight:500">${a.length}</span></div>` +
+    a.slice(0, 40).map(h => `<button class="s-item" data-d="${h.d}"><b>${hl(h.t, rawToks)}</b><span>${hl(h.s, rawToks)}</span></button>`).join('')).join('');
+}
+function openSearch() { $('#search').classList.add('on'); $('#q').value = ''; runSearch(); setTimeout(() => $('#q').focus(), 30); }
+function closeSearch() { $('#search').classList.remove('on'); }
+
+/* ═════════ NAVIGATION ═════════ */
+function showPanel(id) {
+  document.querySelectorAll('.tab').forEach(t => t.setAttribute('aria-selected', t.dataset.p === id));
+  document.querySelectorAll('.panel').forEach(p => p.classList.toggle('on', p.id === id));
+  window.scrollTo(0, 0);
+}
+
+function wire() {
+  document.querySelectorAll('.tab').forEach(t => t.onclick = () => showPanel(t.dataset.p));
+  document.addEventListener('click', e => {
+    const d = e.target.closest('[data-d]'); if (d && !e.target.closest('.sheet')) { if (d.classList.contains('s-item')) closeSearch(); openDay(d.dataset.d); return; }
+    const f = e.target.closest('#dayChips [data-f]'); if (f) { dayFilter = f.dataset.f; renderDayList(); return; }
+    const k = e.target.closest('#errChips [data-k]'); if (k) { errFilter.kind = k.dataset.k; errShown = 25; renderErrList(); return; }
+    if (e.target.closest('#moreErr')) { errShown += 25; renderErrList(); return; }
+    const al = e.target.closest('.rk'); if (al) { const n = +al.dataset.al; errFilter.al = errFilter.al === n ? null : n; errShown = 25; if (errFilter.al && errFilter.kind === 'ave') errFilter.kind = 'all'; renderAisles(); renderErrList(); $('#errList').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' }); return; }
+    if (e.target.closest('#clearAl')) { errFilter.al = null; renderAisles(); renderErrList(); return; }
+    const sq = e.target.closest('[data-q]'); if (sq) { $('#q').value = sq.dataset.q; runSearch(); $('#q').focus(); }
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') { if ($('#search').classList.contains('on')) closeSearch(); else closeDay(); }
+    if ((e.key === 'Enter' || e.key === ' ') && e.target.classList?.contains('rk')) { e.preventDefault(); e.target.dispatchEvent(new MouseEvent('click', { bubbles: true })); }
+  });
+  $('#veil').onclick = closeDay;
+  $('#openSearch').onclick = openSearch;
+  $('#closeSearch').onclick = closeSearch;
+  $('#q').addEventListener('input', runSearch);
+  let y0 = null;
+  $('#sheet').addEventListener('touchstart', e => { y0 = $('#sheet').scrollTop <= 0 ? e.touches[0].clientY : null; }, { passive: true });
+  $('#sheet').addEventListener('touchend', e => { if (y0 != null && e.changedTouches[0].clientY - y0 > 90) closeDay(); y0 = null; }, { passive: true });
+}
+
+function renderAll() {
+  prepare();
+  renderHeader(); renderHero(); renderMsg(); renderCalendar(); renderQualPair(); renderScore(); renderFx();
+  renderWeeks(); renderDayList(); renderMix(); renderAway();
+  renderTypes(); renderAisles(); renderErrList();
+  renderCmp(); renderYear(); renderPpm(); renderBadges(); renderRecords();
+  renderTeam(); buildIndex();
+}
+
+(function init() {
+  if (!DATA) { document.body.innerHTML = '<p style="padding:40px;text-align:center;color:#93A2BC">Aucune donnée : génère la page avec build_spc.py.</p>'; return; }
+  wire(); renderAll(); setupEdit();
+  if (CONFIG.DATA_URL) fetch(CONFIG.DATA_URL, { cache: 'no-store' }).then(r => r.ok ? r.json() : null).then(j => { if (j && j.kpi) { DATA = j; renderAll(); } }).catch(() => {});
+})();
+</script>
+</body>
+</html>
