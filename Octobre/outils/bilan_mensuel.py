@@ -31,6 +31,9 @@ Critères et poids :
     Qualité décelée     20 %  PPM décelée (erreurs au rejet / lignes × 1e6) — plus bas = mieux
     Qualité avérée      20 %  PPM avérée  (litiges / lignes × 1 000 000)  — plus bas = mieux
     RH & savoir-être    20 %  (points positifs − écarts) du journal SUIVI_RH, ramené à 20 jours
+Coup de pouce : note finale de l'équipe confirmée × COUP_DE_POUCE (1,10), plafonnée à 20.
+Nouveaux (NOUVEAUX) : prod., avérée, décelée notées sur OBJ_NOUVEAU (objectif atteint
+= 12/20), puis + BONUS_NOUVEAU points ; classement séparé des confirmés.
 Ne sont JAMAIS pris en compte : absences, maladie, AT, délégation, congés,
 contrat (CDI / intérim), ancienneté.
 """
@@ -59,6 +62,11 @@ MIN_HEURES = 74.0          # = 10 jours pleins de picking pour être classé (no
 BADGE_HEURES = 37.0        # volume mini pour décrocher un badge qualité (5 jours)
 MIN_LIGNES_CARTE = 100     # en dessous : pas de carte (passage trop ponctuel)
 POIDS = {"p": 0.40, "d": 0.20, "a": 0.20, "r": 0.20}
+COUP_DE_POUCE = 1.10       # équipe confirmée : note finale × 1,10 (10 % moins sévère), plafonnée à 20
+# Parcours nouveaux : notés sur LEUR objectif, pas sur la moyenne des confirmés
+NOUVEAUX = {"KELLERER MEGANE", "DEMBELE TAMBA", "HAMDANI AMINE", "ROBIN ELODIE"}
+OBJ_NOUVEAU = {"lj": 500, "pa": 300, "pd": 3200}   # lignes/jour, PPM avérée, PPM décelée
+BONUS_NOUVEAU = 2.0        # points ajoutés à la note finale d'un nouveau
 PPM_DEC_VERT = 1000        # PARAMETRES : PPM décelée verte sous ce seuil
 MOIS_FR = ["", "JANVIER", "FÉVRIER", "MARS", "AVRIL", "MAI", "JUIN", "JUILLET",
            "AOÛT", "SEPTEMBRE", "OCTOBRE", "NOVEMBRE", "DÉCEMBRE"]
@@ -166,6 +174,14 @@ def ppm(n, lig):
     return round(n / lig * 1_000_000) if lig else None
 
 
+def note_objectif(v, obj, plus_bas_mieux=False):
+    """Nouveaux : objectif atteint = 12/20 ; chaque écart de 100 % de l'objectif vaut 8 points."""
+    if v is None:
+        return None
+    x = (obj - v) / obj if plus_bas_mieux else (v - obj) / obj
+    return round(max(0.0, min(20.0, 12 + 8 * x)), 1)
+
+
 def zscore_note(v, moy, sd, plus_bas_mieux=False):
     if v is None:
         return None
@@ -230,22 +246,36 @@ def construire(xlsx: Path, mois: int, annee: int):
         vals = [f[champ] for f in cl if f[champ] is not None]
         equipe[k] = (statistics.mean(vals), statistics.pstdev(vals)) if vals else (0, 0)
     for f in fiches:
+        f["nouveau"] = f["np"] in NOUVEAUX
         notes = {}
         for k, (champ, inv) in crit.items():
             m, sd = equipe[k]
             notes[k] = zscore_note(f[champ], m, sd, inv)
+        if f["nouveau"]:   # notés sur leur objectif d'intégration
+            notes["p"] = note_objectif(f["lj"], OBJ_NOUVEAU["lj"])
+            notes["a"] = note_objectif(f["pa"], OBJ_NOUVEAU["pa"], True)
+            notes["d"] = note_objectif(f["pd"], OBJ_NOUVEAU["pd"], True)
         f["notes"] = notes
-        f["note"] = round(sum(POIDS[k] * notes[k] for k in POIDS), 1) if f["classe"] else None
-    cl.sort(key=lambda f: (-f["note"], f["pa"] or 0, -(f["q"] or 0)))
-    for i, f in enumerate(cl, 1):
-        f["rang"] = i
+        f["note_brute"] = round(sum(POIDS[k] * notes[k] for k in POIDS), 1) if f["classe"] else None
+        if f["note_brute"] is None:
+            f["note"] = None
+        elif f["nouveau"]:
+            f["note"] = round(min(20.0, f["note_brute"] + BONUS_NOUVEAU), 1)
+        else:
+            f["note"] = round(min(20.0, f["note_brute"] * COUP_DE_POUCE), 1)
+    groupes = {False: [f for f in cl if not f["nouveau"]], True: [f for f in cl if f["nouveau"]]}
+    for g in groupes.values():
+        g.sort(key=lambda f: (-f["note"], f["pa"] or 0, -(f["q"] or 0)))
+        for i, f in enumerate(g, 1):
+            f["rang"], f["N"] = i, len(g)
     for f in fiches:
         f.setdefault("rang", None)
+        f.setdefault("N", None)
 
     moy = dict(
         q=round(equipe["p"][0], 1), pa=round(equipe["a"][0]), pd=round(equipe["d"][0]),
         lj=round(statistics.mean([f["lj"] for f in cl if f["lj"]])) if cl else 0,
-        n=len(cl),
+        n=len(cl), nc=len(groupes[False]), nn=len(groupes[True]),
     )
 
     # badges (règles objectives, identiques pour tous)
@@ -261,7 +291,7 @@ def construire(xlsx: Path, mois: int, annee: int):
         if f["prec"] and f["prec"]["q"] and f["q"] and f["q"] - f["prec"]["q"] >= 3 and ok_vol: b.append("up")
         if f["reg"] is not None and f["reg"] >= 80 and ok_vol: b.append("reg")
         if f["lig"] >= 10000: b.append("k10")
-        if f["rang"] and f["rang"] <= 3: b.append("podium")
+        if f["rang"] and f["rang"] <= 3 and not f["nouveau"]: b.append("podium")
         f["badges"] = b
 
     # défi du mois suivant : le critère le plus faible
@@ -280,6 +310,15 @@ def defi(f, moy):
     if not f["classe"]:
         return dict(k="p", t="Prendre tes marques", d="Pas assez d'heures de picking ce mois pour être classé. On se retrouve le mois prochain.", s="P4", st="Préparation détail")
     n = f["notes"]
+    if f.get("nouveau"):
+        o = OBJ_NOUVEAU
+        manque = [(n["p"], "p"), (n["a"], "a"), (n["d"], "d")]
+        k = min(manque)[1]
+        if k == "p":
+            return dict(k="p", t=f"Atteindre {o['lj']} lignes / jour", d=f"Tu es à {f['lj']} lignes / jour. Ton objectif d'intégration : {o['lj']}.", s="P4", st="Préparation détail")
+        if k == "a":
+            return dict(k="a", t=f"PPM avérée sous {o['pa']}", d=f"Tu es à {f['pa']}. Contrôle référence + quantité avant de valider.", s="P8", st="Ruptures & validation")
+        return dict(k="d", t=f"PPM décelée sous {o['pd']}", d=f"Tu es à {f['pd']}. Vérifie l'étiquette et la quantité à chaque ligne.", s="P4", st="Préparation détail")
     k = min(("p", "a", "d"), key=lambda x: n[x] if n[x] is not None else 99)
     if all((n[x] or 0) >= 13 for x in ("p", "a", "d")):
         return dict(k="ok", t="Garder le cap", d="Tu es au-dessus de la moyenne partout. Montre la voie, aide un collègue.", s="P8", st="Ruptures & validation")
@@ -302,7 +341,9 @@ def charge_utile(f, moy, mois, annee):
         "rg": f["reg"], "b": f["badges"], "bt": list(f["best"]),
         "s": [v for _, v in f["serie"]],
         "pr": f["prec"],
-        "no": f["note"], "ns": f["notes"] if f["classe"] else None, "rk": f["rang"], "N": moy["n"],
+        "no": f["note"], "ns": f["notes"] if f["classe"] else None, "rk": f["rang"], "N": f["N"],
+        "nv": f["nouveau"], "ob": OBJ_NOUVEAU if f["nouveau"] else None, "bn": BONUS_NOUVEAU if f["nouveau"] else None,
+        "cp": None if f["nouveau"] else round((COUP_DE_POUCE - 1) * 100),
         "rh": [f["pos"], f["ec"], f["sec"]],
         "rt": [[s, t, n] for (s, t), n in f["rh_types"][:4]],
         "er": [[t, n] for t, n in f["err_types"]],
@@ -427,7 +468,8 @@ body{background:#fff}
 
 def html_synthese(fiches, moy, mois, annee):
     lib = f"{MOIS_FR[mois]} {annee}"
-    cl = sorted([f for f in fiches if f["classe"]], key=lambda f: f["rang"])
+    cl = sorted([f for f in fiches if f["classe"] and not f["nouveau"]], key=lambda f: f["rang"])
+    nv = sorted([f for f in fiches if f["classe"] and f["nouveau"]], key=lambda f: f["rang"])
     nc = sorted([f for f in fiches if not f["classe"]], key=lambda f: f["nom"])
 
     def cell_note(v):
@@ -442,15 +484,18 @@ def html_synthese(fiches, moy, mois, annee):
         d = f["q"] - f["prec"]["q"]
         return f"<td class='d {'up' if d >= 0 else 'dn'}'>{'+' if d >= 0 else ''}{d:.1f}</td>"
 
-    lignes = []
-    for f in cl:
-        med = {1: "or", 2: "argent", 3: "bronze"}.get(f["rang"], "")
-        lignes.append(
+    def rangee(f, nouveau=False):
+        med = "" if nouveau else {1: "or", 2: "argent", 3: "bronze"}.get(f["rang"], "")
+        ajust = f"+{BONUS_NOUVEAU:.0f} bonus" if nouveau else f"×{COUP_DE_POUCE:.2f}".replace(".", ",")
+        return (
             f"<tr><td class='rk {med}'>{f['rang']}</td><td class='np'><b>{html.escape(f['nom'])}</b> {html.escape(f['prenom'])}<span class='mono'>{html.escape(f['mat'])}</span></td>"
-            f"<td class='g'><b>{f['note']:.1f}</b><i style='width:{f['note']*5:.0f}%'></i></td>"
+            f"<td class='g'><b>{f['note']:.1f}</b><i style='width:{f['note']*5:.0f}%'></i><small>{ajust}</small></td>"
             + cell_note(f["notes"]["p"]) + cell_note(f["notes"]["d"]) + cell_note(f["notes"]["a"]) + cell_note(f["notes"]["r"])
             + f"<td>{f['q']:.1f}</td>{delta(f)}<td>{f['lig']:,}</td><td>{f['pa']}</td><td>{f['pd']}</td><td>{f['pos']} / {f['ec']}</td><td>{len(f['badges'])}</td></tr>".replace(",", " ")
         )
+    lignes = [rangee(f) for f in cl]
+    lignes_nv = [rangee(f, True) for f in nv]
+
     def ligne_nc(f):
         raison = "hors quota" if not f["quota_ok"] else f"{f['h_pick']:.0f} h de picking (&lt; {MIN_HEURES:.0f} h)"
         q = "" if f["q"] is None else f"{f['q']:.1f}"
@@ -479,6 +524,7 @@ td.rk{text-align:center;font-weight:800;width:7mm}
 td.rk.or{background:#FFD400}td.rk.argent{background:#D9DCE1}td.rk.bronze{background:#E8C39E}
 td.g{position:relative;width:26mm;text-align:left}
 td.g b{position:relative;z-index:1;font-size:9.5pt}
+td.g small{position:relative;z-index:1;margin-left:2mm;font-size:6pt;color:#5E6672}
 td.g i{position:absolute;left:1.4mm;top:50%;height:2.4mm;transform:translateY(-50%);background:rgba(255,212,0,.55);border-radius:.6mm;max-width:24mm}
 td.n.hi{color:#1d8a4a;font-weight:700}td.n.lo{color:#E5332A;font-weight:700}
 td.d.up{color:#1d8a4a}td.d.dn{color:#E5332A}
@@ -496,18 +542,21 @@ tr.sep td{background:#f4f5f6;text-align:left;font-size:6.4pt;letter-spacing:.14e
 <h1>Classement opérateurs — <em>{lib}</em></h1></div>
 <div class='conf mono'>CONFIDENTIEL — SUPERVISEUR / RH<br><span style='color:#5E6672;font-weight:500'>généré le {dt.date.today():%d/%m/%Y}</span></div></header>
 <div class='kpis'>
-<div class='kpi'><span class='mono'>OPÉRATEURS CLASSÉS</span><b>{moy['n']}</b> / {len(fiches)}</div>
+<div class='kpi'><span class='mono'>CLASSÉS · CONFIRMÉS + NOUVEAUX</span><b>{moy['nc']} + {moy['nn']}</b> / {len(fiches)}</div>
 <div class='kpi'><span class='mono'>QUOTA MOYEN ÉQUIPE</span><b>{moy['q']} %</b></div>
 <div class='kpi'><span class='mono'>PPM AVÉRÉE MOYENNE</span><b>{moy['pa']}</b></div>
 <div class='kpi'><span class='mono'>PPM DÉCELÉE MOYENNE</span><b>{moy['pd']}</b></div>
 <div class='kpi'><span class='mono'>LIGNES PRÉPARÉES</span><b>{tot_lig:,}</b></div>
 </div>
-<table>{tete}{''.join(lignes)}<tr class='sep'><td colspan='14'>NON CLASSÉS — VOLUME INSUFFISANT OU HORS QUOTA (fiche personnelle quand même remise)</td></tr>{lnc}</table>
+<table>{tete}{''.join(lignes)}<tr class='sep'><td colspan='14'>NOUVEAUX — PARCOURS D'INTÉGRATION · notés sur leur objectif : {OBJ_NOUVEAU['lj']} lignes/jour · PPM avérée {OBJ_NOUVEAU['pa']} · PPM décelée {OBJ_NOUVEAU['pd']:,} · bonus nouveau +{BONUS_NOUVEAU:.0f} pts</td></tr>{''.join(lignes_nv)}<tr class='sep'><td colspan='14'>NON CLASSÉS — VOLUME INSUFFISANT OU HORS QUOTA (fiche personnelle quand même remise)</td></tr>{lnc}</table>
 <div class='methode'>
 <div><h3 class='mono'>MÉTHODE — IDENTIQUE POUR TOUS</h3>
 Chaque critère est noté /20 selon l'écart à la moyenne de l'équipe classée : <b>note = 10 + 4 × (valeur − moyenne) / écart-type</b>, bornée de 0 à 20.
 Pile dans la moyenne = 10/20. Pour les PPM, plus bas = meilleure note. Note finale = 40 % productivité (quota) + 20 % qualité décelée (PPM décelée)
 + 20 % qualité avérée (PPM avérée) + 20 % RH &amp; savoir-être (points positifs − écarts du journal SUIVI_RH, ramené à 20 jours travaillés).
+Équipe confirmée : note finale × {COUP_DE_POUCE:.2f} (10 % moins sévère), plafonnée à 20.
+<b>Nouveaux</b> ({', '.join(sorted(n.split()[0].capitalize() for n in NOUVEAUX))}) : prod., avérée et décelée notées sur leur objectif
+({OBJ_NOUVEAU['lj']} l/j, PPM avérée {OBJ_NOUVEAU['pa']}, PPM décelée {OBJ_NOUVEAU['pd']}) — objectif atteint = 12/20 — puis +{BONUS_NOUVEAU:.0f} pts de bonus ; classement séparé.
 Ex-aequo départagés par la PPM avérée puis le quota.</div>
 <div><h3 class='mono'>CE QUI N'EST JAMAIS PRIS EN COMPTE</h3>
 Absences, maladie, accident du travail, heures de délégation, congés, formation, type de contrat (CDI / intérim), ancienneté.

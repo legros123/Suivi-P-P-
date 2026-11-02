@@ -59,6 +59,7 @@ a{text-decoration:none}
 .hello span{color:var(--acier);font-weight:700}
 .idline{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap}.tag{white-space:nowrap}
 .tag{font-family:var(--fm);font-size:10px;letter-spacing:.12em;padding:4px 8px;border-radius:6px;border:1px solid var(--edge-2);color:var(--acier)}
+.tag.nv{background:rgba(76,154,255,.16);border-color:rgba(76,154,255,.5);color:#cfe2ff;font-weight:600}
 .tag.y{background:var(--jaune);color:var(--beton);border-color:var(--jaune);font-weight:600}
 
 .score{display:grid;grid-template-columns:150px 1fr;gap:18px;align-items:center;margin-top:20px}
@@ -297,7 +298,7 @@ function render(D,demo){
  h+='<section class="hero reveal">'
   +'<div class="eyebrow">BILAN · '+esc(mois.toUpperCase())+'</div>'
   +'<div class="hello">'+(nc||D.no<9?"Ton mois en chiffres,":D.no<11?"Beau travail ce mois,":"Bravo pour ce mois,")+'<br>'+esc(D.p)+' <span>'+esc(D.n)+'</span></div>'
-  +'<div class="idline"><span class="tag y">MAT. '+esc(D.i)+'</span><span class="tag">'+fmt(D.j)+' JOURS</span><span class="tag">'+fmt(D.h,1)+' H</span>'+(D.x?'<span class="tag">+'+fmt(D.x,1)+' H SUPP</span>':'')+'</div>'
+  +'<div class="idline"><span class="tag y">MAT. '+esc(D.i)+'</span>'+(D.nv?'<span class="tag nv">PARCOURS NOUVEAU</span>':'')+'<span class="tag">'+fmt(D.j)+' JOURS</span><span class="tag">'+fmt(D.h,1)+' H</span>'+(D.x?'<span class="tag">+'+fmt(D.x,1)+' H SUPP</span>':'')+'</div>'
   +'<div class="score"><div class="ring"><svg viewBox="0 0 150 150"><circle class="bg" cx="75" cy="75" r="62" fill="none" stroke-width="12"/>'
   +'<circle class="fg" id="ringfg" cx="75" cy="75" r="62" fill="none" stroke-width="12" stroke-dasharray="'+ring+'" stroke-dashoffset="'+ring+'" style="stroke:'+(nc?"var(--acier-2)":stN(D.no))+'"/>'
   +(nc?'':'<line class="avg" x1="4" y1="75" x2="22" y2="75"/>')+'</svg>'
@@ -305,8 +306,8 @@ function render(D,demo){
   +'<div class="verdict">'
   +(nc?'<div class="grade">'+raisonNC+'</div><div class="legend">Ta note revient dès que tu as assez de volume. Tes chiffres restent visibles ci-dessous.</div>'
      :'<div class="grade"><i>'+g[0]+'</i> '+g[1]+'</div>'
-      +'<div class="rank"><div class="medal'+medal+'">'+D.rk+'</div><div><b>'+D.rk+(D.rk===1?"er":"e")+' sur '+D.N+'</b><small>CLASSEMENT</small></div></div>'
-      +'<div class="legend"><i></i>10/20 = moyenne de l\'équipe</div>')
+      +'<div class="rank"><div class="medal'+medal+'">'+D.rk+'</div><div><b>'+D.rk+(D.rk===1?"er":"e")+' sur '+D.N+'</b><small>'+(D.nv?"CHEZ LES NOUVEAUX":"CLASSEMENT")+'</small></div></div>'
+      +'<div class="legend">'+(D.nv?'<b style="color:var(--bleu)">+'+D.bn+' pts</b> bonus nouveau inclus':'<b style="color:var(--jaune)">+'+D.cp+' %</b> coup de pouce inclus')+'</div>')
   +'</div></div></section>';
 
  /* 01 chiffres */
@@ -329,6 +330,16 @@ function render(D,demo){
   +'<div class="li"><span class="dot" style="background:var(--acier)"></span>Cadence moyenne<span class="x">'+fmt(D.cd,1)+' l/h</span></div>'
   +'</div></section>';
 
+ /* objectifs d'intégration (nouveaux) */
+ if(D.nv&&D.ob){
+  const O=D.ob,row=(t,v,o,inv,u)=>{const ok=v!=null&&(inv?v<=o:v>=o),pc=v==null?0:Math.min(100,inv?(v<=0?100:o/v*100):v/o*100);
+   return'<div class="cr"><div class="t">'+t+'<small>objectif '+(inv?"≤ ":"")+fmt(o)+u+'</small></div><div class="n" style="color:'+(ok?"var(--vert)":"var(--orange)")+';font-size:15px">'+(ok?"✓ OK":fmt(pc)+" %")+'</div>'
+   +'<div class="bar"><i data-w="'+pc+'" style="background:'+(ok?"var(--vert)":"var(--bleu)")+'"></i></div><div class="why">Toi : <b style="color:var(--craie)">'+fmt(v)+u+'</b></div></div>'};
+  h+='<section class="sec reveal"><div class="sec-h"><span class="num" style="background:var(--bleu)">✚</span><h2>Tes objectifs nouveau</h2><span class="aside">barre pleine = atteint</span></div><div class="crit">'
+   +row("Lignes par jour",D.lj,O.lj,false,"")+row("PPM avérée",D.pa,O.pa,true,"")+row("PPM décelée",D.pd,O.pd,true,"")
+   +'</div><div class="legend" style="margin-top:8px">Tu débutes : tu es noté sur <b style="color:var(--craie)">tes objectifs</b>, pas sur les confirmés. Objectif atteint = 12/20.</div></section>';
+ }
+
  /* 02 note détaillée */
  if(!nc&&D.ns){
   const C=[["p","Productivité","40 %","Ton quota moyen comparé à celui de l'équipe."],
@@ -336,7 +347,7 @@ function render(D,demo){
            ["a","Qualité avérée","20 %","Les litiges avérés : ce que le client a vraiment reçu."],
            ["r","RH & savoir-être","20 %","Points positifs moins écarts du journal RH, ramené à 20 jours."]];
   h+='<section class="sec reveal"><div class="sec-h"><span class="num">02</span><h2>Ta note en détail</h2><span class="aside">trait = 10/20</span></div><div class="crit">'
-   +C.map(([k,t,w,why])=>{const n=D.ns[k];return'<div class="cr"><div class="t">'+t+'<small>'+w+'</small></div><div class="n" style="color:'+stN(n)+'">'+fmt(n,1)+'</div>'
+   +C.map(([k,t,w,why])=>{if(D.nv&&k!=="r")why={p:"Comparé à ton objectif de "+D.ob.lj+" lignes / jour.",a:"Comparé à ton objectif de "+D.ob.pa+" PPM avérée.",d:"Comparé à ton objectif de "+fmt(D.ob.pd)+" PPM décelée."}[k];const n=D.ns[k];return'<div class="cr"><div class="t">'+t+'<small>'+w+'</small></div><div class="n" style="color:'+stN(n)+'">'+fmt(n,1)+'</div>'
     +'<div class="bar"><i data-w="'+(n/20*100)+'" style="background:'+stN(n)+'"></i><u></u></div><div class="why">'+why+'</div></div>'}).join("")
    +'</div></section>';
  }
@@ -386,7 +397,9 @@ function render(D,demo){
  h+='<section class="sec reveal"><details><summary>'+ic("book",18)+' Comment ta note est calculée</summary><div class="meth">'
   +'La même règle pour toute l\'équipe, sans exception. Chaque critère compare <b>ton résultat à la moyenne de l\'équipe</b> :'
   +'<div class="formula">note = 10 + 4 × (toi − moyenne) ÷ écart-type</div>'
-  +'Pile dans la moyenne = <b>10/20</b>. Pour les erreurs, moins tu en fais, plus la note monte. La note va de 0 à 20.'
+  +'Pile dans la moyenne = <b>10/20</b>. Pour les erreurs, moins tu en fais, plus la note monte. La note va de 0 à 20.<br><br>'
+  +'<b>Coup de pouce :</b> la note finale de l\'équipe confirmée est augmentée de 10 % (max 20).<br>'
+  +'<b>Nouveaux :</b> productivité, avérée et décelée sont notées sur l\'objectif d\'intégration (500 lignes / jour, PPM avérée 300, PPM décelée 3 200 : objectif atteint = 12/20), puis +2 points de bonus. Classement séparé des confirmés.'
   +'<table><tr><td>Productivité (quota)</td><td>40 %</td></tr><tr><td>Qualité décelée (PPM décelée)</td><td>20 %</td></tr><tr><td>Qualité avérée (PPM avérée)</td><td>20 %</td></tr><tr><td>RH &amp; savoir-être (journal)</td><td>20 %</td></tr></table>'
   +'<b>Jamais pris en compte :</b> absences, maladie, accident du travail, délégation, congés, formation, type de contrat, ancienneté.<br><br>'
   +'<b>Classés :</b> '+(T.n||"—")+' opérateurs avec au moins 10 jours de picking dans le mois. En dessous, tes chiffres restent visibles mais sans note, pour qu\'elle reste juste.<br><br>'

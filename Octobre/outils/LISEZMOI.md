@@ -30,6 +30,8 @@ dès l'ouverture.
 - Classés : actifs, hors pilotes, soumis au quota (case vide = oui), ≥ 74 h de picking dans le mois.
 - Par critère : `note = 10 + 4 × (valeur − moyenne équipe) / écart-type`, bornée 0–20 → moyenne = 10/20.
 - Poids : productivité (quota) 40 % · qualité décelée (PPM décelée) 20 % · qualité avérée (PPM avérée) 20 % · RH & savoir-être (positifs − écarts du journal SUIVI_RH, ramené à 20 jours) 20 %.
+- Équipe confirmée : note finale × 1,10 (10 % moins sévère), plafonnée à 20.
+- Nouveaux (liste `NOUVEAUX` dans le script : Kellerer, Dembele, Hamdani, Robin) : productivité, avérée et décelée notées sur leur objectif d'intégration — 500 lignes/jour, PPM avérée 300, PPM décelée 3 200 (objectif atteint = 12/20) — puis +2 points de bonus. Classement séparé.
 - Jamais pris en compte : absences, maladie, AT, délégation, congés, formation, contrat, ancienneté.
 
 Réglages (seuils, poids, URL du site) en tête de `bilan_mensuel.py`.

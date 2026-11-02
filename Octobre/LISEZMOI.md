@@ -6,9 +6,11 @@
 | `synthese_OCT2026.pdf` | Classement des 14 opérateurs classés + non classés, notes par critère |
 | `donnees_OCT2026.json` | Tous les chiffres calculés (contrôle) |
 | `fiche.html` | La page bilan qu'ouvre le QR (copie ; la version en ligne est dans Standard-Pick-Pack) |
-| `apercu_fiche_mobile.png` | Aperçu de la page sur téléphone |
+| `apercu_fiche_mobile.png` / `apercu_fiche_nouveau.png` | Aperçus de la page sur téléphone (confirmé / nouveau) |
 | `outils/` | Générateur pour refaire le mois suivant (voir `outils/LISEZMOI.md`) |
 
 Méthode de notation : 10/20 = moyenne de l'équipe ; productivité 40 %, qualité décelée 20 %,
-qualité avérée 20 %, RH & savoir-être 20 %. Absences, maladie, AT, délégation, congés,
+qualité avérée 20 %, RH & savoir-être 20 %. Équipe confirmée : note × 1,10 (coup de pouce).
+Nouveaux (Kellerer, Dembele, Hamdani, Robin) : notés sur leurs objectifs — 500 lignes/jour,
+PPM avérée 300, PPM décelée 3 200 — + 2 points de bonus, classement séparé. Absences, maladie, AT, délégation, congés,
 contrat et ancienneté ne sont jamais pris en compte.
