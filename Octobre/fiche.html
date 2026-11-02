@@ -299,7 +299,7 @@ const ATTR=[["VIT","Vitesse","ton quota"],["VOL","Volume","lignes par jour"],["P
  ["FIA","Fiabilité","litiges client"],["SÉC","Sécurité","écarts sécurité"],["ESP","Esprit d'équipe","points positifs"]];
 const TIER={bronze:"CARTE BRONZE",argent:"CARTE ARGENT",or:"CARTE OR",icone:"CARTE ICÔNE",nc:"CARTE EN COURS"};
 const MOIS=["","janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"];
-const STD_URL="./index.html";
+const STD_URL=window.STD_URL||"./index.html";
 
 /* ════════ décodage : #z + base64url(deflate-raw(JSON)) ════════ */
 async function decode(h){
@@ -542,6 +542,7 @@ function erreur(titre,txt){
    une capture ou un partage du lien ne transmet plus rien). Gardées le temps
    de la session pour survivre à un rechargement. */
 (async()=>{
+ if(window.BILAN){render(window.BILAN,false);return}   /* page perso autonome */
  let h=location.hash.slice(1),demo=false;
  try{if(h)sessionStorage.setItem("pp_bilan",h);else h=sessionStorage.getItem("pp_bilan")||""}catch(e){}
  if(location.hash)history.replaceState(null,"",location.pathname+location.search);

@@ -57,10 +57,13 @@ import segno
 warnings.filterwarnings("ignore")
 
 # ─────────────────────────── réglages ───────────────────────────
-BASE_URL = "https://legros123.github.io/Standard-Pick-Pack/"
+BASE_URL = "https://legros123.github.io/Standard-Pick-Pack/"          # appli Standards (verso)
+SITE_BILAN = "https://legros123.github.io/Suivi-P-P-/"                 # pages perso (recto), 1 dossier par mois
+GABARIT = Path(__file__).resolve().parent.parent / "fiche.html"        # modèle de page bilan
 MIN_HEURES = 74.0          # = 10 jours pleins de picking pour être classé (note fiable)
 BADGE_HEURES = 37.0        # volume mini pour décrocher un badge qualité (5 jours)
 MIN_LIGNES_CARTE = 100     # en dessous : pas de carte (passage trop ponctuel)
+MIN_HEURES_CARTE = 15.0    # heures de picking réelles (hors HG, renforts…) pour recevoir une carte
 POIDS = {"p": 0.40, "d": 0.20, "a": 0.20, "r": 0.20}
 COUP_DE_POUCE = 1.10       # équipe confirmée : note finale × 1,10 (10 % moins sévère), plafonnée à 20
 # Parcours nouveaux : notés sur LEUR objectif, pas sur la moyenne des confirmés
@@ -87,6 +90,7 @@ AJOUTS_RH = [
 ]        # PARAMETRES : PPM décelée verte sous ce seuil
 MOIS_FR = ["", "JANVIER", "FÉVRIER", "MARS", "AVRIL", "MAI", "JUIN", "JUILLET",
            "AOÛT", "SEPTEMBRE", "OCTOBRE", "NOVEMBRE", "DÉCEMBRE"]
+MOIS_DOSSIER = ["", "Janvier", "Fevrier", "Mars", "Avril", "Mai", "Juin", "Juillet", "Aout", "Septembre", "Octobre", "Novembre", "Decembre"]
 MOIS_COURT = ["", "JAN", "FEV", "MARS", "AVR", "MAI", "JUIN", "JUIL", "AOUT", "SEPT", "OCT", "NOV", "DEC"]
 
 # ─────────────────────────── lecture ───────────────────────────
@@ -126,6 +130,7 @@ def lire(xlsx: Path):
         x = dict(date=r[0].date(), np=r[2], h=r[3] or 0, lig=r[5] or 0, cont=r[10] or 0,
                  ed=r[11] or 0, ea=r[12] or 0, q=r[13], reg=r[23])
         hhp = CORRECTIONS_HHP.get(r[2], {}).get(x["date"].isoformat())
+        x["hhp"] = hhp if hhp is not None else (r[4] or 0)
         if hhp is not None and r[18]:   # recalcul du quota du jour avec les vraies heures de picking
             h_reel = max(0.0, x["h"] - hhp)
             x["q"] = round(min(QUOTA_MAX, r[18] / (h_reel / H_REF * QUOTA_JOUR) * 100), 1) if h_reel > 0 else None
@@ -174,7 +179,7 @@ def agreger(prod, np_, mois, annee):
     d = [x for x in prod if x["np"] == np_ and x["date"].month == mois and x["date"].year == annee]
     if not d:
         return None
-    h = sum(x["h"] for x in d)
+    h = sum(max(0.0, x["h"] - x["hhp"]) for x in d)   # heures réellement passées au picking
     lig = sum(x["lig"] for x in d)
     qs = [x["q"] for x in d if isinstance(x["q"], (int, float))]
     regs = [x["reg"] for x in d if isinstance(x["reg"], (int, float))]
@@ -238,7 +243,7 @@ def construire(xlsx: Path, mois: int, annee: int):
         if not o["actif"] or o["role"].lower().startswith("pilote"):
             continue
         a = agreger(prod, np_, mois, annee)
-        if not a or a["lig"] < MIN_LIGNES_CARTE:
+        if not a or a["lig"] < MIN_LIGNES_CARTE or a["h_pick"] < MIN_HEURES_CARTE:
             continue
         p = agreger(prod, np_, mprec, aprec)
         rh_m = [x for x in rh if x["np"] == np_ and x["date"].month == mois and x["date"].year == annee]
@@ -421,13 +426,31 @@ html,body{font-family:'Archivo',Inter,Arial,sans-serif;-webkit-print-color-adjus
 """
 
 
-def html_cartes(fiches, moy, mois, annee):
+def nom_fichier(f):
+    return f"{f['mat'].zfill(3)}_{f['nom'].lower().replace(' ', '-')}.html"
+
+
+def page_perso(f, moy, mois, annee):
+    """Page autonome : la fiche.html avec les données intégrées (marche sur tous les téléphones)."""
+    _, d = charge_utile(f, moy, mois, annee)
+    gab = GABARIT.read_text(encoding="utf-8")
+    inj = ("<script>window.BILAN=" + json.dumps(d, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
+           + ";window.STD_URL=" + json.dumps(BASE_URL + "index.html") + ";</script>\n<script>")
+    assert '<script>\n"use strict";' in gab
+    gab = gab.replace('<script>\n"use strict";', inj + '\n"use strict";', 1)
+    return gab.replace("<title>Mon bilan Pick &amp; Pack</title>",
+                       f"<title>Bilan {MOIS_FR[mois].lower()} — {html.escape(f['prenom'])}</title>", 1)
+
+
+def html_cartes(fiches, moy, mois, annee, pages=None):
     lib = f"{MOIS_FR[mois]} {annee}"
     std_svg, _ = qr_svg(BASE_URL)
     cartes = []
     for f in sorted(fiches, key=lambda f: (f["nom"], f["prenom"])):
-        code, _ = charge_utile(f, moy, mois, annee)
-        url = f"{BASE_URL}fiche.html#{code}"
+        fn = nom_fichier(f)
+        if pages is not None:
+            pages[fn] = page_perso(f, moy, mois, annee)
+        url = f"{SITE_BILAN}{MOIS_DOSSIER[mois]}/{fn}"
         svg, ver = qr_svg(url)
         f["_url"], f["_qrv"] = url, ver
         nb = len(f["badges"])
@@ -623,7 +646,13 @@ def main():
     a.sortie.mkdir(parents=True, exist_ok=True)
     fiches, moy = construire(a.classeur, a.mois, a.annee)
     tag = f"{MOIS_COURT[a.mois]}{a.annee}"
-    (a.sortie / f"cartes_{tag}.html").write_text(html_cartes(fiches, moy, a.mois, a.annee), encoding="utf-8")
+    pages = {}
+    (a.sortie / f"cartes_{tag}.html").write_text(html_cartes(fiches, moy, a.mois, a.annee, pages), encoding="utf-8")
+    dossier = a.sortie / MOIS_DOSSIER[a.mois]
+    dossier.mkdir(exist_ok=True)
+    for fn, contenu in pages.items():
+        (dossier / fn).write_text(contenu, encoding="utf-8")
+    print(f"{len(pages)} pages perso -> {dossier}  (à publier dans {SITE_BILAN}{MOIS_DOSSIER[a.mois]}/)")
     (a.sortie / f"synthese_{tag}.html").write_text(html_synthese(fiches, moy, a.mois, a.annee), encoding="utf-8")
     export = [{k: v for k, v in f.items() if k != "serie"} for f in fiches]
     (a.sortie / f"donnees_{tag}.json").write_text(json.dumps({"moyennes": moy, "fiches": export}, ensure_ascii=False, indent=1, default=str), encoding="utf-8")

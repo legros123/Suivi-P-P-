@@ -2,7 +2,7 @@
 
 | Fichier | Contenu |
 |---|---|
-| `cartes_OCT2026.pdf` | 22 cartes QR, A4 recto-verso (bord long), 4 cartes A6 par feuille. Recto : bilan perso · Verso : les 18 standards |
+| `cartes_OCT2026.pdf` | 16 cartes QR (opérateurs ≥ 15 h de picking réel dans le mois), A4 recto-verso (bord long), 4 cartes A6 par feuille. Recto : bilan perso · Verso : les 18 standards |
 | `synthese_OCT2026.pdf` | Synthèse superviseur, ordre alphabétique (aucun classement), notes et niveau OVR |
 | `donnees_OCT2026.json` | Tous les chiffres calculés (contrôle) |
 | `fiche.html` | La page bilan qu'ouvre le QR (copie ; la version en ligne est dans Standard-Pick-Pack) |
@@ -16,3 +16,5 @@ PPM avérée 300, PPM décelée 3 200 — + 2 points de bonus, sans classement. 
 contrat et ancienneté ne sont jamais pris en compte.
 
 **Aucun classement n'est affiché** (ni sur les pages, ni sur les cartes, ni dans la synthèse) : chacun se compare à la moyenne de l'équipe via sa carte joueur et son hexagone. OVR = 45 + 2,5 × note /20 (10/20 = 70) · bronze < 65 · argent 65-77 · or 78-84 · icône ≥ 85.
+
+**Pages perso** : `NNN_nom.html` (une par opérateur, données intégrées) — le QR du recto pointe vers `https://legros123.github.io/Suivi-P-P-/<Mois>/NNN_nom.html`. Fonctionne sur tous les téléphones et lecteurs QR. Pour un nouveau mois : copier le dossier `bilan/<Mois>/` produit par le script à la racine de Suivi-P-P-. Seuil carte : 15 h de picking réel (heures − hors pick).
