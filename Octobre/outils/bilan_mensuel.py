@@ -27,10 +27,10 @@ Pour chaque critère, la note /20 dépend de l'écart à la moyenne de l'équipe
     note = 10 + 4 × (valeur − moyenne) / écart-type      (bornée 0 – 20)
     => pile dans la moyenne = 10/20 ; +1 écart-type = 14/20 ; −1 = 6/20.
 Critères et poids :
-    Productivité      35 %  quota moyen du mois (%)
-    Qualité client    30 %  PPM avérée  (litiges / lignes × 1 000 000)  — plus bas = mieux
-    Qualité poste     15 %  PPM décelée (erreurs au rejet / lignes × 1e6) — plus bas = mieux
-    Sécurité & vie    20 %  (points positifs − écarts) du journal SUIVI_RH, ramené à 20 jours
+    Productivité        40 %  quota moyen du mois (%)
+    Qualité décelée     20 %  PPM décelée (erreurs au rejet / lignes × 1e6) — plus bas = mieux
+    Qualité avérée      20 %  PPM avérée  (litiges / lignes × 1 000 000)  — plus bas = mieux
+    RH & savoir-être    20 %  (points positifs − écarts) du journal SUIVI_RH, ramené à 20 jours
 Ne sont JAMAIS pris en compte : absences, maladie, AT, délégation, congés,
 contrat (CDI / intérim), ancienneté.
 """
@@ -58,7 +58,7 @@ BASE_URL = "https://legros123.github.io/Standard-Pick-Pack/"
 MIN_HEURES = 74.0          # = 10 jours pleins de picking pour être classé (note fiable)
 BADGE_HEURES = 37.0        # volume mini pour décrocher un badge qualité (5 jours)
 MIN_LIGNES_CARTE = 100     # en dessous : pas de carte (passage trop ponctuel)
-POIDS = {"p": 0.35, "a": 0.30, "d": 0.15, "r": 0.20}
+POIDS = {"p": 0.40, "d": 0.20, "a": 0.20, "r": 0.20}
 PPM_DEC_VERT = 1000        # PARAMETRES : PPM décelée verte sous ce seuil
 MOIS_FR = ["", "JANVIER", "FÉVRIER", "MARS", "AVRIL", "MAI", "JUIN", "JUILLET",
            "AOÛT", "SEPTEMBRE", "OCTOBRE", "NOVEMBRE", "DÉCEMBRE"]
@@ -448,7 +448,7 @@ def html_synthese(fiches, moy, mois, annee):
         lignes.append(
             f"<tr><td class='rk {med}'>{f['rang']}</td><td class='np'><b>{html.escape(f['nom'])}</b> {html.escape(f['prenom'])}<span class='mono'>{html.escape(f['mat'])}</span></td>"
             f"<td class='g'><b>{f['note']:.1f}</b><i style='width:{f['note']*5:.0f}%'></i></td>"
-            + cell_note(f["notes"]["p"]) + cell_note(f["notes"]["a"]) + cell_note(f["notes"]["d"]) + cell_note(f["notes"]["r"])
+            + cell_note(f["notes"]["p"]) + cell_note(f["notes"]["d"]) + cell_note(f["notes"]["a"]) + cell_note(f["notes"]["r"])
             + f"<td>{f['q']:.1f}</td>{delta(f)}<td>{f['lig']:,}</td><td>{f['pa']}</td><td>{f['pd']}</td><td>{f['pos']} / {f['ec']}</td><td>{len(f['badges'])}</td></tr>".replace(",", " ")
         )
     def ligne_nc(f):
@@ -487,8 +487,8 @@ tr.sep td{background:#f4f5f6;text-align:left;font-size:6.4pt;letter-spacing:.14e
 .methode{margin-top:4mm;display:grid;grid-template-columns:1.2fr 1fr;gap:5mm;font-size:7pt;color:#3a3f47;line-height:1.45}
 .methode h3{font-size:7pt;letter-spacing:.16em;margin-bottom:1mm}
 """
-    tete = ("<tr><th>#</th><th class='l'>OPÉRATEUR</th><th class='l'>NOTE /20</th><th>PROD. 35%</th><th>QUAL. CLIENT 30%</th>"
-            "<th>QUAL. POSTE 15%</th><th>SÉCU & VIE 20%</th><th>QUOTA %</th><th>Δ M-1</th><th>LIGNES</th><th>PPM AVÉRÉE</th>"
+    tete = ("<tr><th>#</th><th class='l'>OPÉRATEUR</th><th class='l'>NOTE /20</th><th>PROD. 40%</th><th>DÉCELÉE 20%</th>"
+            "<th>AVÉRÉE 20%</th><th>RH & SAVOIR-ÊTRE 20%</th><th>QUOTA %</th><th>Δ M-1</th><th>LIGNES</th><th>PPM AVÉRÉE</th>"
             "<th>PPM DÉCELÉE</th><th>RH + / −</th><th>BADGES</th></tr>")
     tot_lig = sum(f["lig"] for f in fiches)
     return f"""<!doctype html><html lang='fr'><head><meta charset='utf-8'><title>Synthèse superviseur — {lib}</title><style>{css}</style></head><body>
@@ -506,8 +506,8 @@ tr.sep td{background:#f4f5f6;text-align:left;font-size:6.4pt;letter-spacing:.14e
 <div class='methode'>
 <div><h3 class='mono'>MÉTHODE — IDENTIQUE POUR TOUS</h3>
 Chaque critère est noté /20 selon l'écart à la moyenne de l'équipe classée : <b>note = 10 + 4 × (valeur − moyenne) / écart-type</b>, bornée de 0 à 20.
-Pile dans la moyenne = 10/20. Pour les PPM, plus bas = meilleure note. Note finale = 35 % productivité (quota) + 30 % qualité client (PPM avérée)
-+ 15 % qualité poste (PPM décelée) + 20 % sécurité &amp; vie au poste (points positifs − écarts du journal SUIVI_RH, ramené à 20 jours travaillés).
+Pile dans la moyenne = 10/20. Pour les PPM, plus bas = meilleure note. Note finale = 40 % productivité (quota) + 20 % qualité décelée (PPM décelée)
++ 20 % qualité avérée (PPM avérée) + 20 % RH &amp; savoir-être (points positifs − écarts du journal SUIVI_RH, ramené à 20 jours travaillés).
 Ex-aequo départagés par la PPM avérée puis le quota.</div>
 <div><h3 class='mono'>CE QUI N'EST JAMAIS PRIS EN COMPTE</h3>
 Absences, maladie, accident du travail, heures de délégation, congés, formation, type de contrat (CDI / intérim), ancienneté.

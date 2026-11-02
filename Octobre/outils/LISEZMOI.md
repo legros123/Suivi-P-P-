@@ -29,7 +29,7 @@ dès l'ouverture.
 ## Notation — identique pour tous
 - Classés : actifs, hors pilotes, soumis au quota (case vide = oui), ≥ 74 h de picking dans le mois.
 - Par critère : `note = 10 + 4 × (valeur − moyenne équipe) / écart-type`, bornée 0–20 → moyenne = 10/20.
-- Poids : productivité (quota) 35 % · qualité client (PPM avérée) 30 % · qualité poste (PPM décelée) 15 % · sécurité & vie au poste (positifs − écarts du journal SUIVI_RH, ramené à 20 jours) 20 %.
+- Poids : productivité (quota) 40 % · qualité décelée (PPM décelée) 20 % · qualité avérée (PPM avérée) 20 % · RH & savoir-être (positifs − écarts du journal SUIVI_RH, ramené à 20 jours) 20 %.
 - Jamais pris en compte : absences, maladie, AT, délégation, congés, formation, contrat, ancienneté.
 
 Réglages (seuils, poids, URL du site) en tête de `bilan_mensuel.py`.

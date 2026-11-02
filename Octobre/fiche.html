@@ -331,10 +331,10 @@ function render(D,demo){
 
  /* 02 note détaillée */
  if(!nc&&D.ns){
-  const C=[["p","Productivité","35 %","Ton quota moyen comparé à celui de l'équipe."],
-           ["a","Qualité client","30 %","Les litiges avérés : ce que le client a vraiment reçu."],
-           ["d","Qualité poste","15 %","Les erreurs arrêtées au poste de rejet."],
-           ["r","Sécurité & vie au poste","20 %","Points positifs moins écarts du journal, ramené à 20 jours."]];
+  const C=[["p","Productivité","40 %","Ton quota moyen comparé à celui de l'équipe."],
+           ["d","Qualité décelée","20 %","Les erreurs arrêtées au poste de rejet."],
+           ["a","Qualité avérée","20 %","Les litiges avérés : ce que le client a vraiment reçu."],
+           ["r","RH & savoir-être","20 %","Points positifs moins écarts du journal RH, ramené à 20 jours."]];
   h+='<section class="sec reveal"><div class="sec-h"><span class="num">02</span><h2>Ta note en détail</h2><span class="aside">trait = 10/20</span></div><div class="crit">'
    +C.map(([k,t,w,why])=>{const n=D.ns[k];return'<div class="cr"><div class="t">'+t+'<small>'+w+'</small></div><div class="n" style="color:'+stN(n)+'">'+fmt(n,1)+'</div>'
     +'<div class="bar"><i data-w="'+(n/20*100)+'" style="background:'+stN(n)+'"></i><u></u></div><div class="why">'+why+'</div></div>'}).join("")
@@ -387,7 +387,7 @@ function render(D,demo){
   +'La même règle pour toute l\'équipe, sans exception. Chaque critère compare <b>ton résultat à la moyenne de l\'équipe</b> :'
   +'<div class="formula">note = 10 + 4 × (toi − moyenne) ÷ écart-type</div>'
   +'Pile dans la moyenne = <b>10/20</b>. Pour les erreurs, moins tu en fais, plus la note monte. La note va de 0 à 20.'
-  +'<table><tr><td>Productivité (quota)</td><td>35 %</td></tr><tr><td>Qualité client (PPM avérée)</td><td>30 %</td></tr><tr><td>Qualité poste (PPM décelée)</td><td>15 %</td></tr><tr><td>Sécurité &amp; vie au poste</td><td>20 %</td></tr></table>'
+  +'<table><tr><td>Productivité (quota)</td><td>40 %</td></tr><tr><td>Qualité décelée (PPM décelée)</td><td>20 %</td></tr><tr><td>Qualité avérée (PPM avérée)</td><td>20 %</td></tr><tr><td>RH &amp; savoir-être (journal)</td><td>20 %</td></tr></table>'
   +'<b>Jamais pris en compte :</b> absences, maladie, accident du travail, délégation, congés, formation, type de contrat, ancienneté.<br><br>'
   +'<b>Classés :</b> '+(T.n||"—")+' opérateurs avec au moins 10 jours de picking dans le mois. En dessous, tes chiffres restent visibles mais sans note, pour qu\'elle reste juste.<br><br>'
   +'<b>PPM</b> = erreurs pour un million de lignes. 200 PPM = 1 erreur toutes les 5 000 lignes.'

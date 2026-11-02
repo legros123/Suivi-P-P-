@@ -9,6 +9,6 @@
 | `apercu_fiche_mobile.png` | Aperçu de la page sur téléphone |
 | `outils/` | Générateur pour refaire le mois suivant (voir `outils/LISEZMOI.md`) |
 
-Méthode de notation : 10/20 = moyenne de l'équipe ; productivité 35 %, qualité client 30 %,
-qualité poste 15 %, sécurité & vie au poste 20 %. Absences, maladie, AT, délégation, congés,
+Méthode de notation : 10/20 = moyenne de l'équipe ; productivité 40 %, qualité décelée 20 %,
+qualité avérée 20 %, RH & savoir-être 20 %. Absences, maladie, AT, délégation, congés,
 contrat et ancienneté ne sont jamais pris en compte.
