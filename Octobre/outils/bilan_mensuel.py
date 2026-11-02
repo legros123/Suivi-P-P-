@@ -67,7 +67,23 @@ COUP_DE_POUCE = 1.10       # équipe confirmée : note finale × 1,10 (10 % moin
 NOUVEAUX = {"KELLERER MEGANE", "DEMBELE TAMBA", "HAMDANI AMINE", "ROBIN ELODIE"}
 OBJ_NOUVEAU = {"lj": 500, "pa": 300, "pd": 3200}   # lignes/jour, PPM avérée, PPM décelée
 BONUS_NOUVEAU = 2.0        # points ajoutés à la note finale d'un nouveau
-PPM_DEC_VERT = 1000        # PARAMETRES : PPM décelée verte sous ce seuil
+PPM_DEC_VERT = 1000
+QUOTA_JOUR, H_REF, QUOTA_MAX = 620, 7.4, 150   # PARAMETRES B5, B6, B13
+
+# Corrections validées par le superviseur, en attendant leur report dans le classeur.
+# H. HORS PICK (heures passées hors picking, ex. renfort HG) par opérateur et par jour.
+CORRECTIONS_HHP = {
+    "GRANGER JEAN PHILIPPE": {   # mouvements vers HG non saisis — oct. 2026
+        "2026-10-13": 3.50, "2026-10-14": 3.00, "2026-10-15": 3.00, "2026-10-20": 2.00,
+        "2026-10-21": 3.00, "2026-10-22": 2.30, "2026-10-23": 2.50, "2026-10-26": 4.40,
+        "2026-10-27": 8.40, "2026-10-28": 4.40, "2026-10-29": 4.40,
+    },
+}
+# Points du journal RH ajoutés par le superviseur : (opérateur, date, type, sens, famille, nombre)
+AJOUTS_RH = [
+    ("GRANGER JEAN PHILIPPE", "2026-10-31", "Annulation de RTT (forte activité)", "+", "SAVOIR-ÊTRE", 1),
+    ("GRANGER JEAN PHILIPPE", "2026-10-31", "Polyvalence : renfort expédition en heures sup", "+", "SAVOIR-ÊTRE", 3),
+]        # PARAMETRES : PPM décelée verte sous ce seuil
 MOIS_FR = ["", "JANVIER", "FÉVRIER", "MARS", "AVRIL", "MAI", "JUIN", "JUILLET",
            "AOÛT", "SEPTEMBRE", "OCTOBRE", "NOVEMBRE", "DÉCEMBRE"]
 MOIS_COURT = ["", "JAN", "FEV", "MARS", "AVR", "MAI", "JUIN", "JUIL", "AOUT", "SEPT", "OCT", "NOV", "DEC"]
@@ -106,8 +122,13 @@ def lire(xlsx: Path):
             continue
         if (r[25] or 0):          # DOUBLON
             continue
-        prod.append(dict(date=r[0].date(), np=r[2], h=r[3] or 0, lig=r[5] or 0, cont=r[10] or 0,
-                         ed=r[11] or 0, ea=r[12] or 0, q=r[13], reg=r[23]))
+        x = dict(date=r[0].date(), np=r[2], h=r[3] or 0, lig=r[5] or 0, cont=r[10] or 0,
+                 ed=r[11] or 0, ea=r[12] or 0, q=r[13], reg=r[23])
+        hhp = CORRECTIONS_HHP.get(r[2], {}).get(x["date"].isoformat())
+        if hhp is not None and r[18]:   # recalcul du quota du jour avec les vraies heures de picking
+            h_reel = max(0.0, x["h"] - hhp)
+            x["q"] = round(min(QUOTA_MAX, r[18] / (h_reel / H_REF * QUOTA_JOUR) * 100), 1) if h_reel > 0 else None
+        prod.append(x)
 
     # erreurs décelées (types) et avérées (motifs)
     err = [(r[0].date(), r[2], r[3] or "NON PRÉCISÉ") for r in wb["ERREURS"].iter_rows(min_row=4, values_only=True)
@@ -124,6 +145,8 @@ def lire(xlsx: Path):
         if dans_journal and r[1] and isinstance(r[2], dt.datetime):
             sens = "+" if "POSITIF" in str(r[4]) else "-"
             rh.append(dict(np=r[1], date=r[2].date(), type=r[3], sens=sens, fam=r[5] or ""))
+    for np_, d, t, sens, fam, n in AJOUTS_RH:
+        rh += [dict(np=np_, date=dt.date.fromisoformat(d), type=t, sens=sens, fam=fam)] * n
 
     # pointage : jours / heures / h. supp du mois
     pt = {}
