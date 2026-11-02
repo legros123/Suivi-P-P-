@@ -196,6 +196,9 @@ def agreger(prod, np_, mois, annee):
         best=(int(best["lig"]), best["date"].day),
         serie=[(x["date"].day, round(x["q"])) for x in sorted(d, key=lambda x: x["date"])
                if isinstance(x["q"], (int, float)) and x["h"] > 0],
+        jours_det=[[x["date"].day, round(x["h"], 2), round(max(0.0, x["h"] - x["hhp"]), 2), int(x["lig"]),
+                    int(x["ed"]), int(x["ea"]), round(x["q"]) if isinstance(x["q"], (int, float)) else None]
+                   for x in sorted(d, key=lambda x: x["date"])],
     )
 
 
@@ -393,6 +396,7 @@ def charge_utile(f, moy, mois, annee):
         "q": f["q"], "ed": f["ed"], "ea": f["ea"], "pd": f["pd"], "pa": f["pa"],
         "rg": f["reg"], "b": f["badges"], "bt": list(f["best"]),
         "s": [v for _, v in f["serie"]],
+        "jd": f["jours_det"],   # [jour, heures, heures pick, lignes, décelées, avérées, quota]
         "pr": f["prec"],
         "no": f["note"], "ns": f["notes"] if f["classe"] else None, "ov": f["ovr"], "ca": f["carte"], "at": f["attr"],
         "nv": f["nouveau"], "ob": OBJ_NOUVEAU if f["nouveau"] else None, "bn": BONUS_NOUVEAU if f["nouveau"] else None,

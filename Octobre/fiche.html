@@ -140,6 +140,35 @@ a{text-decoration:none}
 .attr small{display:block;font-size:11.5px;color:var(--acier);margin-top:2px}
 .attr .dl{font-family:var(--fm);font-size:10.5px}
 
+/* ── onglets ── */
+.tabs{position:sticky;top:calc(58px + env(safe-area-inset-top));z-index:15;display:grid;grid-template-columns:1fr 1fr;gap:6px;
+ margin:14px -16px 0;padding:8px 16px;background:rgba(11,12,14,.9);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.tabs button{border:1px solid var(--edge-2);background:var(--plate);border-radius:10px;padding:10px 8px;font-weight:800;font-size:13px;letter-spacing:.02em;cursor:pointer}
+.tabs button.on{background:var(--jaune);color:var(--beton);border-color:var(--jaune)}
+.tabs button small{display:block;font-family:var(--fm);font-size:9.5px;font-weight:500;letter-spacing:.1em;opacity:.75;margin-top:1px}
+[hidden]{display:none!important}
+/* ── tableau jour par jour ── */
+.jtot{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:16px}
+.jtot div{background:var(--plate);border:1px solid var(--edge);border-radius:12px;padding:10px 8px;text-align:center}
+.jtot b{display:block;font-size:20px;font-weight:900}
+.jtot small{font-family:var(--fm);font-size:9px;letter-spacing:.12em;color:var(--acier)}
+.jt{margin-top:12px;background:var(--plate);border:1px solid var(--edge);border-radius:var(--r);overflow:hidden}
+.jt table{width:100%;border-collapse:collapse;font-size:13px;table-layout:fixed}
+.jt col.c1{width:22%}.jt col.c2{width:20%}.jt col.c3{width:17%}.jt col.c4{width:12%}.jt col.c5{width:12%}.jt col.c6{width:17%}
+.jt th{background:var(--plate-2);font-family:var(--fm);font-size:9.5px;letter-spacing:.1em;color:var(--acier);font-weight:600;padding:9px 6px;text-align:right}
+.jt th:first-child,.jt td:first-child{text-align:left;padding-left:12px}
+.jt td{padding:8px 4px;white-space:nowrap;text-align:right;border-top:1px solid var(--edge);font-variant-numeric:tabular-nums}
+.jt td:last-child,.jt th:last-child{padding-right:12px}
+.jt td.d b{font-weight:800}.jt td.d small{display:block;font-family:var(--fm);font-size:9.5px;color:var(--acier)}
+.jt td small.hp{display:block;font-family:var(--fm);font-size:9.5px;color:var(--acier)}
+.jt .z{color:var(--acier-2)}
+.jt .e1{display:inline-block;min-width:22px;padding:1px 6px;border-radius:6px;font-weight:800;background:rgba(255,138,31,.16);color:var(--orange)}
+.jt .e2{display:inline-block;min-width:22px;padding:1px 6px;border-radius:6px;font-weight:800;background:rgba(229,51,42,.18);color:#ff6a62}
+.jt tr.jbest td{background:rgba(255,212,0,.07)}
+.jt tr.jwe td.d b{color:var(--acier)}
+.jt tfoot td{background:var(--plate-2);font-weight:900;border-top:1px solid var(--edge-2)}
+.jnote{font-size:12px;color:var(--acier);margin-top:10px;line-height:1.5}
+
 /* ── titres de section ── */
 .sec{margin-top:30px}
 .sec-h{display:flex;align-items:baseline;gap:10px;margin-bottom:12px}
@@ -468,7 +497,31 @@ function render(D,demo){
  h+='<a class="cta-std reveal" href="'+STD_URL+'"><div class="ico">'+ic("book",22)+'</div><div><b>Les 18 standards Pick &amp; Pack</b><small>Fiches, quiz et badges — au verso de ta carte</small></div><span class="chev">'+ic("chev",18)+'</span></a>'
   +'<footer>DOCUMENT PERSONNEL — NE PAS PARTAGER<br>SOURCE : SUIVI OPÉRATEURS P&amp;P · '+esc(mois.toUpperCase())+'<br>UNE QUESTION ? PARLES-EN À TON SUPERVISEUR</footer>';
 
- $("#app").innerHTML=h;
+ /* onglet 2 : jour par jour */
+ const JS=["dim.","lun.","mar.","mer.","jeu.","ven.","sam."];
+ let jv='';
+ if(D.jd&&D.jd.length){
+  const sum=(i)=>D.jd.reduce((a,r)=>a+(r[i]||0),0),maxL=Math.max(...D.jd.map(r=>r[3]));
+  jv+='<section class="sec"><div class="sec-h"><span class="num">J</span><h2>Ton mois au jour le jour</h2><span class="aside">'+D.jd.length+' journées</span></div>'
+   +'<div class="jtot"><div><b>'+fmt(sum(1),1)+'</b><small>HEURES</small></div><div><b>'+fmt(sum(3))+'</b><small>LIGNES</small></div>'
+   +'<div><b style="color:var(--orange)">'+fmt(sum(4))+'</b><small>DÉCELÉES</small></div><div><b style="color:#ff6a62">'+fmt(sum(5))+'</b><small>AVÉRÉES</small></div></div>'
+   +'<div class="jt"><table><colgroup><col class="c1"><col class="c2"><col class="c3"><col class="c4"><col class="c5"><col class="c6"></colgroup><thead><tr><th>JOUR</th><th>HEURES</th><th>LIGNES</th><th>DÉC.</th><th>AVÉR.</th><th>QUOTA</th></tr></thead><tbody>'
+   +D.jd.map(([j,hh,hp,l,ed,ea,q])=>{const dt=new Date(an,mm-1,j),wd=dt.getDay();
+     return'<tr class="'+(l===maxL?"jbest ":"")+(wd===0||wd===6?"jwe":"")+'"><td class="d"><b>'+String(j).padStart(2,"0")+'/'+String(mm).padStart(2,"0")+'</b><small>'+JS[wd]+(l===maxL?" · record":"")+'</small></td>'
+     +'<td>'+fmt(hh,2)+(hp<hh-.01?'<small class="hp">pick '+fmt(hp,2)+'</small>':'')+'</td>'
+     +'<td>'+fmt(l)+'</td>'
+     +'<td>'+(ed?'<span class="e1">'+ed+'</span>':'<span class="z">0</span>')+'</td>'
+     +'<td>'+(ea?'<span class="e2">'+ea+'</span>':'<span class="z">0</span>')+'</td>'
+     +'<td style="color:'+(q==null?"var(--acier-2)":stQ(q))+';font-weight:700">'+(q==null?"—":q+" %")+'</td></tr>'}).join("")
+   +'</tbody><tfoot><tr><td>TOTAL</td><td>'+fmt(sum(1),1)+'</td><td>'+fmt(sum(3))+'</td><td>'+fmt(sum(4))+'</td><td>'+fmt(sum(5))+'</td><td>'+(D.q==null?"—":fmt(D.q,1)+" %")+'</td></tr></tfoot></table></div>'
+   +'<div class="jnote">Heures = heures pointées au poste ; « pick » = heures réellement passées au picking quand une partie de la journée était ailleurs (HG, renfort…). Le quota du jour est calculé sur les heures de pick. DÉC. = erreurs arrêtées au rejet · AVÉR. = litiges client / agence, datés au jour de la préparation.</div></section>';
+ }else jv='<div class="empty" style="margin-top:30px">Pas de détail journalier disponible pour ce mois.</div>';
+
+ $("#app").innerHTML='<div class="tabs" role="tablist"><button class="on" data-v="b" role="tab">Mon bilan<small>CARTE · NOTE · BADGES</small></button><button data-v="j" role="tab">Jour par jour<small>HEURES · LIGNES · ERR.</small></button></div>'
+  +'<div id="v-b">'+h+'</div><div id="v-j" hidden>'+jv+'</div>';
+ document.querySelectorAll(".tabs button").forEach(b=>b.addEventListener("click",()=>{
+  document.querySelectorAll(".tabs button").forEach(x=>x.classList.toggle("on",x===b));
+  $("#v-b").hidden=b.dataset.v!=="b";$("#v-j").hidden=b.dataset.v!=="j";window.scrollTo({top:0});vib(8)}));
 
  /* interactions */
  document.querySelectorAll(".bd").forEach(b=>b.addEventListener("click",()=>{
