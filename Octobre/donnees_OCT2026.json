@@ -1,0 +1,1817 @@
+{
+ "moyennes": {
+  "q": 93.7,
+  "pa": 246,
+  "pd": 4477,
+  "lj": 541,
+  "n": 14
+ },
+ "fiches": [
+  {
+   "np": "COLSON STEPHANIE",
+   "mat": "129",
+   "nom": "COLSON",
+   "prenom": "Stephanie",
+   "quota_ok": true,
+   "h_pick": 162.8,
+   "lig": 13499,
+   "cont": 4626,
+   "ed": 34,
+   "ea": 5,
+   "q": 104.0,
+   "reg": 100,
+   "jp": 22,
+   "lj": 614,
+   "cad": 82.9,
+   "best": [
+    722,
+    5
+   ],
+   "jours": 22,
+   "heures": 162.8,
+   "hs": 0,
+   "pa": 370,
+   "pd": 2519,
+   "prec": {
+    "q": 104.6,
+    "lig": 11986,
+    "pa": 167,
+    "pd": 1585
+   },
+   "pos": 1,
+   "ec": 1,
+   "sec": 1,
+   "rh_types": [
+    [
+     [
+      "+",
+      "Autre point positif"
+     ],
+     1
+    ],
+    [
+     [
+      "-",
+      "Carton non ramassé"
+     ],
+     1
+    ]
+   ],
+   "err_types": [
+    [
+     "NON PRECISE",
+     24
+    ],
+    [
+     "ERREUR REF",
+     6
+    ],
+    [
+     "QTE +",
+     3
+    ],
+    [
+     "ORIENTATION",
+     1
+    ]
+   ],
+   "ave_types": [
+    [
+     "NON CONFORME",
+     4
+    ],
+    [
+     "MANQUANT",
+     1
+    ]
+   ],
+   "rhv": 0.0,
+   "classe": true,
+   "notes": {
+    "p": 12.2,
+    "a": 8.1,
+    "d": 11.7,
+    "r": 13.2
+   },
+   "note": 11.1,
+   "rang": 7,
+   "badges": [
+    "c100",
+    "team",
+    "reg",
+    "k10"
+   ],
+   "defi": {
+    "k": "a",
+    "t": "Zéro litige client",
+    "d": "5 litige(s) ce mois. Contrôle référence + quantité avant de valider.",
+    "s": "P8",
+    "st": "Ruptures & validation"
+   },
+   "_url": "https://legros123.github.io/Standard-Pick-Pack/fiche.html#zPVNLbtswEL0KMYuiRRRBpP7aGYYCGGikRHY2NbpQbdpWI0sKRRsFghzI-9zAF-uj6BYGNW9m3nxJv9OZMu7QkTISnojuuUcODdCWWg6Humsk9A76vPy-LAsoDRQuUqDflAnh0AEZIuEmDv2hzHOohe4HaQoERsQDhzaUBZGIALaUJcKF7w0sL3DBl7D5IMmashDFoYqQgzLA4MdgqL0hA_yibE0bQFTXsj5CKLnH9xV9_4RfgxCjqRDKCMy9xDGRHPm4J3B8J40hQpzAqhamvhWx5Xu-lcJgkwN2ziEjZB4UZe__JsBUbWMa5GkS2aZ5FNs5eJiEH9hfb9wu9tyNJhL75cLF6sBNjHk7-RGkzO5cgRj1ShkMBQzYjTqYYRz8UF6ZKdd0h7lnJ60kG_qm0_iOjW52ZDhruod3Xivdd6zDUfWxHsfrxXiRQqopRVEW7KnK54tlTo4ITFxeVflLxar8gZzIGJ5XOUMp3-CyWuTFarZamJcwJarP_xPNy-KhrB6RaUr0OCueX2bF6kbc7szkGApD4_Igf1wvqmctet5Ltmkb2WmaVkHhzfp1_MY2kh37ZnTZvO-0un62kqnrZYdY2cF3x95Odacbfb2w-gzEtpKd67bZSuXS9AjoKTHAlKxOgz4pObIvllPrpu8I217dLjT1zS2YOxRBZO8wCOLYPuUw4NN_gQeI2OCZa3WSeMm9RR9_AQ",
+   "_qrv": 22
+  },
+  {
+   "np": "CUNY GREGORY",
+   "mat": "132",
+   "nom": "CUNY",
+   "prenom": "Gregory",
+   "quota_ok": true,
+   "h_pick": 31.0,
+   "lig": 1995,
+   "cont": 1017,
+   "ed": 4,
+   "ea": 0,
+   "q": 80.4,
+   "reg": 60,
+   "jp": 5,
+   "lj": 399,
+   "cad": 64.4,
+   "best": [
+    578,
+    29
+   ],
+   "jours": 5,
+   "heures": 31.0,
+   "hs": 0,
+   "pa": 0,
+   "pd": 2005,
+   "prec": {
+    "q": 110.3,
+    "lig": 2467,
+    "pa": 405,
+    "pd": 811
+   },
+   "pos": 0,
+   "ec": 2,
+   "sec": 2,
+   "rh_types": [
+    [
+     [
+      "-",
+      "Prise de poste KO"
+     ],
+     1
+    ],
+    [
+     [
+      "-",
+      "Carton non ramassé"
+     ],
+     1
+    ]
+   ],
+   "err_types": [
+    [
+     "NON PRECISE",
+     2
+    ],
+    [
+     "QTE +",
+     1
+    ],
+    [
+     "ERREUR REF",
+     1
+    ]
+   ],
+   "ave_types": [],
+   "rhv": -8.0,
+   "classe": false,
+   "notes": {
+    "p": 7.1,
+    "a": 13.7,
+    "d": 12.2,
+    "r": 6.6
+   },
+   "note": null,
+   "rang": null,
+   "badges": [],
+   "defi": {
+    "k": "r",
+    "t": "Zéro écart « Prise de poste KO »",
+    "d": "2 écart(s) ce mois. Objectif : 0 le mois prochain.",
+    "s": "P1",
+    "st": "Prise de poste"
+   },
+   "_url": "https://legros123.github.io/Standard-Pick-Pack/fiche.html#zZVJBbtswEPwKsacWYQSSoi2LV0MtigK2qyaH1shBkelEiSyppBIkCPIgo0_oLf5Yh5JyKHogd3bJnV0O94UeyUhOBzKkhJqfS0GcOnifnb1p3TO8Bt7ycvUDsAKUsQK6IzPjdEsmlpHg9EQGew2uNEW8xnGcppxKRIRMAHZk5jrSnH6RWYgALELBFENuB08JgeRuDLgbZMBek9lewfSws2TBVQrPw9ELLoXCSrmUgscx4p0j8xJKIBLFaKQCi9LzZKTVAz8qLaR8xctaMs1DXQP5d-Tu39EKLOjP4ZFbwRVX4Hehiy2dQ4GNq7xlO8u61veWfV0Tl1d8PFsWrm8b1mC54lB4fzqGUxBYNxCs1iu2ybPll-8ZBeItfbvI2NlEkeV5dpmzPPs0ZRWPowi7fXgeOiSHKuiFfp6OrmWnY4mK7O03-68r9vYHV3fhf6drH_xHVlp2aCsfsfX1nS37as8ME6weo6xzbXlbVE1Eg9K0kQGEcv_SEzS8mARP42gSGXKPImudJOMszLQc5khqZJQYk31Re4tZwAf07sG-_gU",
+   "_qrv": 19
+  },
+  {
+   "np": "DEMBELE TAMBA",
+   "mat": "748",
+   "nom": "DEMBELE",
+   "prenom": "Tamba",
+   "quota_ok": true,
+   "h_pick": 170.45,
+   "lig": 10764,
+   "cont": 3317,
+   "ed": 128,
+   "ea": 5,
+   "q": 77.5,
+   "reg": 77,
+   "jp": 22,
+   "lj": 489,
+   "cad": 63.2,
+   "best": [
+    606,
+    1
+   ],
+   "jours": 22,
+   "heures": 170.5,
+   "hs": 7.7,
+   "pa": 465,
+   "pd": 11891,
+   "prec": {
+    "q": 60.4,
+    "lig": 3519,
+    "pa": 0,
+    "pd": 12504
+   },
+   "pos": 1,
+   "ec": 6,
+   "sec": 6,
+   "rh_types": [
+    [
+     [
+      "-",
+      "Carton non ramassé"
+     ],
+     6
+    ],
+    [
+     [
+      "+",
+      "Initiative"
+     ],
+     1
+    ]
+   ],
+   "err_types": [
+    [
+     "NON PRECISE",
+     94
+    ],
+    [
+     "QTE +",
+     17
+    ],
+    [
+     "ERREUR REF",
+     12
+    ],
+    [
+     "ORIENTATION",
+     5
+    ]
+   ],
+   "ave_types": [
+    [
+     "MANQUANT",
+     3
+    ],
+    [
+     "NON CONFORME",
+     2
+    ]
+   ],
+   "rhv": -4.55,
+   "classe": true,
+   "notes": {
+    "p": 6.5,
+    "a": 6.7,
+    "d": 3.5,
+    "r": 9.4
+   },
+   "note": 6.7,
+   "rang": 13,
+   "badges": [
+    "team",
+    "up",
+    "k10"
+   ],
+   "defi": {
+    "k": "r",
+    "t": "Zéro écart « Carton non ramassé »",
+    "d": "6 écart(s) ce mois. Objectif : 0 le mois prochain.",
+    "s": "P9",
+    "st": "Gestion des déchets"
+   },
+   "_url": "https://legros123.github.io/Standard-Pick-Pack/fiche.html#zbVJNb5tAEP0rqzm16gaxLN4Fbq5LKks1JJRcavWAMalJYqBArEpRfpDVn9Bb_Mf6Bru3Sv6Yefvm7ZudeaEDRUrSniLyXM9cKZckdcjyYr8pEDeIP8Wrj_GXGFmNzPoBogeKPE_SDuXWdWaSflFkHSvpCYhrjY8IHD8IJZUUaa1wVm4pMtpB3U-wLZdVgJQXICgoQt5xroIQpjogvgHW_2C2pA1FaxqrYo_7nzv8PMLud-AjDoxrpEIyIA60tAF_YMNoGXjShtJ6MnBloCSkrC_tPw5SM-GoCgIZgqah0_UUvbBP4zrcTA0TeqbCsy_34tSbuf4rXqkFj7tvBq7qOIPx4oKCqTmHZOgwv39ErZaU4A_iPZ5xraSRBhf33M2artDfoujHthENvn2xL4bhdCTmrOkDTpdNPdbFWB8qQueorPqpMkkTcZPFi-VXjCz0mX6bxwIlynISZ1l8l4ksvgbiMZJmyzjJ5_kyTUjOWKo4TFKreXJ7N09ykpp5rLxIk-s0W0HaY-L2nhtGO2hOEqzTt9Oxb8XpWMK8ePst_tOEePtD06uQuRDfDe9FWYl9Ww-OSDcPVTnW9yISrng6o6Lr23JX1I1D04zpJuSAL_xcDWMN9W01iC3kdtU4EB45vwww1DwDnprnm_PcfJ_3iRd05qtpyRWPpcTyjv1zhf1sz9HrXw",
+   "_qrv": 22
+  },
+  {
+   "np": "GEORGES MELISSA",
+   "mat": "739",
+   "nom": "GEORGES",
+   "prenom": "Melissa",
+   "quota_ok": true,
+   "h_pick": 135.6,
+   "lig": 15255,
+   "cont": 5115,
+   "ed": 52,
+   "ea": 3,
+   "q": 134.4,
+   "reg": 70,
+   "jp": 20,
+   "lj": 763,
+   "cad": 112.5,
+   "best": [
+    1075,
+    27
+   ],
+   "jours": 20,
+   "heures": 135.6,
+   "hs": 4.0,
+   "pa": 197,
+   "pd": 3409,
+   "prec": {
+    "q": 136.3,
+    "lig": 11727,
+    "pa": 767,
+    "pd": 4178
+   },
+   "pos": 2,
+   "ec": 0,
+   "sec": 0,
+   "rh_types": [
+    [
+     [
+      "+",
+      "Autre point positif"
+     ],
+     1
+    ],
+    [
+     [
+      "+",
+      "Initiative"
+     ],
+     1
+    ]
+   ],
+   "err_types": [
+    [
+     "NON PRECISE",
+     35
+    ],
+    [
+     "QTE +",
+     9
+    ],
+    [
+     "ORIENTATION",
+     6
+    ],
+    [
+     "ERREUR REF",
+     2
+    ]
+   ],
+   "ave_types": [
+    [
+     "MANQUANT",
+     2
+    ],
+    [
+     "NON CONFORME",
+     1
+    ]
+   ],
+   "rhv": 2.0,
+   "classe": true,
+   "notes": {
+    "p": 18.7,
+    "a": 10.7,
+    "d": 10.9,
+    "r": 14.8
+   },
+   "note": 14.3,
+   "rang": 1,
+   "badges": [
+    "c100",
+    "turbo",
+    "secu",
+    "team",
+    "k10",
+    "podium"
+   ],
+   "defi": {
+    "k": "a",
+    "t": "Zéro litige client",
+    "d": "3 litige(s) ce mois. Contrôle référence + quantité avant de valider.",
+    "s": "P8",
+    "st": "Ruptures & validation"
+   },
+   "_url": "https://legros123.github.io/Standard-Pick-Pack/fiche.html#zRVNNb6MwEP0r1hxWu6oXYfPhwC2KaJVDoaXpZaMeKDhZtgRSA9FKVX9Q7vsP8sf2GSL1QPzmed7Ybzz5oBPFgtOBYpKuDH8KlzgdEd3rpu77AlGL6C7J8rvkCVGNSHkR0B-KpcvpNwp4gRNy-kux74BpwAQyCICQo0KPU0lxIASYssKmkA7guxX6js9Jgwwk1oJiJB8Rer4bAYEQkeJk9iiE0q8Ub6kUrr3lMJrXDmuvy9GGujhgeZsddFU9HugFigES4aqAS4Wwt5EXcRG48-d7HLfguBNWfEJxIcEJcNLyIRdu8JXvhV940vuoejQUf8yGQgcOmnpvbSqpZg8qVLMtX6jFJ1raYdu3mW1vlWi4WDjIsX5dC6oJoAVmyrQi8zY9VWoJROj7VnKXuzjfWJNbuoHz5TgYzY5d3Q747euh3hEXL3zeXbcgiqE-aUtCqc2kTLOUPeTJav2UEPcCm_64SRgkkcVZvk7SzXKzzlLioWWSPE-ec5Ynt8SlLVScpkL3y_TxeZluLMvnuqssvc3y--R6YrWzjuGF7HDh4vTrcjYda3CzvWZlU-t2oKkD5F3Z7_0PVmp26OreYauuHczlX6OZuZx30OoWezfsfSzaoR4uZ1acgFil2alo6kobh6aHp4eFBfbIfDxifHTPvs05aEnXEpq8uT5k5DnXt5N-eH07X6l5pANfTH8L4UNRYtwHM2oMdDejz_8",
+   "_qrv": 22
+  },
+  {
+   "np": "GRANGER JEAN PHILIPPE",
+   "mat": "194",
+   "nom": "GRANGER",
+   "prenom": "Jean Philippe",
+   "quota_ok": true,
+   "h_pick": 167.25,
+   "lig": 9819,
+   "cont": 3494,
+   "ed": 21,
+   "ea": 2,
+   "q": 91.6,
+   "reg": 65,
+   "jp": 21,
+   "lj": 468,
+   "cad": 58.7,
+   "best": [
+    708,
+    8
+   ],
+   "jours": 21,
+   "heures": 167.3,
+   "hs": 11.8,
+   "pa": 204,
+   "pd": 2139,
+   "prec": {
+    "q": 86.5,
+    "lig": 9261,
+    "pa": 108,
+    "pd": 2160
+   },
+   "pos": 1,
+   "ec": 5,
+   "sec": 5,
+   "rh_types": [
+    [
+     [
+      "-",
+      "Carton non ramassé"
+     ],
+     5
+    ],
+    [
+     [
+      "+",
+      "Aide / entraide"
+     ],
+     1
+    ]
+   ],
+   "err_types": [
+    [
+     "NON PRECISE",
+     13
+    ],
+    [
+     "QTE +",
+     5
+    ],
+    [
+     "ERREUR REF",
+     2
+    ],
+    [
+     "ORIENTATION",
+     1
+    ]
+   ],
+   "ave_types": [
+    [
+     "NON CONFORME",
+     1
+    ],
+    [
+     "MANQUANT",
+     1
+    ]
+   ],
+   "rhv": -3.81,
+   "classe": true,
+   "notes": {
+    "p": 9.6,
+    "a": 10.6,
+    "d": 12.0,
+    "r": 10.1
+   },
+   "note": 10.4,
+   "rang": 9,
+   "badges": [
+    "team",
+    "up"
+   ],
+   "defi": {
+    "k": "r",
+    "t": "Zéro écart « Carton non ramassé »",
+    "d": "5 écart(s) ce mois. Objectif : 0 le mois prochain.",
+    "s": "P9",
+    "st": "Gestion des déchets"
+   },
+   "_url": "https://legros123.github.io/Standard-Pick-Pack/fiche.html#zbVJNb5tAEP0rqzm1yoSyeMEsN8silisFEupcauVAYFOT2pgCiSpF-UFWfkJv8R_rW0A99bDaN2_nzdfOK71QJJkOFJHnesGldImpgfXV5LW42VX7qmkMuBrcKlskqziDVcGSWgE9UeQhwA5hgrkzY_oNJJ2QaU-RDqUGgI8KwBQUzZRWACVFfujMmX7BSToBkynHQCbHjRIGcwZ1YwkXovYHRYHP9EDRlnqTH5D9uaF7MD2ouRtyCKMD1pql6-IoBtQekMfaZx1wGLB2OVSWRSlaspT2PcSR1lQh-y7iNC1Fr7a-MHCQdV8hvfYCOVZkBVORgfuG8Rwt56DMurM6jFDbtgZXC-AqPcdFGwMjoWl_wokpAWHbwwi3kn32kby1HW3pEi0u87Y_1qLGafND3nXnE1mfLV3gdVGVRnwRpu7bHJBY3kNu2kGepIm4yeLl-luMh5nV3G5icTHp4yyL7zKRxVfEniXSbB0nm8VmnSZToPzlX6Blmlyl2bWNZH2vF8nt3SLZTI7lo-0aDaE_JlRP38-n9ijOpwL1i4938Z8-xMcfGiZD_uT4qfssCiMOx6pzRPrwZIq-ehSRcMV-ZEXTHotdXtUODV9NN9oCm3Blur5C9NJ0okS4nek7wpg30z_qmV24YZ1UMH6eUvP5uJ--ksOOSwVFgdXt22eD9TyO6O0v",
+   "_qrv": 22
+  },
+  {
+   "np": "HAMDANI AMINE",
+   "mat": "752",
+   "nom": "HAMDANI",
+   "prenom": "Amine",
+   "quota_ok": true,
+   "h_pick": 115.2,
+   "lig": 5636,
+   "cont": 2190,
+   "ed": 96,
+   "ea": 6,
+   "q": 62.4,
+   "reg": 7,
+   "jp": 15,
+   "lj": 376,
+   "cad": 48.9,
+   "best": [
+    513,
+    27
+   ],
+   "jours": 15,
+   "heures": 115.2,
+   "hs": 4.2,
+   "pa": 1065,
+   "pd": 17033,
+   "prec": null,
+   "pos": 0,
+   "ec": 14,
+   "sec": 14,
+   "rh_types": [
+    [
+     [
+      "-",
+      "Carton non ramassé"
+     ],
+     14
+    ]
+   ],
+   "err_types": [
+    [
+     "NON PRECISE",
+     89
+    ],
+    [
+     "QTE +",
+     5
+    ],
+    [
+     "ERREUR REF",
+     2
+    ]
+   ],
+   "ave_types": [
+    [
+     "MANQUANT",
+     5
+    ],
+    [
+     "NON CONFORME",
+     1
+    ]
+   ],
+   "rhv": -18.67,
+   "classe": true,
+   "notes": {
+    "p": 3.3,
+    "a": 0.0,
+    "d": 0.0,
+    "r": 0.0
+   },
+   "note": 1.2,
+   "rang": 14,
+   "badges": [],
+   "defi": {
+    "k": "r",
+    "t": "Zéro écart « Carton non ramassé »",
+    "d": "14 écart(s) ce mois. Objectif : 0 le mois prochain.",
+    "s": "P9",
+    "st": "Gestion des déchets"
+   },
+   "_url": "https://legros123.github.io/Standard-Pick-Pack/fiche.html#zbVLLbttADPyVBU8Nygi70q5eN8FR2hwsJ6pzqZGDIiu1UltyV0pQIMgHGf2E3uIf66zsYw8LDokhOVzyjV4pVUw7SsmXfnipJDHt4WW7tmuAO-Cv2fwqK27gtfAi4wM9I88wbWCU8Xym35RqZ7eUmjAIAUAJIoCaUl8lEmANTuwlTL8oDX1PMzUIJeA0FSLoDFdFMggAEVEyRA_7g9KI6ZHS1QPMCGtUwH4Eb4CjFOuEdcwm4FCzSTgEiDmWHEqOpAPGMBTELmVvKe1etlvM1qOF09yhzJsbO_DQGY2lB7nrs7WTfQf4CT5EFydjMfxKMqDSqGudsBVd4nNmlR37TnR4ttpVw3A8kCOB1diJVSwKcVvms5tvOXGcPPCK7pa5-ExsHM7LMr8vRZlfE_surXqd0uZZcXefFcszzVWZLYrrRTlHGeWI6yc3CoRCNhMk0ffjwfbieKghSnz8Ef8RJz7-0jQvKX1mfhouRN2IXd8Onlg8Pjf12D6JVEixPUXF3vb1pmo7j6Y10G3igOv4pRnGFuXXzSDWKLdpxoHwf0snDatPAi86LdjX56VrHUWnkzFaTVenNDJqXNNoXxpcTH9C7_8A",
+   "_qrv": 20
+  },
+  {
+   "np": "JANAN ZOUHAIR",
+   "mat": "141",
+   "nom": "JANAN",
+   "prenom": "Zouhair",
+   "quota_ok": true,
+   "h_pick": 7.4,
+   "lig": 264,
+   "cont": 114,
+   "ed": 1,
+   "ea": 0,
+   "q": 72.6,
+   "reg": 0,
+   "jp": 1,
+   "lj": 264,
+   "cad": 35.7,
+   "best": [
+    264,
+    8
+   ],
+   "jours": 1,
+   "heures": 7.4,
+   "hs": 0,
+   "pa": 0,
+   "pd": 3788,
+   "prec": {
+    "q": null,
+    "lig": 1367,
+    "pa": 0,
+    "pd": 0
+   },
+   "pos": 0,
+   "ec": 0,
+   "sec": 0,
+   "rh_types": [],
+   "err_types": [
+    [
+     "ORIENTATION",
+     1
+    ]
+   ],
+   "ave_types": [],
+   "rhv": 0.0,
+   "classe": false,
+   "notes": {
+    "p": 5.5,
+    "a": 13.7,
+    "d": 10.6,
+    "r": 13.2
+   },
+   "note": null,
+   "rang": null,
+   "badges": [],
+   "defi": {
+    "k": "p",
+    "t": "Prendre tes marques",
+    "d": "Pas assez d'heures de picking ce mois pour être classé. On se retrouve le mois prochain.",
+    "s": "P4",
+    "st": "Préparation détail"
+   },
+   "_url": "https://legros123.github.io/Standard-Pick-Pack/fiche.html#zPVHBcoIwFPyVzLv0kjIEECw3Dz3YAzodT2V6SCEqigETcDp1_CD7G_xYF5AOh7eP7O5L9l3pQrHgdKKYPNcLn4VLnGp0H1W7l4VBp9G9LZJFAlwAi0AAHQbdnuLICTh9U-xyKin2QnTl4QEykERfc4r9mRNxOkPgOSEnlQ8GSg7KuidE8znQ-MPshvJFcfqJ0qD2jnM0FjjyAWpD8bV31G1ZYmoBjfDD6N-kd3VveEE1cbSdkDlOKIEKdzR4S-pyfLA2zThYYUSa0up9-ZpsFpvlCiGITxzIy0jIt_0d4IXQOEFFa6N0bhRrlGUnac6tsjjJ-xNpmbRW_bD8aa9aA0KuWF1kx0LvWKbYqSosq6vWsO63gUVWgt7dHbbSzCpmVGOq9qJYOVFNlWFJ2qEhFVoHPRgv0d1raWRTVJrl3b2RRUlIYvNI7MV3HjF5QTgGFQRRNK5uFohh6yKAIsNSt7K0CrtDjI1p1e0P",
+   "_qrv": 18
+  },
+  {
+   "np": "KELLERER MEGANE",
+   "mat": "751",
+   "nom": "KELLERER",
+   "prenom": "Megane",
+   "quota_ok": true,
+   "h_pick": 114.8,
+   "lig": 7569,
+   "cont": 2403,
+   "ed": 60,
+   "ea": 0,
+   "q": 72.5,
+   "reg": 0,
+   "jp": 15,
+   "lj": 505,
+   "cad": 65.9,
+   "best": [
+    558,
+    30
+   ],
+   "jours": 15,
+   "heures": 114.8,
+   "hs": 4.2,
+   "pa": 0,
+   "pd": 7927,
+   "prec": null,
+   "pos": 0,
+   "ec": 6,
+   "sec": 6,
+   "rh_types": [
+    [
+     [
+      "-",
+      "Carton non ramassé"
+     ],
+     6
+    ]
+   ],
+   "err_types": [
+    [
+     "NON PRECISE",
+     50
+    ],
+    [
+     "QTE +",
+     7
+    ],
+    [
+     "ERREUR REF",
+     3
+    ]
+   ],
+   "ave_types": [],
+   "rhv": -8.0,
+   "classe": true,
+   "notes": {
+    "p": 5.5,
+    "a": 13.7,
+    "d": 7.0,
+    "r": 6.6
+   },
+   "note": 8.4,
+   "rang": 12,
+   "badges": [
+    "zero"
+   ],
+   "defi": {
+    "k": "r",
+    "t": "Zéro écart « Carton non ramassé »",
+    "d": "6 écart(s) ce mois. Objectif : 0 le mois prochain.",
+    "s": "P9",
+    "st": "Gestion des déchets"
+   },
+   "_url": "https://legros123.github.io/Standard-Pick-Pack/fiche.html#zbVLbbtNAEP2V1TyBmK582Yu9r5VBiJIWU16weHCdbeOS2GHtIkTVD4r6Cbw1P8ZZh0ekOHPO7lzO7Mwj_SSXMu3IUZZk5ixNiGkP9tHftYMHGUA-VBcXVV3VoD2o1SnQPSI10wYmVbJg-kVOyYxpS85qUwLARSfw6chlKskB1uSMlrj7AadM4s7HowS2JQezB7VlZoFOB-FuMTfkGvrtw0jfQGYwrQvOE7AJRBVsNNuMjWJj2SZsc7Y6_jT-LReghkvNpULIPpAbHrZbtDeSK6QCQJrH2LqOqlA7zSVURDkyyoBKaZ4AvuMKXa5gEBbQf5OwYYO0Iepq6Ayvc96GeRzEgC-0u3aajgeCD5x8WJxWlytxVVfn7z9XxBp9NPTpuhJviG3EVV1XX2pRV2-J8xjWYlIN7Po26oQISGJCQfp6PIRRHA8dSoqXZ_Gf0uLlDy29kPnn-Gp6LTovdmM_SXF5c--7ub8VTiRiezoV-zB2m7YfJC1PTFdlBLHgOz_NPbKv_STWSLfx80R4muuoDIMtl5eL88uUOY1UKczgtBAqXZYqVYjosCtzePDYh_GEnv4C",
+   "_qrv": 20
+  },
+  {
+   "np": "MANGIN CHRISTELLE",
+   "mat": "172",
+   "nom": "MANGIN",
+   "prenom": "Christelle",
+   "quota_ok": true,
+   "h_pick": 152.05,
+   "lig": 12262,
+   "cont": 4127,
+   "ed": 12,
+   "ea": 0,
+   "q": 101.3,
+   "reg": 45,
+   "jp": 20,
+   "lj": 613,
+   "cad": 80.6,
+   "best": [
+    893,
+    1
+   ],
+   "jours": 20,
+   "heures": 152.1,
+   "hs": 7.8,
+   "pa": 0,
+   "pd": 979,
+   "prec": {
+    "q": 110.7,
+    "lig": 14370,
+    "pa": 70,
+    "pd": 487
+   },
+   "pos": 1,
+   "ec": 1,
+   "sec": 1,
+   "rh_types": [
+    [
+     [
+      "-",
+      "Carton non ramassé"
+     ],
+     1
+    ],
+    [
+     [
+      "+",
+      "Autre point positif"
+     ],
+     1
+    ]
+   ],
+   "err_types": [
+    [
+     "NON PRECISE",
+     11
+    ],
+    [
+     "ERREUR REF",
+     1
+    ]
+   ],
+   "ave_types": [],
+   "rhv": 0.0,
+   "classe": true,
+   "notes": {
+    "p": 11.6,
+    "a": 13.7,
+    "d": 13.1,
+    "r": 13.2
+   },
+   "note": 12.8,
+   "rang": 2,
+   "badges": [
+    "c100",
+    "zero",
+    "lynx",
+    "team",
+    "k10",
+    "podium"
+   ],
+   "defi": {
+    "k": "p",
+    "t": "Viser 106 % de quota",
+    "d": "Tu es à 101.3 % (équipe : 93.7 %). Gagne 5 points de rythme.",
+    "s": "P4",
+    "st": "Préparation détail"
+   },
+   "_url": "https://legros123.github.io/Standard-Pick-Pack/fiche.html#zLVLBbtswDP0VgUCBDVMNSXYs27ciyIoelhVZt0uwgxarjVfHdmR5aFf0X3bNd-TH9iTnIJMU-Wi-J77RH6okpwNVpITKr6UgTgOi5d41o7dta3HR4eLLzfr2bo2gQSC1gvebKiU47dFioRK0eaFKJwWnFjdK5QoeanKZctpRlUml4dRUFSLJOR1RJWSCpK0DANZQhYYDwlKXcObYPQG84PSLqi3tpAgz_rWuh2lfuxcYb80B5nkev6-b6UA_AfBAFGXKJYIRvkwFl0Lh5DiClxpG8jLnJYKU6zz4UmRcSs3LgpdZ-EqBYBHvpCjQa3BUvUUCUiQg1TYYUWapFvPQ-sIiK_Q75OsDvSBMNwbcEHBBAVTKNODr6EBBFx0FkHuGupzWoS-ifZiey8jEBVpbugbXpXG-71iH48zBjOP5RKFmS5-QvZm8s2zom87jOza-eQxZtLAutlh_XbP7zWp5922FRMStNpvV9w3brD5fSg1WZAtbP4bZMRXmh-KwP5rROgYt2RWrLTtOvTcUydDDxOzIzv9YfGHkP5xPx6kZLKtYCcrs6mPCbs1TZ9liHnAMLdyr3x9sQvG16D4LTvjTvTufBuOMb0C0Pp-8aVqCSA-XZyijikF5leUX6TOt5_1bZDKusMyA2GE3vZss1q-fvff_",
+   "_qrv": 22
+  },
+  {
+   "np": "MZOUGHI SHEHERAZADE",
+   "mat": "617",
+   "nom": "MZOUGHI",
+   "prenom": "Sheherazade",
+   "quota_ok": true,
+   "h_pick": 135.75,
+   "lig": 11264,
+   "cont": 3735,
+   "ed": 48,
+   "ea": 2,
+   "q": 104.1,
+   "reg": 72,
+   "jp": 18,
+   "lj": 626,
+   "cad": 83.0,
+   "best": [
+    768,
+    1
+   ],
+   "jours": 18,
+   "heures": 135.8,
+   "hs": 6.2,
+   "pa": 178,
+   "pd": 4261,
+   "prec": {
+    "q": 108.3,
+    "lig": 13170,
+    "pa": 456,
+    "pd": 3265
+   },
+   "pos": 0,
+   "ec": 2,
+   "sec": 2,
+   "rh_types": [
+    [
+     [
+      "-",
+      "Carton non ramassé"
+     ],
+     2
+    ]
+   ],
+   "err_types": [
+    [
+     "NON PRECISE",
+     35
+    ],
+    [
+     "ERREUR REF",
+     9
+    ],
+    [
+     "QTE +",
+     3
+    ],
+    [
+     "ORIENTATION",
+     1
+    ]
+   ],
+   "ave_types": [
+    [
+     "MANQUANT",
+     1
+    ],
+    [
+     "NON CONFORME",
+     1
+    ]
+   ],
+   "rhv": -2.22,
+   "classe": true,
+   "notes": {
+    "p": 12.2,
+    "a": 11.0,
+    "d": 10.2,
+    "r": 11.4
+   },
+   "note": 11.4,
+   "rang": 5,
+   "badges": [
+    "c100",
+    "k10"
+   ],
+   "defi": {
+    "k": "r",
+    "t": "Zéro écart « Carton non ramassé »",
+    "d": "2 écart(s) ce mois. Objectif : 0 le mois prochain.",
+    "s": "P9",
+    "st": "Gestion des déchets"
+   },
+   "_url": "https://legros123.github.io/Standard-Pick-Pack/fiche.html#zbVJNb5tAEP0rqzm16gaxCywsN8siqQ-GhNiXWDkQ2MQksXEXGlWN8oOs_oTe4j_Wt-BjDytm3nzw3sy80xulgtOOUpK-VBfCJ04HeLdbszW2-l01BsgeyPKuWF99X8Br4SkRw3pGdcJpi08QebB-Uao8yekViJAqhIUcJRWnmtIgDiIYDaVJ4PmcfiDLDz0QMMBC1JuKUpQfnCsVAgcAIkbEPlEaI_RA6YZq4TuiL6B7D2gAFquECzg9bCFCLnyFp7mWXCMiAngx14pr3wE65EnIdYRINEVdjdB4CbocLKXvE7_EC6CifXIaRexPlMJITSwDqaIPDKhzgj3o3feuEiMU0g2iGnFUNa6XQ-yUiSL7QinmkQNAocUUNz6XXOL_1kna0AVEzis7dHu2x7PVrur705GQgyRjx6S8yNl1mc0XtxnxILrnG8rKMluXrMwuiWsH3Kwy9g1RZxflIstXs9WiyAkjQ6PqbWy0nOU361m-ciif-s6L_LIol9k5sXl04kAbKjiBI92djrZjp2MNluzzD_sPW_b5l0b9JM-JX_qvrDZs17W9x4qHZ1MP7SNLmc9eJ5QdbFdvq3bv0bhRutbOcD-8Mv3Qontjetag3dYMPWGYq_PCdODF045keN5RGMbxdIhRKMZjFm78NY50sD8N7rCbrI9_",
+   "_qrv": 22
+  },
+  {
+   "np": "PETIT MAX",
+   "mat": "670",
+   "nom": "PETIT",
+   "prenom": "Max",
+   "quota_ok": true,
+   "h_pick": 152.1,
+   "lig": 12237,
+   "cont": 3928,
+   "ed": 23,
+   "ea": 1,
+   "q": 99.9,
+   "reg": 90,
+   "jp": 20,
+   "lj": 612,
+   "cad": 80.5,
+   "best": [
+    726,
+    13
+   ],
+   "jours": 20,
+   "heures": 152.1,
+   "hs": 6.8,
+   "pa": 82,
+   "pd": 1880,
+   "prec": {
+    "q": 102.1,
+    "lig": 11869,
+    "pa": 84,
+    "pd": 1432
+   },
+   "pos": 0,
+   "ec": 6,
+   "sec": 6,
+   "rh_types": [
+    [
+     [
+      "-",
+      "Carton non ramassé"
+     ],
+     6
+    ]
+   ],
+   "err_types": [
+    [
+     "NON PRECISE",
+     15
+    ],
+    [
+     "ORIENTATION",
+     3
+    ],
+    [
+     "QTE +",
+     3
+    ],
+    [
+     "ERREUR REF",
+     2
+    ]
+   ],
+   "ave_types": [
+    [
+     "NON CONFORME",
+     1
+    ]
+   ],
+   "rhv": -6.0,
+   "classe": true,
+   "notes": {
+    "p": 11.3,
+    "a": 12.5,
+    "d": 12.3,
+    "r": 8.3
+   },
+   "note": 11.2,
+   "rang": 6,
+   "badges": [
+    "reg",
+    "k10"
+   ],
+   "defi": {
+    "k": "r",
+    "t": "Zéro écart « Carton non ramassé »",
+    "d": "6 écart(s) ce mois. Objectif : 0 le mois prochain.",
+    "s": "P9",
+    "st": "Gestion des déchets"
+   },
+   "_url": "https://legros123.github.io/Standard-Pick-Pack/fiche.html#zbVLLbtswEPwVYk8tuhFE6kndCkMpfIjkquolRg6KrMRKbEul1CBAkA8y8gm9xT_WoSzkFECEZmd3h7MkX-iJEsm0p4SUq8IL6RJTj-iqegY6AK3SclkCt8BhZPMPlCiXaYvWQDlof6YkdGKmHRilvAgINaFUTDUlnlbI1RtKYtcJmP5QorWjmRpQysO_mkz0CGUcQ7kHEaPZ3KMU8S0lazLNPfZ-hMMbMCOoSIUsPUQDAh2xdH2O5fTTwfQh76oPQnLsIdBYtliyjlnKc4N0A2AfYr2h5MWaRKsdbtfChZRxqGdj_mzV99QrjqizWQduD4Nt7KcQU9mhlJ13MwEwEI4dDz3mEafDlFkRRDjItcshh9jd2MHWdIFRF5UZu4M4YJlqXw3D6UioQVFjpqIsz8SqSBfLXymxDG54TXmxTLPye7nMM2LPMj_LVHybcVoU6e9CFOklsbJC1dOH0CLPLvPiyirZzObODgOfcM0EU3R9OppOnI41bIn3N_GJPfH-j6Z5KZwLvwxfRd2IfdcOjshvH5p6bO9EIlyxO7OiN129rdqDQ9M90kpbYDf80QxjC_VNM4gN5LbNOBBOr5zvR3tOdL4S5YfnO_H9aH58gS-n5yt9dNR4mKP52-DtdWf0-h8",
+   "_qrv": 21
+  },
+  {
+   "np": "REH MYRIAM",
+   "mat": "154",
+   "nom": "REH",
+   "prenom": "Myriam",
+   "quota_ok": true,
+   "h_pick": 155.9,
+   "lig": 12725,
+   "cont": 4265,
+   "ed": 7,
+   "ea": 1,
+   "q": 100.3,
+   "reg": 100,
+   "jp": 21,
+   "lj": 606,
+   "cad": 81.6,
+   "best": [
+    705,
+    2
+   ],
+   "jours": 21,
+   "heures": 155.9,
+   "hs": 2.0,
+   "pa": 79,
+   "pd": 550,
+   "prec": {
+    "q": 102.6,
+    "lig": 11791,
+    "pa": 85,
+    "pd": 85
+   },
+   "pos": 0,
+   "ec": 1,
+   "sec": 1,
+   "rh_types": [
+    [
+     [
+      "-",
+      "Carton non ramassé"
+     ],
+     1
+    ]
+   ],
+   "err_types": [
+    [
+     "NON PRECISE",
+     5
+    ],
+    [
+     "QTE +",
+     1
+    ],
+    [
+     "ERREUR REF",
+     1
+    ]
+   ],
+   "ave_types": [
+    [
+     "NON CONFORME",
+     1
+    ]
+   ],
+   "rhv": -0.95,
+   "classe": true,
+   "notes": {
+    "p": 11.4,
+    "a": 12.5,
+    "d": 13.4,
+    "r": 12.4
+   },
+   "note": 12.2,
+   "rang": 3,
+   "badges": [
+    "c100",
+    "lynx",
+    "reg",
+    "k10",
+    "podium"
+   ],
+   "defi": {
+    "k": "p",
+    "t": "Viser 105 % de quota",
+    "d": "Tu es à 100.3 % (équipe : 93.7 %). Gagne 5 points de rythme.",
+    "s": "P4",
+    "st": "Préparation détail"
+   },
+   "_url": "https://legros123.github.io/Standard-Pick-Pack/fiche.html#zPVLLbtswEPwVYoEALcoIIi3qdTWUtofYrur2YuTAWqqjxnqYkoIYQf4lV3-HfqxDygggirPDWXJ2yVd6plRwqikl6cvwVvjEqUN0fzaVrhE0CPLsG1AFJFQA9I9SiaxH5CrlJZxeQHg-pyMYGUkFBE3oh5z2lAYyBLMvKI2FB-oEle97C04luAiTdi46REphmw5xhG3NwSk5_aF0R3tAHH48Ny-YTHnA_2k23BbVWNMDhAOUka-4RNADxwkXQnABKrGTjxFiRDyJeRK6L3BfBHbhkJw1wucJsv0AUGG7zlD6OpuXtoxjZe2JKBGz41jNJcTqDW1rbSs8CdTbtM5KvYCTdjykUIqFZYxjAiSZJ0rRlRUIy6O_O_jlAocbW9iOblHtUpuhbViDYXSt-366EDQQlcaJVusV2-TZ8vvPjDic7-jHNmNfrAg4y_PsV87y7O6apZ8_spbr1d06v8-uK8Vfax2mYJ8THNDvqi8NQzfZDStKdhrbQZOrhbYjK3s2vTN3t1j_NF1OY9WVLGXJwovYzWePfdWHpmSKdW3VDL3dwpyHx7r0yF0Xbezz6u1JGzNdOm30UKHOYroMujoSerS9XoLdcu67DMK58UEQRfPLU4FwL1fYru7xKgczlnh47Yze_gM",
+   "_qrv": 21
+  },
+  {
+   "np": "ROBIN ELODIE",
+   "mat": "119",
+   "nom": "ROBIN",
+   "prenom": "Elodie",
+   "quota_ok": true,
+   "h_pick": 118.75,
+   "lig": 7324,
+   "cont": 2568,
+   "ed": 31,
+   "ea": 1,
+   "q": 78.7,
+   "reg": 0,
+   "jp": 16,
+   "lj": 458,
+   "cad": 61.7,
+   "best": [
+    630,
+    29
+   ],
+   "jours": 15,
+   "heures": 116.8,
+   "hs": 5.8,
+   "pa": 137,
+   "pd": 4233,
+   "prec": {
+    "q": null,
+    "lig": 356,
+    "pa": 0,
+    "pd": 5618
+   },
+   "pos": 0,
+   "ec": 1,
+   "sec": 1,
+   "rh_types": [
+    [
+     [
+      "-",
+      "Carton non ramassé"
+     ],
+     1
+    ]
+   ],
+   "err_types": [
+    [
+     "NON PRECISE",
+     29
+    ],
+    [
+     "ORIENTATION",
+     1
+    ],
+    [
+     "ERREUR REF",
+     1
+    ]
+   ],
+   "ave_types": [
+    [
+     "MANQUANT",
+     1
+    ]
+   ],
+   "rhv": -1.33,
+   "classe": true,
+   "notes": {
+    "p": 6.8,
+    "a": 11.6,
+    "d": 10.2,
+    "r": 12.1
+   },
+   "note": 9.8,
+   "rang": 10,
+   "badges": [],
+   "defi": {
+    "k": "p",
+    "t": "Viser 100 % de quota",
+    "d": "Tu es à 78.7 % (équipe : 93.7 %). Gagne 5 points de rythme.",
+    "s": "P4",
+    "st": "Préparation détail"
+   },
+   "_url": "https://legros123.github.io/Standard-Pick-Pack/fiche.html#zLVLLbpxAEPyVUUuRHGmMZngMMLeNRaI9hN0QnMsqB2wmNgkL7ABWIsv_4ut-Bz-WGnYP0NVNNV39eKUX0pLTkTT5wle3UhCnAV7W9nVj4HRwit2nbQ7cAEuZAv1GWsTpGUYqL-H0l3TkbEs6DvwQAJQwQuSRtB8pB2rSSnoxpxNIiQMGoQD1TbXKGOCGfhAAuUAAhn0iLTg9kD78hJlgVSC4n8Ib4SQ-V4rHeKc8DnkMHHMleCJ5IngMEPB0daVQQEgbLOlXp6Gb2xZCG5QIInUpKi4qIiWTNzTfk05dW93ocjCYtVknTnrIAFMKz4dMAN-TSLF_XIxTDoMxWIzoIDjKo7J18g90iwHeVXbqO9bhsdWxGsflTOCAZOxKync52xfZ3fZ7Rmu7B9oV2ywvN-V2lzsuIllRZPcFK7LP1-TqZU3-usm_3W_y8hqtfzn1EIYOOEEE_WhGY5kUgn1gtWGnuZ8qWvuhcmZmZMs7cyvC55vlfJqbwTDN0sBFPnrsS_XUGRaxoW-6aXR_sP-m56PxaN0K7UMHXKG9Xc5DZaupQaf1cp6qpiWMqbzuwP3yMnk_VNcLCLHC9X6iUK4HKENkPOK0JjsbnE9_QW__AQ",
+   "_qrv": 21
+  },
+  {
+   "np": "STERCKY FRANCK",
+   "mat": "149",
+   "nom": "STERCKY",
+   "prenom": "Franck",
+   "quota_ok": true,
+   "h_pick": 141.2,
+   "lig": 11241,
+   "cont": 8917,
+   "ed": 28,
+   "ea": 2,
+   "q": 112.0,
+   "reg": 79,
+   "jp": 19,
+   "lj": 592,
+   "cad": 79.6,
+   "best": [
+    825,
+    8
+   ],
+   "jours": 19,
+   "heures": 141.2,
+   "hs": 3.0,
+   "pa": 178,
+   "pd": 2491,
+   "prec": {
+    "q": 110.3,
+    "lig": 7406,
+    "pa": 810,
+    "pd": 3106
+   },
+   "pos": 0,
+   "ec": 5,
+   "sec": 5,
+   "rh_types": [
+    [
+     [
+      "-",
+      "Carton non ramassé"
+     ],
+     5
+    ]
+   ],
+   "err_types": [
+    [
+     "NON PRECISE",
+     17
+    ],
+    [
+     "ERREUR REF",
+     9
+    ],
+    [
+     "QTE +",
+     2
+    ]
+   ],
+   "ave_types": [
+    [
+     "NON CONFORME",
+     2
+    ]
+   ],
+   "rhv": -5.26,
+   "classe": true,
+   "notes": {
+    "p": 13.9,
+    "a": 11.0,
+    "d": 11.7,
+    "r": 8.9
+   },
+   "note": 11.7,
+   "rang": 4,
+   "badges": [
+    "c100",
+    "k10"
+   ],
+   "defi": {
+    "k": "r",
+    "t": "Zéro écart « Carton non ramassé »",
+    "d": "5 écart(s) ce mois. Objectif : 0 le mois prochain.",
+    "s": "P9",
+    "st": "Gestion des déchets"
+   },
+   "_url": "https://legros123.github.io/Standard-Pick-Pack/fiche.html#zbVJNb9swDP0rAk8bphqi_ClfA2cYhiWdmx22oAfXcRc3iZ1JXjGg6A8K-hN2a_7YnuxspwEmRD4_Uo8Un-iRcpZ0oJy00skVK5J0RDS3VVfvEHQIblZFOfv4FVGLiCMD7wGJRtIWR8SBlvSL8jBQkvZAWEeougcnNvhVU54ZTuFsKE9NkEj6MbI8vwGmM5wVTlzuw8gg_QiAU_yx332WpDvK11Sz8hp3UHoLaACW6VhmCBx8hijW6WQc44SFWppkcpklqwwWwgccjh8cYBqpCsYJih0t5U-TTBWEaKb1KiKVTMIyVpPWkFXyjDH1nhmgx875RMyQwwCiqxEHefOXgMJZYJBjd5RHkhZ-hIgwyrWSsYxxu_V9rekKnc4qO_Sd6GC2OlTOnU8EDkiNHUmL5UJcl8Xsw01BktNbuaaiLIsvpSiLOUnjgc-rQrwjqX1a9fgvbbZczJflp-LyZ3PvpUMVNEqCBPp2PtlenE81RIjXF_EfMeL1N43dUXwhvnFvRd2IQ9-6QCzvHpp6aO9FLpTYT6g42r7eVm0X0PhqdO03yvkL3zduaFF90zixQbltMzjCrFaX1zChH6F_AR0l0wtEUZpels1vXefHiYwaizjYnw12rZ-85z8",
+   "_qrv": 21
+  },
+  {
+   "np": "VEJUX SANDRA",
+   "mat": "36",
+   "nom": "VEJUX",
+   "prenom": "Sandra",
+   "quota_ok": true,
+   "h_pick": 137.4,
+   "lig": 7844,
+   "cont": 2695,
+   "ed": 4,
+   "ea": 3,
+   "q": 102.0,
+   "reg": 39,
+   "jp": 19,
+   "lj": 413,
+   "cad": 57.1,
+   "best": [
+    689,
+    6
+   ],
+   "jours": 22,
+   "heures": 159.6,
+   "hs": 0.5,
+   "pa": 382,
+   "pd": 510,
+   "prec": {
+    "q": 105.8,
+    "lig": 8384,
+    "pa": 596,
+    "pd": 1789
+   },
+   "pos": 1,
+   "ec": 2,
+   "sec": 2,
+   "rh_types": [
+    [
+     [
+      "-",
+      "Carton non ramassé"
+     ],
+     2
+    ],
+    [
+     [
+      "+",
+      "Aide / entraide"
+     ],
+     1
+    ]
+   ],
+   "err_types": [
+    [
+     "NON PRECISE",
+     3
+    ],
+    [
+     "QTE +",
+     1
+    ]
+   ],
+   "ave_types": [
+    [
+     "NON CONFORME",
+     2
+    ],
+    [
+     "MANQUANT",
+     1
+    ]
+   ],
+   "rhv": -0.91,
+   "classe": true,
+   "notes": {
+    "p": 11.8,
+    "a": 7.9,
+    "d": 13.5,
+    "r": 12.4
+   },
+   "note": 11.0,
+   "rang": 8,
+   "badges": [
+    "c100",
+    "lynx",
+    "team"
+   ],
+   "defi": {
+    "k": "r",
+    "t": "Zéro écart « Carton non ramassé »",
+    "d": "2 écart(s) ce mois. Objectif : 0 le mois prochain.",
+    "s": "P9",
+    "st": "Gestion des déchets"
+   },
+   "_url": "https://legros123.github.io/Standard-Pick-Pack/fiche.html#zbVLLbtswEPwVYk8NwigiRT2om2GoRQtEzsMpiho5KBJTK7UllVKDFEE-yOgn9Bb_WIeS0FMBEpxdzu7OLvlCT5QKTntKSfoyOhM-cepg3RRNZQsYDYzP2afbL8A1cBABPFIqJactgkPtRZyeKfW9kNOO0jhRCgAUJQJOJaiRxlVZURrGHqr9QJgvPZ-TgQ9kU1AKaucYAu7O2QkK2G8AmtM9pRsqhe_U7X41zzgGU-zpDlcD7qJE8whGDyz8gOvELeFjixgbJ9JoxXXA3b1AlfGUCjvhMoIr5AG4MkCezlL6MukMvQQ1awhJgkRN2kIdTWpFnOhXzKgFFK6hpneB3WgiDtzYg35HDdx8kFdITyHGfkdGTjkcyGq3TjmXXKK6dS1t6AxdLgs7tA1rsG2xL_r-eCDH2dApbhd1Zdg5M81gC0Di4g7hxo7h-Spnl9fZ8uNNRjxwIVfrjJ3OpOLpH2m5yt-vri-yOfHFIr-6XeTrmVg9uI4gFtoxdZxfjwfbsuOhhDb29pv9RyN7-0Nj1yRn4rv-hJWG7du699jq_tGUQ_3AUuaz3eRlnW3LbVE3Ho3vSJfaAVfwg-mHGtkr07MK6bZm6AkjXM-PpAMvnh5GqvlhlIrj6ROGSoyfWLihl_ifg_1p8AfbCb3-BQ",
+   "_qrv": 22
+  },
+  {
+   "np": "WINGERT ALEXIS",
+   "mat": "789",
+   "nom": "WINGERT",
+   "prenom": "Alexis",
+   "quota_ok": true,
+   "h_pick": 168.1,
+   "lig": 9785,
+   "cont": 2804,
+   "ed": 28,
+   "ea": 1,
+   "q": 70.8,
+   "reg": 68,
+   "jp": 22,
+   "lj": 445,
+   "cad": 58.2,
+   "best": [
+    625,
+    8
+   ],
+   "jours": 22,
+   "heures": 168.1,
+   "hs": 8.3,
+   "pa": 102,
+   "pd": 2862,
+   "prec": {
+    "q": 71.5,
+    "lig": 7861,
+    "pa": 254,
+    "pd": 3816
+   },
+   "pos": 0,
+   "ec": 5,
+   "sec": 5,
+   "rh_types": [
+    [
+     [
+      "-",
+      "Carton non ramassé"
+     ],
+     5
+    ]
+   ],
+   "err_types": [
+    [
+     "NON PRECISE",
+     23
+    ],
+    [
+     "QTE +",
+     4
+    ],
+    [
+     "ERREUR REF",
+     1
+    ]
+   ],
+   "ave_types": [
+    [
+     "NON CONFORME",
+     1
+    ]
+   ],
+   "rhv": -4.55,
+   "classe": true,
+   "notes": {
+    "p": 5.1,
+    "a": 12.2,
+    "d": 11.4,
+    "r": 9.4
+   },
+   "note": 9.0,
+   "rang": 11,
+   "badges": [],
+   "defi": {
+    "k": "r",
+    "t": "Zéro écart « Carton non ramassé »",
+    "d": "5 écart(s) ce mois. Objectif : 0 le mois prochain.",
+    "s": "P9",
+    "st": "Gestion des déchets"
+   },
+   "_url": "https://legros123.github.io/Standard-Pick-Pack/fiche.html#zbVLLbtswEPwVYk8tuhFEmiJp3gpDCXKonaouCtTIQZGVWqltqaIaBAjyQUY-obf4xzqUjZ4KUODsanY5-3imR_KSaUeeVKrMhUyJqYP1cVs_NQHGHsa36_lVXixhNbCsmwI9kFeKaYN44xLkeCLvkgnTlvzUugwAFK0BKlBdqgHW5DOXIOwXeZsmjqlex5-4y1FIN5oGjC46UoD-B3kDxh351S2uAbdRGTsYAdgajidlkAzcGVs7ejSblK08-61ip9hOxjNytGNnWCvk6Xryz6MomUTlDd60zsiTDJXpk7KJk-YFLWlRYpIChBiGdmWxAVGwisWBKWWCmD7yNCL6n9HFNMcV_ejaKuWMM7zdx4JWdIGezsp-aPdij68vd2UIxwOBA1Ldj6T5Yi5uinx2_SUnVpNbXtHnZS4-EOuI86LIvxaiyC-JZQwrH_-FzRbzy0XxKT__Wd9H6ZAFkUyQQN-Ph74Vx0MFEeLtVfxHjHj7Q2N5lJ2J78J7UdVi1zYhEYu7h7oamnvhRSq2J6_o-rbalM0-oXFcdBOXJ8QHr-owNMi-roNYI92mHgKhWcvzLKaTxJ4HoM1pAFpjbuNiZVqOuyljeyvs3ND_rrFX7Qm9_AU",
+   "_qrv": 21
+  },
+  {
+   "np": "BOURLIER EMMANUELLE",
+   "mat": "155",
+   "nom": "BOURLIER",
+   "prenom": "Emmanuelle",
+   "quota_ok": true,
+   "h_pick": 44.5,
+   "lig": 4264,
+   "cont": 1704,
+   "ed": 6,
+   "ea": 0,
+   "q": 119.2,
+   "reg": 33,
+   "jp": 15,
+   "lj": 284,
+   "cad": 95.8,
+   "best": [
+    525,
+    27
+   ],
+   "jours": 15,
+   "heures": 44.5,
+   "hs": 0,
+   "pa": 0,
+   "pd": 1407,
+   "prec": {
+    "q": null,
+    "lig": 139,
+    "pa": 0,
+    "pd": 14388
+   },
+   "pos": 0,
+   "ec": 1,
+   "sec": 1,
+   "rh_types": [
+    [
+     [
+      "-",
+      "Carton non ramassé"
+     ],
+     1
+    ]
+   ],
+   "err_types": [
+    [
+     "NON PRECISE",
+     6
+    ]
+   ],
+   "ave_types": [],
+   "rhv": -1.33,
+   "classe": false,
+   "notes": {
+    "p": 15.5,
+    "a": 13.7,
+    "d": 12.7,
+    "r": 12.1
+   },
+   "note": null,
+   "rang": null,
+   "badges": [
+    "c100",
+    "zero"
+   ],
+   "defi": {
+    "k": "r",
+    "t": "Zéro écart « Carton non ramassé »",
+    "d": "1 écart(s) ce mois. Objectif : 0 le mois prochain.",
+    "s": "P9",
+    "st": "Gestion des déchets"
+   },
+   "_url": "https://legros123.github.io/Standard-Pick-Pack/fiche.html#zbVLLTuNAEPyVUZ9AGizPePyaIyhaIa0SlF0uRByMPdmY9SPMOAiB-KBoP2Fv5MeosRNOHKyuKndXt3r6jZ5JC04taZKhTC5ESJy2YLO2LbqdaRoDoYNwubhd_ryeLUFrUBHHQI-ojjltSCsVALyQDjk1oDJRAPgvM4ASeWnoQUU6j4OM0xMkkQeSk4GWIBRj8RZMqDAFmgT7h3QUcXogvaJShH7CV2N7uoc2QIxlzGUK5kCElFxAgDcXcchFpMARvS4yRDFpEbjKRy2XPBKo31rSb36wbtc0mL5GZxHlX5NMo0VZ9o6V9Ke0zp2Q_XtCc58IAYtZoTf37tbPuqILjH9V2KHvWIfPFm3h3GFPyEGSsWPSfDFnN8vZ1fWvGfHE_yjwUCvEau1nRCOyMIIl3R32tmeHfQlT9vGPfWPOPv4jufLPdkw8c-esNKztaxewxcOjKYd6zTQLWTOpbGv7clPUXUDjYukm98A3_GHcUMO9Mo5VsNuYwRFW8vu4vTwKjq8nVTJtTak0nc4hVmK8J6FQUeJS1kXjDM4B-xzszrx_Ag",
+   "_qrv": 19
+  },
+  {
+   "np": "DROUANT JULIE",
+   "mat": "186",
+   "nom": "DROUANT",
+   "prenom": "Julie",
+   "quota_ok": true,
+   "h_pick": 0,
+   "lig": 181,
+   "cont": 39,
+   "ed": 0,
+   "ea": 0,
+   "q": null,
+   "reg": null,
+   "jp": 0,
+   "lj": null,
+   "cad": null,
+   "best": [
+    181,
+    23
+   ],
+   "jours": 0,
+   "heures": 0,
+   "hs": 0,
+   "pa": 0,
+   "pd": 0,
+   "prec": {
+    "q": null,
+    "lig": 792,
+    "pa": 0,
+    "pd": 0
+   },
+   "pos": 0,
+   "ec": 0,
+   "sec": 0,
+   "rh_types": [],
+   "err_types": [],
+   "ave_types": [],
+   "rhv": 0.0,
+   "classe": false,
+   "notes": {
+    "p": null,
+    "a": 13.7,
+    "d": 13.9,
+    "r": 13.2
+   },
+   "note": null,
+   "rang": null,
+   "badges": [],
+   "defi": {
+    "k": "p",
+    "t": "Prendre tes marques",
+    "d": "Pas assez d'heures de picking ce mois pour être classé. On se retrouve le mois prochain.",
+    "s": "P4",
+    "st": "Préparation détail"
+   },
+   "_url": "https://legros123.github.io/Standard-Pick-Pack/fiche.html#zRVHBbsIwDP2VyJddOkRLR6G3STvtAGhiJ7RD1hjICG1JUjQN8UHsN_pje23WTZHiZ_v5xbEvdKY8juhIOSXjZHofjymiGt5zYzQDl8BPL8vXx8UanoYXz6ZAH5SPI9r392d_GyjNoGWQKhtjIioon8xh1BA4DYBVX8KyN3Xw6uDZ3cB6p3zzBuNhO-lkAs-FYG0pv_wLGo2qbJ78qfSaV_RfDZTSDcgeBrRAzykC-MdmHOFA2frwAttg5TlYte1eRCnmExFItLJcKsvCsxNHaU8NO2RUl5FOSOf4S6i7PTcWBMWi1sVBlztRsDhW2om6aqxovz0kCgN6exuJZSkcC8veVs2ZhRmotir2Upcj6idAq7QDoYn2Vksrva5Kodqbl9oQPr7-nc98MsrCVJJ0GuaSplkW9vSQxv2K4xQVBTa4lcYxFoWpedvw9Qc",
+   "_qrv": 17
+  },
+  {
+   "np": "DUMARTHERAY LAURA",
+   "mat": "193",
+   "nom": "DUMARTHERAY",
+   "prenom": "Laura",
+   "quota_ok": true,
+   "h_pick": 2,
+   "lig": 2099,
+   "cont": 915,
+   "ed": 7,
+   "ea": 0,
+   "q": 150,
+   "reg": 0,
+   "jp": 1,
+   "lj": 2099,
+   "cad": 1049.5,
+   "best": [
+    289,
+    2
+   ],
+   "jours": 1,
+   "heures": 2,
+   "hs": 0,
+   "pa": 0,
+   "pd": 3335,
+   "prec": null,
+   "pos": 0,
+   "ec": 0,
+   "sec": 0,
+   "rh_types": [],
+   "err_types": [
+    [
+     "NON PRECISE",
+     6
+    ],
+    [
+     "QTE +",
+     1
+    ]
+   ],
+   "ave_types": [],
+   "rhv": 0.0,
+   "classe": false,
+   "notes": {
+    "p": 20.0,
+    "a": 13.7,
+    "d": 11.0,
+    "r": 13.2
+   },
+   "note": null,
+   "rang": null,
+   "badges": [],
+   "defi": {
+    "k": "p",
+    "t": "Prendre tes marques",
+    "d": "Pas assez d'heures de picking ce mois pour être classé. On se retrouve le mois prochain.",
+    "s": "P4",
+    "st": "Préparation détail"
+   },
+   "_url": "https://legros123.github.io/Standard-Pick-Pack/fiche.html#zPZHPboJAEMZfZTOXHrol_Fm1cDMtSZu0aq09NMTDFlZFEXAXTFPjA9nX4MX6CaHhML-Z_eZjMnOiIwUOpz0F5Nru8M6xiVOJ7EXWWoJz8OPH63i-eArn409UUlQc3wNt294NBS6nbwpsThnY9n3AtqeYAt8ZICZQ28K3wAfgAHKF2ghBts0lMs_z8F52Bb1uwxcF0RKhQnTvfe4iMWBYgEpNQV5nGUYt_sn0pHc9TfBPgQLGjWyOD7266qwVPKKIJtMJm83Dh-f3kPhwySN6W4TslrizhEgeO3GyouBE8MWeOMGBZlrliVasUobtpT7UyuAlub5Iw6Qx6oclNxtVawgSxco03qX5msWK7YvUsLKoNWt-K1jEGeTNxWLTnBnFtKp0UR8Vy3qpLuKNTHOL2h3QTFyhG6K5lFLLKi1yljSXSqYZnTktrtNi4b5njbrNumLYLVuI0ag71UA47akdgY4YV1zJzCgcCiutdK3Ofw",
+   "_qrv": 18
+  },
+  {
+   "np": "GASSERT FABIEN",
+   "mat": "628",
+   "nom": "GASSERT",
+   "prenom": "Fabien",
+   "quota_ok": true,
+   "h_pick": 0,
+   "lig": 153,
+   "cont": 88,
+   "ed": 0,
+   "ea": 0,
+   "q": null,
+   "reg": null,
+   "jp": 0,
+   "lj": null,
+   "cad": null,
+   "best": [
+    61,
+    30
+   ],
+   "jours": 0,
+   "heures": 0,
+   "hs": 0,
+   "pa": 0,
+   "pd": 0,
+   "prec": {
+    "q": null,
+    "lig": 761,
+    "pa": 0,
+    "pd": 0
+   },
+   "pos": 0,
+   "ec": 0,
+   "sec": 0,
+   "rh_types": [],
+   "err_types": [],
+   "ave_types": [],
+   "rhv": 0.0,
+   "classe": false,
+   "notes": {
+    "p": null,
+    "a": 13.7,
+    "d": 13.9,
+    "r": 13.2
+   },
+   "note": null,
+   "rang": null,
+   "badges": [],
+   "defi": {
+    "k": "p",
+    "t": "Prendre tes marques",
+    "d": "Pas assez d'heures de picking ce mois pour être classé. On se retrouve le mois prochain.",
+    "s": "P4",
+    "st": "Préparation détail"
+   },
+   "_url": "https://legros123.github.io/Standard-Pick-Pack/fiche.html#zRVHBbsIwDP2VyJddOtSWUlhvO2y7bWhwQzuE1kBGSEvSommID2K_0R_bo1k0Rcrzs58dxz7TiYokogMVlMZpfp_EFFED9izXig2IAXl5XCye3pdgCixPZ7A-qYgj2g3313BrlJqMgQiZTuuISipmM0AVHMdgcDWksByg8azxzG6Dak3F6gPQAvMkGscgzvsaS8X5v55WSJpCE4oMJS9ovw4S44Jl98F6RcsZHPjGKo5wUNm2_gW2HuXJY7W5vYhUzCciiGhu2VSWRctOHKQ9duwQqW4R6YR0jr9FdbfjzkJQsWhUuVdmK0oWh1o50dSdFf1PixKlhry_jsSbEY6F5dbW3YmFDlJblzupzIiGCdA8uxm-if7aSCtbVRtR9ddWKk34-PJvPg_j0dRPJc1yP5csm079miZZMmw4yZBRYoEbqR1jT5haazu-_AI",
+   "_qrv": 17
+  },
+  {
+   "np": "MESSAOUDI KAHIN",
+   "mat": "113",
+   "nom": "MESSAOUDI",
+   "prenom": "Kahin",
+   "quota_ok": true,
+   "h_pick": 0,
+   "lig": 230,
+   "cont": 133,
+   "ed": 0,
+   "ea": 0,
+   "q": null,
+   "reg": null,
+   "jp": 0,
+   "lj": null,
+   "cad": null,
+   "best": [
+    195,
+    30
+   ],
+   "jours": 0,
+   "heures": 0,
+   "hs": 0,
+   "pa": 0,
+   "pd": 0,
+   "prec": null,
+   "pos": 0,
+   "ec": 0,
+   "sec": 0,
+   "rh_types": [],
+   "err_types": [],
+   "ave_types": [],
+   "rhv": 0.0,
+   "classe": false,
+   "notes": {
+    "p": null,
+    "a": 13.7,
+    "d": 13.9,
+    "r": 13.2
+   },
+   "note": null,
+   "rang": null,
+   "badges": [],
+   "defi": {
+    "k": "p",
+    "t": "Prendre tes marques",
+    "d": "Pas assez d'heures de picking ce mois pour être classé. On se retrouve le mois prochain.",
+    "s": "P4",
+    "st": "Préparation détail"
+   },
+   "_url": "https://legros123.github.io/Standard-Pick-Pack/fiche.html#zPVFNb8IwDP0rkS-7ZKhfgOht0naYpg0kthPaITSGZpS0OCmahvhB7G_0j81t1KlS3nv2s-XaFzhDHks4Qg5JlMzu4wgkNKxeVGksc8v89Wm9flh-PD6zNqzjOGX2BXkkoRze7-GtIE_SHjll26qSUHD3NGXUY-Q0EtRDDaoBmqCaoGg_uraQbz4ZPGO8mMo0YuVCsKHRZet_5kZGh5G98RAZB3jUTST541ryoQdSQHUOqHeQX4BLeQkS2AQrQqsJhUcnjopOLTrO6D6jnFDO4Y_QdyW2xAaNojHFwdi9KFAca-NEU7ckul_PLYqK7d1tIpZWOBSEnur2jKIarVQXpTJ2AsM_wirrSRiiuzWKlDe1Fbq7eWUquEp476fllS7SyTxsL8lmYZtZNp-HU0yzeLhjnHFFwUfaqcohn4K35qnF6x8",
+   "_qrv": 17
+  },
+  {
+   "np": "VILLA CHRISTELLE",
+   "mat": "111",
+   "nom": "VILLA",
+   "prenom": "Christelle",
+   "quota_ok": true,
+   "h_pick": 0,
+   "lig": 244,
+   "cont": 105,
+   "ed": 1,
+   "ea": 0,
+   "q": null,
+   "reg": null,
+   "jp": 0,
+   "lj": null,
+   "cad": null,
+   "best": [
+    165,
+    23
+   ],
+   "jours": 0,
+   "heures": 0,
+   "hs": 0,
+   "pa": 0,
+   "pd": 4098,
+   "prec": {
+    "q": null,
+    "lig": 574,
+    "pa": 0,
+    "pd": 0
+   },
+   "pos": 0,
+   "ec": 0,
+   "sec": 0,
+   "rh_types": [],
+   "err_types": [
+    [
+     "NON PRECISE",
+     1
+    ]
+   ],
+   "ave_types": [],
+   "rhv": 0.0,
+   "classe": false,
+   "notes": {
+    "p": null,
+    "a": 13.7,
+    "d": 10.3,
+    "r": 13.2
+   },
+   "note": null,
+   "rang": null,
+   "badges": [],
+   "defi": {
+    "k": "p",
+    "t": "Prendre tes marques",
+    "d": "Pas assez d'heures de picking ce mois pour être classé. On se retrouve le mois prochain.",
+    "s": "P4",
+    "st": "Préparation détail"
+   },
+   "_url": "https://legros123.github.io/Standard-Pick-Pack/fiche.html#zRVHLTsMwEPwVay9cQhWnbktzQ1UPSKitAHGJOJhkoaZuktpOhUB8UPmN_hiThIAseWdfs_bsJx0plRHtKaUkTqaXMqaIaniLrTM-sLWMQInA483t7TWwAZZSAr1RGke07e737raUJkrBIlU21kaUgz6ewBZD5DAALrrRrLvWGp6K51dAfcC9DoXPlGZPMAFWTidRMobn-2DtKP3857QGXZOZ-mNpaeMv_KAaSko_ILcb0AovQY_DX7I4wgGzC_0ExoQso9V6JTZ3y8XN_ZIi-YSEPvYFxUv7BHBBt4jQRRvHZeFYBPZir92hYY9M0Wa0F9p7_hDFxZYbh4KCRW3ynSlfRc5iXxkv6qpx4vwdQJFblJ9PI7EuhWfhOLiqObKwQ6mr8q025Yg6SWijWtA_4nyqtdPBVKUozqegjSUo8fAr2Hw8mvUyJWr6q7-azfrlTZTsti4VOnKs9UVbz1geZAyu4a8f",
+   "_qrv": 18
+  }
+ ]
+}
