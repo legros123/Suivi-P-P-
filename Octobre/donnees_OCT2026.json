@@ -6,7 +6,15 @@
   "lj": 541,
   "n": 14,
   "nc": 10,
-  "nn": 4
+  "nn": 4,
+  "at": {
+   "VIT": 74,
+   "VOL": 70,
+   "PRÉ": 68,
+   "FIA": 72,
+   "SÉC": 71,
+   "ESP": 69
+  }
  },
  "fiches": [
   {
@@ -100,11 +108,24 @@
    "note": 12.5,
    "rang": 6,
    "N": 10,
+   "secv": 0.91,
+   "posv": 0.91,
+   "attr": {
+    "VIT": 75,
+    "VOL": 77,
+    "PRÉ": 74,
+    "FIA": 65,
+    "SÉC": 78,
+    "ESP": 71
+   },
+   "ovr": 76,
+   "carte": "or",
    "badges": [
     "c100",
     "team",
     "reg",
-    "k10"
+    "k10",
+    "or"
    ],
    "defi": {
     "k": "a",
@@ -113,8 +134,8 @@
     "s": "P8",
     "st": "Ruptures & validation"
    },
-   "_url": "https://legros123.github.io/Standard-Pick-Pack/fiche.html#zPVNLbtswEL0KMYuiRRhBpP7aGYYCBGjkRHY2DbpQZTpRI1MKRRsFghzI-97AF-uj5BQCNW84b4bzId_pSLngtKecpC_ja-ETpwHa2qrhpdatgq6hL1ff16sSSgtFyAzoN-VScnpBhFh6Kac_lPucOuhBmGVAYMQi5NRQHsYyBthSnkoPtjew_NADX2EvAEnVlEc4HKqMBCgDNoIEDPPsyAC_KH-iBhCnW1XvIYx6xv8Vef-E3YKQIKkIyggs_JQ7T4F4wpdYAc8SiAgrnNUZZsEskpnvB7OUDrsY2BcCMkbkwVD-_lkBqupal6DI0nhOWsTJXIeI0ugD_esBpYfi9Og8h0lF28FNnXRU4cHJTJYMPuYVveNUukPghzHt6m5UnHo0QR-6DtXqT9QMM828uJo5PmRpXDOe6ArtWRysUWzoW23xH1vb7shxnuga1mVtbK-ZxjL1vh7H88lZEUKZKUS5Ktl9VSxv1wVxGTq_oqqKx4pVxQ3x2G08bAqGowKHV9VtUW4Wm1t3YaZA9fF_oOWqvFlVd4g0BbpblA-Pi3JzIW53rkGoHb3BjCF_nE-mZx1yflas6VqlLU0do-iy-3X8xhrF9n07emzZa2vOfzvFzPm0g6_SsF2xt0OtbWvPJ1YfgdhWsWPdtVtlPJruCt2nDrgjq8NgD0aN7MvMqW3ba8JQNpe5Z6EXzKOWYTyPOgyTZL7xUSimJ-Muvm4u84MeIkCDx2HNAWN862f08Q8",
-   "_qrv": 23
+   "_url": "https://legros123.github.io/Standard-Pick-Pack/fiche.html#zVVNLbtswEL0KMYuiRRRBpD6WtDMMBTCQyI7sZNGgC9WmEzUypVC0UaDIAXIU73sDXayPkh2gMOR5w3kzHA4f_9CRUu7QnlISnoiuuUcOtfBWRrYvpaokfAV_trhdLXI4FRwuEqBflArh0AsqRMKNHfpNqedQDd8PkgQIjIgHDm0oDSIRAWwpjYWL2BtYXuCCL7HmgyRLSkNsDleEHJQWC_4EDP1syQA_KX2iDSB2N7Lcw2j5jP_Xoe9G0w-QDFgTdBbC6YC5Fzs2naMo9wQ-30kmMCG-YHRHmPijmYx8zx-tsNjWwDrnsBEqt5rSP5dj4Gh1ZbvkSRyNnfNoMh6Gh3H4jiE2gMLFCVVnM9vBxezBja21VO4iSQ-RBDkNbmdixwaOPR3IxuY-ztcIoNTj4hYAOcui_wDCGG_mU0wdsVX_McMS7iVbLQG4bQIFd2XdSdTGMNWhrjEwdUEb25Qd-Isdm4MfDqrtPJ_oCrtPD0ZL1jaVMvjvKlPtyHKe6BrRWalNo5jCp8t92XX9yUZRQuqhRL7I2bLIZvNVRo4IbF5WFNlDwYrshpzILtyvM4atfIsXxTzL19P13ApvKFQePwvNFvnNorhDpaHQ3TS_f5jm6zNxu7NzesXYSqsV2O_9STesRs_Pkm3qSipDw9ApPK9-7b6xjWT7pupcNmuU0f3fWjLdn3bIlQqxK_Z2KJWpTH9i5RGIbSU7lnW1ldqlQW60jC2wWxaH1hy07NiXkVOaqlGEa1ifpZMErj-qRQTRqJYgsNdpX04Y8OHp2QekNuPFKPjB_yoILirwLiqI4rMKJuJTBfysgih5x_4bvFGjD1DBWzOi938",
+   "_qrv": 24
   },
   {
    "np": "CUNY GREGORY",
@@ -194,6 +215,18 @@
    "note": null,
    "rang": null,
    "N": null,
+   "secv": 8.0,
+   "posv": 0.0,
+   "attr": {
+    "VIT": 62,
+    "VOL": 56,
+    "PRÉ": 76,
+    "FIA": 79,
+    "SÉC": 62,
+    "ESP": 64
+   },
+   "ovr": null,
+   "carte": null,
    "badges": [],
    "defi": {
     "k": "r",
@@ -202,8 +235,8 @@
     "s": "P1",
     "st": "Prise de poste"
    },
-   "_url": "https://legros123.github.io/Standard-Pick-Pack/fiche.html#zZVLBbtswDP0VgacNUw1JVuJY18AbhgFJ5rWHLejBcZTWnWO7kltsKPpBQT9ht-bH9mQnBYYdbD5S4iPFxyd6JCM57cmQEmp6IQVx6uB9cvamdb_hNfDmV4vvgBWgjBXQHZkJp1sysYwEp19k8K_BlaaI1ziO05RTiYiQCcCWzFRHmtM9mZkIwCIUTDHkdvCUEEjuxoC7QQbshsz6GqaHnSQzrlJ4Ho6ecSkUvpRLKXgcI945Mk-hBCJRjEYqsCg9TUZaPfCj0kzKZ7ysJdM81DWQPyP384wWb4eY0a6oveXUbs7BTXNGZRceiUxMYy244gqNuNDumi4wqpWrvGVby7rW95Z9WRKX13w8mxeubxvW4HPFvvD-eAinILBuIFgsF2yVZ_PP3zIKxGv6epmxDyeKLM-zq5zl2cdTVvE4Tmu7C3PAU8ihCnqhH8eDa9nxUKIie31h_3XFXv_g6jYswunaO_-elZbt28pHbLm5s2Vf7ZhhgtVjlHWuLW-LqolokIRWMoBQ7l96wrAvT8qkOggT1IAuoxpaJ8m4NBMth4WTWIymHOfawNcgKOs3Ge4hXO8e7PNf",
-   "_qrv": 20
+   "_url": "https://legros123.github.io/Standard-Pick-Pack/fiche.html#zZVLbbptAEP2V1Ty16sbaXbAx-1ZZpLJa2S52IrVWHjDGCSkGshCrUeQPyKdY_YS-hR_rWTBRqz7AnpndOXM580wH0pLTnjQpoUYXUhCnEtYnk9wW5glWDmtyNfsGmAJKRwHdkx5yuiPtyIHg9JM0_hm4fB_-DNeO73OK4RHSA9iSHrkDl9MD6bGwIIHLHlEbW8JSQiC47BzmFhE4N6TXNzhqnENvzJUPq4LhjrkUCp_PpRTcceAvDelnmwKegYNCUrAod-R1tG7Lj0xjKY_orCCdP2YZUNWj4tCjOOpRVFvW6-kKFSlO1_Mv6H7EaRE2L6Q9oMvpRwA0vGxeJt2rYLmwLds0oNxFWZWAfdNzbvK3PKUdEhrGNNeCK67QiLHtrukCo16YtErYNmFlUdUJ-zwnLm94dzeJTF3kLMdnon1UVc3J3oIgMS3BbD5jizCYTJcBWeI1fV0F7MOZIgjD4CpkYXB5jooO3bS3O9vxD8htkAW10PfmZArWnGJkZK-_2H9VsdffeLq1i3R-9q56z-KE7Yu0GrD55j6J63THNBMs67ysNEV8F6X5gFpJaSEtsOn-pSdMcXVW1netsFZN6Nqp6bqe1y3d0JXtwkosVh53c83zds_-EtFzzyJ6ohdxNO5FVL2InuxF9I_IH2dvKj5gb2rzmBz_AA",
+   "_qrv": 22
   },
   {
    "np": "DEMBELE TAMBA",
@@ -296,6 +329,18 @@
    "note": 10.1,
    "rang": 3,
    "N": 4,
+   "secv": 5.45,
+   "posv": 0.91,
+   "attr": {
+    "VIT": 74,
+    "VOL": 65,
+    "PRÉ": 45,
+    "FIA": 64,
+    "SÉC": 68,
+    "ESP": 71
+   },
+   "ovr": 70,
+   "carte": "argent",
    "badges": [
     "team",
     "up",
@@ -308,8 +353,8 @@
     "s": "P9",
     "st": "Gestion des déchets"
    },
-   "_url": "https://legros123.github.io/Standard-Pick-Pack/fiche.html#zbVPbbptAEP2V1Ty16gQtC14ub2lKKks1Tih5qdUHjElDYgMBHFWK8kFWP6FvyY_1DHbeKvkyM5xz9szM8kxPFLtMO4rJaGPPXE1MHbK82K0LxA3iL8nic_ItQVYjC_wQ0T3FxjDdgR5oZ8b0m-LACZi2qOjA-oiA8cOIqaTY81w8KzcUW88B7xHoQGgVSq4JERQUI-8kd8MIpjpUfIta_0vQTGuKVzRWxQ7n7zv8PMDuT9RHPLDasotkQBx6HITygQ3rcWg4iDgwHGoOXYZU4HPwjkFqpzpYYcgRYB50up7iZ_FptSPN1DDhzdzo6EufnJqZ9l8wpVa6dmC6GYTWSRMOuipkKpYJWO2ABNHIMWD0D5BjStEiSNjC2O8rpnYtdJncTOvjUZ4-HeYZrcFcYyVGtEqc0uy3W4hhDSuXLVsY72UaKzrDfC6Kfmwb1eDbF7tiGN4OJJgVfcLTeVOPdTHWTxVhcmBW_cRMl6m6ypKL-XesPPIFfp0nChQ3kCTJsuQmU1lyiYqRyjKbJ2l-ns-XKfFMpIqnSWpxnl7fnKc5sSc4Ub5YppfLbAFpI8DNrTSMYWA0TLBOP94OfaveDiXMq9c_6j9NqNe_NM2U7An4Yfioykrt2npw1HJ9X5VjfatipdX2WFVd35Z3Rd04NN0RuookkAO_VsNYQ31TDWoDubtqHAiDzk8XIPId77gK49vjKnxf7uO0Jt-dXhJX1ljKLcA_crkV5fZ9rY_tMXr5Bw",
-   "_qrv": 23
+   "_url": "https://legros123.github.io/Standard-Pick-Pack/fiche.html#zbVPNTttAEH6V1ZxadbF2bWf9c0tTU0UCJxjDoVEPjmPAkNjGNqgSygPwKKiP0Bt5sX5jhxtSCDOz38x8M_PlhZ4p1JJ2FJKtbHOiFUlq4KXZbp3BrmD_iM6_R2cRvBKe5_qw7im0bUl3SPeUNZH0h0LP8iRtEVGecWEB4_qBpJxCx9F4yzcUGsdC3iPQHqcVCGnbh5FRCL9hX_sBSDWIuAax9pbRktYUrqgvsh36PzX4egDd34j3eDDKSA2ng-070vP5AxrGkb4tvUB6tvSV9LVEKc-V3gcGrhniyPJ9GQDmoE7TUvjCPI2yeJgSJJyJDkZe6sjUnih3jy3VPLUF0lXHaQ0PYWGqjLdiJAGrLCShaGDZyKixeA-BHAjK2tui6jFQ1nP29TzFI5peL87QHxtYJodXLAPW6XyKEN4uD68zWOgRXS4B10wDRfv2qUD5NRfiC0yUGik76kjasZUCeI3T2swpB9vqabsFO5xzpaWRBgtoeasrOgGtWdb2dSUq_LXZLuu6wxsxZkXf8Dqvyr7M-vK5IFwAmUU7ZMaLWCyTaDa_hHQCl-EXaSSQoj12oiSJrhKRRKeI2BxZJPMoTqfpfBGTnHCp7HkodT6NL66mcUrSYRxXni3i00VyjtI2Azc3PPADltmCEqjTr8NbW4vDWw7y4v2v-GQI8f6PhtuQOQK_dF9FXohdXXaWWKzvi7wvb0QolNiOUdG0dX6XlZVFg9ZoGbDBDX8WXV-i-qboxAbl7oq-Iyw6PQopcC1nPIXtmvEUrsu6Hs7k6uHHpnHaKmc14T9893NRsHRGUbACBlFA30dRePooChPs0T_ffqjisR6t_X8",
+   "_qrv": 24
   },
   {
    "np": "GEORGES MELISSA",
@@ -402,13 +447,25 @@
    "note": 16.2,
    "rang": 1,
    "N": 10,
+   "secv": 0.0,
+   "posv": 2.0,
+   "attr": {
+    "VIT": 92,
+    "VOL": 92,
+    "PRÉ": 72,
+    "FIA": 72,
+    "SÉC": 80,
+    "ESP": 80
+   },
+   "ovr": 86,
+   "carte": "icone",
    "badges": [
     "c100",
     "turbo",
     "secu",
     "team",
     "k10",
-    "podium"
+    "or"
    ],
    "defi": {
     "k": "a",
@@ -417,8 +474,8 @@
     "s": "P8",
     "st": "Ruptures & validation"
    },
-   "_url": "https://legros123.github.io/Standard-Pick-Pack/fiche.html#zRVPLbqMwFP0V6y5GM6oHYWNwwi6KaJVFSUvTzURdUOJkmBJIDEQjVf2g7PsH-bE5hoy6AJ97fM_lvninE8WC055ikr6MfgqfOB1g3ZuqbNscVg3rLllmd8kTrBKWDqZAfyiWPqffCBCEXsTpL8XKA1OBCWUYAsFHRwGnguJQCDDFBpdCeoBHJ1Se4mRAhhJnTjGcDzAD5U-BQIip5mR3CITQrxSvqRC-y7Lr7WuDszVF70yT73G8jRU0m7Lf0wsUHSTC1yGXGmbrrGDKReiPjwo4suDICSceobmQ4AQ46fiICz_88g-iLzzoFaIeLMXvY0GRhwqqcufK1FKPNehIj2UpoScfaGmD68hDyXXrlGi4mLgWunp9D86bAaAFiCyUF0Jk34ZRpe4GQgxum1et4dSgK3VfVSi2_o-Kw-hmMZ615D73kaZ1vVjTDRo06ztr2KEp6w7vtuzKLXHxwsfbRQ0i78qTcSSUxg7KdJmyhyyZL54S4kHo3B9XCYNk6vAyWyTparZaLFPikWOSLEueM5Ylt8SlC5SfhkD3s_TxeZauHMvHuPNlervM7pPrFzdb1xiUTG4HkTj9upxtwypktjOsqEpTdzQ0ioIr-739wQrD9k3Zemze1J29fFaG2ct5C62pcXfDjn1ed2V3ObP8BMQ2hp3yqtwY69GwH_QwccB9MusP2DLTsm-jD1rS1IRZrK7znio3bjdiqaLriJXW4-aHSgx_D1aJ6uI6NtgKAQr8JJ3tMb1jM6KPfw",
-   "_qrv": 23
+   "_url": "https://legros123.github.io/Standard-Pick-Pack/fiche.html#zZVPLbptAFP2V0V1UrTJFDAyMYWdZJLLUgIOdLBplQfA4pSGDw8OqFOUD8inZ9w_8Yz0DrqKqC5hzz9z3vfNCB4oFpyeKyXO98KtwidMe0qWuq64rIBlIF0mWXyRrSBUk5UdAPyn2XE4_4MAPnJDTL4qlA6YGE3hBAAQdFfqcSooDIcCUW1wKzwF8tobSkZw0yMDDWVAM5T1EX7oREAgRKU7tAxzB9T3Ft1QK12bZD-19g7PT5WBFXTzheBwraFq6g3YPdeGqgHsKYmclP-IicKdP-hwZcOSDE59QXHjgBDjP8iEXbvCh74cfeLSX8LpvKX6ZigkdZF9XD7ZE5akpfxWqqSQp1OwV7WxwHToo13TWEs0WM9s-W6vrQHk7ApQPz0I6AYwajGkGnRJKVJWN0Siy6K39zXJDcQR3N9m3Cazy4xviAp0v5xNYH98W8IAOJuuVBTYR-NwVdafhHn01Q12jZeYvKm1iMGgx4FuPu9xFsa3t6C2dIfp86FvN9k1levy7qq92xMUdn26XBkTRVwdtSVjqdrRMs5St8mSxXCfE_cCqX20SBpPI4ixfJulmvllmKfHQMkmeJ9c5y5Nz4p51VBxGR5fz9Op6nm4syye_iyw9z_LL5BRxu7PteUTD7BYjcfp-fG8bViOzB83KutKmp7Hd5J_Yz90XVmr21FSdwxaN6dvj71qz9vi-g602uDtjz0Nh-qo_vrPiAMS2mh2Kutrq1qFxy2g1s8CGzIc99lR37NOkg5Y0htD9zWlrImmXxi6KJ8PTokilprcTSDG-PywkmXKah4Es_xm-kqfh2xcyDT-c_Td8JU7DD6NXxC_xSvt2wPCfmwm9_gE",
+   "_qrv": 24
   },
   {
    "np": "GRANGER JEAN PHILIPPE",
@@ -525,10 +582,23 @@
    "note": 12.8,
    "rang": 5,
    "N": 10,
+   "secv": 4.76,
+   "posv": 4.76,
+   "attr": {
+    "VIT": 73,
+    "VOL": 63,
+    "PRÉ": 75,
+    "FIA": 72,
+    "SÉC": 69,
+    "ESP": 95
+   },
+   "ovr": 77,
+   "carte": "or",
    "badges": [
     "c100",
     "team",
-    "up"
+    "up",
+    "or"
    ],
    "defi": {
     "k": "r",
@@ -537,8 +607,8 @@
     "s": "P9",
     "st": "Gestion des déchets"
    },
-   "_url": "https://legros123.github.io/Standard-Pick-Pack/fiche.html#zbVPRbpswFP0V6z61qsswIQTzFkU06qSSlNGXRXug4Cx0BKghUaeqHxTtE_bW_NiOgfZpQhbH1-deHx9fv9KRAsFpTwE5tuNdC5s4NZh9VWnF1ruiLJpGIVYhtozn0TKMMSswE9IFeqLAQYEdyngza8LpBUhYPqeSAukLCQCO6yGSUTBxpQuQUzD1rRmnZ7Bt23I4qXyopFL8oaGfTpDemICNLP2TAm_K6ZGCDWVIw_adSvf4HRr6gYUOKzPb5z4mLbCUHDQMlwNKB8jhcsqlBzThQthc-iYOUYYkhKH4GIJLMeZ6KNZoCl6NWN-zoKAsIEU6nhjUmZRRsGe_wasaMcd4ULUmr-ktgTc91_I45T3Bxpl6IJGkf8ETTpGhIBH3sk3LVnGqcd7qUJY4X_WBsmagafi-mXJ8EKnN8Td0DT8Wqe7qilUYOt2nbXs-keFs6Aqr67r8fUxLVWWKBUyralvrjqmX5nzKi65AkqrYTh20alkLa_nkI3Ne5Ip9wXKnU0Di4nOlgrK0TwYlThJ2YaoqlmZdcSy68-nSsCFT6V5mtIrYOg4Xt99CLPQ73Cchuxp1hnEcPsQsDm-IOyawim_DKJknt6toLJQePwstVtHNKr4LR0F38-j-YR4lIzHfmluAv7AbLYP_9_NJ1-x8yuATe__D_uMXe_9L_UXRdCRetJcMju3rorXY6vFJ4WRbGGizcoiyRtfZLi0qi_r-o7U0wGy4VO3oTctylNupriXcejL2lXRNf_St7npDM7nubDY8nqkr-gco8AiqbGwQzF0UyPDMOn1AnzzXA3r7Bw",
-   "_qrv": 24
+   "_url": "https://legros123.github.io/Standard-Pick-Pack/fiche.html#zbVPdbpswGH0V67tqVZdhQgjmLopolWmFlNJeLNoFBWehI0CBRJ2qPkAfJdoj7K55sR0TWmnTFDkcf38-Pt_nZ9qRJzhtyCPLtJxzYRKnGrvPKinZYp0XeV0r2ErYLqNpcOlH2OXYCWkDPZBnocAaZZyJMeL0BCQMl1NBnnSFBECM7cCSkjeypQ2QkTd2jQmnR0SbpmFxUtmxkkrwBYd-O0J6rQ0msprv5DljTvfkLSlFGo7vVLLBZ1vjr2roG7wd3BPT5S42LbCUHLFYNgeUFpDF5ZhLB2jEhTC5dLUdzHSQEDrExRJciiHXQbG6Ie9ZM3YdAzSKHHyk5YgjRZ0ysHbMFwhWwWZpIcpW59W9LhCojzUcTlkfYOJiPZBIqtCOCWRJEaTvg-hOJ9_NYziQfBd-gQgAi-jwChN4XMynAJDs5vA6gxOS-TcLUBtrFii4SopWoTZ0K7dFAYnKd5RqVpoB-rccc_xwz0YruKRznD5Lmq4qWYnVJJukbQ970jFLOoN3URU_d0mhylQxjzWqXFVNx9RTfdhneZcjSZVsrbaNalmrWzR6z5zmmWKf4O6aBJC4-PCUYJb0yQiJ4pid6KqKJWmX7_LusD_V0aCpmp5mEAZsEfmz-Y0PR3_Cdeyzs4GnH0X-bcQi_4K4pQ1hNPeDeBrPw2AolOw-Cs3C4CKMrvyB0NU0uL6dBvEQmK10L36gNbozUIm-HvZNxQ77FDqxt1_sP3qxt9_U95rGQ-BJe8qg2KbKW4OF9w8KN1tBQJMVRyurmypdJ3lpUD_CtJAa6AMvVTto07IM5daqawl9jofRlLYesf7J2M5xHm1bT5R-hGNb9A9Z4DGV6bHzJfb232NmD2M2Md_HTD_ef8ZsIoYxc-QLzk_x2rtmizF7rI7o5Q8",
+   "_qrv": 25
   },
   {
    "np": "HAMDANI AMINE",
@@ -615,6 +685,18 @@
    "note": 6.0,
    "rang": 4,
    "N": 4,
+   "secv": 18.67,
+   "posv": 0.0,
+   "attr": {
+    "VIT": 70,
+    "VOL": 54,
+    "PRÉ": 45,
+    "FIA": 45,
+    "SÉC": 45,
+    "ESP": 64
+   },
+   "ovr": 60,
+   "carte": "bronze",
    "badges": [],
    "defi": {
     "k": "r",
@@ -623,8 +705,8 @@
     "s": "P9",
     "st": "Gestion des déchets"
    },
-   "_url": "https://legros123.github.io/Standard-Pick-Pack/fiche.html#zbVLLbtpAFP2V0V216o01Y8_4tUPUabPAJC7ZFGVhjFOcgk3GTlQpygehfEJ34cd6xpBdJcw5d3Tu-77QM6WKaUcp-dIPL5Qkpj2sya5pa_AW_Ptk9nWSX8FqYEXGB3uAn2HaAJTxfKY_lGqHW0pNGIQgkAQRSEWprxIJsoYm9hKmR0pD39NMNZ4SaOoSL8gMU0UyCEDxomSIHPYXpRHTitLlHWAAGhWwH8HqYSjFOmEdswk41GwSDkFijiWHkiPpiDGMCmLnsreUtk_bLXrrkNRDYS3CvLi2lXQmMo-4PqMd8RXkNxpgysf_FqMb7FPN1K2cu-vXSHmqPBgJAgS-dJ4rzNF3sar9R3aL2S0lK40fyrKuryVdYLbT0g5dK1p8ttyVfX88kBNBVdtRlc9zcV1k06sfGXGc3PGSbhaZ-EJsHM-KIrstRJFdEvvOrXwe3WaT_OZ2ki_OMhdlOs8v58UMYZQTru9dK2gTTTOhJPp5PNhOHA8VihLvb-I_xYn3vzROi5Q-Kz_1n0VVi13X9J6Yrx7qamjuRSqk2J5exd521aZsWo_GLdJ14ojL-K3uhwbh13Uv1gi3qYeeMMOFKw2Xk2jvfB--Pt-M1lF0ujij1Xi0ym2ochsFwtYIUG0_NvbYndjrPw",
-   "_qrv": 21
+   "_url": "https://legros123.github.io/Standard-Pick-Pack/fiche.html#zbVLbbptAEP2V1Ty16gbtwgKGN-Ti1lJ9CXbyUCsPGJOa1AZnIVHUyB-QT7H6CX2Lf6xnAT9UqmQ0Z9ZzOTNnXumZQslpTyHZwvaupCBOB3jRvihz4BL4azT5HE3H8Ap4vmsDPSDP5bSFka5lc3qhUBm7o9D1HA8AIY4PkFFoy0AAbBAzsAJOjxR6tqU45XgKEJOneEFnuNIXjgOIFyk89NA_KPQ5rSlc3cE0sK50uO3Dq-FIyVXA1YC7DvcUdwPuAQz4QHBPcF8Y4LocDAYm5aApLJ92O8xWoakFYiXKvJqxpTAuOrd201vd2iOnCtvyzCCIoLWuyl9mRWljsm_HS9DEn7ezb1gBZpsn5zcMjAlG46gDi_PbsEPxYo5aCkVLFG30U47ya1PI7M0VotuA0wIQcWxhGKyhh204ZYfLFBoarASXCj-Mp81-VnQFYsNUN1XJSnw63ad1fT6RCUJUrtuo6WzK5kk8HC9i4oPgjq_oehmzT8Rdg-MkiW8SlsQj4rZJS5_btEk0vb6Jpss-zFQZzqajWTJBGWkCN_dmlJ9YkwYRUKLv55Ou2PmUgRR7_83-Q469_6F26yRVH_mh_siynO2rorbYbP2QZ01xz0Im2K57ZQddZdu0KC1qr4HmgQGm45e8bgqU3-Q126DcNm9qwg6XhhouMFBWf2e26m9PKd_vLtdVsj1-rJXKzFwGLHz1r96q19sI3-mNw-v09u2L3r686B0c0T_bXQR_rDp0_As",
+   "_qrv": 23
   },
   {
    "np": "JANAN ZOUHAIR",
@@ -681,6 +763,18 @@
    "note": null,
    "rang": null,
    "N": null,
+   "secv": 0.0,
+   "posv": 0.0,
+   "attr": {
+    "VIT": 58,
+    "VOL": 45,
+    "PRÉ": 72,
+    "FIA": 79,
+    "SÉC": 80,
+    "ESP": 64
+   },
+   "ovr": null,
+   "carte": null,
    "badges": [],
    "defi": {
     "k": "p",
@@ -689,8 +783,8 @@
     "s": "P4",
     "st": "Préparation détail"
    },
-   "_url": "https://legros123.github.io/Standard-Pick-Pack/fiche.html#zPVIxcsIwEPyK5po0iscywibuKFIkBTAZqjAphC2CEyEbyWYyyeRB5Bt8LCsbMy5uT7e3Ou35h06UC04HyimJk_RexMSpQfZad3tVOWQW2fN8MV8AV8BCCqCPvm9PeRZJTl-Ux5wM5UmKzHxcQQGSCLGkfDKNMk5HNCRRykmXvYBWfWcTCNlsBjQcuPc-bCnfvCG0iEFxhsQDZxOAxlH-ExRtZwxurdAjJml2Ewmq8S9eUI8c60fkPke0uBXhxU4ZrznV2_Fwa0dUwBYRRsOjNzHHhxlcO0yoMctmQ8uXp8fFer5-WsIt8YaCOg2EcheGxaVwlxO6aOW0LZ1mrfbsoNyx0x6VMlSUZ8p7_c3Ku73uHAilZk1VfFb2nRWaHerKs6buHLv8tZAoDOiXc8SWlnnNnG5d3Z00MyPV1QW2aSPq7aOVDGAY4nJulFNtVVtWXs6tqgzBsvXV2gcZTQY_E5kOjkqZZcOOp1L0v0dYsS0GdyxyCYHC3Mw8wv7Wdfr3Hw",
-   "_qrv": 19
+   "_url": "https://legros123.github.io/Standard-Pick-Pack/fiche.html#zVVJLbqNAEL1KqzazYRDgNuDeWaNEcjSyrcTKYqws2tCJSXCDG7BGE_kAOYrnGlxsXoPb0ohFvaKrXn1efdKJROjRgQRFQRR_DwPyqIb3q-r2sjDwNLyH-XK-BC6AQx4CvQ95exKJzz36TSLwqCQRxfDK9yvIEBRam5OYTP3EoyMSIj_2SOUDgZJDZm0DkjQFGn-Yt8HsSGxfYFpYy5jCaYCTCUBtSHxaRt2VJaoWyAkncXIjsazBGRNULkY3DlUnhzLpkGwt4fNiQ2KKVp5XP0nwqUfrx_7L9u3R_WIOMPPoqf_6QSJFkbunNYmY2zKgfJVlo8C-c5w7fauDtYZ2NCxtG3j4MINpxwkVZtluafW4uFtu5pvFCtsOX_AgT2NA_mp7-8D-a2wfWbQ2SudGsVY17CDNsVMNXnL7Ihsmm0b9Yfm3veoMAnLF6iL7KPQbyxQ7VEXD6qozrP_bgiIrEd5ffLbSrFHMqNZU3Umx0oWaKsM1aJ-G9dOaWzA20V9qaWRbVJrl_aWVRUnYxeYqzYz7k1GPiMejIpwnyXgjUx4O52VPRGfjdjR8_p8UCb9KkQROijh1UkROiiR0UszOqJ-VNy2OUL81nTr_Aw",
+   "_qrv": 21
   },
   {
    "np": "KELLERER MEGANE",
@@ -758,8 +852,21 @@
    "note": 12.2,
    "rang": 2,
    "N": 4,
+   "secv": 8.0,
+   "posv": 0.0,
+   "attr": {
+    "VIT": 75,
+    "VOL": 66,
+    "PRÉ": 46,
+    "FIA": 95,
+    "SÉC": 62,
+    "ESP": 64
+   },
+   "ovr": 76,
+   "carte": "or",
    "badges": [
-    "zero"
+    "zero",
+    "or"
    ],
    "defi": {
     "k": "r",
@@ -768,8 +875,8 @@
     "s": "P9",
     "st": "Gestion des déchets"
    },
-   "_url": "https://legros123.github.io/Standard-Pick-Pack/fiche.html#zbVLLbtswEPwVYk8tuhEoig9L10AtiqZOqqaXGD3IMhM7tSWHUoqiQT7IyCf0Fv9Yh1JyC2B5d7iv2SEf6DcVKdOOClJS2ZNUEtMe6Ku_qVsP0AJ8Kc_OyqqsADeAzqTwblFpmNYwqU5mTH-o0Ili2lLhjM3hIMVI5DRUKC0zOCsqrEkQu0OSShDz8UjC1lTA7AFdrhy86SDcjGZJxYL--tDRT4AByJgZZxKoB9AztoadYqvZOnaSXcbOxJ_Bv-MZoOXccK5Rsg9UtPfbLdbrwF9F2i36PMTdASEJpiuZYDIIyRhHiU3MI5xfCDHNsS6qIOAQ7j1Tt4z1085yop_Jl40yJSUqlxBTxZ7N_nV-gH4LyZYtaIW414JOoO5pHYauFS2-UO_qvj8eCDlI8mFMmp_PxUVVnn7-XhIb6LCgb5el-EDsol9WVfmjElX5kTiLZTWILmBX15EmVsBCTBhIV8dD6MTx0GCkeH4Sb4wWz_9oVILsS-K7_r1ovNh1mz4R58tb3wyba1EIKbbTqdiHrlnXmzah8YroIo9OHPjJ98MG3Ve-Fyu0W_uhJ8hzGZnhYeQ6ySYBlbaTgFrjDidxdTo-yjSKj4eVQs4WWKNBs329jLtu8h7_Aw",
-   "_qrv": 21
+   "_url": "https://legros123.github.io/Standard-Pick-Pack/fiche.html#zbVLLbtpAFP2V0V216sQaj-eBvauQU6HSQA3NoqgLY5xACjYZO1XViA_Ip6B-Qnfhx3oGm0WlSph7z8yZ-zj3PtMPSkJOO0pICmmuQkGc9kCfyvu8KgEqgI_peJxmaQa4AbQ6hPeAl5rTGiZUwYDTT0pUIDltKbHaxHBA0QKcghKpRARnRYnRAe4eQZIB7kp_JGBzSmD2gDaWFl534O7PZknJgn6Vrkbm2tE3nLQ40nrAIwHUAKgBN5pbyY3ixnIruI241f6n8W_5ANDwWPNY4cneUVI9bbfosUYT0tdeIc6zFwAQuqAEKQKkR1XC3-OJCfQBNUA4xKICFF8QuK1_ejua-_Y53U7G4IIxzU4vUAbe9eg9JchOs9PLEJeIl86mcBQCVgjYuqcSoZc-UCee6HSIRC9NJIUAeYmpSF9Xsb_04DCIheCGG7TmvDYLukJZw9y1dcUqfC7f5U1zOhI4IJXuTLqZ3LBplg5Hs5S4hpYL-jxP2Tvi1vtplqVfMpal18Qj_yxHoQvY1Z0v8zva990jIX09HV3NTscCKdnrb_af1Oz1D53VJNMT3zRvWVGyXb1pAjZZPpRFu7ljCRNs252yvauLdb6pAjqPmaaxd3zCD2XTbhB9VTZshXDrsm0I8sx9ZdiwWAVRJ6D0-nsBlcIedOKq8LzdoYLBhoaQswJW_45S9aPENvWjNIN-lNi0fpQ2vIwyPiB_sb3M8rHuvMNf",
+   "_qrv": 23
   },
   {
    "np": "MANGIN CHRISTELLE",
@@ -845,13 +952,25 @@
    "note": 13.8,
    "rang": 2,
    "N": 10,
+   "secv": 1.0,
+   "posv": 1.0,
+   "attr": {
+    "VIT": 74,
+    "VOL": 77,
+    "PRÉ": 78,
+    "FIA": 79,
+    "SÉC": 77,
+    "ESP": 72
+   },
+   "ovr": 80,
+   "carte": "or",
    "badges": [
     "c100",
     "zero",
     "lynx",
     "team",
     "k10",
-    "podium"
+    "or"
    ],
    "defi": {
     "k": "p",
@@ -860,8 +979,8 @@
     "s": "P4",
     "st": "Préparation détail"
    },
-   "_url": "https://legros123.github.io/Standard-Pick-Pack/fiche.html#zNVLLbtswEPwVYoECLcoIpESLkm6B4QY51DXUtBejB9aiYzWyJFNUkTTIv_Tq7_CPdSi5B2pfnNXOLF_pNxWS05EKikWc3khBnHpEy4OrB2-bxiLRIvH5dn13v0ZQI5A6hveLilhwOqDFIo7Q5pkKHWWcGmTiOI3h4U4qE047KpSMNZyKikxEKacTbgkZoWirAIA1VKBhjzDXOZw5do8ALzj9pGJLOynCjH-s62Cal_YZxltzhHmax--qejzSDwA8EFmecIlggC8TwaWIcVIcwXMNI3me8hxBwnUafCkUl1LzPOO5Cl8pECymnBQZevWOiteJgBQRSDU1RpQq0WIeWl9ZqEy_Qb4OxSQI0w4B1wdcBEJmygNfTQ4UdEGIKAfIPUFdTusgEoDY0940g-XUQYZ2bBrQa_97u36-5g6BJJcTYRfYb-kGkiyN813LWhxnjmYYLmcKd7b0EdXb0TvL-q5uPb5D7et9qKKFdVOL9Zc125Sr5f3XFQoTblWWq28lK1efrlcNJtzCVvtAEcODJhYD-70erGOQnL1jlWWnsfOGJs70MDI7sMtfNj0E1N9fzqex7i0rWK5C5kPE7sxja9liHnAILdyLPxxtRNNSaaOCE_60cZdzb5zxNYhWl7M3dUPQ8uG6rdByXlCs0uuGlNbzM10oOb10qWB2V9kRKzTY4UV7N0L9Uzd7b_8A",
-   "_qrv": 22
+   "_url": "https://legros123.github.io/Standard-Pick-Pack/fiche.html#zdVNLbtswEL0KMUCBFmUEUpYlSzvDcAIDrWM4aTZGF6xNx2pkSaboIGmQA-QW3foculjfSE52XVDz5suZN9QLPVKmJe0po1CF8YVWJKmGNtm5vPG2KCwMJQzfx_Or2RxKDkUnIdBvykIlaYcSwzBAmSfKkmAkqYAlDOMQCDGxHkhaUxbpMAHYUDZSQSzpgCilAzjthhMgDWUoWENNkxSg1909koeSflG2orVW3OMf6yqI4rl8gvDW7CEeuvYrRz8R7BE9SgdSQ2mA9UBJrUKcGEfJNIHQMo1lCmUgk5ixVpHUOpHpSKYRf7WCMuxsWo1Qq3aUvXTNaxVgoCJHezoaJKpvODlPEI2SV1BXwTlgUsqG82rOCzCM6ezI33QA7DkmIUiRVD0yR-AKQTwOoj0n381uUT-SdHf9DQDJi2X7BoTyl7MxAEi7ad8mvXN6swAIuQsU3JqisagNFstjUYCh8h2tuSsmesc8Sd1x5pjAFV3g9olxvipFiePM3jRNeyKOWdFXeMdH76yoq7z0-Da5z7fsRQnruhLz67lYLKeT2c0Uji5vulxOfyzFcnp5DjXocAW52fKgD5i75r1C3uWNdQJbE5_ExorDsfKGOtro9ihsI9q_ontH8H9uT4djXluRiTRiy5dAXJn70oph32DDJdyz3-1tQN27oEXEgG9auPZUG2d8jkE37cmbvCCwd3teOJfsdxxG8XnJERPNr3wY6e5H0VhPue75LKFH_1meel9e_LG88GN5-ry8OH3F_Wv8T94dsbxD1aPXfw",
+   "_qrv": 23
   },
   {
    "np": "MZOUGHI SHEHERAZADE",
@@ -947,9 +1066,22 @@
    "note": 12.4,
    "rang": 8,
    "N": 10,
+   "secv": 2.22,
+   "posv": 0.0,
+   "attr": {
+    "VIT": 75,
+    "VOL": 78,
+    "PRÉ": 70,
+    "FIA": 72,
+    "SÉC": 75,
+    "ESP": 64
+   },
+   "ovr": 76,
+   "carte": "or",
    "badges": [
     "c100",
-    "k10"
+    "k10",
+    "or"
    ],
    "defi": {
     "k": "r",
@@ -958,8 +1090,8 @@
     "s": "P9",
     "st": "Gestion des déchets"
    },
-   "_url": "https://legros123.github.io/Standard-Pick-Pack/fiche.html#zbVLLbqNAEPyVUZ92tRPEDMPzZlkk64MhIfYlVg4EcExiAxlItNooH2TlE_YW_9jWgPe2h5Grqx-uruad3igSnA4UkbSldyFs4tQhut1Vu0rnv_OyAtOAWd6l66ufC0Q1Ik_4QE_oDjjt8OO4FtAvijxLctqDEdJTQKjxpMepoMjxHRegpChwLJvTC6psZUFABU6hv8opQntnQukh0YEQPjL6kSIfqQeKNlQI2wh9htx7UAM43wu4QNADC6G4sD28kIeSh8gIB5HPQ4-HtiFCxQPFQxcZd8qaHhHiBZjSaYreJ32B5WCL-tHsKHx7kqRcb1LpSM_9gEEt0tLCvk1vOrsxhH4jX5hdSzPLWKNHRqBJP8MITonJoBGn2Ob7vuLUYsnmdb_Has0_VHRTmYbZG5tLLiFTm803dAEv5rke2oY1eDo_5H1_OhJqUFTpsShJE3adxfPFbUzcce_5huIsi9cZy-JL4qEhblYx-4GswWm2iJPVbLVIE4KzGJS_jYOWs-RmPUtWhuXT3HmaXKbZMj4XllvjAbbDspygke5OR92y07GASvb1yf6jln39odEmkufCb_13VlTs0Na9xdKHp6oY6i2LmM32E8s63Ra7vG4sGg9P16EB5g-vqn6oMb2selZi3K4aeoLnq_NdQ2XOak4p1fmUSvn-9L26SozfvDD3LM7nQawwoMCnPehXXOmlndDHXw",
-   "_qrv": 22
+   "_url": "https://legros123.github.io/Standard-Pick-Pack/fiche.html#zbVPLbptQEP2Vq1m16g3iXi5g2FkWTi014GAni1hZEExiJzY4QKIqUT4gnxL1E7qLf6xnwF5U7QIxc-bBmTPDKz1TqCRtKSRta-9E2SRpB2-2KlZFnb1kywJICeTsKrk4_T6Bt4bnKR_WPaoHklZ4Oa4F6yeFnqUlbYAo7RlYyPG0Jymn0PEdF8aSwoFj2ZIekWUbCwQKYAb1RUYhynfsag-BHQDlI1LfUegjdEPhgnJlM9GHjm5V0zXwFgHfG0gFp4GtlJHK9vAEMtAyQEQ58HwZeDKwGQiMHBgZuIi4fZRrVIBngC67msLXnuTAcjDK-o4HVb7d8zKu11N1tOe-QaUKYW1h6LLhyl3nYgieQfHAS-7F-tQdolBUYQM-y4MkHgXZLRdfTuYIQK7L5AcMKDBN9--w0GY8GfZizPbvoz4rmk2hs2EWaHibbZoCvSFW-bTZQJ3yaOXMCj1qLG1hSy01Jq1ZvAWd4OujrG6rUpR46mybNc3-g5CDpKLukuIkFtM0Gk1mEUnHvZYLitI0ukhFGo1JBgyczyPxDVG2k3QSxfPhfJLEhOWgUfbcNTobxucXw3jOqOz7jpJ4nKRn0SFxectKPEAY1gUc6Wr_UVdi_5GDpfj8Jf7DVnz-pk5p0ofEL81XkRdiW60bSyQ390Xerm9FKGyx6VGxq6t8la1Li7rboWnABn_wtGjaNbovi0Ys0W5VtA1B5fnhNALDl8HXoM3hGozx_f7uXaO6f0fxSeS97iV88_eSzXHJ9nHJOON_lqyOSw7e8P0cf1hbP2HJj1Vvvf0B",
+   "_qrv": 24
   },
   {
    "np": "PETIT MAX",
@@ -1041,9 +1173,22 @@
    "note": 12.2,
    "rang": 9,
    "N": 10,
+   "secv": 6.0,
+   "posv": 0.0,
+   "attr": {
+    "VIT": 73,
+    "VOL": 77,
+    "PRÉ": 76,
+    "FIA": 76,
+    "SÉC": 66,
+    "ESP": 64
+   },
+   "ovr": 76,
+   "carte": "or",
    "badges": [
     "reg",
-    "k10"
+    "k10",
+    "or"
    ],
    "defi": {
     "k": "r",
@@ -1052,8 +1197,8 @@
     "s": "P9",
     "st": "Gestion des déchets"
    },
-   "_url": "https://legros123.github.io/Standard-Pick-Pack/fiche.html#zbVLLbptAFP2V0V216g1ihoeBXWWRyouAS-mmVhYE45gEAxlIFCnKB1n9hO7iH-sZTLKKxIhzn3POvfNCTxRJpgNFpGzlX0ibmHpYV8UzUAu0jvNVDlwD-wsTv6NI2Ux7lHrKQvkzRb4VMDXwKOUsgJDjS8VUUuSECrFyS1FgWx7TA0VhaIVMFVzKwb-YSPQwZRCgcw9HgGJ9i1TYNxRtSFe3uPseDK_hGeFaKJ-lA2uAES5Y2i4HcvqF3vQhbqsPh-TAgRHimGTJYcBSnguk7QG7aNZril4MSZQacU0NFlIGfjgTc2eqrqNeMaLOiLbAth1MYW-SjVlMfujdTgA60TiwJGr0PXQxJeYO1GEHu6IZKqYOStvHpoHA9h2V_TlNY94bm332QVIb_Ru6wESWhR67VrQ4ujgUw3A6EnKQVOkpKUkTsc7i5epXTCy9a95Qmq3iJP-er9KE2DGen3ksvs04zrL4dyay-JJYmUbF00ejZZpcptmV6WQi253RDDkQxwRS9Od01J04HUvQEm9_xSf0xNs_msZC_pz4ZfgqykocunqwRHpzV5VjvRORsEVz9oped-W-qFuLpnXTOjTAXPijGsYa3bfVILZot6_GgTDkfF5j6JrZm80p1z-vznUX8xv1XDm9comltuW8D9guGpR4zqN-xFoeujN6_Q8",
-   "_qrv": 22
+   "_url": "https://legros123.github.io/Standard-Pick-Pack/fiche.html#zbVPbbptAEP2V1Ty16gaxy523yMKVpca4mOahVh4IxjEJBgIkihT5A_IpVj6hb_GP9SyXSJUqgTgze2b27JnllZ7JF5wO5JPUpX0hdOJUI7pKXoBKoFUQL2LgHNh21Po9-VLntEepJTWUv5Bvay6nAhkpDQcIHFtITin5hiexlm7Jd3XN4vRIvudpHqcMKWngm_QiaoTCddG5RsJFcXMHKuJb8jfUZHfY-6FXWDV0g3SHvCNtLgxELQLP4UI3uSv6j2f1D9Z1-ZkQ3DUQeHgVWXDP5UIMBUK3gE00qxvyX5VSlKoTFjmkCOHa3qjOHPWahjzCp0qdXIPkslWFtSKrMOnzOPS2BzgsGruaQE0F6x0bxoCjDgRyp2qv4bbvgHkd_gCAmavo_DZw54vLAazPbzM4DBSsVwCmEoGGu6RoM_SGY-VTUcCjckKpEgUzG8xto3Ob2zhnoyzc0AV2nyVNV5WsxNskh6RtzycCB6Ss6UnLcMlWUTBbrAPiwrrhGwqjRbCML-NFuCRuqMzPOGDfRhxEUfArYlEwJy5Vo-T5s9EsXM7D6Ep1UivbnTr6A5xQRkAU_T6fmoqdTylksY939h957OMP9c6SPRK_tF9ZmrFDlbcaC2_vs7TLd8xnOiuGLKubKt0nealRf2No5SmgNvyetV2O7tusZVu022ddS7A1Hm-CZ6rxqeFL0x6mb5rOeNctU_R_i8C9KNPB6BKx-e9UzWmq-jRV252mKqepOmKaqnfE_in-qq55wlQfqwEd_wI",
+   "_qrv": 23
   },
   {
    "np": "REH MYRIAM",
@@ -1131,12 +1276,24 @@
    "note": 13.3,
    "rang": 3,
    "N": 10,
+   "secv": 0.95,
+   "posv": 0.0,
+   "attr": {
+    "VIT": 73,
+    "VOL": 76,
+    "PRÉ": 78,
+    "FIA": 76,
+    "SÉC": 78,
+    "ESP": 64
+   },
+   "ovr": 78,
+   "carte": "or",
    "badges": [
     "c100",
     "lynx",
     "reg",
     "k10",
-    "podium"
+    "or"
    ],
    "defi": {
     "k": "p",
@@ -1145,8 +1302,8 @@
     "s": "P4",
     "st": "Préparation détail"
    },
-   "_url": "https://legros123.github.io/Standard-Pick-Pack/fiche.html#zPVLBjpswEP0Va6RKrepF2LEhcI3YtodNUpr2EvXgApulS4AYWO1qtf_Sa74jP9Znk1bC-M34zXjejF_piVLB6UgpyVBGNyIkTj2suxdbmyOMFkaefQaqgYRWQL8plYh6QKzWQcLpGY4g5NTAI2OpgcCJwohTQamSETxFSelSBHCdwArDYMGpgi_GZnwVPSytkaaHHSOtPXgmp1-U7qkAxOXNS_uMzVYH_B_ngruyno70E8QRzDjUXMIYgJcJF0JwAVfithArwop5suRJ5D_lvxjehUdy5oiQJ4gOFaBGut5S-joXL52MpnbliTgRc8VLPUtY6je0rcPZwmlsBxfWO6oznVQZgFp6goIS7xEIso-UgrJ2VyAQs7k3zVBx6tCAdmoaCGz_oaKfaRZj2EMWF6jROv17ukFTVsaOXctaLGuOZhguZwIHpMp60nqzZts8W335lhGHwD193WXsoyMBZ3mefc9Znt1eo8zT_6jVZn27ye-y60l57xSidqjkhAroRz1UlqHp7B0rK3aautGQl0y7iVUDu_xh_gng_P3lfJrqvmIpS5TzfAjYJ3NoK6ZZ39XtOLgU9mV8OFYB-anS1r3Cwd20tZdzb6wZa-gsL-fR1A2hlbvrrFzKeTxSRfN8lIrj-YFqJfwDF5hCW1y7DlshQYG3PNoJzT91M3r7Cw",
-   "_qrv": 22
+   "_url": "https://legros123.github.io/Standard-Pick-Pack/fiche.html#zVVPbjpswEP0Va6RKrepFmJjrWxWRNlJ3k5I0L1EfKGGzdAkQQ1YbrfIB-xd9zXfwYz02SaRKgGfGZ8Yz55g3eqFIcNpRRI7teHfCJk4NvPujKtIdnApOEn-DVcASroT1hyIHWU_IdV0r5PSKgGVzKhFxfMeFBYxne5wyiqTjIZJtKAqEhdAeKNu2RpxyxHwsqemigee6KNPA91FWbQ2S02-K1pTBxOHlsXrFovItvs-m4VrRL4A6oHzb5Q6cFnYQciEEFwiFerHxenh9HgY89MwjzeMjOjKWM2CEzUNk2xKmi3KNouhtaNzRI5SFbk34oRi6Ddyh_cA9gbIaeyM9X9XqtEZDtavHdCxANwYgMYWJCCTVUMIPQBNAeiCgO528mi6xgeTV7DsMnD1P-vcBO5l-GUKL_n08hOLFHMRL3QUKPqZlm6M2-KsOZQmOqquV6a5ArYKKazDDBcZUmsI13eH0caq6umIVXpXu0rbtzwQMQLkyoIfZA5sn8Xi6iImDozX9WMbsswbBjpMk_pmwJJ5cstKXW9Z49jCZJffxZWfzqOd8xtgNzkUHtCraXDHoxj6wTc72h7pLybBGywPLW9b_ZeYGYf9jf94fiiZnEQuljnyy2Nd0W-XMZU1dVF2rS6hj97TLLTIXg-b6Erf6pLnqz02q0q7AnJv-3KVFSSBveZFblxwUdqQ3SCyl7w_325XC_B8CQlbZQGcFX_6vnbxqZ1-1827aOTftxFW78ITzM_xJnTpAu309WKd_",
+   "_qrv": 23
   },
   {
    "np": "ROBIN ELODIE",
@@ -1224,7 +1381,21 @@
    "note": 14.0,
    "rang": 1,
    "N": 4,
-   "badges": [],
+   "secv": 1.33,
+   "posv": 0.0,
+   "attr": {
+    "VIT": 73,
+    "VOL": 62,
+    "PRÉ": 68,
+    "FIA": 86,
+    "SÉC": 76,
+    "ESP": 64
+   },
+   "ovr": 80,
+   "carte": "or",
+   "badges": [
+    "or"
+   ],
    "defi": {
     "k": "d",
     "t": "PPM décelée sous 3200",
@@ -1232,8 +1403,8 @@
     "s": "P4",
     "st": "Préparation détail"
    },
-   "_url": "https://legros123.github.io/Standard-Pick-Pack/fiche.html#zNVLLbtswEPwVYi-9MAKpB_W4uYEK-BDZVZ1ejB5om2nUKpJMSUGBIP_Sq75DP5ahrBwkzi53uTO7-0avlElOL5SRL3x1JwVx6mDldXupDIwGRrn7ui2AK2ApU6A_SIs4PeOQyks4_aMscmdNWRz4IQBCwgieM2V-pBy4UKakF3O6IihxwMAVoL7RC40OZugHAZBzBIiwvykTnE6UHX_hGHCqQHA_hdXDSHyuFI_xT3kc8hg45krwRPJE8Bgg4OliSqGAkNZZyt4ch2asaxCtUCKI1K2ouLGIlEzeIb4FjdCDs-ldUuf0euDn6CkHEJt6kGuXG5dj_y5aCkhBGvo72NFwak_uAdeVSIhbrUCs1QJfCGSe0GvfFTt3n-QsOnwUHOxB3Dr1R7pD_--1HdqGNfisftF9P0-EGAQZuwQVu4Lty_x--yOnpVtH2pXbvDhsDttd4WLhycsyfyxZmX9bk_XrkvywKb4_borD6r08OeqQBbWcQIL2-wd2maezqefJsL4de-Y00NIPOozM9Gz-z9wsPfZznmz1VBlWf5mnobqOZhgMMwOrNbuOuhmqYZ5c-PlZ45JhII3xaJkv7UMHlpp2njpt9VBBNIoPuqoJXTus00xDb10cP1TrLoVYhlvPQ7mssnQzwUZKN1LYIR44158zurY39P4B",
-   "_qrv": 22
+   "_url": "https://legros123.github.io/Standard-Pick-Pack/fiche.html#zXVPBbptAEP2V1Vx62aBdWBbDzbWIZKnBLnFysXog9qahJWAvOKoU-QPyF73yHfxY3mJ8aA82b5Y3O2_eDO_0Ronk9EoJ-cLXN1IQpwOitGr2pUFQI8hXX5cZcAksZQz0C2khpxc8pPZmnP5QErpnRUkU-AoAFBXiZEeJH2oH9pRo6UWcjiDNHDA4ClDfFKOMA0LlBwGQOwjAsD8pEZyeKNlSY-kHYAesA8H9GFGLYOZzrXmE_5hHikfAEdeCzySfCR4BBDweQyk0ENIOlpJ3p6M-VRXEligThPpSWFyUhFrOzjCggRTl4bBuXdLB9exBo5OoHQA39tCyHd-4nAa2ojTtwHGyQe5c7uNy4_zh9Lj6BjN8Tut8-ACCPbfLOZIg4X74WIAFlN6v8U45EbiwsyeDq5_cRc7dUIiL3kBMigNfCJCfMDPfCd4drg1aTGorOBxA89Y5uKUbyFoUtmtqVuNni9eibYeewAHJ2JGUrTK2ztPF8j6l0fEtrfJlmm3mm-Uqc1ycpHmePuQsT2-n5OJtTL6bZ98f5tlmOt0_O-m_YckepSGC1us7th_6namG3rC2ObXM9UCjp7Q5MdOy4S9zO-Gxx6G35XNpWPVl6LvyeDJdZ5jpWFWw46mou7IbekffvRR4yTDU2ng07gitlQNjTTv0h8IWXYmmUbwryorg2mbaiFh50wL6Sk87qbBQF8-VHD8JiXHX2Gzp1gKx-nfCapowdu__CWNNrxOW1wnHZ9TfVdcRH5sLOn8C",
+   "_qrv": 23
   },
   {
    "np": "STERCKY FRANCK",
@@ -1311,9 +1482,22 @@
    "note": 13.0,
    "rang": 4,
    "N": 10,
+   "secv": 5.26,
+   "posv": 0.0,
+   "attr": {
+    "VIT": 80,
+    "VOL": 75,
+    "PRÉ": 74,
+    "FIA": 72,
+    "SÉC": 68,
+    "ESP": 64
+   },
+   "ovr": 78,
+   "carte": "or",
    "badges": [
     "c100",
-    "k10"
+    "k10",
+    "or"
    ],
    "defi": {
     "k": "r",
@@ -1322,8 +1506,8 @@
     "s": "P9",
     "st": "Gestion des déchets"
    },
-   "_url": "https://legros123.github.io/Standard-Pick-Pack/fiche.html#zbVJLbtswEL0KMasWZQSSor5bQy6KonaquIvWyEKR5VqxLCmkEhQIciAjR-guvlgfJbWrAhrMzOPM6M3nmZ4olZxOlJISKrySgjj18JamaMsjnBbOzSbLF5-_w6vhSZ3AukdiwukApaWnOP2i1PcEpwaIVBpVG8QECZ5KSuNERjB2lEaJF3J6GKNcfAVMxdAFNH7uXJ0gvQcgI7yYny6L0x2lWyqlcByPYHoLaAAWq4DHcCxsCVJSRZPIABriK56EkykllyKG-LAB--MHA5hCqoDIEMV6Q-nzRFN4PpqpHQstwolYLMXE1ZcifMGYOkSO_bfWJfajC_KuCenw3WhgCCgcexFyzJFSzWmFB5eHVeyLxlacOnTaPjYN-mv_WmU_hRlMfCt4wAOQNK79LV1hIIvCDF3LWogpToW1lzMhBkGVGYNW6xW7zrPFp5uMuIxu-ZayPM--5SzPlsQTB3zdZOwDceXSiqd_aYv1arnOv2Tzy27vOgR5tMIJFOjH5Ww6djmXIMHeXtl_yLC33zQOgYI58J19z8qKnbraemx9d1-VQ71nKROsmVDWm648FHXr0bhcunaHZ90PP1Z2qFF9V1m2Q7lDNVjCSDfz0hLtduYWpXQ4LUrrKJpv0h1n6w4XqpynD1-jQInzHcwjlvDQTdbLHw",
-   "_qrv": 22
+   "_url": "https://legros123.github.io/Standard-Pick-Pack/fiche.html#zbVPbattAEP2VZZ5auhG7uktvxcjFtLVd2Q20Jg-KLNeKbclZKSEQ_AH5FNNP6Fv8Yz0j2YWWgpadmT0ze2bO6pkeKdaSdhSTrWz_SiuStIc3NFmVb-BUcGbzJB18_AavhKfdCNYdEiNJa2yutmxJTxQ7lpK0RUTbLqpugfEiHOUUh5EOYCwpDiLLl3TfoRhfIGaH2DPsuJxdN0L6HgEd4MT84CxJtxQvKNeKOW46prWhG8RbHIS2J0M4DWwNZtoO-qU97FiOLSO_N7WWWoVYDmyEne6DgZiNVIWlfRTbG4qfe67KctBRyVRc5ffsQq16wo5W_gGzqoHshlA1nLjvXHTAnWiOLzsDk0Dh0AqQU0MBbjIHhvsBuOXc69EcEKRcTz4B4UmapqcXvl3ScPQeBoY1O70MKPaRnsymMFwmgYKrbNsUqI2JVQ_bLUZUXaycSaGsgXILJT3poU_DE1zQFW4fZKatK1FhmWyXNc3pSMAAVJgONJ6MxTRNBqNZQlIHN3JBSZomX1ORJkOSEQe-zBPxjqTNadnjn7TBZDycpJ-T88lyxY1u0De3DQr0_XQ0tTgdc5AQrz_Ff8iI11_UzZG8M_BN81bkhdjVZWOJye1dkbflSsRCiW0fFXtT5-usrCzq3gdN-QE3fOGHomlLVF8WjVii3LpoG8IQ52fdI5dlZ61t1--1dt0gOL9tfuQV_wDY8n6sFXz3Lw1ZsF5DddGQBftHw0BfNIwOuD_HX9SaB2h4X_fW4Tc",
+   "_qrv": 23
   },
   {
    "np": "VEJUX SANDRA",
@@ -1408,10 +1592,23 @@
    "note": 12.5,
    "rang": 7,
    "N": 10,
+   "secv": 1.82,
+   "posv": 0.91,
+   "attr": {
+    "VIT": 74,
+    "VOL": 58,
+    "PRÉ": 79,
+    "FIA": 65,
+    "SÉC": 76,
+    "ESP": 71
+   },
+   "ovr": 76,
+   "carte": "or",
    "badges": [
     "c100",
     "lynx",
-    "team"
+    "team",
+    "or"
    ],
    "defi": {
     "k": "r",
@@ -1420,8 +1617,8 @@
     "s": "P9",
     "st": "Gestion des déchets"
    },
-   "_url": "https://legros123.github.io/Standard-Pick-Pack/fiche.html#zbVLbbpwwEP0Va55axaHYmOvbakWrVgqby6aqusoDAW-XlAViSJQoyget-gl9y_5Yj4H2qRKWz3jOzJyZ4YUeKRGc9pSQdGVwKlzi1MG6ypvS5DAaGF_TL9ffgCtgLwC4o0RKTjsE-7ETcHqixHV8TjUlYaQUAChKeJwKUIMYrqKkxA8dVLtHmCsdl5PGG8g6pwTUzjIEnjtrRyhgfgDEnG4p2VAhXKuufm6ecA0639MNXAN8QRTzAEYPLFyPx5H9hIsjQhzcSBMrHnvc-gWqjLdUOBGXAZ587oErPeTpDCUvk07fiVCzgpDIi9SkzY-DSa0Io_gVM2oBpe2_6W0gBiiEHQu4oQP9lupZvxmJEjHmJ3ycMlsDcdjDNq97zalFs81DXaO15i8quolmdrZBLrmESGM739AphrHMzdA2rMEx-T7v--OBLGdDJ_AuqlKzD0w3g8kBiYsbhGszhmerjJ1fpsvPVylxz4ZcrFN2MpPyx3-k5Sr7uLo8S-fEZ4vs4nqRrWdiubWNoye0iOXg_n48mJYdDwW0sbdf7D8a2dtvGodDcia-69-zQrN9W_UOW93e6WKotixhLqunV9aZttjlVePQuG46jy2wBT_pfqiQvdQ9K5Fup4eeMOn1vMtYOd60P6nm_SkVhtO_6isx_usCK26KeSmwFRIU-KsH84Dd3LcTev0D",
-   "_qrv": 22
+   "_url": "https://legros123.github.io/Standard-Pick-Pack/fiche.html#zbVNLbtswEL0KMasWYVSR-mtnGErhorEd2zGKGlkoklwrtSmHUoIUgQ-Qoxg9QnfxxfooKVkFEMFHzpsP34ye6ZFiwWlHMUlb-ufCJk57nOapynWKg8JhmXy7_gFcAjs-wB3FUnLawNmLLJ_TE8W25XHaUhyErgsAiiscThmofgRTllPsBRay3cPNlpbNqcAdyEVKMah7wxC43ptziAT6F0DE6ZbiFWXCNtVt_6gnbE2R7rBVmm5gb0Dww4j7ONTAwnZ4FJpP2FgiwMKOWJHLI4cbu0CqdpcuVsiljyuPO-BKB3H2muLnrljPCpG4RDWhE7pdgV7kdyWLIIwOEKoClEYEVRtHqCiE0QbcwMIjDNUxdt0SJXwqyB-AkoFjngJyY3yXowUMSLScfEcmJJ_OTi-4QpiL0YBiH2Hmp5dh557MpwDCFIGA63RbF4gN0dTDdgt11BvKTFEQWG-MRlxyiXdqI96KzpF9mOqmUkxh6XSX1vXpSIazojNYB2VesC-sUI1OAYmLG7gXunUfT8ZsOkuGo3lC3DEuV4uEnfWk9PGdNJyMLyazy6QPfDkYX10PxouemK_N-39DDqMGKqOfp6Ou2OmYoTb2-pd9UCN7_UetviR74qf6M8sKtqvK2mKT27sia8o1i5nNtt0t2-sq26SlsqidGJpGBpiEX4u6KRE9L2qWI9ymaGqCtot-HCLXcroRkG4_Aq4bBN3Me65o_xmB5qmsU1updso_am1gv7XWD_vWBvK9taJvrR8dkD_Dz9XoB7T2vurQ4T8",
+   "_qrv": 23
   },
   {
    "np": "WINGERT ALEXIS",
@@ -1499,6 +1696,18 @@
    "note": 9.5,
    "rang": 10,
    "N": 10,
+   "secv": 4.55,
+   "posv": 0.0,
+   "attr": {
+    "VIT": 58,
+    "VOL": 60,
+    "PRÉ": 74,
+    "FIA": 76,
+    "SÉC": 70,
+    "ESP": 64
+   },
+   "ovr": 69,
+   "carte": "argent",
    "badges": [],
    "defi": {
     "k": "r",
@@ -1507,8 +1716,8 @@
     "s": "P9",
     "st": "Gestion des déchets"
    },
-   "_url": "https://legros123.github.io/Standard-Pick-Pack/fiche.html#zbVJNb5tAEP0rqzm16gTBelnW3CqLRDnUTqmrSrVyIBjXpBgIS6JIUX6Q1Z_QW_zH-nZxe6q0aN8Mb2bffLzQE6UR04FSkqHUF1FITD2sj031XFsYLYxv18urLF_DqmElZg50T6mUTHvEaxMgxzOlJpgxNZTOExMDgKIUQAmqCRXAltLYBAh7oDQJA8NUbd1P3IUX0ntTg9E7Rwgw_KBUg3FH6eYW14hby5gNDAucaHYnZJA03DEnifco1iEn0dmfSDaSk5k_nqMMG81KIk8_UPriRUWBU17jzcToaJIhYzUpm5lIv6IlHUp0vNa6MLQrDkImJ1i64sCMogAxg-NJRAw_XTFMy-lq0fVd0diKqUNZ7WPToLD2Lyr7iTaguZuQY44hcXB1b-gCrV8Uw9i1osU3FIfC2tORwAGpGjxpuVqKmzxbXH_JiOXsljf0eZ2JD8TK4SzPs6-5yLNL4siFFU__whar5eUq_5Sd_2x3rkKoRy1MkEDfT8ehE6djCRHi7Zf4jxjx9pt8Fyg-E9_Z96KsxKGrbSBWd_dVOdY7kYpQNJNX9ENX7ou6DchPlW7cjln34FVlxxrZt5UVW6TbV6Ml9HR9Htlcua3zc1J6mpNSGK_fv1hFfoUjTKMtz92HrZCgxKaOwyOG8NBN6PUP",
-   "_qrv": 22
+   "_url": "https://legros123.github.io/Standard-Pick-Pack/fiche.html#zbVPbattAEP2VZZ5aOhHSerVa6y0YJRha25XdFGryoMhKrNSWHEkJgeAPyKeEfELf4h_r2ZUTKBQkdmZ15nbO6IkeKA6YthST9KU-CXxi2sE73RSPZQungvNzPDlP0gW8El5khrBuKZaSaY14bTzkeKTYeAOmDcXDyIQwAFEKRg6o8RWMFcWh8RB2R3Hke4apWNmPODPXyM65GoidvfBhNDcUayCuKF5e4uhwahmygdPCjjTbx2eANK5DjiJ3o1j7HAXH-0iykRwN3OMwyrDRrCTy7BqKn1xTgWc7L1EzMjro25Ch6jsbmEDvQUmNES2uam0Y6Ao9n8k2LO1wQAaBh5jG4iQiatCshyAAGMqam6LqQGHW2fCL8cKywnQx_QoUEs3SwzPqI8HZ-BSGZpofnkeWMqZkPgNK2TaQ9DrbtAXyg5zqfrMBPdW7le8sgWgCEi19DjnEoI1lb0knqD7Kmq6uRIW3ybZZ2x5eCBiAisaBJtOJmKXJaDxPiOXgkpf0fZGIL8TK2kmaJj9SkSZnxIENyx4-wkbTydk0_ZYcv6yu7aC_MXuDwmiBfh1emlocXnI0Id5exX-aEW9_yHFJ4RH4qf0s8kJs67L1xPTqtsi78lrEwheb_lbsmjpfZ2XlkdsNmtlNbW3B86LtSmRfFa1YId266FoCiYuj8ENld9eprXSvtlJYErfFoQrcjxBAkirvaa3gq380tII5DaMPDe3e9hrKDw2Ddw2He9TP8bt0zT00vKt7a_8X",
+   "_qrv": 23
   },
   {
    "np": "BOURLIER EMMANUELLE",
@@ -1573,6 +1782,18 @@
    "note": null,
    "rang": null,
    "N": null,
+   "secv": 1.33,
+   "posv": 0.0,
+   "attr": {
+    "VIT": 83,
+    "VOL": 45,
+    "PRÉ": 77,
+    "FIA": 79,
+    "SÉC": 76,
+    "ESP": 64
+   },
+   "ovr": null,
+   "carte": null,
    "badges": [
     "c100",
     "zero"
@@ -1584,8 +1805,8 @@
     "s": "P9",
     "st": "Gestion des déchets"
    },
-   "_url": "https://legros123.github.io/Standard-Pick-Pack/fiche.html#zbVLLbtswEPwVYk8twAgiRT2PDYwiQGEHbnuJkYMs0bVSiXJIuQgS5IOMfkJv8Y9lKEU-9UDszHC53B3yhf5QITh1VJAMZXIlQuJ0AFt0XWmOum01BAPhy-rn-tvNYg3agIo4BnrA6ZjTngqlAoAnKkJOLahMFAD2ZQZQIS8NPaipyOMg4_QISeSB5KShJQjlePgAJlSYAk2C_UVFFHHaUrGhSoS-w2dte7qHNkCMZcxlCuZAhJRcQEBtLuKQi0iBI3pdZIhi0iJwlY9aLnkkcP5gqXjxjZlj26L7BjeLKL90MrUWZdkrLOnnNONmZH_PaHnZhL-7snWaU7-dxa2ZUQWrhZ8RDm7QJPdtWD_Uhq4w53Vph94wg2XLrnTufCLkIEnbMWm5WrLb9eL65vuCeOI3Sty4Qax3fhh0RBaFUJLuzifbs_OpQlH29pf9pzh7-4fk2r_vR-In95lVmnV94wK22j7oamh2rGAhayeVHWxf7cvGBDS-AN3mHvgLv2o3NKhea8dqlNvrwRG8-_Fhc66CaDJXqmSyV6k0nf5NrMT48QR-jakmmwy4QoGqvbj6iHcY7FG_vgM",
-   "_qrv": 20
+   "_url": "https://legros123.github.io/Standard-Pick-Pack/fiche.html#zbVLLbtswEPwVYk8twAgiRb14aw23MBDEhp3mUKMHWaZrpbLkUHJQNPAH5FOMfkJv8Y91KFkGCvQgcHa0nF3u7As9kxacdqRJ-jK6ET5x2iMa73ZZdTBlaUBUID5Ov8xvJ-M5wgKhCEOgR9wOOW1JK-UB_CTtcyoRykgB4L9MAHLkxb4Da9Jp6CWcnkCJ1JOcDLgIR9Zd3iMSyo-BesJ-Jx0EnFakl5QL33X4y9iavoFrQYYy5DJG1CAQUnIBAtpchD4XgUKM0_EiwSl6LkCs0o5LJQ8E7u8t6RfXWHUoS3RfoLII0msnfWtBkhwxknpIq5oB1c8DyrMBZa3TfJjck07wiIfpLYaDSc3m51fSMZ75afIBAFUW59cREEYxXswwEuXKQHKTlY2B-mrQXFXXOrBKuBnBgSUeyd0zrBvKkm4wp1Fm27piFT6b7bKmOZ8IOUgytku6m96x2Xw8mizGxCP3I0PFJc71xjX-A1ZbCEGSvp5PtmbnUw5R9vab_Uecvf1B8trtxyXxXfOe5Ybt6qLx2HT1aPK22DDNfFb2LNvbOt9mReVR5yDNUgdcwc-maQuor03D1pDbmrYhDOX-YlOqvKA3R6qot0cpN1K3d6ES3eIKbF2V92OqEKt_PInVxZPYHzyJksETefVEDJ6kR9TPy6spT1iD1h7M8S8",
+   "_qrv": 22
   },
   {
    "np": "DROUANT JULIE",
@@ -1637,6 +1858,18 @@
    "note": null,
    "rang": null,
    "N": null,
+   "secv": 0.0,
+   "posv": 0.0,
+   "attr": {
+    "VIT": null,
+    "VOL": null,
+    "PRÉ": 80,
+    "FIA": 79,
+    "SÉC": 80,
+    "ESP": 64
+   },
+   "ovr": null,
+   "carte": null,
    "badges": [],
    "defi": {
     "k": "p",
@@ -1645,8 +1878,8 @@
     "s": "P4",
     "st": "Préparation détail"
    },
-   "_url": "https://legros123.github.io/Standard-Pick-Pack/fiche.html#zRVLLboMwEPwVay-90AgIzYNbpZ56SKIqPUU9OLBJ3DiG2BBVjfJB6W_wYx1woULyzLDr8XrgShdKo4BOlFIcxpPHKKSASqjXWisGN-Avb8v358UaSkFFswnYJ6VhQIdu_epWDacZvDRKptY6oIzS8RyQ9y_OPeG828Kyg9Kr0iu777u2lG4-ABWwtY7HUM6_LC2l139DrbBrOo8Hl87zhvmLvsW4ntljzxZDETnspHYcULEdzjfDTRBJ1M6GC2_CAA9GsJUfha1HefGY79rRcAaCDAhNtLJscsuiYidO0p5rdqjkbUU6IZ3jb5E_HLi2aMhZlCo7KrMXGYtToZwoi9qK5qeCRabR3txHYmmEY2G5skV9YaH7VltkB6nMiLqoaJW0xA_R3EtpZaUKI_LmXkmlCQmt_4KcJ6Oxjy9OJj7AJJlO_Qd9SqLuX4gSQObDMNAJDDI9ZHdG2pWt-fYL",
-   "_qrv": 18
+   "_url": "https://legros123.github.io/Standard-Pick-Pack/fiche.html#zVVLdTuswDH6VyDfnpkxtl9NuvUP8SKAjNsHgBnERWsMCWdol6YQO2gPwKOM1-mK4DSlClerPjvPZ_px32EGRRLCBAtI4zY6SGCJoyLtslUTCmvDp9eL2-GpFniQvmWWEXqCII1gP_7fhr4hpRlyKjnSrVAQlFNM5mSoEtgFgNVxBMZjGe433zHPIeoTi_oGMI9tTp1PyrA82Bor3H0Il6VY-T0eWgXNP_dchRduA6t3YoQhIuJ7v7mIVAneLfwEur7sPKGbEen5x3JeJ4Kb7OPGhs5slFBnvSxHtk1AWqcLjOIMea5GsST8fiXYfR_TRGMb5cdB4K3beVk99O68kd0NiUxIsDerKIHNo2UaYbYuWTqr-RFgmrMX_rPqzxtZQQoWskeWr1M-sRLappWVN3RrWfTqiKBWld4cJW2hmkRl0pm53yFRINXW5FlJPYJAblrwHvonu0AgjnKw1q7qDE1IBjb76XsacT6Z-BSnP_BI4z3P_KP7yZHhPCSdTejE0-fyX-jn_1j6Pg_LZLCifBuXzJCg_31P9Uo3Sb2nhzrS4_wI",
+   "_qrv": 19
   },
   {
    "np": "DUMARTHERAY LAURA",
@@ -1702,6 +1935,18 @@
    "note": null,
    "rang": null,
    "N": null,
+   "secv": 0.0,
+   "posv": 0.0,
+   "attr": {
+    "VIT": 95,
+    "VOL": 95,
+    "PRÉ": 72,
+    "FIA": 79,
+    "SÉC": 80,
+    "ESP": 64
+   },
+   "ovr": null,
+   "carte": null,
    "badges": [],
    "defi": {
     "k": "p",
@@ -1710,8 +1955,8 @@
     "s": "P4",
     "st": "Préparation détail"
    },
-   "_url": "https://legros123.github.io/Standard-Pick-Pack/fiche.html#zPZLPbsIwDMZfJfJlh2WofwKsvaENaZM2YIwdpopDaAMUSlqSFk1DPBB7DV5sH62KevDP9hfHsXukA4Uupx2F5Dle78F1iFMB701WRoI1-PnrfTCdvQyng29EUkTcwAdt6rNrCj1OPxQ6nDKwEwSATUsxhYHbhU2gdkTQAe-BXcgVYn0YWR8u4Pm-j3zRBMyqNgsKozlMCes9BtyDY8EoASoMhbrKMrSa38i2ZLYtjW5JPHkpM6s45Ys2uNAtxcW1T5zEuyKH48Mlpmx6ULgsimg0HrHJdPj0-jkk3pvziD5mQ3ZP3J1DJA-NOFlSeCQ0gIFyQgWaGKUTo1ipLNtJs6-URSa5ZqRl0lr1y5K7taoMBIliRRpvU71isWK7PLWsyCvDLn8lSsQZ5Jdzh401s4oZVZq8OiiWtVKTx2uZ6g7Vw6KJuELTxOVcSCPLNNcsuZxLmWZ04jS7dovNBKLjNyvwRK_ZihD9frPTrnDrf8IVMHEzKQ1foECc3Qa7xypKU6nTPw",
-   "_qrv": 19
+   "_url": "https://legros123.github.io/Standard-Pick-Pack/fiche.html#zVZLdjpswEIVfxZqbXpRG_DgQuIu2VI203aRJulKFcuGAd8MuAWJDVHWVB9hHSV-DF-sB6kgVF_ONPYyP5_iNzhQ5Fh0pItd2_U-OTRbVyO5FqwS4BH_-8W2-3n6N1_OfWMmx4oQe6GX490CRa9EvimyLCrAdhoAXQylFoTNFzFBt83ACPgGnKJdYCxDE8HONzPM87Nfjgnoewp6iZIfQILqz0HKRaDBagGpFUdkWBaRWN9KGqrOhVBgSaPRGj4stlOGwx-X9CKt19w49uMyXxRwA8Zvu_Y6iGUTEmxVFPr-gOVo-iUJLdN-bnvvydk7d3xPiMZfEtvBBpGrGO0iITRJ6WD6w1Tq-W2xisvydldD3bcw-kuXsUCTOY3H21Ot8xbhrDBsdaKVkmSnJGqnZUahTKzV2sn5HaCa0lr9Z9uEgW4WCTLI6T1_z8pmlkh2rXLO6ahXr_jRokRYo764TtiyZlkzJRlXtWbLClKoqPYi8nNAwbFrxHkYR3bUWSjR5VbKsuzYiLwhz2fZq4WzIJ95oocv90VXOg2B8E1PuDG_K4QjpOKkSOf_PloD_syWwjS3-zNjiGlsCx9gSXnB-Wtx8OeElNKqVl78",
+   "_qrv": 21
   },
   {
    "np": "GASSERT FABIEN",
@@ -1763,6 +2008,18 @@
    "note": null,
    "rang": null,
    "N": null,
+   "secv": 0.0,
+   "posv": 0.0,
+   "attr": {
+    "VIT": null,
+    "VOL": null,
+    "PRÉ": 80,
+    "FIA": 79,
+    "SÉC": 80,
+    "ESP": 64
+   },
+   "ovr": null,
+   "carte": null,
    "badges": [],
    "defi": {
     "k": "p",
@@ -1771,8 +2028,8 @@
     "s": "P4",
     "st": "Préparation détail"
    },
-   "_url": "https://legros123.github.io/Standard-Pick-Pack/fiche.html#zRVLBcoIwFPyVzLv0Qh1ARMuth7a31qnenB4iPDU1BkzA6dTxg-xv8GNdSaHDTPYtb7N5WTjTibIooANlFIdxeh-FFFAF9izXig2IAXl5XCye3pdgCiyNZ6g-KQsD2nXrV7dqWE3GQLRMo3VAOWWzGaDoXxz7gotuC8sOKs8qz-y2V60pW30AamAaBeMQxPl3laXs_O-nFTZNoelNOssLxi97iXF9Zfd99To0kcNGascBlevheDNcBJFEt9Fw31UY4MEItvajsPUoTx6LzW00nIEgA4KI5pZNYVnU7MRB2mPDDp3i1pFOSOf4WxR3O24sBAWLSuV7ZbYiZ3EolRNV2VjR_tSwyDXk7XUk3oxwLCzXtmxOLHQvtWW-k8qMqIuK5smt8EO010paWavSiKK91lJpQkLLvyAfktHYxxcnqQ8wSaZT_z0nSdT9ClECyH0YBjyBQa6H7I5Iu7YNX34B",
-   "_qrv": 18
+   "_url": "https://legros123.github.io/Standard-Pick-Pack/fiche.html#zVVJLbtswEL0KMZtuVEOSGcnWLiiSIkCBGLGRTZAFLTExG5qSScooGvgAOYp7DV2sT2LoohCgN284nM8bvtORqiyhPVWUp3nxNUspoQ7sVmyVNCAG5Pv1en3zsAFTYEW-gPWTqjSh3fT_Nf01Ul3NgTgyvdYJ1VQtFoAmOg7RkM10RYoJusC6wOxrjNpS9fQM8MAiS-YpiAu-zlL1_i-fVrhUIiYmmVKe0H4bQ4yLVnu8NCiiJfyY7_FuEx2P9z-iuXoYPjAJst7eXaPMMqH18PEtuG7WK6oKPpZC2hehnUSF7WUEc6kFWbNxPGj2lCb4MIb1YRxpA4pjwOZlbOcNanfQGkG0stI0VjIvHdsLe-ilw0kzngjHhHPyN2u-7GRvEdBI1qn6TZlXVku2b5VjXdtbNvzxSFFrhA_nGbs3zElmpbdtf5RMx1Db1juhzIwmuWnFRyM0MZw7YYVXrWHNcPZCacLom89lLPlsHlaQ8yIsgfOyDG_iimfTc8o4oA5iGHD-n_ol_9S-TKPyxSIqn0flyywqvzyhfq0v0h-wcG97efoL",
+   "_qrv": 19
   },
   {
    "np": "MESSAOUDI KAHIN",
@@ -1819,6 +2076,18 @@
    "note": null,
    "rang": null,
    "N": null,
+   "secv": 0.0,
+   "posv": 0.0,
+   "attr": {
+    "VIT": null,
+    "VOL": null,
+    "PRÉ": 80,
+    "FIA": 79,
+    "SÉC": 80,
+    "ESP": 64
+   },
+   "ovr": null,
+   "carte": null,
    "badges": [],
    "defi": {
     "k": "p",
@@ -1827,8 +2096,8 @@
     "s": "P4",
     "st": "Préparation détail"
    },
-   "_url": "https://legros123.github.io/Standard-Pick-Pack/fiche.html#zPVHLbsIwEPwVay-9uCgmBtTcKrWHqmpBoj2hHky8EBfjBDtBVREfRH8jP9ZNrESRPDPezT7GFzhDJjgcIYNpMp3fiwQ4VKReVWEccUf87Xm9flx-Pr2QNqSFSIl9Q5ZwKPrzpz8tZNO0Qwq5xloOOVVPU0I93JwGgrr_B1UPVVRVVH4_ZG0h23wR1ITiYcbThFSIl5Ufslw5sjAwfxjY-xikZXfKBuRQbscObhyW9hZdd9ppk3D6qImvYzP0EdU5ot5BdgHqQW5xoCRYeXTaI6sxsKPypwYDRXQXUYGpEPCX6bsCG08JGlll8oNxe5YjO5YmsKpsPGv_aiqRW0pvbxO2dCwg81j7sjkjs0OqL_NCGTeB3gxYyY7EIdpbpbyqTemYbm-1MhauHD66acn7BzlJo81TOY-2S7lYxDebSdE_uJAEeTTDkZZUILejdydyu_YNXv8B",
-   "_qrv": 18
+   "_url": "https://legros123.github.io/Standard-Pick-Pack/fiche.html#zVVLBjpswEP0Vay57oREGJyTconYrRW2VaJPdy6oHLzgbGmKIDVHVVT5gPyX7G_xYH7hGqpD83oyHmccb3uhCKQ_oRClFYTT7xEMKqEb0TR4KDa7Bf9xvt8v145cV4gIx5zHYL0rDgA7D-Xs4S0qjuEdc6bYsA8rQPY6Buc-cPVH58I6SA9Quql1kXn3VC6XPPwENkC-mQRwisi5ZG1-lq5FZz6rLKEJ6JtHmjZ5WO594Wn_3dPPQvVM6x_SvqyWlySKgbff-2aXutxtKZ-KKAWi7l6VVmPAyqtTjLHjH-y-AL89hgAdCTeMEK-NQXhzm-17OEY7W8BNFtDFK50axRll2kubcKoubvL-Rlklr1R-W3x1Ua1CQK1YX2bHQryxT7FQVltVVa1j30aBFVqK8u03YWjOrmFGNqdqLYqUvNVV2kIWe0GAobURPnIjuVksjm6LSLO9ujSxKwqfverXY30JMYreqSMzc6oRIErf3qeDDT8MFIHNmaMTiP_cT8c_7JPTOz-be-cg7n3Dv_OKK-Vk5Wn_GwhvTqutf",
+   "_qrv": 19
   },
   {
    "np": "VILLA CHRISTELLE",
@@ -1885,6 +2154,18 @@
    "note": null,
    "rang": null,
    "N": null,
+   "secv": 0.0,
+   "posv": 0.0,
+   "attr": {
+    "VIT": null,
+    "VOL": null,
+    "PRÉ": 71,
+    "FIA": 79,
+    "SÉC": 80,
+    "ESP": 64
+   },
+   "ovr": null,
+   "carte": null,
    "badges": [],
    "defi": {
     "k": "p",
@@ -1893,8 +2174,8 @@
     "s": "P4",
     "st": "Préparation détail"
    },
-   "_url": "https://legros123.github.io/Standard-Pick-Pack/fiche.html#zRVLBTuMwEP0Vay57MVUc3HbJbYU4IKFSAdpLxcEkAzW4Tmo7FQLxQeU3-mP7kpCsInnezLwZzzznkw5UKEk7KijP8sWZykhSA-9yG2xM7Bwj4BH4e31z8wfYAiulgF6pyCRt-_O9Px0VudawSPnWOUkl2mdz2GqM7EfAVX81m760gaezi99AQyC8jMQnKjaPMAlWLeYyP4cXh2ATqPj839NZVM2XeurStc2-sEE9UnwcUXgb0WpKQo5n4yJLqp-m-_20TdOtg0osvckkPowQ0jAKY5TNhla3K7G-u7q8vr8iqR6RMIeBUD13s-JSCCwJVbQO7KvAInEUOxP2LUdkqi5jojAx8oeofm25DSBULBpbvln_IkoWu9pG0dRtEKfvhBalA_10nIlbLyKLwCnU7YGFG6mhLrfG-hn12tFad2AY4nRsTDDJ1l5Up2My1hEke_hR9kLPzgc9c734eSi9XA6vPNeq_z0UJPfloI6Hr9GgdJOYe8ifQstf_wA",
-   "_qrv": 19
+   "_url": "https://legros123.github.io/Standard-Pick-Pack/fiche.html#zVVJLbtswEL0KMZtuVENSaNnWLjBcwIARC3HgjZEFIzGxGpqSScooGvgAOYp7DV2sT1KooiDAefPh_B4_6EJpFNCJUorDOPkehRRQDW15NKV1UikJg4Zhv95s7oFL4CiKgH5SGgZ07O9f_a0ojTmHhEs3SgWUI304hSy85eyBLPrSUvRPa2g8XMyBBoN584EvlB6eIRxklEyD-A6aHYy1ofTjX05V4tV0xscsXdrwigkqH6KtR9Vl7FJ4JFyXb79-8ob9duNh9th-UjpDzz_W9wCLgHbt55LSOQqtdhmlCe9KIe2rUFaiwss4gx5r1d1KMB8WdwgDHIxh3DCOxDiHAz1sH1j2uFqudysKomc4xGUIKF67_t7BQQ0G8IoyI3VhJHPSspMw50ZaeIrOIywT1srfrPh2lI1BQCFZXebvpX5juWSnqrSsrhrD2j8OKXKF8PY2YVvNrGRGOlM1F8mUDzVVfhSlnlC_f8p4B4Ym2lstjHBlpVnR3pwoFWEXT1_sLPjkbuAk5skX2Xw2G37KlEf9F4tAm86H7Wjo_D86OlJ7MmahpyKZeypiT0XHzkDF4or6uRq5OOMHONPI618",
+   "_qrv": 20
   }
  ]
 }

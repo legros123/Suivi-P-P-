@@ -17,7 +17,7 @@ Sortie dans `bilan/` (jamais versionné, données personnelles) :
 | `donnees_OCT2026.json` | Contrôle des calculs. |
 
 ## Ce que voit l'opérateur (fiche.html)
-Note /20 et rang, chiffres du mois face à la moyenne de l'équipe et au mois précédent,
+Carte joueur style jeu de foot (niveau OVR, bronze / argent / or / icône, 6 attributs) et hexagone comparé à la moyenne de l'équipe, note /20, chiffres du mois face à la moyenne de l'équipe et au mois précédent,
 note par critère, courbe jour par jour, record du mois, 10 badges, vie au poste (journal RH),
 défi personnalisé avec lien direct vers le standard à revoir (`index.html#P9`).
 
@@ -31,7 +31,9 @@ dès l'ouverture.
 - Par critère : `note = 10 + 4 × (valeur − moyenne équipe) / écart-type`, bornée 0–20 → moyenne = 10/20.
 - Poids : productivité (quota) 40 % · qualité décelée (PPM décelée) 20 % · qualité avérée (PPM avérée) 20 % · RH & savoir-être (positifs − écarts du journal SUIVI_RH, ramené à 20 jours) 20 %.
 - Équipe confirmée : note finale × 1,10 (10 % moins sévère), plafonnée à 20.
-- Nouveaux (liste `NOUVEAUX` dans le script : Kellerer, Dembele, Hamdani, Robin) : productivité, avérée et décelée notées sur leur objectif d'intégration — 500 lignes/jour, PPM avérée 300, PPM décelée 3 200 (objectif atteint = 12/20) — puis +2 points de bonus. Classement séparé.
+- Nouveaux (liste `NOUVEAUX` dans le script : Kellerer, Dembele, Hamdani, Robin) : productivité, avérée et décelée notées sur leur objectif d'intégration — 500 lignes/jour, PPM avérée 300, PPM décelée 3 200 (objectif atteint = 12/20) — puis +2 points de bonus. Pas de classement entre eux ni avec les confirmés.
 - Jamais pris en compte : absences, maladie, AT, délégation, congés, formation, contrat, ancienneté.
 
 Réglages (seuils, poids, URL du site) en tête de `bilan_mensuel.py`.
+
+**Aucun classement n'est affiché** (ni sur les pages, ni sur les cartes, ni dans la synthèse) : chacun se compare à la moyenne de l'équipe via sa carte joueur et son hexagone. OVR = 45 + 2,5 × note /20 (10/20 = 70) · bronze < 65 · argent 65-74 · or 75-84 · icône ≥ 85.

@@ -86,6 +86,60 @@ a{text-decoration:none}
 .legend{font-family:var(--fm);font-size:10px;color:var(--acier);letter-spacing:.06em}
 .legend i{display:inline-block;width:10px;height:3px;background:var(--craie);vertical-align:middle;margin-right:6px}
 
+/* ── carte joueur (style jeu de foot) ── */
+.joueur{display:flex;flex-direction:column;align-items:center;margin-top:20px}
+.fut{position:relative;width:240px;height:372px;color:#1a1206;
+ clip-path:polygon(0 7%,9% 0,91% 0,100% 7%,100% 86%,50% 100%,0 86%);
+ background:var(--fond);filter:drop-shadow(0 18px 30px rgba(0,0,0,.6))}
+.fut::before{content:'';position:absolute;inset:7px;clip-path:inherit;border:1.5px solid rgba(255,255,255,.55);
+ clip-path:polygon(0 7%,9% 0,91% 0,100% 7%,100% 86%,50% 100%,0 86%);pointer-events:none}
+.fut::after{content:'';position:absolute;inset:0;background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.45) 45%,transparent 60%);
+ transform:translateX(-120%);animation:shine 3.2s ease-in-out 1.2s infinite}
+@keyframes shine{0%{transform:translateX(-120%)}35%,100%{transform:translateX(120%)}}
+.fut.bronze{--fond:linear-gradient(160deg,#F1C59E 0%,#B97A4B 45%,#7A4A26 100%)}
+.fut.argent{--fond:linear-gradient(160deg,#FFFFFF 0%,#C3C9D1 45%,#7B838E 100%)}
+.fut.or{--fond:linear-gradient(160deg,#FFF6BF 0%,#FFD400 42%,#B88E00 100%)}
+.fut.icone{--fond:radial-gradient(120% 80% at 50% 0%,#3a3320,#0B0C0E 70%);color:#FFD400}
+.fut.nc{--fond:linear-gradient(160deg,#3A3F48,#1B1E24 70%);color:#C9CED6}
+.fut .ovr{position:absolute;left:24px;top:26px;text-align:center;line-height:1}
+.fut .ovr b{display:block;font-size:46px;font-weight:900;letter-spacing:-.04em}
+.fut .ovr span{display:block;font-family:var(--fm);font-size:11px;font-weight:600;letter-spacing:.14em;margin-top:3px}
+.fut .ovr i{display:block;width:26px;height:2px;background:currentColor;opacity:.5;margin:7px auto 6px}
+.fut .ovr small{display:block;font-size:10px;font-weight:800;letter-spacing:.04em}
+.fut .avatar{position:absolute;right:20px;top:30px;width:118px;height:118px;border-radius:50%;display:grid;place-items:center;
+ font-size:46px;font-weight:900;letter-spacing:-.03em;background:rgba(255,255,255,.22);border:2px solid rgba(255,255,255,.5)}
+.fut.icone .avatar,.fut.nc .avatar{background:rgba(255,212,0,.08);border-color:rgba(255,212,0,.4)}
+.fut .nm{position:absolute;left:0;right:0;top:168px;text-align:center;font-size:19px;font-weight:900;letter-spacing:.02em;text-transform:uppercase}
+.fut .nm::after{content:'';display:block;width:150px;height:1.5px;background:currentColor;opacity:.4;margin:6px auto 0}
+.fut .stats{position:absolute;left:32px;right:32px;top:210px;display:grid;grid-template-columns:1fr 1fr;gap:2px 16px}
+.fut .stats div{display:flex;align-items:baseline;gap:6px;font-size:15px}
+.fut .stats b{font-size:19px;font-weight:900;min-width:26px;text-align:right}
+.fut .stats span{font-family:var(--fm);font-size:11px;font-weight:600;letter-spacing:.06em}
+.fut .stats div:nth-child(odd){border-right:1px solid rgba(0,0,0,.18);padding-right:10px}
+.fut.icone .stats div:nth-child(odd),.fut.nc .stats div:nth-child(odd){border-right-color:rgba(255,212,0,.25)}
+.fut .club{position:absolute;left:0;right:0;bottom:44px;text-align:center;font-family:var(--fm);font-size:9px;font-weight:600;letter-spacing:.18em;opacity:.75}
+.joueur .under{margin-top:14px;text-align:center}
+.joueur .under .grade{font-size:19px}
+.joueur .under .legend{margin-top:6px}
+.tier{display:inline-block;font-family:var(--fm);font-size:10px;font-weight:600;letter-spacing:.16em;padding:4px 9px;border-radius:6px;margin-top:8px;
+ background:var(--plate-2);border:1px solid var(--edge-2)}
+/* ── hexagone ── */
+.hexa{background:var(--plate);border:1px solid var(--edge);border-radius:var(--r);padding:10px 8px 12px}
+.hexa svg{display:block;width:100%;max-width:360px;margin:0 auto}
+.hexa .me{fill:rgba(255,212,0,.28);stroke:var(--jaune);stroke-width:2.2;stroke-linejoin:round}
+.hexa .avgp{fill:none;stroke:#F4F5F6;stroke-width:1.4;stroke-dasharray:5 4;opacity:.75}
+.hexa .me,.hexa .dotm{transform-origin:180px 160px;animation:grow 1.1s cubic-bezier(.2,.9,.3,1.2) both .2s}
+@keyframes grow{from{transform:scale(0)}to{transform:scale(1)}}
+.hexa-leg{display:flex;justify-content:center;gap:16px;font-family:var(--fm);font-size:10.5px;color:var(--acier);margin-top:4px}
+.hexa-leg i{display:inline-block;width:14px;height:8px;vertical-align:middle;margin-right:6px;border-radius:2px}
+.attrs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.attr{background:var(--surf);border:1px solid var(--edge);border-radius:10px;padding:9px 11px}
+.attr .h{display:flex;justify-content:space-between;align-items:baseline}
+.attr .h b{font-size:18px;font-weight:900}
+.attr .h span{font-family:var(--fm);font-size:10px;letter-spacing:.1em;color:var(--acier)}
+.attr small{display:block;font-size:11.5px;color:var(--acier);margin-top:2px}
+.attr .dl{font-family:var(--fm);font-size:10.5px}
+
 /* ── titres de section ── */
 .sec{margin-top:30px}
 .sec-h{display:flex;align-items:baseline;gap:10px;margin-bottom:12px}
@@ -240,7 +294,10 @@ const BADGES=[
  {id:"up",i:"up",n:"En progrès",d:"Quota en hausse d'au moins 3 points par rapport au mois précédent."},
  {id:"reg",i:"gauge",n:"Métronome",d:"Au moins 80 % de journées régulières (± 15 % de ta moyenne)."},
  {id:"k10",i:"layers",n:"10 000 lignes",d:"Au moins 10 000 lignes préparées dans le mois."},
- {id:"podium",i:"crown",n:"Podium",d:"Top 3 du classement de l'équipe."}];
+ {id:"or",i:"crown",n:"Carte Or",d:"Niveau OVR de 75 ou plus sur ta carte joueur."}];
+const ATTR=[["VIT","Vitesse","ton quota"],["VOL","Volume","lignes par jour"],["PRÉ","Précision","erreurs au rejet"],
+ ["FIA","Fiabilité","litiges client"],["SÉC","Sécurité","écarts sécurité"],["ESP","Esprit d'équipe","points positifs"]];
+const TIER={bronze:"CARTE BRONZE",argent:"CARTE ARGENT",or:"CARTE OR",icone:"CARTE ICÔNE",nc:"CARTE EN COURS"};
 const MOIS=["","janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"];
 const STD_URL="./index.html";
 
@@ -257,10 +314,10 @@ async function decode(h){
 
 /* exemple affiché si la page est ouverte sans QR */
 const DEMO={v:1,m:"2026-10",p:"Camille",n:"EXEMPLE",i:"000",j:21,h:155.4,x:3.5,l:12480,lj:594,c:4120,cd:80.3,q:104.2,ed:9,ea:1,pd:721,pa:80,rg:86,
- b:["c100","lynx","team","reg","k10","podium"],bt:[812,14],s:[96,101,99,108,104,97,110,103,106,101,99,112,104,100,98,107,109,103,101,105,111],
- pr:{q:99.1,lig:11020,pa:181,pd:902},no:13.6,ns:{p:13.1,a:14.8,d:12.6,r:13.4},rk:3,N:14,rh:[1,0,0],rt:[["+","Aide / entraide",1]],er:[["NON PRECISE",6],["QTE +",2],["ERREUR REF",1]],
+ b:["c100","lynx","team","reg","k10","or"],ov:79,ca:"or",at:{"VIT":78,"VOL":76,"PRÉ":77,"FIA":82,"SÉC":81,"ESP":79},bt:[812,14],s:[96,101,99,108,104,97,110,103,106,101,99,112,104,100,98,107,109,103,101,105,111],
+ pr:{q:99.1,lig:11020,pa:181,pd:902},no:13.6,ns:{p:13.1,a:14.8,d:12.6,r:13.4},cp:10,rh:[1,0,0],rt:[["+","Aide / entraide",1]],er:[["NON PRECISE",6],["QTE +",2],["ERREUR REF",1]],
  av:[["MANQUANT",1]],df:{k:"ok",t:"Garder le cap",d:"Tu es au-dessus de la moyenne partout. Montre la voie, aide un collègue.",s:"P8",st:"Ruptures & validation"},
- T:{q:93.7,pa:246,pd:3600,lj:540,n:14},cl:true,qo:true};
+ T:{q:93.7,pa:246,pd:3600,lj:540,n:14,at:{"VIT":70,"VOL":70,"PRÉ":69,"FIA":70,"SÉC":70,"ESP":70}},cl:true,qo:true};
 
 /* ════════ utilitaires ════════ */
 const $=s=>document.querySelector(s);
@@ -287,9 +344,9 @@ function render(D,demo){
  $("#t-mois").textContent=(MOIS[mm]+" "+an).toUpperCase()+" · CLR";
  const T=D.T||{},g=grade(D.no),pr=D.pr||{};
  const ring=2*Math.PI*62;
- const medal=D.rk&&D.rk<=3?" m"+D.rk:"";
  const nc=!D.cl;
  const raisonNC=!D.qo?"Hors quota ce mois-ci":"Moins de 10 jours de picking ce mois";
+ const at=D.at||{},TA=(T.at)||{};
 
  let h='';
  if(demo)h+='<div class="demo">Page d\'exemple. Scanne <b>ton QR personnel</b> (recto de ta carte) pour voir ton vrai bilan.</div>';
@@ -299,16 +356,8 @@ function render(D,demo){
   +'<div class="eyebrow">BILAN · '+esc(mois.toUpperCase())+'</div>'
   +'<div class="hello">'+(nc||D.no<9?"Ton mois en chiffres,":D.no<11?"Beau travail ce mois,":"Bravo pour ce mois,")+'<br>'+esc(D.p)+' <span>'+esc(D.n)+'</span></div>'
   +'<div class="idline"><span class="tag y">MAT. '+esc(D.i)+'</span>'+(D.nv?'<span class="tag nv">PARCOURS NOUVEAU</span>':'')+'<span class="tag">'+fmt(D.j)+' JOURS</span><span class="tag">'+fmt(D.h,1)+' H</span>'+(D.x?'<span class="tag">+'+fmt(D.x,1)+' H SUPP</span>':'')+'</div>'
-  +'<div class="score"><div class="ring"><svg viewBox="0 0 150 150"><circle class="bg" cx="75" cy="75" r="62" fill="none" stroke-width="12"/>'
-  +'<circle class="fg" id="ringfg" cx="75" cy="75" r="62" fill="none" stroke-width="12" stroke-dasharray="'+ring+'" stroke-dashoffset="'+ring+'" style="stroke:'+(nc?"var(--acier-2)":stN(D.no))+'"/>'
-  +(nc?'':'<line class="avg" x1="4" y1="75" x2="22" y2="75"/>')+'</svg>'
-  +(nc?'<div class="ring-in nc"><b>Non<br>classé</b><small>CE MOIS</small></div>':'<div class="ring-in"><b data-count="'+D.no+'" data-dec="1">0</b><small>/ 20</small></div>')+'</div>'
-  +'<div class="verdict">'
-  +(nc?'<div class="grade">'+raisonNC+'</div><div class="legend">Ta note revient dès que tu as assez de volume. Tes chiffres restent visibles ci-dessous.</div>'
-     :'<div class="grade"><i>'+g[0]+'</i> '+g[1]+'</div>'
-      +'<div class="rank"><div class="medal'+medal+'">'+D.rk+'</div><div><b>'+D.rk+(D.rk===1?"er":"e")+' sur '+D.N+'</b><small>'+(D.nv?"CHEZ LES NOUVEAUX":"CLASSEMENT")+'</small></div></div>'
-      +'<div class="legend">'+(D.nv?'<b style="color:var(--bleu)">+'+D.bn+' pts</b> bonus nouveau inclus':'<b style="color:var(--jaune)">+'+D.cp+' %</b> coup de pouce inclus')+'</div>')
-  +'</div></div></section>';
+  +carteJoueur(D,nc,g,raisonNC)
+  +'</section>';
 
  /* 01 chiffres */
  const qMax=Math.max(140,D.q||0,T.q||0);
@@ -329,6 +378,15 @@ function render(D,demo){
   +'<div class="li"><span class="dot" style="background:var(--bleu)"></span>Contenants préparés<span class="x">'+fmt(D.c)+'</span></div>'
   +'<div class="li"><span class="dot" style="background:var(--acier)"></span>Cadence moyenne<span class="x">'+fmt(D.cd,1)+' l/h</span></div>'
   +'</div></section>';
+
+ /* hexagone : toi vs moyenne de l'équipe */
+ if(D.at){
+  h+='<section class="sec reveal"><div class="sec-h"><span class="num">✦</span><h2>Ton hexagone</h2><span class="aside">toi vs moyenne équipe</span></div>'
+   +'<div class="hexa">'+hexagone(at,TA)+'<div class="hexa-leg"><span><i style="background:rgba(255,212,0,.5);border:1.5px solid var(--jaune)"></i>toi</span><span><i style="border:1.5px dashed #F4F5F6"></i>moyenne équipe</span></div></div>'
+   +'<div class="attrs">'+ATTR.map(([k,n,d])=>{const v=at[k],m=TA[k],x=v!=null&&m!=null?v-m:null;
+     return'<div class="attr"><div class="h"><span>'+k+' · '+n.toUpperCase()+'</span><b style="color:'+(v==null?"var(--acier)":v>=75?"var(--vert)":v>=65?"var(--jaune)":"var(--orange)")+'">'+(v??"—")+'</b></div>'
+     +'<small>'+d+' · <span class="dl '+(x==null?"":x>=0?"d-up":"d-dn")+'">'+(x==null?"":(x>=0?"+":"")+x+" vs équipe")+'</span></small></div>'}).join("")+'</div></section>';
+ }
 
  /* objectifs d'intégration (nouveaux) */
  if(D.nv&&D.ob){
@@ -399,10 +457,11 @@ function render(D,demo){
   +'<div class="formula">note = 10 + 4 × (toi − moyenne) ÷ écart-type</div>'
   +'Pile dans la moyenne = <b>10/20</b>. Pour les erreurs, moins tu en fais, plus la note monte. La note va de 0 à 20.<br><br>'
   +'<b>Coup de pouce :</b> la note finale de l\'équipe confirmée est augmentée de 10 % (max 20).<br>'
-  +'<b>Nouveaux :</b> productivité, avérée et décelée sont notées sur l\'objectif d\'intégration (500 lignes / jour, PPM avérée 300, PPM décelée 3 200 : objectif atteint = 12/20), puis +2 points de bonus. Classement séparé des confirmés.'
+  +'<b>Nouveaux :</b> productivité, avérée et décelée sont notées sur l\'objectif d\'intégration (500 lignes / jour, PPM avérée 300, PPM décelée 3 200 : objectif atteint = 12/20), puis +2 points de bonus. Ils ont leur propre carte, sans comparaison avec les confirmés.'
   +'<table><tr><td>Productivité (quota)</td><td>40 %</td></tr><tr><td>Qualité décelée (PPM décelée)</td><td>20 %</td></tr><tr><td>Qualité avérée (PPM avérée)</td><td>20 %</td></tr><tr><td>RH &amp; savoir-être (journal)</td><td>20 %</td></tr></table>'
   +'<b>Jamais pris en compte :</b> absences, maladie, accident du travail, délégation, congés, formation, type de contrat, ancienneté.<br><br>'
-  +'<b>Classés :</b> '+(T.n||"—")+' opérateurs avec au moins 10 jours de picking dans le mois. En dessous, tes chiffres restent visibles mais sans note, pour qu\'elle reste juste.<br><br>'
+  +'<b>Carte joueur :</b> ton niveau OVR = 45 + 2,5 × ta note /20 (10/20 = 70). Bronze sous 65, argent 65-74, or 75-84, icône 85 et plus. Chaque attribut suit la même règle : 70 = moyenne de l\'équipe.<br><br>'
+  +'<b>Aucun classement</b> n\'est affiché : tu te compares à la moyenne, pas aux autres. Il faut au moins 10 jours de picking dans le mois pour avoir une note.<br><br>'
   +'<b>PPM</b> = erreurs pour un million de lignes. 200 PPM = 1 erreur toutes les 5 000 lignes.'
   +'</div></details></section>';
 
@@ -420,8 +479,37 @@ function render(D,demo){
  const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;e.target.classList.add("in");anime(e.target);io.unobserve(e.target)}),{threshold:.15});
  document.querySelectorAll(".reveal").forEach(e=>io.observe(e));
  requestAnimationFrame(()=>{const fg=$("#ringfg");if(fg&&!nc)fg.style.strokeDashoffset=ring*(1-Math.max(0,Math.min(20,D.no))/20)});
- if(!nc&&(D.rk<=3||got.size>=5))setTimeout(()=>confetti(D.rk===1?220:140),900);
+ if(!nc&&(D.ov>=80||got.size>=5))setTimeout(()=>confetti(D.ov>=85?220:140),900);
 }
+
+function initiales(p,n){return((p||"").trim()[0]||"")+((n||"").trim()[0]||"")}
+function carteJoueur(D,nc,g,raisonNC){
+ const ca=nc?"nc":(D.ca||"bronze"),at=D.at||{};
+ const st=["VIT","VOL","PRÉ","FIA","SÉC","ESP"].map(k=>'<div><b>'+(at[k]??"–")+'</b><span>'+k+'</span></div>').join("");
+ return'<div class="joueur"><div class="fut '+ca+'">'
+  +'<div class="ovr"><b'+(nc?'>NC':' data-count="'+D.ov+'">'+D.ov)+'</b><span>'+(D.nv?"NOUV":"PRÉPA")+'</span><i></i><small>P&amp;P</small></div>'
+  +'<div class="avatar">'+esc(initiales(D.p,D.n).toUpperCase())+'</div>'
+  +'<div class="nm">'+esc(D.p)+'</div><div class="stats">'+st+'</div><div class="club">CLR CHAMPIGNEULLES</div></div>'
+  +'<div class="under"><span class="tier">'+TIER[ca]+'</span>'
+  +(nc?'<div class="grade" style="margin-top:8px">'+raisonNC+'</div><div class="legend">Ton niveau revient dès que tu as assez de volume.</div>'
+     :'<div class="grade" style="margin-top:8px"><i>'+g[0]+'</i> '+g[1]+'</div>'
+      +'<div class="legend">Note '+fmt(D.no,1)+' / 20 · '+(D.nv?'<b style="color:var(--bleu)">+'+D.bn+' pts</b> bonus nouveau inclus':'<b style="color:var(--jaune)">+'+D.cp+' %</b> coup de pouce inclus')+'</div>')
+  +'</div></div>'}
+function hexagone(at,TA){
+ const K=["VIT","VOL","PRÉ","FIA","SÉC","ESP"],cx=180,cy=160,R=108,ang=i=>-Math.PI/2+i*Math.PI/3;
+ const r=v=>Math.max(.04,Math.min(1,((v??40)-40)/59));
+ const pt=(i,k)=>[cx+Math.cos(ang(i))*R*k,cy+Math.sin(ang(i))*R*k];
+ const poly=vals=>vals.map((v,i)=>pt(i,r(v)).map(n=>n.toFixed(1)).join(",")).join(" ");
+ let g='';
+ [55,70,85,99].forEach(v=>{g+='<polygon points="'+poly(K.map(()=>v))+'" fill="'+(v===99?"rgba(255,255,255,.02)":"none")+'" stroke="rgba(255,255,255,'+(v===70?.16:.08)+')" stroke-width="1"/>'});
+ K.forEach((k,i)=>{const [x,y]=pt(i,1);g+='<line x1="'+cx+'" y1="'+cy+'" x2="'+x.toFixed(1)+'" y2="'+y.toFixed(1)+'" stroke="rgba(255,255,255,.07)"/>'});
+ g+='<polygon class="avgp" points="'+poly(K.map(k=>TA[k]??70))+'"/>';
+ g+='<polygon class="me" points="'+poly(K.map(k=>at[k]))+'"/>';
+ K.forEach((k,i)=>{const [x,y]=pt(i,r(at[k]));g+='<circle class="dotm" cx="'+x.toFixed(1)+'" cy="'+y.toFixed(1)+'" r="3.6" fill="#FFD400" stroke="#0B0C0E" stroke-width="1.5"/>'});
+ K.forEach((k,i)=>{const [x,y]=pt(i,1.24),v=at[k],anch=Math.abs(x-cx)<8?"middle":x>cx?"start":"end";
+  g+='<text x="'+x.toFixed(1)+'" y="'+(y-3).toFixed(1)+'" text-anchor="'+anch+'" font-family="Archivo" font-weight="900" font-size="17" fill="#F4F5F6">'+(v??"–")+'</text>'
+   +'<text x="'+x.toFixed(1)+'" y="'+(y+12).toFixed(1)+'" text-anchor="'+anch+'" font-family="IBM Plex Mono" font-size="10" fill="#98A0AC" letter-spacing="1">'+k+'</text>'});
+ return'<svg viewBox="0 0 360 330" role="img" aria-label="Hexagone de tes attributs comparés à la moyenne de l\'équipe">'+g+'</svg>'}
 
 function anime(root){
  root.querySelectorAll("[data-w]").forEach(e=>requestAnimationFrame(()=>e.style.width=e.dataset.w+"%"));
