@@ -68,6 +68,7 @@ NOUVEAUX = {"KELLERER MEGANE", "DEMBELE TAMBA", "HAMDANI AMINE", "ROBIN ELODIE"}
 OBJ_NOUVEAU = {"lj": 500, "pa": 300, "pd": 3200}   # lignes/jour, PPM avérée, PPM décelée
 BONUS_NOUVEAU = 2.0        # points ajoutés à la note finale d'un nouveau
 PPM_DEC_VERT = 1000
+SEUIL_OR = 78              # carte or (et badge « Carte Or ») à partir de ce niveau OVR
 QUOTA_JOUR, H_REF, QUOTA_MAX = 620, 7.4, 150   # PARAMETRES B5, B6, B13
 
 # Corrections validées par le superviseur, en attendant leur report dans le classeur.
@@ -315,7 +316,7 @@ def construire(xlsx: Path, mois: int, annee: int):
             "ESP": sur99(zscore_note(f["posv"], *extra["esp"])),           # esprit d'équipe : points positifs
         }
         f["ovr"] = sur99(f["note"]) if f["note"] is not None else None
-        f["carte"] = (None if f["ovr"] is None else "icone" if f["ovr"] >= 85 else "or" if f["ovr"] >= 75
+        f["carte"] = (None if f["ovr"] is None else "icone" if f["ovr"] >= 85 else "or" if f["ovr"] >= SEUIL_OR
                       else "argent" if f["ovr"] >= 65 else "bronze")
     attr_moy = {k: int(round(statistics.mean([f["attr"][k] for f in cl]))) for k in fiches[0]["attr"]} if cl else {}
 
@@ -338,7 +339,7 @@ def construire(xlsx: Path, mois: int, annee: int):
         if f["prec"] and f["prec"]["q"] and f["q"] and f["q"] - f["prec"]["q"] >= 3 and ok_vol: b.append("up")
         if f["reg"] is not None and f["reg"] >= 80 and ok_vol: b.append("reg")
         if f["lig"] >= 10000: b.append("k10")
-        if f["ovr"] and f["ovr"] >= 75: b.append("or")
+        if f["ovr"] and f["ovr"] >= SEUIL_OR: b.append("or")
         f["badges"] = b
 
     # défi du mois suivant : le critère le plus faible
@@ -604,7 +605,7 @@ Pile dans la moyenne = 10/20. Pour les PPM, plus bas = meilleure note. Note fina
 Équipe confirmée : note finale × {COUP_DE_POUCE:.2f} (10 % moins sévère), plafonnée à 20.
 <b>Nouveaux</b> ({', '.join(sorted(n.split()[0].capitalize() for n in NOUVEAUX))}) : prod., avérée et décelée notées sur leur objectif
 ({OBJ_NOUVEAU['lj']} l/j, PPM avérée {OBJ_NOUVEAU['pa']}, PPM décelée {OBJ_NOUVEAU['pd']}) — objectif atteint = 12/20 — puis +{BONUS_NOUVEAU:.0f} pts de bonus.
-Ordre alphabétique : aucun classement affiché. OVR (niveau carte joueur) = 45 + 2,5 × note /20 ; bronze &lt; 65 · argent 65-74 · or 75-84 · icône ≥ 85.</div>
+Ordre alphabétique : aucun classement affiché. OVR (niveau carte joueur) = 45 + 2,5 × note /20 ; bronze &lt; 65 · argent 65-77 · or 78-84 · icône ≥ 85.</div>
 <div><h3 class='mono'>CE QUI N'EST JAMAIS PRIS EN COMPTE</h3>
 Absences, maladie, accident du travail, heures de délégation, congés, formation, type de contrat (CDI / intérim), ancienneté.
 Population classée : actifs hors pilotes, soumis au quota, ≥ {MIN_HEURES:.0f} h de picking dans le mois. Source : Suivi_Op_PP_OFFICIEL, onglets PROD, SUIVI_RH, POINTAGE.</div>

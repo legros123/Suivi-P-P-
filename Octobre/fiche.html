@@ -294,7 +294,7 @@ const BADGES=[
  {id:"up",i:"up",n:"En progrès",d:"Quota en hausse d'au moins 3 points par rapport au mois précédent."},
  {id:"reg",i:"gauge",n:"Métronome",d:"Au moins 80 % de journées régulières (± 15 % de ta moyenne)."},
  {id:"k10",i:"layers",n:"10 000 lignes",d:"Au moins 10 000 lignes préparées dans le mois."},
- {id:"or",i:"crown",n:"Carte Or",d:"Niveau OVR de 75 ou plus sur ta carte joueur."}];
+ {id:"or",i:"crown",n:"Carte Or",d:"Niveau OVR de 78 ou plus sur ta carte joueur."}];
 const ATTR=[["VIT","Vitesse","ton quota"],["VOL","Volume","lignes par jour"],["PRÉ","Précision","erreurs au rejet"],
  ["FIA","Fiabilité","litiges client"],["SÉC","Sécurité","écarts sécurité"],["ESP","Esprit d'équipe","points positifs"]];
 const TIER={bronze:"CARTE BRONZE",argent:"CARTE ARGENT",or:"CARTE OR",icone:"CARTE ICÔNE",nc:"CARTE EN COURS"};
@@ -460,7 +460,7 @@ function render(D,demo){
   +'<b>Nouveaux :</b> productivité, avérée et décelée sont notées sur l\'objectif d\'intégration (500 lignes / jour, PPM avérée 300, PPM décelée 3 200 : objectif atteint = 12/20), puis +2 points de bonus. Ils ont leur propre carte, sans comparaison avec les confirmés.'
   +'<table><tr><td>Productivité (quota)</td><td>40 %</td></tr><tr><td>Qualité décelée (PPM décelée)</td><td>20 %</td></tr><tr><td>Qualité avérée (PPM avérée)</td><td>20 %</td></tr><tr><td>RH &amp; savoir-être (journal)</td><td>20 %</td></tr></table>'
   +'<b>Jamais pris en compte :</b> absences, maladie, accident du travail, délégation, congés, formation, type de contrat, ancienneté.<br><br>'
-  +'<b>Carte joueur :</b> ton niveau OVR = 45 + 2,5 × ta note /20 (10/20 = 70). Bronze sous 65, argent 65-74, or 75-84, icône 85 et plus. Chaque attribut suit la même règle : 70 = moyenne de l\'équipe.<br><br>'
+  +'<b>Carte joueur :</b> ton niveau OVR = 45 + 2,5 × ta note /20 (10/20 = 70). Bronze sous 65, argent 65-77, or 78-84, icône 85 et plus. Chaque attribut suit la même règle : 70 = moyenne de l\'équipe.<br><br>'
   +'<b>Aucun classement</b> n\'est affiché : tu te compares à la moyenne, pas aux autres. Il faut au moins 10 jours de picking dans le mois pour avoir une note.<br><br>'
   +'<b>PPM</b> = erreurs pour un million de lignes. 200 PPM = 1 erreur toutes les 5 000 lignes.'
   +'</div></details></section>';

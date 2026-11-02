@@ -15,4 +15,4 @@ Nouveaux (Kellerer, Dembele, Hamdani, Robin) : notés sur leurs objectifs — 50
 PPM avérée 300, PPM décelée 3 200 — + 2 points de bonus, sans classement. Absences, maladie, AT, délégation, congés,
 contrat et ancienneté ne sont jamais pris en compte.
 
-**Aucun classement n'est affiché** (ni sur les pages, ni sur les cartes, ni dans la synthèse) : chacun se compare à la moyenne de l'équipe via sa carte joueur et son hexagone. OVR = 45 + 2,5 × note /20 (10/20 = 70) · bronze < 65 · argent 65-74 · or 75-84 · icône ≥ 85.
+**Aucun classement n'est affiché** (ni sur les pages, ni sur les cartes, ni dans la synthèse) : chacun se compare à la moyenne de l'équipe via sa carte joueur et son hexagone. OVR = 45 + 2,5 × note /20 (10/20 = 70) · bronze < 65 · argent 65-77 · or 78-84 · icône ≥ 85.
