@@ -13,7 +13,7 @@
    "PRÉ": 68,
    "FIA": 72,
    "SÉC": 70,
-   "ESP": 69
+   "ESP": 70
   }
  },
  "fiches": [
@@ -248,10 +248,17 @@
     "pa": 167,
     "pd": 1585
    },
-   "pos": 1,
+   "pos": 4,
    "ec": 1,
    "sec": 1,
    "rh_types": [
+    [
+     [
+      "+",
+      "Polyvalence : renfort câble"
+     ],
+     3
+    ],
     [
      [
       "+",
@@ -295,7 +302,7 @@
      1
     ]
    ],
-   "rhv": 0.0,
+   "rhv": 2.73,
    "classe": true,
    "indicatif": false,
    "nouveau": false,
@@ -303,21 +310,21 @@
     "p": 11.9,
     "a": 8.1,
     "d": 11.7,
-    "r": 12.4
+    "r": 13.0
    },
-   "note_brute": 11.2,
-   "note": 12.3,
-   "rang": 8,
+   "note_brute": 11.3,
+   "note": 12.4,
+   "rang": 7,
    "N": 10,
    "secv": 0.91,
-   "posv": 0.91,
+   "posv": 3.64,
    "attr": {
     "VIT": 75,
     "VOL": 74,
     "PRÉ": 74,
     "FIA": 65,
     "SÉC": 78,
-    "ESP": 69
+    "ESP": 74
    },
    "ovr": 76,
    "carte": "argent",
@@ -473,10 +480,10 @@
     "p": 13.4,
     "a": 13.7,
     "d": 12.2,
-    "r": 14.9
+    "r": 13.4
    },
-   "note_brute": 13.5,
-   "note": 14.9,
+   "note_brute": 13.2,
+   "note": 14.5,
    "rang": null,
    "N": null,
    "secv": 6.67,
@@ -489,7 +496,7 @@
     "SÉC": 65,
     "ESP": 95
    },
-   "ovr": 82,
+   "ovr": 81,
    "carte": "or",
    "badges": [
     "team",
@@ -791,10 +798,10 @@
     "p": 11.5,
     "a": 7.6,
     "d": 0.0,
-    "r": 9.0
+    "r": 8.2
    },
-   "note_brute": 7.9,
-   "note": 9.9,
+   "note_brute": 7.8,
+   "note": 9.8,
    "rang": 3,
    "N": 4,
    "secv": 5.45,
@@ -805,7 +812,7 @@
     "PRÉ": 45,
     "FIA": 64,
     "SÉC": 68,
-    "ESP": 69
+    "ESP": 64
    },
    "ovr": 70,
    "carte": "argent",
@@ -1092,10 +1099,10 @@
     "p": 18.2,
     "a": 10.7,
     "d": 10.9,
-    "r": 13.9
+    "r": 12.5
    },
-   "note_brute": 14.4,
-   "note": 15.8,
+   "note_brute": 14.1,
+   "note": 15.5,
    "rang": 1,
    "N": 10,
    "secv": 0.0,
@@ -1106,7 +1113,7 @@
     "PRÉ": 72,
     "FIA": 72,
     "SÉC": 80,
-    "ESP": 74
+    "ESP": 68
    },
    "ovr": 84,
    "carte": "or",
@@ -1359,7 +1366,7 @@
     "pa": 108,
     "pd": 2160
    },
-   "pos": 8,
+   "pos": 10,
    "ec": 5,
    "sec": 5,
    "rh_types": [
@@ -1369,6 +1376,13 @@
       "Carton non ramassé"
      ],
      5
+    ],
+    [
+     [
+      "+",
+      "RTT du vendredi décalée pour la production"
+     ],
+     3
     ],
     [
      [
@@ -1388,13 +1402,6 @@
      [
       "+",
       "Aide / entraide"
-     ],
-     1
-    ],
-    [
-     [
-      "+",
-      "Annulation de RTT (forte activité)"
      ],
      1
     ]
@@ -1427,7 +1434,7 @@
      1
     ]
    ],
-   "rhv": 2.73,
+   "rhv": 4.55,
    "classe": true,
    "indicatif": false,
    "nouveau": false,
@@ -1435,21 +1442,21 @@
     "p": 11.1,
     "a": 10.6,
     "d": 12.0,
-    "r": 14.5
+    "r": 14.2
    },
-   "note_brute": 11.9,
-   "note": 13.1,
-   "rang": 5,
+   "note_brute": 11.8,
+   "note": 13.0,
+   "rang": 6,
    "N": 10,
    "secv": 4.55,
-   "posv": 7.27,
+   "posv": 9.09,
    "attr": {
     "VIT": 73,
     "VOL": 72,
     "PRÉ": 75,
     "FIA": 72,
     "SÉC": 70,
-    "ESP": 95
+    "ESP": 93
    },
    "ovr": 78,
    "carte": "or",
@@ -1690,7 +1697,7 @@
     "PRÉ": 45,
     "FIA": 45,
     "SÉC": 45,
-    "ESP": 64
+    "ESP": 61
    },
    "ovr": 60,
    "carte": "bronze",
@@ -1948,10 +1955,10 @@
     "p": 11.9,
     "a": 20.0,
     "d": 0.2,
-    "r": 6.4
+    "r": 5.9
    },
-   "note_brute": 10.1,
-   "note": 12.1,
+   "note_brute": 10.0,
+   "note": 12.0,
    "rang": 2,
    "N": 4,
    "secv": 8.0,
@@ -1962,7 +1969,7 @@
     "PRÉ": 46,
     "FIA": 95,
     "SÉC": 62,
-    "ESP": 64
+    "ESP": 61
    },
    "ovr": 75,
    "carte": "argent",
@@ -2201,10 +2208,17 @@
     "pa": 70,
     "pd": 487
    },
-   "pos": 1,
+   "pos": 4,
    "ec": 1,
    "sec": 1,
    "rh_types": [
+    [
+     [
+      "+",
+      "Polyvalence : renfort câble"
+     ],
+     3
+    ],
     [
      [
       "-",
@@ -2231,7 +2245,7 @@
     ]
    ],
    "ave_types": [],
-   "rhv": 0.0,
+   "rhv": 3.0,
    "classe": true,
    "indicatif": false,
    "nouveau": false,
@@ -2239,23 +2253,23 @@
     "p": 11.4,
     "a": 13.7,
     "d": 13.1,
-    "r": 12.4
+    "r": 13.2
    },
-   "note_brute": 12.4,
-   "note": 13.6,
+   "note_brute": 12.6,
+   "note": 13.9,
    "rang": 2,
    "N": 10,
    "secv": 1.0,
-   "posv": 1.0,
+   "posv": 4.0,
    "attr": {
     "VIT": 74,
     "VOL": 73,
     "PRÉ": 78,
     "FIA": 79,
     "SÉC": 77,
-    "ESP": 70
+    "ESP": 75
    },
-   "ovr": 79,
+   "ovr": 80,
    "carte": "or",
    "badges": [
     "c100",
@@ -2518,11 +2532,11 @@
     "p": 12.4,
     "a": 11.0,
     "d": 10.2,
-    "r": 10.7
+    "r": 9.7
    },
-   "note_brute": 11.3,
-   "note": 12.4,
-   "rang": 7,
+   "note_brute": 11.1,
+   "note": 12.2,
+   "rang": 8,
    "N": 10,
    "secv": 2.22,
    "posv": 0.0,
@@ -2532,7 +2546,7 @@
     "PRÉ": 70,
     "FIA": 72,
     "SÉC": 74,
-    "ESP": 64
+    "ESP": 61
    },
    "ovr": 76,
    "carte": "argent",
@@ -2807,10 +2821,10 @@
     "p": 11.0,
     "a": 12.5,
     "d": 12.3,
-    "r": 7.9
+    "r": 7.3
    },
-   "note_brute": 10.9,
-   "note": 12.0,
+   "note_brute": 10.8,
+   "note": 11.9,
    "rang": 9,
    "N": 10,
    "secv": 6.0,
@@ -2821,7 +2835,7 @@
     "PRÉ": 76,
     "FIA": 76,
     "SÉC": 66,
-    "ESP": 64
+    "ESP": 61
    },
    "ovr": 75,
    "carte": "argent",
@@ -3061,10 +3075,17 @@
     "pa": 85,
     "pd": 85
    },
-   "pos": 0,
+   "pos": 3,
    "ec": 1,
    "sec": 1,
    "rh_types": [
+    [
+     [
+      "+",
+      "Heures sup pour la production"
+     ],
+     3
+    ],
     [
      [
       "-",
@@ -3093,7 +3114,7 @@
      1
     ]
    ],
-   "rhv": -0.95,
+   "rhv": 1.9,
    "classe": true,
    "indicatif": false,
    "nouveau": false,
@@ -3101,27 +3122,28 @@
     "p": 11.1,
     "a": 12.5,
     "d": 13.4,
-    "r": 11.7
+    "r": 12.5
    },
-   "note_brute": 12.0,
-   "note": 13.2,
-   "rang": 4,
+   "note_brute": 12.1,
+   "note": 13.3,
+   "rang": 5,
    "N": 10,
    "secv": 0.95,
-   "posv": 0.0,
+   "posv": 2.86,
    "attr": {
     "VIT": 73,
     "VOL": 73,
     "PRÉ": 78,
     "FIA": 76,
     "SÉC": 77,
-    "ESP": 64
+    "ESP": 71
    },
    "ovr": 78,
    "carte": "or",
    "badges": [
     "c100",
     "lynx",
+    "team",
     "reg",
     "k10",
     "or"
@@ -3353,10 +3375,10 @@
     "p": 11.4,
     "a": 16.3,
     "d": 9.4,
-    "r": 11.4
+    "r": 10.3
    },
-   "note_brute": 12.0,
-   "note": 14.0,
+   "note_brute": 11.8,
+   "note": 13.8,
    "rang": 1,
    "N": 4,
    "secv": 1.33,
@@ -3367,7 +3389,7 @@
     "PRÉ": 68,
     "FIA": 86,
     "SÉC": 76,
-    "ESP": 64
+    "ESP": 61
    },
    "ovr": 80,
    "carte": "or",
@@ -3588,7 +3610,7 @@
     "pa": 810,
     "pd": 3106
    },
-   "pos": 0,
+   "pos": 6,
    "ec": 5,
    "sec": 5,
    "rh_types": [
@@ -3598,6 +3620,20 @@
       "Carton non ramassé"
      ],
      5
+    ],
+    [
+     [
+      "+",
+      "Polyvalence : renfort hors gabarit"
+     ],
+     3
+    ],
+    [
+     [
+      "+",
+      "Heures sup pour la production"
+     ],
+     3
     ]
    ],
    "err_types": [
@@ -3620,7 +3656,7 @@
      2
     ]
    ],
-   "rhv": -5.26,
+   "rhv": 1.05,
    "classe": true,
    "indicatif": false,
    "nouveau": false,
@@ -3628,27 +3664,29 @@
     "p": 13.5,
     "a": 11.0,
     "d": 11.7,
-    "r": 8.5
+    "r": 11.9
    },
-   "note_brute": 11.6,
-   "note": 12.8,
-   "rang": 6,
+   "note_brute": 12.3,
+   "note": 13.5,
+   "rang": 4,
    "N": 10,
    "secv": 5.26,
-   "posv": 0.0,
+   "posv": 6.32,
    "attr": {
     "VIT": 79,
     "VOL": 76,
     "PRÉ": 74,
     "FIA": 72,
     "SÉC": 68,
-    "ESP": 64
+    "ESP": 83
    },
-   "ovr": 77,
-   "carte": "argent",
+   "ovr": 79,
+   "carte": "or",
    "badges": [
     "c100",
-    "k10"
+    "team",
+    "k10",
+    "or"
    ],
    "defi": {
     "k": "r",
@@ -3864,10 +3902,17 @@
     "pa": 596,
     "pd": 1789
    },
-   "pos": 4,
+   "pos": 7,
    "ec": 2,
    "sec": 2,
    "rh_types": [
+    [
+     [
+      "+",
+      "RTT du vendredi décalée pour la production"
+     ],
+     3
+    ],
     [
      [
       "+",
@@ -3910,7 +3955,7 @@
      1
     ]
    ],
-   "rhv": 1.82,
+   "rhv": 4.55,
    "classe": true,
    "indicatif": false,
    "nouveau": false,
@@ -3918,14 +3963,14 @@
     "p": 13.2,
     "a": 7.9,
     "d": 13.5,
-    "r": 13.8
+    "r": 14.2
    },
-   "note_brute": 12.3,
-   "note": 13.5,
+   "note_brute": 12.4,
+   "note": 13.6,
    "rang": 3,
    "N": 10,
    "secv": 1.82,
-   "posv": 3.64,
+   "posv": 6.36,
    "attr": {
     "VIT": 78,
     "VOL": 78,
@@ -4224,10 +4269,10 @@
     "p": 4.9,
     "a": 12.2,
     "d": 11.4,
-    "r": 9.0
+    "r": 8.2
    },
-   "note_brute": 8.5,
-   "note": 9.4,
+   "note_brute": 8.3,
+   "note": 9.1,
    "rang": 10,
    "N": 10,
    "secv": 4.55,
@@ -4238,7 +4283,7 @@
     "PRÉ": 74,
     "FIA": 76,
     "SÉC": 70,
-    "ESP": 64
+    "ESP": 61
    },
    "ovr": 68,
    "carte": "argent",
@@ -4448,7 +4493,7 @@
     "p": 15.0,
     "a": 13.7,
     "d": 12.7,
-    "r": 11.4
+    "r": 10.3
    },
    "note_brute": null,
    "note": null,
@@ -4462,7 +4507,7 @@
     "PRÉ": 77,
     "FIA": 79,
     "SÉC": 76,
-    "ESP": 64
+    "ESP": 61
    },
    "ovr": null,
    "carte": null,

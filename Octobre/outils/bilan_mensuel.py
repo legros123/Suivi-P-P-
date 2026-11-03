@@ -88,11 +88,17 @@ CORRECTIONS_HHP = {
 }
 # Points du journal RH ajoutés par le superviseur : (opérateur, date, type, sens, famille, nombre)
 AJOUTS_RH = [
-    ("GRANGER JEAN PHILIPPE", "2026-10-31", "Annulation de RTT (forte activité)", "+", "SAVOIR-ÊTRE", 1),
+    ("GRANGER JEAN PHILIPPE", "2026-10-31", "RTT du vendredi décalée pour la production", "+", "SAVOIR-ÊTRE", 3),
     ("GRANGER JEAN PHILIPPE", "2026-10-31", "Polyvalence : renfort expédition en heures sup", "+", "SAVOIR-ÊTRE", 3),
     ("GRANGER JEAN PHILIPPE", "2026-10-31", "Polyvalence : renfort hors gabarit", "+", "SAVOIR-ÊTRE", 3),
+    ("VEJUX SANDRA", "2026-10-31", "RTT du vendredi décalée pour la production", "+", "SAVOIR-ÊTRE", 3),
     ("VEJUX SANDRA", "2026-10-31", "Polyvalence : renfort hors gabarit", "+", "SAVOIR-ÊTRE", 3),
     ("CUNY GREGORY", "2026-10-31", "Polyvalence : renfort hors gabarit", "+", "SAVOIR-ÊTRE", 3),
+    ("STERCKY FRANCK", "2026-10-31", "Polyvalence : renfort hors gabarit", "+", "SAVOIR-ÊTRE", 3),
+    ("STERCKY FRANCK", "2026-10-31", "Heures sup pour la production", "+", "SAVOIR-ÊTRE", 3),
+    ("REH MYRIAM", "2026-10-31", "Heures sup pour la production", "+", "SAVOIR-ÊTRE", 3),
+    ("MANGIN CHRISTELLE", "2026-10-31", "Polyvalence : renfort câble", "+", "SAVOIR-ÊTRE", 3),
+    ("COLSON STEPHANIE", "2026-10-31", "Polyvalence : renfort câble", "+", "SAVOIR-ÊTRE", 3),
 ]        # PARAMETRES : PPM décelée verte sous ce seuil
 MOIS_FR = ["", "JANVIER", "FÉVRIER", "MARS", "AVRIL", "MAI", "JUIN", "JUILLET",
            "AOÛT", "SEPTEMBRE", "OCTOBRE", "NOVEMBRE", "DÉCEMBRE"]
