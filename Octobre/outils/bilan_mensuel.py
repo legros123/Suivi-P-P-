@@ -70,6 +70,10 @@ COUP_DE_POUCE = 1.10       # équipe confirmée : note finale × 1,10 (10 % moin
 NOUVEAUX = {"KELLERER MEGANE", "DEMBELE TAMBA", "HAMDANI AMINE", "ROBIN ELODIE"}
 OBJ_NOUVEAU = {"lj": 500, "pa": 300, "pd": 3200}   # lignes/jour, PPM avérée, PPM décelée
 BONUS_NOUVEAU = 2.0        # points ajoutés à la note finale d'un nouveau
+# Temps de picking réduit (heures hors picking non imputables à l'opérateur) :
+# volume ramené à ses heures de picking (lignes / h × 7,4 h) et note calculée même sous MIN_HEURES,
+# avec la méthode commune, sans entrer dans les moyennes ni le classement de l'équipe.
+HEURES_REDUITES = {"CUNY GREGORY"}
 PPM_DEC_VERT = 1000
 SEUIL_OR = 78              # carte or (et badge « Carte Or ») à partir de ce niveau OVR
 QUOTA_JOUR, H_REF, QUOTA_MAX = 620, 7.4, 150   # PARAMETRES B5, B6, B13
@@ -271,6 +275,9 @@ def construire(xlsx: Path, mois: int, annee: int):
         )
         f["rhv"] = round((pos - ec) / max(jours, 1) * 20, 2)
         f["classe"] = bool(o["quota"] and a["h_pick"] >= MIN_HEURES and a["q"] is not None)
+        f["indicatif"] = bool(np_ in HEURES_REDUITES and not f["classe"] and o["quota"] and a["q"] is not None)
+        if np_ in HEURES_REDUITES and a["h_pick"]:
+            f["lj"] = round(a["lig"] / a["h_pick"] * H_REF)   # lignes par journée de 7,4 h de picking
         fiches.append(f)
 
     # statistiques de l'équipe classée
@@ -291,7 +298,7 @@ def construire(xlsx: Path, mois: int, annee: int):
             notes["a"] = note_objectif(f["pa"], OBJ_NOUVEAU["pa"], True)
             notes["d"] = note_objectif(f["pd"], OBJ_NOUVEAU["pd"], True)
         f["notes"] = notes
-        f["note_brute"] = round(sum(POIDS[k] * notes[k] for k in POIDS), 1) if f["classe"] else None
+        f["note_brute"] = round(sum(POIDS[k] * notes[k] for k in POIDS), 1) if (f["classe"] or f.get("indicatif")) else None
         if f["note_brute"] is None:
             f["note"] = None
         elif f["nouveau"]:
@@ -364,9 +371,9 @@ def defi(f, moy):
     if f["sec"] or f["ec"]:
         t = next((t for (s, t), n in f["rh_types"] if s == "-"), None)
         sid, stitre = STD_LIEN.get(t, ("P18", "Sécurité au quotidien"))
-        if f["ec"] >= 2 or not f["classe"]:
+        if f["ec"] >= 2 or not (f["classe"] or f.get("indicatif")):
             return dict(k="r", t=f"Zéro écart « {t} »", d=f"{f['ec']} écart(s) ce mois. Objectif : 0 le mois prochain.", s=sid, st=stitre)
-    if not f["classe"]:
+    if not (f["classe"] or f.get("indicatif")):
         return dict(k="p", t="Prendre tes marques", d="Pas assez d'heures de picking ce mois pour être classé. On se retrouve le mois prochain.", s="P4", st="Préparation détail")
     n = f["notes"]
     if f.get("nouveau"):
@@ -401,7 +408,7 @@ def charge_utile(f, moy, mois, annee):
         "s": [v for _, v in f["serie"]],
         "jd": f["jours_det"],   # [jour, heures, heures pick, lignes, décelées, avérées, quota]
         "pr": f["prec"],
-        "no": f["note"], "ns": f["notes"] if f["classe"] else None, "ov": f["ovr"], "ca": f["carte"], "at": f["attr"],
+        "no": f["note"], "ns": f["notes"] if (f["classe"] or f.get("indicatif")) else None, "ov": f["ovr"], "ca": f["carte"], "at": f["attr"],
         "nv": f["nouveau"], "ob": OBJ_NOUVEAU if f["nouveau"] else None, "bn": BONUS_NOUVEAU if f["nouveau"] else None,
         "cp": None if f["nouveau"] else round((COUP_DE_POUCE - 1) * 100),
         "rh": [f["pos"], f["ec"], f["sec"]],
@@ -410,7 +417,7 @@ def charge_utile(f, moy, mois, annee):
         "av": [[t, n] for t, n in f["ave_types"]],
         "df": f["defi"],
         "T": moy,
-        "cl": f["classe"], "qo": f["quota_ok"],
+        "cl": f["classe"] or f.get("indicatif", False), "qo": f["quota_ok"],
     }
     brut = json.dumps(d, ensure_ascii=False, separators=(",", ":")).encode()
     comp = zlib.compressobj(9, zlib.DEFLATED, -15)
@@ -576,6 +583,8 @@ def html_synthese(fiches, moy, mois, annee):
 
     def ligne_nc(f):
         raison = "hors quota" if not f["quota_ok"] else f"{f['h_pick']:.0f} h de picking (&lt; {MIN_HEURES:.0f} h)"
+        if f.get("indicatif"):
+            raison += f" · note indicative {f['note']:.1f} (OVR {f['ovr']}, carte {f['carte']}), volume ramené aux heures de picking"
         q = "" if f["q"] is None else f"{f['q']:.1f}"
         return (f"<tr><td class='rk'>·</td><td class='np'><b>{html.escape(f['nom'])}</b> {html.escape(f['prenom'])}"
                 f"<span class='mono'>{html.escape(f['mat'])}</span></td><td colspan='5' class='raison'>{raison}</td>"

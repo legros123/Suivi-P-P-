@@ -297,6 +297,7 @@
    ],
    "rhv": 0.0,
    "classe": true,
+   "indicatif": false,
    "nouveau": false,
    "notes": {
     "p": 11.9,
@@ -350,7 +351,7 @@
    "q": 111.3,
    "reg": 100,
    "jp": 6,
-   "lj": 332,
+   "lj": 673,
    "cad": 90.9,
    "best": [
     578,
@@ -466,6 +467,7 @@
    "ave_types": [],
    "rhv": 3.33,
    "classe": false,
+   "indicatif": true,
    "nouveau": false,
    "notes": {
     "p": 13.4,
@@ -473,24 +475,25 @@
     "d": 12.2,
     "r": 14.9
    },
-   "note_brute": null,
-   "note": null,
+   "note_brute": 13.5,
+   "note": 14.9,
    "rang": null,
    "N": null,
    "secv": 6.67,
    "posv": 10.0,
    "attr": {
     "VIT": 78,
-    "VOL": 50,
+    "VOL": 83,
     "PRÉ": 76,
     "FIA": 79,
     "SÉC": 65,
     "ESP": 95
    },
-   "ovr": null,
-   "carte": null,
+   "ovr": 82,
+   "carte": "or",
    "badges": [
-    "team"
+    "team",
+    "or"
    ],
    "defi": {
     "k": "r",
@@ -782,6 +785,7 @@
    ],
    "rhv": -4.55,
    "classe": true,
+   "indicatif": false,
    "nouveau": true,
    "notes": {
     "p": 11.8,
@@ -1082,6 +1086,7 @@
    ],
    "rhv": 2.0,
    "classe": true,
+   "indicatif": false,
    "nouveau": false,
    "notes": {
     "p": 18.2,
@@ -1424,6 +1429,7 @@
    ],
    "rhv": 2.73,
    "classe": true,
+   "indicatif": false,
    "nouveau": false,
    "notes": {
     "p": 11.1,
@@ -1664,6 +1670,7 @@
    ],
    "rhv": -18.67,
    "classe": true,
+   "indicatif": false,
    "nouveau": true,
    "notes": {
     "p": 10.0,
@@ -1935,6 +1942,7 @@
    "ave_types": [],
    "rhv": -8.0,
    "classe": true,
+   "indicatif": false,
    "nouveau": true,
    "notes": {
     "p": 12.1,
@@ -2225,6 +2233,7 @@
    "ave_types": [],
    "rhv": 0.0,
    "classe": true,
+   "indicatif": false,
    "nouveau": false,
    "notes": {
     "p": 11.4,
@@ -2503,6 +2512,7 @@
    ],
    "rhv": -2.22,
    "classe": true,
+   "indicatif": false,
    "nouveau": false,
    "notes": {
     "p": 12.4,
@@ -2791,6 +2801,7 @@
    ],
    "rhv": -6.0,
    "classe": true,
+   "indicatif": false,
    "nouveau": false,
    "notes": {
     "p": 11.0,
@@ -3084,6 +3095,7 @@
    ],
    "rhv": -0.95,
    "classe": true,
+   "indicatif": false,
    "nouveau": false,
    "notes": {
     "p": 11.1,
@@ -3335,6 +3347,7 @@
    ],
    "rhv": -1.33,
    "classe": true,
+   "indicatif": false,
    "nouveau": true,
    "notes": {
     "p": 11.3,
@@ -3609,6 +3622,7 @@
    ],
    "rhv": -5.26,
    "classe": true,
+   "indicatif": false,
    "nouveau": false,
    "notes": {
     "p": 13.5,
@@ -3898,6 +3912,7 @@
    ],
    "rhv": 1.82,
    "classe": true,
+   "indicatif": false,
    "nouveau": false,
    "notes": {
     "p": 13.2,
@@ -4203,6 +4218,7 @@
    ],
    "rhv": -4.55,
    "classe": true,
+   "indicatif": false,
    "nouveau": false,
    "notes": {
     "p": 4.9,
@@ -4426,6 +4442,7 @@
    "ave_types": [],
    "rhv": -1.33,
    "classe": false,
+   "indicatif": false,
    "nouveau": false,
    "notes": {
     "p": 15.0,
