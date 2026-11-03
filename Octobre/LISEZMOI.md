@@ -9,6 +9,8 @@
 | `apercu_fiche_mobile.png` / `apercu_fiche_nouveau.png` | Aperçus de la page sur téléphone (confirmé / nouveau) |
 | `outils/` | Générateur pour refaire le mois suivant (voir `outils/LISEZMOI.md`) |
 
+Lignes / jour = lignes ÷ heures de picking × 7,4 h (heures hors picking et heures sup neutralisées).
+
 Méthode de notation : 10/20 = moyenne de l'équipe ; productivité 40 %, qualité décelée 20 %,
 qualité avérée 20 %, RH & savoir-être 20 %. Équipe confirmée : note × 1,10 (coup de pouce).
 Nouveaux (Kellerer, Dembele, Hamdani, Robin) : notés sur leurs objectifs — 500 lignes/jour,

@@ -70,9 +70,8 @@ COUP_DE_POUCE = 1.10       # équipe confirmée : note finale × 1,10 (10 % moin
 NOUVEAUX = {"KELLERER MEGANE", "DEMBELE TAMBA", "HAMDANI AMINE", "ROBIN ELODIE"}
 OBJ_NOUVEAU = {"lj": 500, "pa": 300, "pd": 3200}   # lignes/jour, PPM avérée, PPM décelée
 BONUS_NOUVEAU = 2.0        # points ajoutés à la note finale d'un nouveau
-# Temps de picking réduit (heures hors picking non imputables à l'opérateur) :
-# volume ramené à ses heures de picking (lignes / h × 7,4 h) et note calculée même sous MIN_HEURES,
-# avec la méthode commune, sans entrer dans les moyennes ni le classement de l'équipe.
+# Temps de picking réduit (heures hors picking non imputables à l'opérateur) : note calculée même sous
+# MIN_HEURES, avec la méthode commune, sans entrer dans les moyennes ni le classement de l'équipe.
 HEURES_REDUITES = {"CUNY GREGORY"}
 PPM_DEC_VERT = 1000
 SEUIL_OR = 78              # carte or (et badge « Carte Or ») à partir de ce niveau OVR
@@ -198,7 +197,7 @@ def agreger(prod, np_, mois, annee):
         q=round(statistics.mean(qs), 1) if qs else None,
         reg=round(100 * statistics.mean(regs)) if regs else None,
         jp=len(jours_pick),
-        lj=round(lig / len(jours_pick)) if jours_pick else None,
+        lj=round(lig / h * H_REF) if h else None,   # lignes par journée de 7,4 h de picking (heures hors picking neutralisées)
         cad=round(lig / h, 1) if h else None,
         best=(int(best["lig"]), best["date"].day),
         serie=[(x["date"].day, round(x["q"])) for x in sorted(d, key=lambda x: x["date"])
@@ -276,8 +275,6 @@ def construire(xlsx: Path, mois: int, annee: int):
         f["rhv"] = round((pos - ec) / max(jours, 1) * 20, 2)
         f["classe"] = bool(o["quota"] and a["h_pick"] >= MIN_HEURES and a["q"] is not None)
         f["indicatif"] = bool(np_ in HEURES_REDUITES and not f["classe"] and o["quota"] and a["q"] is not None)
-        if np_ in HEURES_REDUITES and a["h_pick"]:
-            f["lj"] = round(a["lig"] / a["h_pick"] * H_REF)   # lignes par journée de 7,4 h de picking
         fiches.append(f)
 
     # statistiques de l'équipe classée
