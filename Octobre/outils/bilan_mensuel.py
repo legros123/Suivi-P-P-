@@ -63,7 +63,7 @@ GABARIT = Path(__file__).resolve().parent.parent / "fiche.html"        # modèle
 MIN_HEURES = 74.0          # = 10 jours pleins de picking pour être classé (note fiable)
 BADGE_HEURES = 37.0        # volume mini pour décrocher un badge qualité (5 jours)
 MIN_LIGNES_CARTE = 100     # en dessous : pas de carte (passage trop ponctuel)
-MIN_HEURES_CARTE = 15.0    # heures de picking réelles (hors HG, renforts…) pour recevoir une carte
+MIN_HEURES_CARTE = 20.0    # heures de picking réelles (hors HG, renforts…) pour recevoir une carte
 POIDS = {"p": 0.40, "d": 0.20, "a": 0.20, "r": 0.20}
 COUP_DE_POUCE = 1.10       # équipe confirmée : note finale × 1,10 (10 % moins sévère), plafonnée à 20
 # Parcours nouveaux : notés sur LEUR objectif, pas sur la moyenne des confirmés
@@ -87,6 +87,9 @@ CORRECTIONS_HHP = {
 AJOUTS_RH = [
     ("GRANGER JEAN PHILIPPE", "2026-10-31", "Annulation de RTT (forte activité)", "+", "SAVOIR-ÊTRE", 1),
     ("GRANGER JEAN PHILIPPE", "2026-10-31", "Polyvalence : renfort expédition en heures sup", "+", "SAVOIR-ÊTRE", 3),
+    ("GRANGER JEAN PHILIPPE", "2026-10-31", "Polyvalence : renfort hors gabarit", "+", "SAVOIR-ÊTRE", 3),
+    ("VEJUX SANDRA", "2026-10-31", "Polyvalence : renfort hors gabarit", "+", "SAVOIR-ÊTRE", 3),
+    ("CUNY GREGORY", "2026-10-31", "Polyvalence : renfort hors gabarit", "+", "SAVOIR-ÊTRE", 3),
 ]        # PARAMETRES : PPM décelée verte sous ce seuil
 MOIS_FR = ["", "JANVIER", "FÉVRIER", "MARS", "AVRIL", "MAI", "JUIN", "JUILLET",
            "AOÛT", "SEPTEMBRE", "OCTOBRE", "NOVEMBRE", "DÉCEMBRE"]

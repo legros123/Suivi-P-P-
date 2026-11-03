@@ -1,9 +1,9 @@
 {
  "moyennes": {
-  "q": 94.3,
+  "q": 95.1,
   "pa": 246,
   "pd": 4477,
-  "lj": 541,
+  "lj": 540,
   "n": 14,
   "nc": 10,
   "nn": 4,
@@ -12,7 +12,7 @@
    "VOL": 70,
    "PRÉ": 68,
    "FIA": 72,
-   "SÉC": 71,
+   "SÉC": 70,
    "ESP": 69
   }
  },
@@ -299,14 +299,14 @@
    "classe": true,
    "nouveau": false,
    "notes": {
-    "p": 12.1,
+    "p": 11.9,
     "a": 8.1,
     "d": 11.7,
-    "r": 12.9
+    "r": 12.4
    },
-   "note_brute": 11.4,
-   "note": 12.5,
-   "rang": 6,
+   "note_brute": 11.2,
+   "note": 12.3,
+   "rang": 8,
    "N": 10,
    "secv": 0.91,
    "posv": 0.91,
@@ -316,7 +316,7 @@
     "PRÉ": 74,
     "FIA": 65,
     "SÉC": 78,
-    "ESP": 71
+    "ESP": 69
    },
    "ovr": 76,
    "carte": "argent",
@@ -342,16 +342,16 @@
    "nom": "CUNY",
    "prenom": "Gregory",
    "quota_ok": true,
-   "h_pick": 23.75,
+   "h_pick": 21.95,
    "lig": 1995,
    "cont": 1017,
    "ed": 4,
    "ea": 0,
-   "q": 80.4,
-   "reg": 60,
-   "jp": 5,
-   "lj": 399,
-   "cad": 84.0,
+   "q": 111.3,
+   "reg": 100,
+   "jp": 6,
+   "lj": 332,
+   "cad": 90.9,
    "best": [
     578,
     29
@@ -360,11 +360,11 @@
     [
      1,
      4.4,
-     4.4,
+     1.8,
      154,
      1,
      0,
-     48
+     117
     ],
     [
      5,
@@ -396,24 +396,24 @@
     [
      28,
      7.4,
-     7.4,
+     2.2,
      189,
      1,
      0,
-     33
+     110
     ],
     [
      29,
-     0,
-     0.0,
+     7.4,
+     6.0,
      578,
      1,
      0,
-     null
+     119
     ]
    ],
-   "jours": 5,
-   "heures": 31.0,
+   "jours": 6,
+   "heures": 38.4,
    "hs": 0,
    "pa": 0,
    "pd": 2005,
@@ -423,10 +423,17 @@
     "pa": 405,
     "pd": 811
    },
-   "pos": 0,
+   "pos": 3,
    "ec": 2,
    "sec": 2,
    "rh_types": [
+    [
+     [
+      "+",
+      "Polyvalence : renfort hors gabarit"
+     ],
+     3
+    ],
     [
      [
       "-",
@@ -457,32 +464,34 @@
     ]
    ],
    "ave_types": [],
-   "rhv": -8.0,
+   "rhv": 3.33,
    "classe": false,
    "nouveau": false,
    "notes": {
-    "p": 7.0,
+    "p": 13.4,
     "a": 13.7,
     "d": 12.2,
-    "r": 6.5
+    "r": 14.9
    },
    "note_brute": null,
    "note": null,
    "rang": null,
    "N": null,
-   "secv": 8.0,
-   "posv": 0.0,
+   "secv": 6.67,
+   "posv": 10.0,
    "attr": {
-    "VIT": 62,
-    "VOL": 56,
+    "VIT": 78,
+    "VOL": 50,
     "PRÉ": 76,
     "FIA": 79,
-    "SÉC": 62,
-    "ESP": 64
+    "SÉC": 65,
+    "ESP": 95
    },
    "ovr": null,
    "carte": null,
-   "badges": [],
+   "badges": [
+    "team"
+   ],
    "defi": {
     "k": "r",
     "t": "Zéro écart « Prise de poste KO »",
@@ -778,10 +787,10 @@
     "p": 11.8,
     "a": 7.6,
     "d": 0.0,
-    "r": 9.2
+    "r": 9.0
    },
-   "note_brute": 8.1,
-   "note": 10.1,
+   "note_brute": 8.0,
+   "note": 10.0,
    "rang": 3,
    "N": 4,
    "secv": 5.45,
@@ -792,7 +801,7 @@
     "PRÉ": 45,
     "FIA": 64,
     "SÉC": 68,
-    "ESP": 71
+    "ESP": 69
    },
    "ovr": 70,
    "carte": "argent",
@@ -1075,27 +1084,27 @@
    "classe": true,
    "nouveau": false,
    "notes": {
-    "p": 18.6,
+    "p": 18.2,
     "a": 10.7,
     "d": 10.9,
-    "r": 14.5
+    "r": 13.9
    },
-   "note_brute": 14.7,
-   "note": 16.2,
+   "note_brute": 14.4,
+   "note": 15.8,
    "rang": 1,
    "N": 10,
    "secv": 0.0,
    "posv": 2.0,
    "attr": {
-    "VIT": 92,
+    "VIT": 90,
     "VOL": 92,
     "PRÉ": 72,
     "FIA": 72,
     "SÉC": 80,
-    "ESP": 80
+    "ESP": 74
    },
-   "ovr": 86,
-   "carte": "icone",
+   "ovr": 84,
+   "carte": "or",
    "badges": [
     "c100",
     "turbo",
@@ -1120,16 +1129,16 @@
    "nom": "GRANGER",
    "prenom": "Jean Philippe",
    "quota_ok": true,
-   "h_pick": 119.2,
+   "h_pick": 122.2,
    "lig": 9819,
    "cont": 3494,
    "ed": 21,
    "ea": 2,
-   "q": 100.2,
-   "reg": 65,
-   "jp": 21,
-   "lj": 468,
-   "cad": 82.4,
+   "q": 100.4,
+   "reg": 67,
+   "jp": 22,
+   "lj": 446,
+   "cad": 80.4,
    "best": [
     708,
     8
@@ -1326,17 +1335,17 @@
     ],
     [
      30,
-     0,
-     0.0,
+     8.4,
+     3.0,
      216,
      0,
      0,
-     null
+     104
     ]
    ],
-   "jours": 21,
-   "heures": 167.3,
-   "hs": 11.8,
+   "jours": 22,
+   "heures": 175.7,
+   "hs": 12.8,
    "pa": 204,
    "pd": 2139,
    "prec": {
@@ -1345,7 +1354,7 @@
     "pa": 108,
     "pd": 2160
    },
-   "pos": 5,
+   "pos": 8,
    "ec": 5,
    "sec": 5,
    "rh_types": [
@@ -1360,6 +1369,13 @@
      [
       "+",
       "Polyvalence : renfort expédition en heures sup"
+     ],
+     3
+    ],
+    [
+     [
+      "+",
+      "Polyvalence : renfort hors gabarit"
      ],
      3
     ],
@@ -1406,35 +1422,36 @@
      1
     ]
    ],
-   "rhv": 0.0,
+   "rhv": 2.73,
    "classe": true,
    "nouveau": false,
    "notes": {
-    "p": 11.3,
+    "p": 11.1,
     "a": 10.6,
     "d": 12.0,
-    "r": 12.9
+    "r": 14.5
    },
-   "note_brute": 11.6,
-   "note": 12.8,
+   "note_brute": 11.9,
+   "note": 13.1,
    "rang": 5,
    "N": 10,
-   "secv": 4.76,
-   "posv": 4.76,
+   "secv": 4.55,
+   "posv": 7.27,
    "attr": {
     "VIT": 73,
-    "VOL": 63,
+    "VOL": 61,
     "PRÉ": 75,
     "FIA": 72,
-    "SÉC": 69,
+    "SÉC": 70,
     "ESP": 95
    },
-   "ovr": 77,
-   "carte": "argent",
+   "ovr": 78,
+   "carte": "or",
    "badges": [
     "c100",
     "team",
-    "up"
+    "up",
+    "or"
    ],
    "defi": {
     "k": "r",
@@ -1923,7 +1940,7 @@
     "p": 12.1,
     "a": 20.0,
     "d": 0.2,
-    "r": 6.5
+    "r": 6.4
    },
    "note_brute": 10.2,
    "note": 12.2,
@@ -1933,7 +1950,7 @@
    "posv": 0.0,
    "attr": {
     "VIT": 75,
-    "VOL": 66,
+    "VOL": 67,
     "PRÉ": 46,
     "FIA": 95,
     "SÉC": 62,
@@ -1960,16 +1977,16 @@
    "nom": "MANGIN",
    "prenom": "Christelle",
    "quota_ok": true,
-   "h_pick": 149.95,
+   "h_pick": 148.95,
    "lig": 12262,
    "cont": 4127,
    "ed": 12,
    "ea": 0,
-   "q": 101.3,
-   "reg": 45,
+   "q": 102.0,
+   "reg": 50,
    "jp": 20,
    "lj": 613,
-   "cad": 81.8,
+   "cad": 82.3,
    "best": [
     893,
     1
@@ -2041,11 +2058,11 @@
     [
      12,
      7.4,
-     7.4,
+     6.4,
      572,
      1,
      0,
-     90
+     104
     ],
     [
      13,
@@ -2210,13 +2227,13 @@
    "classe": true,
    "nouveau": false,
    "notes": {
-    "p": 11.5,
+    "p": 11.4,
     "a": 13.7,
     "d": 13.1,
-    "r": 12.9
+    "r": 12.4
    },
-   "note_brute": 12.5,
-   "note": 13.8,
+   "note_brute": 12.4,
+   "note": 13.6,
    "rang": 2,
    "N": 10,
    "secv": 1.0,
@@ -2227,9 +2244,9 @@
     "PRÉ": 78,
     "FIA": 79,
     "SÉC": 77,
-    "ESP": 72
+    "ESP": 70
    },
-   "ovr": 80,
+   "ovr": 79,
    "carte": "or",
    "badges": [
     "c100",
@@ -2241,8 +2258,8 @@
    ],
    "defi": {
     "k": "p",
-    "t": "Viser 106 % de quota",
-    "d": "Tu es à 101.3 % (équipe : 94.3 %). Gagne 5 points de rythme.",
+    "t": "Viser 107 % de quota",
+    "d": "Tu es à 102.0 % (équipe : 95.1 %). Gagne 5 points de rythme.",
     "s": "P4",
     "st": "Préparation détail"
    },
@@ -2255,16 +2272,16 @@
    "nom": "MZOUGHI",
    "prenom": "Sheherazade",
    "quota_ok": true,
-   "h_pick": 135.75,
+   "h_pick": 133.75,
    "lig": 11264,
    "cont": 3735,
    "ed": 48,
    "ea": 2,
-   "q": 104.1,
+   "q": 106.4,
    "reg": 72,
    "jp": 18,
    "lj": 626,
-   "cad": 83.0,
+   "cad": 84.2,
    "best": [
     768,
     1
@@ -2345,11 +2362,11 @@
     [
      13,
      4.7,
-     4.7,
+     3.7,
      366,
      2,
      0,
-     90
+     114
     ],
     [
      14,
@@ -2372,11 +2389,11 @@
     [
      16,
      6.4,
-     6.4,
+     5.4,
      406,
      3,
      0,
-     84
+     99
     ],
     [
      23,
@@ -2488,23 +2505,23 @@
    "classe": true,
    "nouveau": false,
    "notes": {
-    "p": 12.1,
+    "p": 12.4,
     "a": 11.0,
     "d": 10.2,
-    "r": 11.1
+    "r": 10.7
    },
    "note_brute": 11.3,
    "note": 12.4,
-   "rang": 8,
+   "rang": 7,
    "N": 10,
    "secv": 2.22,
    "posv": 0.0,
    "attr": {
-    "VIT": 75,
+    "VIT": 76,
     "VOL": 78,
     "PRÉ": 70,
     "FIA": 72,
-    "SÉC": 75,
+    "SÉC": 74,
     "ESP": 64
    },
    "ovr": 76,
@@ -2776,26 +2793,26 @@
    "classe": true,
    "nouveau": false,
    "notes": {
-    "p": 11.2,
+    "p": 11.0,
     "a": 12.5,
     "d": 12.3,
-    "r": 8.1
+    "r": 7.9
    },
-   "note_brute": 11.1,
-   "note": 12.2,
+   "note_brute": 10.9,
+   "note": 12.0,
    "rang": 9,
    "N": 10,
    "secv": 6.0,
    "posv": 0.0,
    "attr": {
-    "VIT": 73,
+    "VIT": 72,
     "VOL": 77,
     "PRÉ": 76,
     "FIA": 76,
     "SÉC": 66,
     "ESP": 64
    },
-   "ovr": 76,
+   "ovr": 75,
    "carte": "argent",
    "badges": [
     "reg",
@@ -3069,14 +3086,14 @@
    "classe": true,
    "nouveau": false,
    "notes": {
-    "p": 11.3,
+    "p": 11.1,
     "a": 12.5,
     "d": 13.4,
-    "r": 12.1
+    "r": 11.7
    },
-   "note_brute": 12.1,
-   "note": 13.3,
-   "rang": 3,
+   "note_brute": 12.0,
+   "note": 13.2,
+   "rang": 4,
    "N": 10,
    "secv": 0.95,
    "posv": 0.0,
@@ -3085,7 +3102,7 @@
     "VOL": 76,
     "PRÉ": 78,
     "FIA": 76,
-    "SÉC": 78,
+    "SÉC": 77,
     "ESP": 64
    },
    "ovr": 78,
@@ -3100,7 +3117,7 @@
    "defi": {
     "k": "p",
     "t": "Viser 105 % de quota",
-    "d": "Tu es à 100.3 % (équipe : 94.3 %). Gagne 5 points de rythme.",
+    "d": "Tu es à 100.3 % (équipe : 95.1 %). Gagne 5 points de rythme.",
     "s": "P4",
     "st": "Préparation détail"
    },
@@ -3323,10 +3340,10 @@
     "p": 11.3,
     "a": 16.3,
     "d": 9.4,
-    "r": 11.8
+    "r": 11.4
    },
-   "note_brute": 12.0,
-   "note": 14.0,
+   "note_brute": 11.9,
+   "note": 13.9,
    "rang": 1,
    "N": 4,
    "secv": 1.33,
@@ -3594,31 +3611,30 @@
    "classe": true,
    "nouveau": false,
    "notes": {
-    "p": 13.8,
+    "p": 13.5,
     "a": 11.0,
     "d": 11.7,
-    "r": 8.7
+    "r": 8.5
    },
-   "note_brute": 11.8,
-   "note": 13.0,
-   "rang": 4,
+   "note_brute": 11.6,
+   "note": 12.8,
+   "rang": 6,
    "N": 10,
    "secv": 5.26,
    "posv": 0.0,
    "attr": {
-    "VIT": 80,
+    "VIT": 79,
     "VOL": 75,
     "PRÉ": 74,
     "FIA": 72,
     "SÉC": 68,
     "ESP": 64
    },
-   "ovr": 78,
-   "carte": "or",
+   "ovr": 77,
+   "carte": "argent",
    "badges": [
     "c100",
-    "k10",
-    "or"
+    "k10"
    ],
    "defi": {
     "k": "r",
@@ -3636,16 +3652,16 @@
    "nom": "VEJUX",
    "prenom": "Sandra",
    "quota_ok": true,
-   "h_pick": 95.9,
+   "h_pick": 87.65,
    "lig": 7844,
    "cont": 2695,
    "ed": 4,
    "ea": 3,
-   "q": 102.0,
-   "reg": 39,
+   "q": 110.5,
+   "reg": 47,
    "jp": 19,
    "lj": 413,
-   "cad": 81.8,
+   "cad": 89.5,
    "best": [
     689,
     6
@@ -3726,11 +3742,11 @@
     [
      13,
      7.4,
-     1.25,
+     1.0,
      93,
      0,
      1,
-     93
+     116
     ],
     [
      14,
@@ -3744,11 +3760,11 @@
     [
      15,
      7.4,
-     0.0,
+     2.4,
      187,
      0,
      0,
-     null
+     92
     ],
     [
      16,
@@ -3789,11 +3805,11 @@
     [
      22,
      7.4,
-     7.4,
+     2.0,
      169,
      1,
      0,
-     26
+     97
     ],
     [
      23,
@@ -3807,11 +3823,11 @@
     [
      29,
      7.4,
-     7.4,
+     2.4,
      193,
      0,
      0,
-     37
+     113
     ],
     [
      30,
@@ -3834,10 +3850,17 @@
     "pa": 596,
     "pd": 1789
    },
-   "pos": 1,
+   "pos": 4,
    "ec": 2,
    "sec": 2,
    "rh_types": [
+    [
+     [
+      "+",
+      "Polyvalence : renfort hors gabarit"
+     ],
+     3
+    ],
     [
      [
       "-",
@@ -3873,35 +3896,37 @@
      1
     ]
    ],
-   "rhv": -0.91,
+   "rhv": 1.82,
    "classe": true,
    "nouveau": false,
    "notes": {
-    "p": 11.6,
+    "p": 13.2,
     "a": 7.9,
     "d": 13.5,
-    "r": 12.2
+    "r": 13.8
    },
-   "note_brute": 11.4,
-   "note": 12.5,
-   "rang": 7,
+   "note_brute": 12.3,
+   "note": 13.5,
+   "rang": 3,
    "N": 10,
    "secv": 1.82,
-   "posv": 0.91,
+   "posv": 3.64,
    "attr": {
-    "VIT": 74,
+    "VIT": 78,
     "VOL": 58,
     "PRÉ": 79,
     "FIA": 65,
     "SÉC": 76,
-    "ESP": 71
+    "ESP": 83
    },
-   "ovr": 76,
-   "carte": "argent",
+   "ovr": 79,
+   "carte": "or",
    "badges": [
     "c100",
     "lynx",
-    "team"
+    "team",
+    "up",
+    "or"
    ],
    "defi": {
     "k": "r",
@@ -4180,26 +4205,26 @@
    "classe": true,
    "nouveau": false,
    "notes": {
-    "p": 5.0,
+    "p": 4.9,
     "a": 12.2,
     "d": 11.4,
-    "r": 9.2
+    "r": 9.0
    },
-   "note_brute": 8.6,
-   "note": 9.5,
+   "note_brute": 8.5,
+   "note": 9.4,
    "rang": 10,
    "N": 10,
    "secv": 4.55,
    "posv": 0.0,
    "attr": {
-    "VIT": 58,
-    "VOL": 60,
+    "VIT": 57,
+    "VOL": 61,
     "PRÉ": 74,
     "FIA": 76,
     "SÉC": 70,
     "ESP": 64
    },
-   "ovr": 69,
+   "ovr": 68,
    "carte": "argent",
    "badges": [],
    "defi": {
@@ -4403,10 +4428,10 @@
    "classe": false,
    "nouveau": false,
    "notes": {
-    "p": 15.3,
+    "p": 15.0,
     "a": 13.7,
     "d": 12.7,
-    "r": 11.8
+    "r": 11.4
    },
    "note_brute": null,
    "note": null,
@@ -4415,8 +4440,8 @@
    "secv": 1.33,
    "posv": 0.0,
    "attr": {
-    "VIT": 83,
-    "VOL": 45,
+    "VIT": 82,
+    "VOL": 46,
     "PRÉ": 77,
     "FIA": 79,
     "SÉC": 76,
